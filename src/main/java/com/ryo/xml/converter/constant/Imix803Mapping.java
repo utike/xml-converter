@@ -9,7 +9,11 @@ import java.util.Map;
  */
 public class Imix803Mapping {
 
-    private static Map<String, String> map = new HashMap<>();
+    public static Map<String, String> map = new HashMap<>();
+
+    public static String getActualVal(String key) {
+        return map.get(key);
+    }
 
     static {
         map.put("SECURITIES_ACCOUNT_NUMBER", "SECURITIES_ACCOUNT_NUMBER");
