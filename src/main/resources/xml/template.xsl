@@ -24,35 +24,15 @@
                         <xsl:value-of select="."/>
                     </xsl:element>
                 </xsl:for-each>
-            
-
-            <xsl:for-each select="message/body/groups/group">
-
-                <xsl:variable name="groupNodeName" select="field[@enum]/@enum"/>
-                <xsl:element name="{$groupNodeName}">
-
-					<xsl:for-each select="field[@name]">
-						<xsl:variable name="nodeName" select="@name" />
-						<xsl:element name="{$nodeName}">
-							<xsl:value-of select="."/>
-						</xsl:element>
-					</xsl:for-each>
-					
-					<xsl:for-each select="groups/group">
-					   <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
-					   <xsl:element name="{$enumNodeName}">
-							<xsl:value-of select="field[@name='PartySubID']"/>
-					   </xsl:element>
-					</xsl:for-each>
-						
-                </xsl:element>
 
 
-            </xsl:for-each>
-			
-			</Body>
+                %s
+
+            </Body>
 
         </Message>
+
+        %s
 
     </xsl:template>
 
