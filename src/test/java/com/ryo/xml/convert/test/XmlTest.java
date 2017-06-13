@@ -1,5 +1,8 @@
 package com.ryo.xml.convert.test;
 
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -10,6 +13,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
+import java.io.File;
+import java.util.Iterator;
 
 /**
  * Created by bbhou on 2017/6/12.
@@ -46,5 +51,32 @@ public class XmlTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void getDesc() throws DocumentException {
+        //创建SAXReader对象
+        SAXReader reader = new SAXReader();
+        //读取文件 转换成Document
+        org.dom4j.Document document = reader.read(new File("E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\xml\\803.xml"));
+        //获取根节点元素对象
+        Element root = document.getRootElement();
+//        root.elements();
+
+        //同时迭代当前节点下面的所有子节点
+        //使用递归
+        Iterator<Element> iterator = root.elementIterator();
+        String stringFormat = "map.put(\"%s\", \"%s\");";
+        while(iterator.hasNext()){
+            Element e = iterator.next();
+            String value = e.attribute("description").getValue();
+            System.out.println(String.format(stringFormat, value, value));
+//            System.out.println(e.attribute("description").getValue());
+        }
+
+
+//        System.out.println(root.getName());
+    }
+
+
 
 }
