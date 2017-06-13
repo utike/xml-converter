@@ -1,5 +1,6 @@
 package com.ryo.xml.converter.util;
 
+import com.ryo.xml.converter.vo.GroupVo;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
@@ -30,8 +31,8 @@ public class XslGeneratorUtil {
      * @param xmlPath xml 文件路径
      * @return
      */
-    private static String generatorMessageXslContent(final String xmlPath)  {
-        StringBuilder stringBuilder = new StringBuilder();
+    private static GroupVo generatorXslContent(final String xmlPath)  {
+        GroupVo groupVo = new GroupVo();
 
         //创建SAXReader对象
         SAXReader reader = new SAXReader();
@@ -43,28 +44,69 @@ public class XslGeneratorUtil {
             Element root = document.getRootElement();
             List<Element> eles = root.element("body").elements("groups");
             for (Element element : eles) {
-                System.out.println(element.attribute("name").getValue());
+                String groupName = element.attribute("name").getValue();
+                if("NoUnderlyings".equals(groupName)) {
+                    String content = getNoUnderlyingsXslContent(element);
+                    groupVo.setNoUnderlyings(content);
+                } else if("NoPartyIDs".equals(groupName)) {
+                    String content = getNoPartyIDsXslContent(element);
+                    groupVo.setNoPartyIDs(content);
+                }
             }
-
-            return stringBuilder.toString();
+            return groupVo;
         } catch (DocumentException e) {
             e.printStackTrace();
-            return "";
+            return groupVo;
         }
     }
 
     /**
-     * 生成 xsl 内容
+     * 生成 NoUnderlyings xsl 内容
      * @return
      */
-    private static String generatorNoUnderlyingsXslContent() {
-        return "";
+    private static String getNoUnderlyingsXslContent(Element element) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        return stringBuilder.toString();
+    }
+
+    /**
+     * 生成 NoPartyIDs xsl 内容
+     * 1. 对手方 还是我方。
+     * @return
+     */
+    private static String getNoPartyIDsXslContent(Element element) {
+        String PartySubID = "PartySubID";
+        String PartySubIDType = "PartySubIDType";
+
+        StringBuilder stringBuilder = new StringBuilder();
+        List<Element> groups = element.elements("group");
+        for (Element group : groups) {
+            List<Element> NoPartySubIDsEles = group.element("groups").elements("group");
+
+            for (Element NoPartySubIDsEle : NoPartySubIDsEles) {
+                List<Element> fields = NoPartySubIDsEle.elements("field");
+                for(Element field : fields) {
+                    String name = field.attributeValue("name");
+                    System.out.println(name);
+                }
+            }
+
+
+        }
+
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
         final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\original\\1.txt";
-//        String content = generatorXslContent(xmlPath);
-//        System.out.println(content);
+        GroupVo groupVo = generatorXslContent(xmlPath);
+//
+//        String templateContent = FileUtil.getFileContent("E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\xml\\template.xsl");
+//        String resultXsl = String.format(templateContent, groupVo.getNoPartyIDs(), groupVo.getNoUnderlyings());
+//        System.out.println(resultXsl);
+
+
     }
 
 
