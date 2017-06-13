@@ -1,5 +1,6 @@
 package com.ryo.xml.convert.test;
 
+import com.ryo.xml.converter.util.FilePathUtil;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
@@ -14,12 +15,71 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by bbhou on 2017/6/12.
  */
 public class XmlTest {
+
+    @Test
+    public void msgTypeMarketTest() throws IOException {
+        Set<String> stringSet = new HashSet<>();
+
+        String dir = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original";
+        List<Path> pathList = FilePathUtil.getPathList(dir, "*.xml");
+
+        System.out.println(pathList.size());
+        for (Path path : pathList) {
+            String fullPath = dir+"/"+path.getFileName().toString();
+//            System.out.println(fullPath);
+            //创建SAXReader对象
+            SAXReader reader = new SAXReader();
+            //读取文件 转换成Document
+            org.dom4j.Document document = null;
+            try {
+                document = reader.read(new File(fullPath));
+                String msgType = "";
+                String MarketIndicator = "";
+                //获取根节点元素对象
+                Element root = document.getRootElement();
+                List<Element> eles = root.element("header").elements("field");
+                for (Element element : eles) {
+                    if(element.attributeValue("name").equals("MsgType")) {
+
+                        msgType = element.attributeValue("enum");
+                    }
+                }
+
+                List<Element> bodys = root.element("body").elements("field");
+                for (Element element : bodys) {
+                    if(element.attributeValue("name").equals("MarketIndicator")) {
+                        MarketIndicator = element.attributeValue("enum");
+                    }
+                }
+
+                String value = String.format("%s_%s", msgType, MarketIndicator);
+                if(!stringSet.contains(value)) {
+                    System.out.println(value);
+                    System.out.println(fullPath);
+                }
+                stringSet.add(value);
+
+
+//
+            } catch (DocumentException e) {
+                e.printStackTrace();
+            }
+            System.out.println("=====");
+        }
+
+        System.out.println(stringSet.size());
+    }
 
     @Test
     public void readXmlTest()
