@@ -31,7 +31,8 @@ public class XmlTest {
     public void msgTypeMarketTest() throws IOException {
         Set<String> stringSet = new HashSet<>();
 
-        String dir = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original";
+//        String dir = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original";
+        String dir = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\original";
         List<Path> pathList = FilePathUtil.getPathList(dir, "*.xml");
 
         System.out.println(pathList.size());
