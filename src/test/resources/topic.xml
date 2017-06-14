@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="topic.xsl"?>
+<topic name="My_topic"
+       title="My Topic">
+    <meta>
+        <owner>
+            <name>Jane</name>
+            <email>jane@topicfactory.com</email>
+            <since></since>
+        </owner>
+        <history>
+            <created-by>
+                <name>John</name>
+                <email>john@topicfactory.com</email>
+                <date>Nov 5, 2001</date>
+            </created-by>
+            <modifiers>
+            </modifiers>
+        </history>
+        <keyword></keyword>
+        <refs></refs>
+    </meta>
+
+    <para name="para1" title="First Paragraph">
+        The first para has both name and title.
+    </para>
+    <para title="Second Paragraph">
+        the second para has a title but no name.
+    </para>
+
+    <para>
+        Third para has neither name nor title.
+    </para>
+</topic>
