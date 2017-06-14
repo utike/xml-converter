@@ -59,12 +59,12 @@ E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/19.xml
 
 
 
-Quote_INTER_BANK_OFFERING（报价——银行拆借）
+Quote_INTER_BANK_OFFERING（报价——信用拆借）
 E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/23.xml
 =====
 =====
 
-ExecutionReport_INTER_BANK_OFFERING（报价——银行拆借）
+ExecutionReport_INTER_BANK_OFFERING（报价——信用拆借）
 E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/3.xml
 =====
 =====

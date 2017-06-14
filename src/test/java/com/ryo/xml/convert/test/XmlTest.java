@@ -37,7 +37,7 @@ public class XmlTest {
 
         System.out.println(pathList.size());
         for (Path path : pathList) {
-            String fullPath = dir+"/"+path.getFileName().toString();
+            String fullPath = dir + "/" + path.getFileName().toString();
 //            System.out.println(fullPath);
             //创建SAXReader对象
             SAXReader reader = new SAXReader();
@@ -47,28 +47,30 @@ public class XmlTest {
                 document = reader.read(new File(fullPath));
                 String msgType = "";
                 String MarketIndicator = "";
+                String QuoteType = "";
                 //获取根节点元素对象
                 Element root = document.getRootElement();
                 List<Element> eles = root.element("header").elements("field");
                 for (Element element : eles) {
-                    if(element.attributeValue("name").equals("MsgType")) {
+                    if (element.attributeValue("name").equals("MsgType")) {
 
-                        msgType = element.attributeValue("enum");
+                        msgType = element.attributeValue("enum")+"(MsgType="+element.getStringValue()+")";
                     }
                 }
 
                 List<Element> bodys = root.element("body").elements("field");
                 for (Element element : bodys) {
-                    if(element.attributeValue("name").equals("MarketIndicator")) {
+                    if (element.attributeValue("name").equals("MarketIndicator")) {
                         MarketIndicator = element.attributeValue("enum");
+                    }
+                    if (element.attributeValue("name").equals("QuoteType")) {
+                        QuoteType = element.attributeValue("enum")+"(QuoteType="+element.getStringValue()+")";
                     }
                 }
 
-                String value = String.format("%s_%s", msgType, MarketIndicator);
-                if(!stringSet.contains(value)) {
-                    System.out.println(value);
-                    System.out.println(fullPath);
-                }
+                String value = String.format("%s_%s_%s", msgType, MarketIndicator, QuoteType);
+                System.out.println(value);
+                System.out.println(fullPath);
                 stringSet.add(value);
 
 
@@ -83,8 +85,7 @@ public class XmlTest {
     }
 
     @Test
-    public void readXmlTest()
-    {
+    public void readXmlTest() {
         try {
             String xmlFilePath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\xml\\city.xml";
 
@@ -97,14 +98,14 @@ public class XmlTest {
             XPathFactory factory = XPathFactory.newInstance(); //创建 XPathFactory
             XPath xpath = factory.newXPath();//用这个工厂创建 XPath 对象
 
-            NodeList nodes = (NodeList)xpath.evaluate("location/property", doc, XPathConstants.NODESET);
+            NodeList nodes = (NodeList) xpath.evaluate("location/property", doc, XPathConstants.NODESET);
             String name = "";
             String value = "";
             for (int i = 0; i < nodes.getLength(); i++) {
                 Node node = nodes.item(i);
                 name = (String) xpath.evaluate("name", node, XPathConstants.STRING);
                 value = (String) xpath.evaluate("value", node, XPathConstants.STRING);
-                System.out.println("name="+name+";value="+value);
+                System.out.println("name=" + name + ";value=" + value);
             }
 
         } catch (Exception e) {
@@ -127,7 +128,7 @@ public class XmlTest {
         //使用递归
         Iterator<Element> iterator = root.elementIterator();
         String stringFormat = "map.put(\"%s\", \"%s\");";
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Element e = iterator.next();
             String value = e.attribute("description").getValue();
             System.out.println(String.format(stringFormat, value, value));
@@ -137,7 +138,6 @@ public class XmlTest {
 
 //        System.out.println(root.getName());
     }
-
 
 
 }
