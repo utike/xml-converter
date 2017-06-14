@@ -1,6 +1,5 @@
 package com.ryo.xml.converter.util;
 
-import com.alibaba.fastjson.JSON;
 import org.dom4j.Document;
 import org.dom4j.io.*;
 
@@ -68,7 +67,7 @@ public class XmlConverterUtil {
      * @param transformDoc doc文档
      * @return
      */
-    private static String write2String(Document transformDoc){
+    private static String write2XMLString(Document transformDoc){
         StringWriter strWriter = new StringWriter();
         OutputFormat format = OutputFormat.createPrettyPrint();
         format.setEncoding(StandardCharsets.UTF_8.toString());
@@ -84,11 +83,33 @@ public class XmlConverterUtil {
         return strWriter.toString();
     }
 
+
+    /**
+     * 将doc文档对象转化为html字符串
+     * @param transformDoc doc文档
+     * @return
+     */
+    private static String write2HTMLString(Document transformDoc){
+        StringWriter strWriter = new StringWriter();
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        format.setEncoding(StandardCharsets.UTF_8.toString());
+        format.setXHTML(true);
+        HTMLWriter writer = new HTMLWriter(strWriter, format);
+        format.setExpandEmptyElements(false);
+        try {
+            writer.write(transformDoc);
+            writer.flush();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        return strWriter.toString();
+    }
+
     public static void main(String[] args) {
-        String xmlPath = "C:\\Users\\bbhou\\Desktop\\convert\\test.xml";
-        String xslPath = "C:\\Users\\bbhou\\Desktop\\convert\\newtest.xsl";
+        String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
+        String xslPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
         Document document = convertWithXsl(xmlPath, xslPath);
-        System.out.println(write2String(document));
+        System.out.println(write2XMLString(document));
     }
 
 }
