@@ -5,15 +5,18 @@ ExecutionReport/Quote
 
 注意：暂时的转换 放在一个独立结构体的有问题。！！！(直接放在body节点中)
 
+http://blog.163.com/jiamei_lx/blog/static/120972534201153103342725/
+
+
 
 # 信用拆借
 
 ExecutionReport(MsgType=8)_INTER_BANK_OFFERING_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/3.xml (√)
+E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/3.xml (√) recheck
 =====
 
 Quote(MsgType=S)_INTER_BANK_OFFERING_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/5.xml   (√)
+E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/5.xml   (√) recheck
 =====
 
 Quote(MsgType=S)_INTER_BANK_OFFERING_TRADEABLE(QuoteType=1)
@@ -23,7 +26,7 @@ E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/23.xml
 # 质押式回购
 
 Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/2.xml (√)
+E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/2.xml (√) recheck
 =====
 
 ExecutionReport(MsgType=8)_COLLATERAL_REPO_

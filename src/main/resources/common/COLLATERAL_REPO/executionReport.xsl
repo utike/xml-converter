@@ -18,6 +18,7 @@
             </Header>
 
             <Body>
+
                 <xsl:for-each select="message/body/field[@name]">
                     <xsl:variable name="nodeName" select="@name"/>
                     <xsl:element name="{$nodeName}">
@@ -38,10 +39,17 @@
                             </xsl:element>
                         </xsl:for-each>
 
-                        <xsl:for-each select="groups/group">
+                        <xsl:for-each select="groups[@name='NoPartySubIDs']/group">
                             <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
                             <xsl:element name="{$enumNodeName}">
                                 <xsl:value-of select="field[@name='PartySubID']"/>
+                            </xsl:element>
+                        </xsl:for-each>
+
+                        <xsl:for-each select="groups[@name='NoContactInfos']/group">
+                            <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
+                            <xsl:element name="{$enumNodeName}">
+                                <xsl:value-of select="field[@name='ContactInfoID']"/>
                             </xsl:element>
                         </xsl:for-each>
 
@@ -50,35 +58,38 @@
 
                 </xsl:for-each>
 
+
+                <NoUnderlyings>
+
+                    <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
+
+                        <NoUnderlying>
+
+                            <xsl:for-each select="field[@name]">
+                                <xsl:variable name="nodeName" select="@name" />
+                                <xsl:element name="{$nodeName}">
+                                    <xsl:value-of select="."/>
+                                </xsl:element>
+                            </xsl:for-each>
+
+                            <xsl:for-each select="groups/group">
+                                <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
+                                <xsl:element name="{$enumNodeName}">
+                                    <xsl:value-of select="field[@name='UnderlyingStipValue']"/>
+                                </xsl:element>
+                            </xsl:for-each>
+                        </NoUnderlying>
+
+                    </xsl:for-each>
+
+                </NoUnderlyings>
+
             </Body>
 
         </Message>
 
 
-        <NoUnderlyings>
 
-            <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
-
-                <NoUnderlying>
-
-                    <xsl:for-each select="field[@name]">
-                        <xsl:variable name="nodeName" select="@name" />
-                        <xsl:element name="{$nodeName}">
-                            <xsl:value-of select="."/>
-                        </xsl:element>
-                    </xsl:for-each>
-
-                    <xsl:for-each select="groups/group">
-                        <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
-                        <xsl:element name="{$enumNodeName}">
-                            <xsl:value-of select="field[@name='UnderlyingStipValue']"/>
-                        </xsl:element>
-                    </xsl:for-each>
-                </NoUnderlying>
-
-            </xsl:for-each>
-
-        </NoUnderlyings>
 
 
     </xsl:template>

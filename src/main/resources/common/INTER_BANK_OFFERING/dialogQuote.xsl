@@ -18,6 +18,7 @@
             </Header>
 
             <Body>
+
                 <xsl:for-each select="message/body/field[@name]">
                     <xsl:variable name="nodeName" select="@name"/>
                     <xsl:element name="{$nodeName}">
@@ -38,7 +39,7 @@
                             </xsl:element>
                         </xsl:for-each>
 
-                        <xsl:for-each select="groups/group">
+                        <xsl:for-each select="groups[@name='NoPartySubIDs']/group">
                             <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
                             <xsl:element name="{$enumNodeName}">
                                 <xsl:value-of select="field[@name='PartySubID']"/>
