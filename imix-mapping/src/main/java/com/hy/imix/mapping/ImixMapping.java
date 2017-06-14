@@ -1,4 +1,4 @@
-package com.ryo.xml.converter.constant;
+package com.hy.imix.mapping;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,12 +7,23 @@ import java.util.Map;
  * imix 803 mapping
  * Created by bbhou on 2017/6/13.
  */
-public class Imix803Mapping {
+public class ImixMapping {
 
-    public static Map<String, String> map = new HashMap<>();
+    private static Map<String, String> map = new HashMap<>();
 
+    /**
+     * 获取实际对应的结果
+     * 1. 如果没有对应值，则返回KEY本身。
+     * @param key
+     * @return
+     */
     public static String getActualVal(String key) {
-        return map.get(key);
+        String result = map.get(key);
+        if(result == null
+                || "".equals(result)) {
+            result = key;
+        }
+        return result;
     }
 
     static {
