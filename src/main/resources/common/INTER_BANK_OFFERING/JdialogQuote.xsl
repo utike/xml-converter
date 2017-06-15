@@ -39,6 +39,17 @@
 
                 return original;
             }
+            public function getRate(original) {
+                return original/100.0;
+            }
+
+            public function getActualVal(nodeName, original) {
+                if("Price" == nodeName) {
+                    return original/100.0;
+                } else {
+                    return getFormatDate(original);
+                }
+            }
         ]]>
     </msxsl:script>
 
@@ -49,7 +60,7 @@
                 <xsl:for-each select="message/header/field[@name]">
                     <xsl:variable name="nodeName" select="@name"/>
                     <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="jscript:getFormatDate(current())"/>
+                        <xsl:value-of select="jscript:getActualVal($nodeName, current())"/>
                     </xsl:element>
                 </xsl:for-each>
             </Header>
@@ -59,7 +70,7 @@
                 <xsl:for-each select="message/body/field[@name]">
                     <xsl:variable name="nodeName" select="jscript:map(@name)"/>
                     <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="jscript:getFormatDate(current())"/>
+                        <xsl:value-of select="jscript:getActualVal($nodeName, current())"/>
                     </xsl:element>
                 </xsl:for-each>
 
