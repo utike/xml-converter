@@ -1,12 +1,15 @@
 package com.ryo.xml.converter.util;
 
 import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
 import org.dom4j.io.*;
 
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
@@ -105,14 +108,21 @@ public class XmlConverterUtil {
         return strWriter.toString();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DocumentException {
 //        String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
 //        String xslPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
 
         final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xml";
-        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xsl";
-        Document document = convertWithXsl(xmlPath, xslPath);
-        System.out.println(write2XMLString(document));
+//        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xsl";
+//        Document document = convertWithXsl(xmlPath, xslPath);
+//        System.out.println(write2XMLString(document));
+
+        //创建SAXReader对象
+        SAXReader reader = new SAXReader();
+        //读取文件 转换成Document
+        Document document = reader.read(new File(xmlPath));
+        Element element= document.getRootElement();
+        System.out.println(element.getName());
     }
 
 }
