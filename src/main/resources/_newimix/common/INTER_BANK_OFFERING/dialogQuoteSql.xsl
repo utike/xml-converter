@@ -12,7 +12,7 @@
             <xsl:for-each select="Quote/Master/*">
                 <xsl:call-template name="fields"/>
             </xsl:for-each>
-        ) VALES (
+        ) VALUES (
             <xsl:for-each select="Quote/Master/*">
                 <xsl:call-template name="values"/>
             </xsl:for-each>
@@ -27,7 +27,7 @@
                 <xsl:for-each select="*">
                     <xsl:call-template name="fields"/>
                 </xsl:for-each>
-            ) VALES
+            ) VALUES
             (
                 <xsl:for-each select="*">
                     <xsl:call-template name="values"/>
@@ -42,10 +42,10 @@
     <xsl:template name="fields">
         <xsl:choose>
             <xsl:when test="position() = 1">
-                '<xsl:value-of select="name()"/>'
+                [<xsl:value-of select="name()"/>]
             </xsl:when>
             <xsl:otherwise>
-                ,'<xsl:value-of select="name()"/>'
+                ,[<xsl:value-of select="name()"/>]
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
