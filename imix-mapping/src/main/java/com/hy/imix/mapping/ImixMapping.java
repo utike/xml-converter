@@ -28,7 +28,7 @@ public class ImixMapping {
 
     static {
         map.put("SECURITIES_ACCOUNT_NUMBER", "SECURITIES_ACCOUNT_NUMBER");
-        map.put("TRADER_NAME", "TRADER_NAME");
+        map.put("TRADER_NAME", "TraderName");
         map.put("SHORT_LEGAL_NAME_OF_FIRM", "SHORT_LEGAL_NAME_OF_FIRM");
         map.put("CONTACT_METHOD_OF_TRADER", "CONTACT_METHOD_OF_TRADER");
         map.put("MEMBERS_OR_CLIENTS", "MEMBERS_OR_CLIENTS");
