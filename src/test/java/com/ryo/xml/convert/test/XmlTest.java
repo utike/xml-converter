@@ -127,7 +127,7 @@ public class XmlTest {
         //同时迭代当前节点下面的所有子节点
         //使用递归
         Iterator<Element> iterator = root.elementIterator();
-        String stringFormat = "map.put(\"%s\", \"%s\");";
+        String stringFormat = "\"%s\": \"%s\",";
         while (iterator.hasNext()) {
             Element e = iterator.next();
             String value = e.attribute("description").getValue();
