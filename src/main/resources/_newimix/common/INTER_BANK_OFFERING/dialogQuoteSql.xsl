@@ -27,11 +27,13 @@
                 <xsl:for-each select="*">
                     <xsl:call-template name="fields"/>
                 </xsl:for-each>
+                ,[GUID]
             ) VALUES
             (
                 <xsl:for-each select="*">
                     <xsl:call-template name="values"/>
                 </xsl:for-each>
+                ,GUID()
             );
         </xsl:for-each>
 
