@@ -9,6 +9,12 @@
     <msxsl:script language="JavaScript" implements-prefix="jscript">
         <![CDATA[
         var CONSTANT = {
+            "TRADER_NAME": "TraderName",
+            "FULL_LEGAL_CHINESE_NAME_OF_FIRM": "FirmFullChineseName",
+            "SHORT_LEGAL_CHINESE_NAME_OF_FIRM": "FirmShortChineseName",
+            "SETTLEMENT_BANK_NAME": "SettlementBankName",
+            "CASH_ACCOUNT_NUMBER": "CashAccountNumber",
+            "ELIGIBLE_COUNTERPARTY": "EligibleCounterParty",
             "QuoteTransType": "TransType",
             "OrderQty": "Qty"
         };

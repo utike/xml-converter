@@ -52,7 +52,7 @@
                             </xsl:for-each>
 
                             <xsl:for-each select="groups[@name='NoPartySubIDs']/group">
-                                <xsl:variable name="enumNodeName" select="jscript:map(field[@enum]/@enum)"/>
+                                <xsl:variable name="enumNodeName" select="jscript:getDefineMap(field[@enum]/@enum)"/>
                                 <xsl:element name="{$enumNodeName}">
                                     <xsl:value-of select="field[@name='PartySubID']"/>
                                 </xsl:element>
