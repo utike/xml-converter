@@ -12,10 +12,22 @@
             <xsl:for-each select="Quote/Master/*">
                 <xsl:call-template name="fields"/>
             </xsl:for-each>
+            ,[SysID]
+            ,[SysOriMsg]
+            ,[SysDirect]
+            ,[SysStatus]
+            ,[SysSenderApp]
+            ,[SysSender]
         ) VALUES (
             <xsl:for-each select="Quote/Master/*">
                 <xsl:call-template name="values"/>
             </xsl:for-each>
+            ,'%s'
+            ,'%s'
+            ,'%s'
+            ,'%s'
+            ,'%s'
+            ,'%s'
         );
 
 
@@ -27,7 +39,7 @@
                 <xsl:for-each select="*">
                     <xsl:call-template name="fields"/>
                 </xsl:for-each>
-                ,[GUID]
+                ,[FkID]
             ) VALUES
             (
                 <xsl:for-each select="*">
