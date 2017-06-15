@@ -1,6 +1,5 @@
 package com.ryo.xml.converter.util;
 
-import com.ryo.xml.converter.constant.Imix803Mapping;
 import com.ryo.xml.converter.vo.GroupVo;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -90,13 +89,11 @@ public class XslGeneratorUtil {
                 for(Element field : fields) {
                     String name = field.attributeValue("name");
                     if("PartySubIDType".equals(name)) {
-                        String actualVal = Imix803Mapping.getActualVal(field.attributeValue("enum"));
+//                        String actualVal = Imix803Mapping.getActualVal(field.attributeValue("enum"));
 //                        System.out.println(field.attributeValue("enum"));
                     }
                 }
             }
-
-
         }
 
         return stringBuilder.toString();

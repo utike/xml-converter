@@ -67,7 +67,7 @@ public class PathUtil {
     /**
      * 类似getPath(Class), 只是不包含类的路径,而是获取到当前类包的根路径。
      * 如:
-     * filelist:/Users/houbinbin/IT/code/script-generator/script-generator-tool/target/classes/
+     * filelist:/Users/houbinbin/IT/code/script-generator/script-generator-tool/result/classes/
      * 转化为:
      * /Users/houbinbin/IT/code/script-generator/script-generator-tool/src/main/java
      * @param clazz
@@ -83,7 +83,7 @@ public class PathUtil {
     /**
      * 直接class.getResource("")拿到的是编译后的路径。
      * 如:
-     * filelist:/Users/houbinbin/IT/code/script-generator/script-generator-tool/target/classes/com/ryo/script-generator/util/
+     * filelist:/Users/houbinbin/IT/code/script-generator/script-generator-tool/result/classes/com/ryo/script-generator/util/
      * 转化成:
      * /Users/houbinbin/IT/code/script-generator/script-generator-tool/src/main/java/com/ryo/script-generator/util/
      * @param clazz 类

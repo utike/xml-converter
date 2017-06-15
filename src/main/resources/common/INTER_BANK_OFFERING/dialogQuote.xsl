@@ -34,9 +34,12 @@
 
                         <xsl:for-each select="field[@name]">
                             <xsl:variable name="nodeName" select="@name" />
-                            <xsl:element name="{$nodeName}">
-                                <xsl:value-of select="."/>
-                            </xsl:element>
+                            <xsl:if test="@tag != 802">
+                                <xsl:element name="{$nodeName}">
+                                    <xsl:value-of select="."/>
+                                </xsl:element>
+                            </xsl:if>
+
                         </xsl:for-each>
 
                         <xsl:for-each select="groups[@name='NoPartySubIDs']/group">

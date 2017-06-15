@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>imix-mapping</module>
+        <module>xsl-learn</module>
     </modules>
 
 
@@ -24,10 +25,21 @@
         <!--main-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <compiler.level>1.8</compiler.level>
-        
+
+        <!--log4j2-->
+        <log4j2.api.version>2.5</log4j2.api.version>
+
     </properties>
 
     <dependencies>
+        <!--self-->
+        <!--<dependency>-->
+            <!--<groupId>com.ryo</groupId>-->
+            <!--<artifactId>xml-converter</artifactId>-->
+            <!--<version>1.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
+
+
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -55,6 +67,18 @@
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
             <version>1.1.6</version>
+        </dependency>
+
+        <!--log4j2-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.api.version}</version>
         </dependency>
 
     </dependencies>

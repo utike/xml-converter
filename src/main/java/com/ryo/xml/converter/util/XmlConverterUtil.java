@@ -106,8 +106,11 @@ public class XmlConverterUtil {
     }
 
     public static void main(String[] args) {
-        String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
-        String xslPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
+//        String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
+//        String xslPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
+
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xml";
+        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xsl";
         Document document = convertWithXsl(xmlPath, xslPath);
         System.out.println(write2XMLString(document));
     }

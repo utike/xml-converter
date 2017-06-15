@@ -24,7 +24,7 @@ public final class PathConstant {
     /**
      * 目标class文件路径后缀
      */
-    public static final String TARGET_CLASSES_PATH_SUFFIX = "target/classes/";
+    public static final String TARGET_CLASSES_PATH_SUFFIX = "result/classes/";
 
     /**
      * java源文件默认存放路径
