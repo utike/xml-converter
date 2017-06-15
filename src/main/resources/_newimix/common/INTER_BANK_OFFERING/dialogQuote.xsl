@@ -19,7 +19,7 @@
                 <xsl:for-each select="message/header/field[@name]">
                     <xsl:variable name="nodeName" select="@name"/>
                     <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="jscript:getActualVal($nodeName, current())"/>
+                        <xsl:value-of select="jscript:getFormatDateAndRate($nodeName, current())"/>
                     </xsl:element>
                 </xsl:for-each>
             </Header>
@@ -27,9 +27,9 @@
             <Master>
 
                 <xsl:for-each select="message/body/field[@name]">
-                    <xsl:variable name="nodeName" select="jscript:map(@name)"/>
+                    <xsl:variable name="nodeName" select="jscript:getDefineMap(@name)"/>
                     <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="jscript:getActualVal($nodeName, current())"/>
+                        <xsl:value-of select="jscript:getFormatDateAndRate($nodeName, current())"/>
                     </xsl:element>
                 </xsl:for-each>
 
