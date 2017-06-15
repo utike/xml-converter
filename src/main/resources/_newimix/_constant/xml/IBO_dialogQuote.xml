@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Quote xmlns:jscript="http://jscript.org">
+    <Header>
+        <BeginString>IMIX.1.0</BeginString>
+        <BodyLength>850</BodyLength>
+        <MsgSeqNum>53</MsgSeqNum>
+        <MsgType>S</MsgType>
+        <SenderCompID>CFETS-RMB-CSTP</SenderCompID>
+        <SendingTime>20170216 06:53:35.517</SendingTime>
+        <TargetCompID>102445</TargetCompID>
+        <TargetSubID>zyzqcstp3</TargetSubID>
+        <OnBehalfOfCompID>CFETS-RMB</OnBehalfOfCompID>
+        <DeliverToCompID>102445</DeliverToCompID>
+        <DeliverToSubID>zyzqcstp3</DeliverToSubID>
+    </Header>
+    <Master>
+        <ClOrdID>994828487256773001</ClOrdID>
+        <Qty>300000.00</Qty>
+        <Price>0.02</Price>
+        <SecurityID>IBO007</SecurityID>
+        <Side>1</Side>
+        <TransactTime>20170216 14:53:35.026</TransactTime>
+        <ValidUntilTime>20170216 19:20:00.000</ValidUntilTime>
+        <SettlType>2</SettlType>
+        <QuoteID>201702160120000013</QuoteID>
+        <QuoteStatus>16</QuoteStatus>
+        <NoPartyIDs>2</NoPartyIDs>
+        <QuoteType>1</QuoteType>
+        <AccruedInterestTotalAmt>83.33</AccruedInterestTotalAmt>
+        <MarketIndicator>1</MarketIndicator>
+        <NegotiationCount>1</NegotiationCount>
+        <QuoteTime>20170216 14:53:35.026</QuoteTime>
+        <TransType>N</TransType>
+        <RemarkIndicator>N</RemarkIndicator>
+        <SettlCurrAmt2>300083.33</SettlCurrAmt2>
+        <TradeLimitDays>5</TradeLimitDays>
+        <DataCategoryIndicator>0</DataCategoryIndicator>
+    </Master>
+    <Slave>
+        <Parties>
+            <Party>
+                <PartyID>102445</PartyID>
+                <PartyRole>101</PartyRole>
+                <TraderName>中原证券首席交易员</TraderName>
+                <FirmFullChineseName>中原证券股份有限公司</FirmFullChineseName>
+                <FirmShortChineseName>中原证券</FirmShortChineseName>
+                <SettlementBankName>中国建设银行股份有限公司郑州期货城支行(105491000047)</SettlementBankName>
+                <CashAccountNumber>41001521010050006729</CashAccountNumber>
+                <EligibleCounterParty>CFETS</EligibleCounterParty>
+            </Party>
+            <Party>
+                <PartyID>304161</PartyID>
+                <PartyRole>102</PartyRole>
+                <TraderName>中原证券对手方</TraderName>
+                <FirmFullChineseName>恒天基金</FirmFullChineseName>
+                <FirmShortChineseName>恒天基金</FirmShortChineseName>
+                <EligibleCounterParty>CFETS</EligibleCounterParty>
+            </Party>
+        </Parties>
+    </Slave>
+</Quote>
