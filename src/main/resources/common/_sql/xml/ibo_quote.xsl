@@ -6,6 +6,7 @@
 
     <xsl:template match="/">
 
+
         INSERT INTO [dbo].[cfets_quotes]
         (
             <xsl:for-each select="Message/Header/*">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Message>
-    <Header>
+<Quote>
+    <Master>
         <BeginString>IMIX.1.0</BeginString>
         <BodyLength>850</BodyLength>
         <MsgSeqNum>53</MsgSeqNum>
@@ -12,8 +12,6 @@
         <OnBehalfOfCompID>CFETS-RMB</OnBehalfOfCompID>
         <DeliverToCompID>102445</DeliverToCompID>
         <DeliverToSubID>zyzqcstp3</DeliverToSubID>
-    </Header>
-    <Body>
         <ClOrdID>994828487256773001</ClOrdID>
         <OrderQty>300000.00</OrderQty>
         <Price>2.0000</Price>
@@ -35,23 +33,31 @@
         <SettlCurrAmt2>300083.33</SettlCurrAmt2>
         <TradeLimitDays>5</TradeLimitDays>
         <DataCategoryIndicator>0</DataCategoryIndicator>
-        <INITIATOR>
-            <PartyID>102445</PartyID>
-            <PartyRole>101</PartyRole>
-            <TraderName>中原证券首席交易员</TraderName>
-            <FirmFullChineseName>中原证券股份有限公司</FirmFullChineseName>
-            <FirmShortChineseName>中原证券</FirmShortChineseName>
-            <SettlementBankName>中国建设银行股份有限公司郑州期货城支行(105491000047)</SettlementBankName>
-            <CashAccountNumber>41001521010050006729</CashAccountNumber>
-            <EligibleCounterParty>CFETS</EligibleCounterParty>
-        </INITIATOR>
-        <COUNTERPARTY>
-            <PartyID>304161</PartyID>
-            <PartyRole>102</PartyRole>
-            <TraderName>中原证券对手方</TraderName>
-            <FirmFullChineseName>恒天基金</FirmFullChineseName>
-            <FirmShortChineseName>恒天基金</FirmShortChineseName>
-            <EligibleCounterParty>CFETS</EligibleCounterParty>
-        </COUNTERPARTY>
-    </Body>
-</Message>
+    </Master>
+
+    <Slave>
+        <Parties>
+            <Party >
+                <Type>INITIATOR</Type>
+                <PartyID>102445</PartyID>
+                <PartyRole>101</PartyRole>
+                <TraderName>中原证券首席交易员</TraderName>
+                <FirmFullChineseName>中原证券股份有限公司</FirmFullChineseName>
+                <FirmShortChineseName>中原证券</FirmShortChineseName>
+                <SettlementBankName>中国建设银行股份有限公司郑州期货城支行(105491000047)</SettlementBankName>
+                <CashAccountNumber>41001521010050006729</CashAccountNumber>
+                <EligibleCounterParty>CFETS</EligibleCounterParty>
+            </Party >
+
+            <Party>
+                <Type>INITIATOR</Type>
+                <PartyID>304161</PartyID>
+                <PartyRole>102</PartyRole>
+                <TraderName>中原证券对手方</TraderName>
+                <FirmFullChineseName>恒天基金</FirmFullChineseName>
+                <FirmShortChineseName>恒天基金</FirmShortChineseName>
+                <EligibleCounterParty>CFETS</EligibleCounterParty>
+            </Party>
+        </Parties>
+    </Slave>
+</Quote>
