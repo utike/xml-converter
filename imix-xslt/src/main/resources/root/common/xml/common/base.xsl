@@ -17,11 +17,11 @@
     </xsl:template>
 
 
-    <!--评级的主数据,没有利率-->
-    <xsl:template name="master-quote-noRate">
+    <!--报价的主数据,没有利率-->
+    <xsl:template name="master-dialogQuote-noRate">
         <xsl:element name="Master">
             <xsl:for-each select="message/body/field[@name]">
-                <xsl:variable name="nodeName" select="jscript:getDefineMap(@name)"/>
+                <xsl:variable name="nodeName" select="jscript:getDialogQuoteMap(@name)"/>
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="jscript:getFormatDate(current())"/>
                 </xsl:element>
@@ -30,12 +30,12 @@
     </xsl:template>
 
 
-    <!--评级的主数据,具有利率-->
+    <!--报价的主数据,具有利率-->
     <!--1.price 需要转化为rate-->
-    <xsl:template name="master-quote-withRate">
+    <xsl:template name="master-dialogQuote-withRate">
         <xsl:element name="Master">
             <xsl:for-each select="message/body/field[@name]">
-                <xsl:variable name="nodeName" select="jscript:getDefineMap(@name)"/>
+                <xsl:variable name="nodeName" select="jscript:getDialogQuoteMap(@name)"/>
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="jscript:getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>
@@ -59,7 +59,7 @@
                     </xsl:for-each>
 
                     <xsl:for-each select="groups[@name='NoPartySubIDs']/group">
-                        <xsl:variable name="enumNodeName" select="jscript:getDefineMap(field[@enum]/@enum)"/>
+                        <xsl:variable name="enumNodeName" select="jscript:getPartyMap(field[@enum]/@enum)"/>
                         <xsl:element name="{$enumNodeName}">
                             <xsl:value-of select="field[@name='PartySubID']"/>
                         </xsl:element>
@@ -87,7 +87,7 @@
                     </xsl:for-each>
 
                     <xsl:for-each select="groups[@name='NoPartySubIDs']/group">
-                        <xsl:variable name="enumNodeName" select="jscript:getDefineMap(field[@enum]/@enum)"/>
+                        <xsl:variable name="enumNodeName" select="jscript:getPartyMap(field[@enum]/@enum)"/>
                         <xsl:element name="{$enumNodeName}">
                             <xsl:value-of select="field[@name='PartySubID']"/>
                         </xsl:element>
@@ -96,6 +96,32 @@
             </xsl:for-each>
         </xsl:element>
 
+    </xsl:template>
+
+
+    <!--成交的主数据,没有利率-->
+    <xsl:template name="master-executionReport-noRate">
+        <xsl:element name="Master">
+            <xsl:for-each select="message/body/field[@name]">
+                <xsl:variable name="nodeName" select="jscript:getExecutionReportMap(@name)"/>
+                <xsl:element name="{$nodeName}">
+                    <xsl:value-of select="jscript:getFormatDate(current())"/>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
+    <!--成交的主数据,具有利率-->
+    <!--1.price 需要转化为rate-->
+    <xsl:template name="master-executionReport-withRate">
+        <xsl:element name="Master">
+            <xsl:for-each select="message/body/field[@name]">
+                <xsl:variable name="nodeName" select="jscript:getExecutionReportMap(@name)"/>
+                <xsl:element name="{$nodeName}">
+                    <xsl:value-of select="jscript:getFormatDateAndRate($nodeName, current())"/>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
     </xsl:template>
 
 </xsl:stylesheet>

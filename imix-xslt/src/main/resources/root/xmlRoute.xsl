@@ -4,6 +4,8 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
     <xsl:import href="component/INTER_BANK_OFFERING/dialogQuote.xsl"/>
+    <xsl:import href="component/INTER_BANK_OFFERING/executionReport.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -17,8 +19,11 @@
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTER_BANK_OFFERING'">
                 <xsl:call-template name="route-dialogQuote"/>
             </xsl:when>
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'INTER_BANK_OFFERING'">
+                <xsl:call-template name="route-executionReport"/>
+            </xsl:when>
             <xsl:otherwise>
-               222
+                <ROOT>NOT FOUND</ROOT>
             </xsl:otherwise>
         </xsl:choose>
 

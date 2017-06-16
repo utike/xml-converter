@@ -6216,7 +6216,7 @@ Same values as the SecurityIDSource  (22) field" type="STRING">
       <value enum="103" description="CONTACT_METHOD_OF_TRADER"/>
       <value enum="104" description="MEMBERS_OR_CLIENTS"/>
       <value enum="105" description="NON_MARKET_MAKER"/>
-      <value enum="106" description="MARGIN_SETTLEMENT_ACCOUNT_NUMBER"/>
+      <value enum="106" description="MARGIN_SETTLEMEN8T_ACCOUNT_NUMBER"/>
       <value enum="107" description="MARGIN_CUSTODIAN_ACCOUNT_NUMBER"/>
       <value enum="108" description="MARGIN_SETTLEMENT_BANK_NAME"/>
       <value enum="109" description="MARGIN_CUSTODIAN_INSTITUTION_NAME"/>
