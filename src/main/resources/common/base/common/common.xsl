@@ -6,7 +6,7 @@
     <!--共有的方法模板-->
 
     <!--header 生成模板-->
-    <!--<xsl:template match="message/header" name="base-header">-->
+    <!--<xsl:template match="message/header" nacommonbase-header">-->
         <!--<xsl:element name="Header">-->
             <!--<xsl:for-each select="field">-->
                 <!--<xsl:variable name="nodeName" select="@name" />-->

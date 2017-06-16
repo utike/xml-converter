@@ -11,6 +11,7 @@
     <modules>
         <module>imix-mapping</module>
         <module>xsl-learn</module>
+        <module>imix-xslt</module>
     </modules>
 
 

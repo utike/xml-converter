@@ -2,8 +2,8 @@
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!--<xsl:import href="../base/common/base-header.xsl"/>-->
-    <!--<xsl:import href="../base/common/base-body.xsl"/>-->
+    <!--<xsl:import href=commonbase/comcommonbase-header.xsl"/>-->
+    <!--<xsl:import href=commonbase/comcommonbase-body.xsl"/>-->
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent "/>
@@ -18,10 +18,10 @@
         <!--<xsl:template match="/message/header">-->
 
             <!--<Message>-->
-                <!--&lt;!&ndash;<xsl:call-template name="base-header"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<xsl:call-template nacommonbase-header"/>&ndash;&gt;-->
 
                 <!--<Body>-->
-                    <!--<xsl:call-template name="base-body-fields"/>-->
+                    <!--<xsl:call-template nacommonbase-body-fields"/>-->
                 <!--</Body>-->
 
             <!--</Message>-->

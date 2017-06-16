@@ -3,7 +3,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 
-    <!--base-header 生成模板-->
+    commonbase-header 生成模板-->
     <xsl:template match="/message/header" name="base-header">
         <xsl:element name="Header">
             <xsl:for-each select="field">
