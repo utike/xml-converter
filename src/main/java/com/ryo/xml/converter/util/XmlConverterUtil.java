@@ -108,21 +108,27 @@ public class XmlConverterUtil {
         return strWriter.toString();
     }
 
+    public static String getDateStr() {
+        return "";
+    }
+
     public static void main(String[] args) throws DocumentException {
 //        String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
 //        String xslPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
 
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xml";
+        final String xmlPath = "E:\\_java\\test.xml";
+        final String xslPath = "E:\\_java\\test.xsl";
+//        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\main\\resources\\root\\java.xsl";
 //        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xsl";
-//        Document document = convertWithXsl(xmlPath, xslPath);
-//        System.out.println(write2XMLString(document));
+        Document document = convertWithXsl(xmlPath, xslPath);
+        System.out.println(write2XMLString(document));
 
         //创建SAXReader对象
-        SAXReader reader = new SAXReader();
-        //读取文件 转换成Document
-        Document document = reader.read(new File(xmlPath));
-        Element element= document.getRootElement();
-        System.out.println(element.getName());
+//        SAXReader reader = new SAXReader();
+//        //读取文件 转换成Document
+//        Document document = reader.read(new File(xmlPath));
+//        Element element= document.getRootElement();
+//        System.out.println(element.getName());
     }
 
 }

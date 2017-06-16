@@ -11,9 +11,9 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <xsl:template match="/" name="route-dialogQuote-ibo">
+    <xsl:template match="/" name="route-executionReport-collateral-repo">
 
-        <Quote>
+        <Order>
 
             <!--header-->
             <xsl:for-each select="/">
@@ -22,17 +22,17 @@
 
             <!--master-quote-->
             <xsl:for-each select="/">
-                <xsl:call-template name="master-dialogQuote-withRate"/>
+                <xsl:call-template name="master-executionReport-withRate"/>
             </xsl:for-each>
 
             <Slave>
-                <!--parties-noContact-->
+                <!--parties-withContact-->
                 <xsl:for-each select="/">
-                    <xsl:call-template name="slave-parties-noContact"/>
+                    <xsl:call-template name="slave-parties-withContact"/>
                 </xsl:for-each>
             </Slave>
 
-        </Quote>
+        </Order>
 
     </xsl:template>
 

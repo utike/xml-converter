@@ -17,10 +17,14 @@
 
         <xsl:choose>
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTER_BANK_OFFERING'">
-                <xsl:call-template name="route-dialogQuote"/>
+                <xsl:call-template name="route-dialogQuote-ibo"/>
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'INTER_BANK_OFFERING'">
-                <xsl:call-template name="route-executionReport"/>
+                <xsl:call-template name="route-executionReport-ibo"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'COLLATERAL_REPO'">
+                <xsl:call-template name="route-dialogQuote-ibo"/>
             </xsl:when>
             <xsl:otherwise>
                 <ROOT>NOT FOUND</ROOT>

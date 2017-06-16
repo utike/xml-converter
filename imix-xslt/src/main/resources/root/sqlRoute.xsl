@@ -15,10 +15,10 @@
 
         <xsl:choose>
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '1'">
-                <xsl:call-template name="route-dialogQuoteSql"/>
+                <xsl:call-template name="route-dialogQuoteSql-ibo"/>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '1'">
-                <xsl:call-template name="route-executionReportSql"/>
+                <xsl:call-template name="route-executionReportSql-ibo"/>
             </xsl:when>
             <xsl:otherwise>
                 <ROOT>NOT FOUND</ROOT>

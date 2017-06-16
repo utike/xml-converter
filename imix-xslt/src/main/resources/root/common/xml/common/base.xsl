@@ -92,6 +92,13 @@
                             <xsl:value-of select="field[@name='PartySubID']"/>
                         </xsl:element>
                     </xsl:for-each>
+
+                    <xsl:for-each select="groups[@name='NoContactInfos']/group">
+                        <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
+                        <xsl:element name="{$enumNodeName}">
+                            <xsl:value-of select="field[@name='ContactInfoID']"/>
+                        </xsl:element>
+                    </xsl:for-each>
                 </Party>
             </xsl:for-each>
         </xsl:element>

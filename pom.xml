@@ -12,6 +12,7 @@
         <module>imix-mapping</module>
         <module>xsl-learn</module>
         <module>imix-xslt</module>
+        <module>xslt-java</module>
     </modules>
 
 

@@ -5,7 +5,7 @@
     <xsl:output method="text" version="1.0" encoding="gb2312"
                 indent="yes" cdata-section-elements="DataContent" />
 
-    <xsl:template match="/" name="route-dialogQuoteSql-ibo">
+    <xsl:template match="/" name="route-dialogQuoteSql-collateral-repo">
 
 
         INSERT INTO [dbo].[cfets_quotes]
@@ -46,9 +46,11 @@
                 <xsl:for-each select="*">
                     <xsl:call-template name="values"/>
                 </xsl:for-each>
-                ,GUID()
+                ,NEWID()
             );
         </xsl:for-each>
+
+        <!--TODO:对于 underlying 的补充-->
 
     </xsl:template>
 

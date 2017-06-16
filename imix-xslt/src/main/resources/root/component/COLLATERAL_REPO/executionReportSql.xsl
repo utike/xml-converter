@@ -5,12 +5,12 @@
     <xsl:output method="text" version="1.0" encoding="gb2312"
                 indent="yes" cdata-section-elements="DataContent" />
 
-    <xsl:template match="/" name="route-dialogQuoteSql-ibo">
+    <xsl:template match="/" name="route-executionReportSql-collateral-repo">
 
 
-        INSERT INTO [dbo].[cfets_quotes]
+        INSERT INTO [dbo].[cfets_orders]
         (
-            <xsl:for-each select="Quote/Master/*">
+            <xsl:for-each select="Order/Master/*">
                 <xsl:call-template name="fields"/>
             </xsl:for-each>
             ,[SysID]
@@ -20,7 +20,7 @@
             ,[SysSenderApp]
             ,[SysSender]
         ) VALUES (
-            <xsl:for-each select="Quote/Master/*">
+            <xsl:for-each select="Order/Master/*">
                 <xsl:call-template name="values"/>
             </xsl:for-each>
             ,'%s'
@@ -33,7 +33,7 @@
 
 
 
-        <xsl:for-each select="Quote/Slave/Parties/Party">
+        <xsl:for-each select="Order/Slave/Parties/Party">
 
             INSERT INTO [dbo].[details_parties]
             (
@@ -46,8 +46,9 @@
                 <xsl:for-each select="*">
                     <xsl:call-template name="values"/>
                 </xsl:for-each>
-                ,GUID()
+                ,NEWID()
             );
+
         </xsl:for-each>
 
     </xsl:template>
