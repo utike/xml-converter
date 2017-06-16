@@ -1,4 +1,4 @@
-package com.ryo.xml.converter.util;
+package com.ryo.xslt.util;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -7,9 +7,7 @@ import org.dom4j.io.*;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.StringWriter;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -106,6 +104,34 @@ public class XmlConverterUtil {
         return strWriter.toString();
     }
 
+    private static String write2CommonString(Document document) {
+
+        DocumentSource source = new DocumentSource(document); //XML源文件对象
+//		DocumentResult result = new DocumentResult(); //转换结果对象
+        ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
+
+//        arrayOutputStream.
+
+        System.out.println(source.toString());;
+
+//        StreamSource s = new StreamSource(new File("D:\\imix\\root\\sqlRoute.xsl"));
+//        TransformerFactory tf = TransformerFactory.newInstance(); //转换器工厂
+//        Transformer t = tf.newTransformer(s); //转换器对象，并绑定XSLT对象
+
+
+//        t.transform(source, new StreamResult(arrayOutputStream)); //进行转换操作
+
+        try {
+            System.out.println(new String(arrayOutputStream.toByteArray(),"UTF-8")); //显示转换结果对象内容
+            return new String(arrayOutputStream.toByteArray(),"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return "";
+        }
+//		System.out.println(result); //显示转换结果对象内容
+
+    }
+
     public static String getDateStr() {
         return "";
     }
@@ -114,12 +140,20 @@ public class XmlConverterUtil {
 //        String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
 //        String xslPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
 
-        final String xmlPath = "E:\\_java\\test.xml";
-        final String xslPath = "E:\\_java\\test.xsl";
+        final String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/xslt-util/src/main/resources/root/test.xml";
+        final String xslPath = "/Users/houbinbin/IT/fork/xml-converter/xslt-util/src/main/resources/root/newtest.xsl";
 //        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\main\\resources\\root\\java.xsl";
 //        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xsl";
         Document document = convertWithXsl(xmlPath, xslPath);
-        System.out.println(write2XMLString(document));
+//        System.out.println(write2XMLString(document));
+        System.out.println(write2CommonString(document));
+
+
+
+//        StreamSource s = new StreamSource(new File("D:\\imix\\root\\sqlRoute.xsl"));
+//        TransformerFactory tf = TransformerFactory.newInstance(); //转换器工厂
+//        Transformer t = tf.newTransformer(s); //转换器对象，并绑定XSLT对象
+
 
         //创建SAXReader对象
 //        SAXReader reader = new SAXReader();

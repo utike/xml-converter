@@ -13,6 +13,7 @@
         <module>xsl-learn</module>
         <module>imix-xslt</module>
         <module>xslt-java</module>
+        <module>xslt-util</module>
     </modules>
 
 
