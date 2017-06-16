@@ -62,7 +62,12 @@
                 "SHORT_LEGAL_CHINESE_NAME_OF_FIRM": "FirmShortChineseName",
                 "SETTLEMENT_BANK_NAME": "SettlementBankName",
                 "CASH_ACCOUNT_NUMBER": "CashAccountNumber",
-                "ELIGIBLE_COUNTERPARTY": "EligibleCounterParty"
+                "ELIGIBLE_COUNTERPARTY": "EligibleCounterParty",
+                "POSTAL_ADDRESS": "PostalAddress",
+                "SHORT_LEGAL_NAME_OF_FIRM": "FirmShortName",
+                "CASH_ACCOUNT_NAME": "CashAccountName",
+                "SETTLEMENT_BANK_SORT_CODE": "SettlementBankSortCode",
+                "TRADER_CHINESE_NAME": "TraderChineseName"
             };
             var DIALOGQUOTE_CONSTANT = {
                 "QuoteTransType": "TransType",

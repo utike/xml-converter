@@ -8,9 +8,9 @@
     <xsl:template match="/" name="route-executionReportSql">
 
 
-        INSERT INTO [dbo].[cfets_quotes]
+        INSERT INTO [dbo].[cfets_orders]
         (
-            <xsl:for-each select="Quote/Master/*">
+            <xsl:for-each select="Order/Master/*">
                 <xsl:call-template name="fields"/>
             </xsl:for-each>
             ,[SysID]
@@ -20,7 +20,7 @@
             ,[SysSenderApp]
             ,[SysSender]
         ) VALUES (
-            <xsl:for-each select="Quote/Master/*">
+            <xsl:for-each select="Order/Master/*">
                 <xsl:call-template name="values"/>
             </xsl:for-each>
             ,'%s'
@@ -33,7 +33,7 @@
 
 
 
-        <xsl:for-each select="Quote/Slave/Parties/Party">
+        <xsl:for-each select="Order/Slave/Parties/Party">
 
             INSERT INTO [dbo].[details_parties]
             (

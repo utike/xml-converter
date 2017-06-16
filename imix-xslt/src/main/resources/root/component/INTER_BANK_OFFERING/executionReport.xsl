@@ -22,7 +22,7 @@
 
             <!--master-quote-->
             <xsl:for-each select="/">
-                <xsl:call-template name="master-executionReport-noRate"/>
+                <xsl:call-template name="master-executionReport-withRate"/>
             </xsl:for-each>
 
             <Slave>
