@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet
+        version="2.0"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+    <xsl:import href="component/INTER_BANK_OFFERING/dialogQuote.xsl"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8"
+                indent="yes" cdata-section-elements="DataContent"/>
+
+    <!--xml生成的路由-->
+    <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
+    <xsl:template match="/">
+        <xsl:variable name="MsgType" select="message/header/field[@name='MsgType']/@enum"/>
+        <xsl:variable name="MarketIndicator" select="message/body/field[@name='MarketIndicator']/@enum"/>
+
+        <xsl:choose>
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTER_BANK_OFFERING'">
+                <xsl:call-template name="route-dialogQuote"/>
+            </xsl:when>
+            <xsl:otherwise>
+               222
+            </xsl:otherwise>
+        </xsl:choose>
+
+    </xsl:template>
+
+</xsl:stylesheet>

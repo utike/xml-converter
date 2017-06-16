@@ -11,7 +11,7 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <xsl:template match="/">
+    <xsl:template match="/" name="route-dialogQuote">
 
         <Quote>
 
