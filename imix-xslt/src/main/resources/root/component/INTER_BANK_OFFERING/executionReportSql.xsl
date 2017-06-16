@@ -5,7 +5,7 @@
     <xsl:output method="text" version="1.0" encoding="gb2312"
                 indent="yes" cdata-section-elements="DataContent" />
 
-    <xsl:template match="/" name="route-dialogQuoteSql">
+    <xsl:template match="/" name="route-executionReportSql">
 
 
         INSERT INTO [dbo].[cfets_quotes]
