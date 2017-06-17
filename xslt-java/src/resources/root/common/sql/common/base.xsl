@@ -73,7 +73,7 @@
     </xsl:template>
 
     <!--对话报价-NoUnderlyings-->
-    <xsl:template name="sql-quote-party-noUnderlying">
+    <xsl:template name="sql-quote-noUnderlying">
         <xsl:for-each select="Quote/Slave/NoUnderlyings/NoUnderlying">
             INSERT INTO [dbo].[details_underlyings]
             (
@@ -90,6 +90,7 @@
             );
         </xsl:for-each>
     </xsl:template>
+
 
 
     <!--成交报价表-->
