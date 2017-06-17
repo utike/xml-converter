@@ -1,6 +1,6 @@
-package com.ryo.xslt.test;
+package cn.com.haiyi.cstp.xstl;
 
-import com.ryo.xslt.test.util.FileUtil;
+import cn.com.haiyi.cstp.xstl.util.FileUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;

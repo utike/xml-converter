@@ -1,4 +1,4 @@
-package com.ryo.xslt.test;
+package cn.com.haiyi.cstp.xstl;
 
 /**
  * Created by bbhou on 2017/6/16.
