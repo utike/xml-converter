@@ -42,6 +42,7 @@
         <xsl:for-each select="Quote/MessageParam/*">
             ,[<xsl:value-of select="name()"/>]
         </xsl:for-each>
+            ,[SysStatus]
         ) VALUES (
         <xsl:for-each select="Quote/Master/*">
             <xsl:call-template name="values"/>
@@ -49,6 +50,7 @@
         <xsl:for-each select="Quote/MessageParam/*">
             ,'<xsl:value-of select="string()"/>'
         </xsl:for-each>
+            ,0
         );
     </xsl:template>
 
@@ -92,7 +94,6 @@
     </xsl:template>
 
 
-
     <!--成交报价表-->
     <xsl:template name="sql-order">
         INSERT INTO [dbo].[cfets_orders]
@@ -103,6 +104,7 @@
         <xsl:for-each select="Order/MessageParam/*">
             ,[<xsl:value-of select="name()"/>]
         </xsl:for-each>
+            ,[SysStatus]
         ) VALUES (
         <xsl:for-each select="Order/Master/*">
             <xsl:call-template name="values"/>
@@ -110,6 +112,7 @@
         <xsl:for-each select="Order/MessageParam/*">
             ,'<xsl:value-of select="string()"/>'
         </xsl:for-each>
+            ,0
         );
     </xsl:template>
 
