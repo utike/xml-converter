@@ -2,7 +2,7 @@
 
 <xsl:stylesheet version="1.0"
 				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-				xmlns:java="com.ryo.xslt.util"
+				xmlns:java="com.ryo.xslt.test"
 				exclude-result-prefixes="java">
 
 	<xsl:template match="/">
