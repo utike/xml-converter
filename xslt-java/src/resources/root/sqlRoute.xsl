@@ -6,6 +6,8 @@
 
     <xsl:import href="component/INTER_BANK_OFFERING/dialogQuoteSql.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/executionReportSql.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/dialogQuoteSql.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/executionReportSql.xsl"/>
 
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
@@ -20,6 +22,14 @@
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '1'">
                 <xsl:call-template name="route-executionReportSql-ibo"/>
             </xsl:when>
+
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'COLLATERAL_REPO'">
+                <xsl:call-template name="route-dialogQuoteSql-collateral-repo"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'COLLATERAL_REPO'">
+                <xsl:call-template name="route-dialogQuoteSql-collateral-repo"/>
+            </xsl:when>
+
             <xsl:otherwise>
                 <ROOT>NOT FOUND</ROOT>
             </xsl:otherwise>

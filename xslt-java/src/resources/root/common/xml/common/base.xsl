@@ -5,6 +5,7 @@
                 exclude-result-prefixes="java">
 
 
+    <!--================================= header =================================-->
     <!--1. 生成xml-header的模板方法-->
     <xsl:template name="header">
         <xsl:element name="Header">
@@ -18,6 +19,7 @@
     </xsl:template>
 
 
+    <!--================================= dialogQuote =================================-->
     <!--报价的主数据,没有利率-->
     <xsl:template name="master-dialogQuote-noRate">
         <xsl:element name="Master">
@@ -49,6 +51,7 @@
     </xsl:template>
 
 
+    <!--================================= parties =================================-->
     <!--交易方从数据，不包含联系方式-->
     <xsl:template name="slave-parties-noContact">
         <xsl:element name="Parties">
@@ -111,6 +114,7 @@
     </xsl:template>
 
 
+    <!--================================= executionReport =================================-->
     <!--成交的主数据,没有利率-->
     <xsl:template name="master-executionReport-noRate">
         <xsl:element name="Master">
@@ -139,5 +143,50 @@
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
+
+
+    <!--================================= noUnderlyings =================================-->
+    <!-- noUnderlyings 只有普通字段-->
+    <xsl:template name="noUnderlyings-onlyFields">
+        <xsl:element name="NoUnderlyings">
+
+            <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
+
+                <xsl:element name="NoUnderlying">
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="@name"/>
+                        <xsl:element name="{$nodeName}">
+                            <xsl:value-of select="."/>
+                        </xsl:element>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:for-each>
+
+        </xsl:element>
+    </xsl:template>
+
+    <!-- noUnderlyings 拥有StipValue信息-->
+    <xsl:template name="noUnderlyings-withStipValue">
+        <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
+
+            <xsl:element name="NoUnderlying">
+                <xsl:for-each select="field[@name]">
+                    <xsl:variable name="nodeName" select="@name"/>
+                    <xsl:element name="{$nodeName}">
+                        <xsl:value-of select="."/>
+                    </xsl:element>
+                </xsl:for-each>
+
+                <xsl:for-each select="groups/group">
+                    <xsl:variable name="enumNodeName" select="field[@enum]/@enum"/>
+                    <xsl:element name="{$enumNodeName}">
+                        <xsl:value-of select="field[@name='UnderlyingStipValue']"/>
+                    </xsl:element>
+                </xsl:for-each>
+            </xsl:element>
+
+        </xsl:for-each>
+    </xsl:template>
+
 
 </xsl:stylesheet>
