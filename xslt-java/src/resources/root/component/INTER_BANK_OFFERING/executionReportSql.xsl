@@ -7,48 +7,9 @@
 
     <xsl:template match="/" name="route-executionReportSql-ibo">
 
+        <xsl:call-template name="sql-order"/>
 
-        INSERT INTO [dbo].[cfets_orders]
-        (
-            <xsl:for-each select="Order/Master/*">
-                <xsl:call-template name="fields"/>
-            </xsl:for-each>
-            ,[SysID]
-            ,[SysOriMsg]
-            ,[SysDirect]
-            ,[SysStatus]
-            ,[SysSenderApp]
-            ,[SysSender]
-        ) VALUES (
-            <xsl:for-each select="Order/Master/*">
-                <xsl:call-template name="values"/>
-            </xsl:for-each>
-            ,'%s'
-            ,'%s'
-            ,'%s'
-            ,'%s'
-            ,'%s'
-            ,'%s'
-        );
-
-
-
-        <xsl:for-each select="Order/Slave/Parties/Party">
-
-            INSERT INTO [dbo].[details_parties]
-            (
-                <xsl:for-each select="*">
-                    <xsl:call-template name="fields"/>
-                </xsl:for-each>
-                ,[FkID]
-            ) VALUES
-            (
-                <xsl:for-each select="*">
-                    <xsl:call-template name="values"/>
-                </xsl:for-each>
-                ,NEWID()
-            );
-        </xsl:for-each>
+        <xsl:call-template name="sql-order-party"/>
 
     </xsl:template>
 

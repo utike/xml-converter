@@ -8,47 +8,9 @@
     <xsl:template match="/" name="route-dialogQuoteSql-ibo">
 
 
-        INSERT INTO [dbo].[cfets_quotes]
-        (
-            <xsl:for-each select="Quote/Master/*">
-                <xsl:call-template name="fields"/>
-            </xsl:for-each>
-            ,[SysID]
-            ,[SysOriMsg]
-            ,[SysDirect]
-            ,[SysStatus]
-            ,[SysSenderApp]
-            ,[SysSender]
-        ) VALUES (
-            <xsl:for-each select="Quote/Master/*">
-                <xsl:call-template name="values"/>
-            </xsl:for-each>
-            ,'%s'
-            ,'%s'
-            ,'%s'
-            ,'%s'
-            ,'%s'
-            ,'%s'
-        );
+        <xsl:call-template name="sql-quote"/>
 
-
-
-        <xsl:for-each select="Quote/Slave/Parties/Party">
-
-            INSERT INTO [dbo].[details_parties]
-            (
-                <xsl:for-each select="*">
-                    <xsl:call-template name="fields"/>
-                </xsl:for-each>
-                ,[FkID]
-            ) VALUES
-            (
-                <xsl:for-each select="*">
-                    <xsl:call-template name="values"/>
-                </xsl:for-each>
-                ,NEWID()
-            );
-        </xsl:for-each>
+        <xsl:call-template name="sql-quote-party"/>
 
     </xsl:template>
 
