@@ -70,7 +70,7 @@ public class XmlConverterUtil {
      * @param transformDoc doc文档
      * @return
      */
-    private static String write2XMLString(Document transformDoc){
+    public static String write2XMLString(Document transformDoc){
         StringWriter strWriter = new StringWriter();
         OutputFormat format = OutputFormat.createPrettyPrint();
         format.setEncoding(StandardCharsets.UTF_8.toString());
@@ -92,7 +92,7 @@ public class XmlConverterUtil {
      * @param transformDoc doc文档
      * @return
      */
-    private static String write2HTMLString(Document transformDoc){
+    public static String write2HTMLString(Document transformDoc){
         StringWriter strWriter = new StringWriter();
         OutputFormat format = OutputFormat.createPrettyPrint();
         format.setEncoding(StandardCharsets.UTF_8.toString());
@@ -108,7 +108,7 @@ public class XmlConverterUtil {
         return strWriter.toString();
     }
 
-    private static String write2CommonString(Document document) {
+    public static String write2CommonString(Document document) {
 
         DocumentSource source = new DocumentSource(document); //XML源文件对象
 //		DocumentResult result = new DocumentResult(); //转换结果对象
@@ -139,15 +139,17 @@ public class XmlConverterUtil {
 
     /**
      * 进行转换
-     * @param xmlPath xml 文件路径
+     * @param xmlPath result 文件路径
      * @param xslPath xsl 文件路径
      * @return
      */
-    private static String transfer2CommonStr(String xmlPath, String xslPath) {
+    public static String transfer2CommonStr(String xmlPath, String xslPath) {
+            String srcStr = FileUtil.getFileContent(xmlPath);
+            return transfer2WithSrc(srcStr, xslPath);
+    }
+
+    public static String transfer2WithSrc(String srcStr, String xslPath) {
         try {
-//            String srcStr = FileUtil.getFileContent(xmlPath);
-            String srcStr = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                    "<ROOt>values</ROOt>";
             StreamSource s = new StreamSource(new File(xslPath));
             TransformerFactory tf = TransformerFactory.newInstance(); //转换器工厂
             Transformer t = tf.newTransformer(s); //转换器对象，并绑定XSLT对象
@@ -167,19 +169,25 @@ public class XmlConverterUtil {
 
 
     public static void main(String[] args) throws DocumentException {
-//        String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
-//        String xslPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
+//        String xmlPath = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/original/5.result";
+//        String xslPath = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
 
-        final String xmlPath = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original/5.xml";
-        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\root\\newtest.xsl";
-//        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\main\\resources\\root\\java.xsl";
-//        final String xslPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\test\\resources\\withJava\\fruit.xsl";
+//        final String xmlPath = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/original/5.result";
+//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-util\\src\\main\\resources\\root\\newtest.xsl";
+//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-java\\src\\main\\resources\\root\\java.xsl";
+//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\test\\resources\\withJava\\fruit.xsl";
 
-        String result = transfer2CommonStr(xmlPath, xslPath);
-        System.out.println(result);
+//        String result = transfer2CommonStr(xmlPath, xslPath);
+//        System.out.println(result);
 //        Document document = convertWithXsl(xmlPath, xslPath);
 //        System.out.println(write2XMLString(document));
 //        System.out.println(write2XMLString(document));
+
+
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\original\\3.result";
+        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-java\\src\\resources\\root\\xmlRoute.xsl";
+        String xmlResult = convertWithXsl(xmlPath, xslPath).asXML();
+        System.out.println(xmlResult);
     }
 
 }

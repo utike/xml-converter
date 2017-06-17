@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?result version="1.0" encoding="UTF-8"?>
 <!-- Using a Jar file, full file reference, no package name -->
 <!-- FileName: fruit01 -->
 <!-- Creator: Margaret Gruen-Kerr -->

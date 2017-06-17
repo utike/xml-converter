@@ -28,7 +28,7 @@ public class XslGeneratorUtil {
      * 1. 根据解析拼接处对应的 xsl 内容
      * 2. 根据 mapping 替换掉太长的名称。
      * 3. 返回最后的结果
-     * @param xmlPath xml 文件路径
+     * @param xmlPath result 文件路径
      * @return
      */
     private static GroupVo generatorXslContent(final String xmlPath)  {
@@ -100,10 +100,10 @@ public class XslGeneratorUtil {
     }
 
     public static void main(String[] args) {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\original\\1.txt";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\original\\1.txt";
         GroupVo groupVo = generatorXslContent(xmlPath);
 //
-//        String templateContent = FileUtil.getFileContent("E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\xml\\template.xsl");
+//        String templateContent = FileUtil.getFileContent("E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\result\\template.xsl");
 //        String resultXsl = String.format(templateContent, groupVo.getNoPartyIDs(), groupVo.getNoUnderlyings());
 //        System.out.println(resultXsl);
 

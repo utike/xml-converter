@@ -15,61 +15,61 @@ http://blog.163.com/jiamei_lx/blog/static/120972534201153103342725/
 # 信用拆借
 
 ExecutionReport(MsgType=8)_INTER_BANK_OFFERING_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/3.xml (√) recheck
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/3.result (√) recheck
 =====
 
 Quote(MsgType=S)_INTER_BANK_OFFERING_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/5.xml   (√) recheck
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/5.result   (√) recheck
 =====
 
 Quote(MsgType=S)_INTER_BANK_OFFERING_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/23.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/23.result
 =====
 
 # 质押式回购
 
 Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/2.xml (√) recheck
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/2.result (√) recheck
 =====
 
 ExecutionReport(MsgType=8)_COLLATERAL_REPO_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/25.xml (√)
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/25.result (√)
 =====
 Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/26.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/26.result
 =====
 Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/27.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/27.result
 =====
 Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/29.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/29.result
 =====
 
 ExecutionReport(MsgType=8)_COLLATERAL_REPO_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/30.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/30.result
 =====
 
 
 # 买断式回购
 
 Quote(MsgType=S)_OUTRIGHT_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/4.xml  (√)
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/4.result  (√)
 =====
 
 ExecutionReport(MsgType=8)_OUTRIGHT_REPO_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/6.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/6.result
 =====
 
 ExecutionReport(MsgType=8)_OUTRIGHT_REPO_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/28.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/28.result
 =====
 
 Quote(MsgType=S)_OUTRIGHT_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/1.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/1.result
 =====
 
 Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/12.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/12.result
 =====
 
 # 现券买卖
@@ -77,59 +77,59 @@ E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/12.xml
 NoStipulations 直接拉平。(信息量不是很大。)
 
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/13.xml （√）
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/13.result （√）
 =====
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/14.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/14.result
 =====
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/15.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/15.result
 =====
 
 ExecutionReport(MsgType=8)_CASH_BOND_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/16.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/16.result
 =====
 ExecutionReport(MsgType=8)_CASH_BOND_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/10.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/10.result
 =====
 ExecutionReport(MsgType=8)_CASH_BOND_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/11.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/11.result
 =====
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/7.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/7.result
 =====
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/8.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/8.result
 =====
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/9.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/9.result
 =====
 
 
 # 6.5.8 债券借贷
 
 ExecutionReport(MsgType=8)_SECURITY_LENDING_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/17.xml 
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/17.result 
 =====
 ExecutionReport(MsgType=8)_SECURITY_LENDING_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/18.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/18.result
 =====
 Quote(MsgType=S)_SECURITY_LENDING_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/19.xml (√)
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/19.result (√)
 =====
 
 Quote(MsgType=S)_SECURITY_LENDING_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/20.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/20.result
 =====
 ExecutionReport(MsgType=8)_SECURITY_LENDING_
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/21.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/21.result
 =====
 Quote(MsgType=S)_SECURITY_LENDING_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/22.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/22.result
 =====
 
 Quote(MsgType=S)_SECURITY_LENDING_TRADEABLE(QuoteType=1)
-E:\CODE_GEN\Fork\xml-converter\src\main\resources\original/24.xml
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/24.result
 =====
 
 

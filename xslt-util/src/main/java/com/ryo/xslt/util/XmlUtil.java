@@ -33,10 +33,10 @@ public class XmlUtil {
      */
     public static void dom4jTest()  {
         try {
-            String srcStr = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+            String srcStr = "<?result version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                     "<ROOt>values</ROOt>";
 
-            StreamSource s = new StreamSource(new File("/Users/houbinbin/IT/fork/xml-converter/xslt-util/src/main/resources/root/newtest.xsl"));
+            StreamSource s = new StreamSource(new File("/Users/houbinbin/IT/fork/result-converter/xslt-util/src/main/resources/root/newtest.xsl"));
             TransformerFactory tf = TransformerFactory.newInstance(); //转换器工厂
             Transformer t = tf.newTransformer(s); //转换器对象，并绑定XSLT对象
 

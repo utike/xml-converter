@@ -31,9 +31,9 @@ public class XmlTest {
     public void msgTypeMarketTest() throws IOException {
         Set<String> stringSet = new HashSet<>();
 
-//        String dir = "/Users/houbinbin/IT/fork/xml-converter/src/main/resources/original";
-        String dir = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\original";
-        List<Path> pathList = FilePathUtil.getPathList(dir, "*.xml");
+//        String dir = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/original";
+        String dir = "E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\original";
+        List<Path> pathList = FilePathUtil.getPathList(dir, "*.result");
 
         System.out.println(pathList.size());
         for (Path path : pathList) {
@@ -87,7 +87,7 @@ public class XmlTest {
     @Test
     public void readXmlTest() {
         try {
-            String xmlFilePath = "E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\xml\\city.xml";
+            String xmlFilePath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\result\\city.result";
 
             //解析文档
             DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
@@ -119,7 +119,7 @@ public class XmlTest {
         //创建SAXReader对象
         SAXReader reader = new SAXReader();
         //读取文件 转换成Document
-        org.dom4j.Document document = reader.read(new File("E:\\CODE_GEN\\Fork\\xml-converter\\src\\main\\resources\\xml\\803.xml"));
+        org.dom4j.Document document = reader.read(new File("E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\result\\803.result"));
         //获取根节点元素对象
         Element root = document.getRootElement();
 //        root.elements();

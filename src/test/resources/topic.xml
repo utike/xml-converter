@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="topic.xsl"?>
+<?result version="1.0"?>
+<?result-stylesheet type="text/xsl" href="topic.xsl"?>
 <topic name="My_topic"
        title="My Topic">
     <meta>
