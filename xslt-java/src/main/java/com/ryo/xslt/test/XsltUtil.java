@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * @author xml转换工具类
+ * @since 1.7
  * Created by bbhou on 2017/6/16.
  */
 public class XsltUtil {
@@ -12,6 +13,7 @@ public class XsltUtil {
     private static Map<String, String> PARTY_CONSTANT = new HashMap<>();
     private static Map<String, String> DIALOGQUOTE_CONSTANT = new HashMap<>();
     private static Map<String, String> ExecutionReport_CONSTANT = new HashMap<>();
+    private static Map<String, String> NOUNDERLYING_CONSTANT = new HashMap<>();
 
     static {
         /**
@@ -31,6 +33,11 @@ public class XsltUtil {
         PARTY_CONSTANT.put("TRADER_CHINESE_NAME", "TraderChineseName");
         PARTY_CONSTANT.put("PHONE_NO_1", "PhoneNo");
 
+        PARTY_CONSTANT.put("CUSTODIAN_INSTITUTION_NAME", "CustodianInstitutionName");
+        PARTY_CONSTANT.put("SECURITIES_ACCOUNT_NUMBER", "SecuritiesAccNumber");
+        PARTY_CONSTANT.put("SECURITIES_ACCOUNT_NAME", "SecuritiesAccName");
+
+
         /**
          * DIALOGQUOTE(对话报价)
          */
@@ -43,6 +50,14 @@ public class XsltUtil {
          */
         ExecutionReport_CONSTANT.put("QuoteTransType", "TransType");
         ExecutionReport_CONSTANT.put("OrderQty", "Qty");
+
+        /**
+         * noUnderlyings(质押债券的种类)
+         */
+        NOUNDERLYING_CONSTANT.put("UnderlyingSecurityID", "SecurityID");
+        NOUNDERLYING_CONSTANT.put("UnderlyingQty", "Qty");
+        NOUNDERLYING_CONSTANT.put("UnderlyingSymbol", "Symbol");
+        NOUNDERLYING_CONSTANT.put("CONVERSION_PROPORTION", "HairCut");
     }
 
 
@@ -145,6 +160,15 @@ public class XsltUtil {
      */
     public static String getExecutionReportMap(String original) {
         return defineMap(original, ExecutionReport_CONSTANT);
+    }
+
+    /**
+     * 获取 NoUnderlyings 的映射
+     * @param original
+     * @return
+     */
+    public static String getNoUnderlyingsMap(String original) {
+        return defineMap(original, NOUNDERLYING_CONSTANT);
     }
 
 }

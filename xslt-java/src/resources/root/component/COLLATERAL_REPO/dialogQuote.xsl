@@ -31,30 +31,9 @@
                 </xsl:for-each>
 
                 <!--Underlyings-->
-                <Underlyings>
-
-                    <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
-
-                        <NoUnderlying>
-
-                            <xsl:for-each select="field[@name]">
-                                <xsl:variable name="nodeName" select="@name" />
-                                <xsl:element name="{$nodeName}">
-                                    <xsl:value-of select="."/>
-                                </xsl:element>
-                            </xsl:for-each>
-
-                            <xsl:for-each select="groups/group">
-                                <xsl:variable name="enumNodeName" select="field[@enum]/@enum" />
-                                <xsl:element name="{$enumNodeName}">
-                                    <xsl:value-of select="field[@name='UnderlyingStipValue']"/>
-                                </xsl:element>
-                            </xsl:for-each>
-                        </NoUnderlying>
-
-                    </xsl:for-each>
-
-                </Underlyings>
+                <xsl:for-each select="/">
+                    <xsl:call-template name="noUnderlyings-withStipValue"/>
+                </xsl:for-each>
 
             </Slave>
 

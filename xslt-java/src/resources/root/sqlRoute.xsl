@@ -23,11 +23,11 @@
                 <xsl:call-template name="route-executionReportSql-ibo"/>
             </xsl:when>
 
-            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'COLLATERAL_REPO'">
+            <xsl:when test="$MsgType = 'S' and $MarketIndicator = '9'">
                 <xsl:call-template name="route-dialogQuoteSql-collateral-repo"/>
             </xsl:when>
-            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'COLLATERAL_REPO'">
-                <xsl:call-template name="route-dialogQuoteSql-collateral-repo"/>
+            <xsl:when test="$MsgType = '8' and $MarketIndicator = '9'">
+                <xsl:call-template name="route-executionReportSql-collateral-repo"/>
             </xsl:when>
 
             <xsl:otherwise>

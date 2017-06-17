@@ -25,7 +25,7 @@
         <xsl:element name="Master">
             <xsl:for-each select="message/body/field[@name]">
                 <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-                <xsl:if test="@tag != 453">
+                <xsl:if test="@tag != 453 and @tag != 711">
                     <xsl:element name="{$nodeName}">
                         <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                     </xsl:element>
@@ -41,7 +41,7 @@
         <xsl:element name="Master">
             <xsl:for-each select="message/body/field[@name]">
                 <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-                <xsl:if test="@tag != 453">
+                <xsl:if test="@tag != 453 and @tag != 711">
                     <xsl:element name="{$nodeName}">
                         <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                     </xsl:element>
@@ -120,7 +120,7 @@
         <xsl:element name="Master">
             <xsl:for-each select="message/body/field[@name]">
                 <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-                <xsl:if test="@tag != 453">
+                <xsl:if test="@tag != 453 and @tag != 711">
                     <xsl:element name="{$nodeName}">
                         <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                     </xsl:element>
@@ -135,7 +135,7 @@
         <xsl:element name="Master">
             <xsl:for-each select="message/body/field[@name]">
                 <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-                <xsl:if test="@tag != 453">
+                <xsl:if test="@tag != 453 and @tag != 711">
                     <xsl:element name="{$nodeName}">
                         <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                     </xsl:element>
@@ -149,43 +149,46 @@
     <!-- noUnderlyings 只有普通字段-->
     <xsl:template name="noUnderlyings-onlyFields">
         <xsl:element name="NoUnderlyings">
-
             <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
 
                 <xsl:element name="NoUnderlying">
                     <xsl:for-each select="field[@name]">
-                        <xsl:variable name="nodeName" select="@name"/>
-                        <xsl:element name="{$nodeName}">
-                            <xsl:value-of select="."/>
-                        </xsl:element>
+                        <xsl:variable name="nodeName" select="java:XsltUtil.getNoUnderlyingsMap(@name)"/>
+                        <xsl:if test="@tag != 887">
+                            <xsl:element name="{$nodeName}">
+                                <xsl:value-of select="."/>
+                            </xsl:element>
+                        </xsl:if>
                     </xsl:for-each>
                 </xsl:element>
             </xsl:for-each>
-
         </xsl:element>
     </xsl:template>
 
     <!-- noUnderlyings 拥有StipValue信息-->
     <xsl:template name="noUnderlyings-withStipValue">
-        <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
+        <xsl:element name="NoUnderlyings">
+            <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
+                <xsl:element name="NoUnderlying">
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="java:XsltUtil.getNoUnderlyingsMap(@name)"/>
+                        <xsl:if test="@tag != 887">
+                            <xsl:element name="{$nodeName}">
+                                <xsl:value-of select="."/>
+                            </xsl:element>
+                        </xsl:if>
+                    </xsl:for-each>
 
-            <xsl:element name="NoUnderlying">
-                <xsl:for-each select="field[@name]">
-                    <xsl:variable name="nodeName" select="@name"/>
-                    <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="."/>
-                    </xsl:element>
-                </xsl:for-each>
-
-                <xsl:for-each select="groups/group">
-                    <xsl:variable name="enumNodeName" select="field[@enum]/@enum"/>
-                    <xsl:element name="{$enumNodeName}">
-                        <xsl:value-of select="field[@name='UnderlyingStipValue']"/>
-                    </xsl:element>
-                </xsl:for-each>
-            </xsl:element>
-
-        </xsl:for-each>
+                    <xsl:for-each select="groups/group">
+                        <xsl:variable name="enumNodeName"
+                                      select="java:XsltUtil.getNoUnderlyingsMap(field)"/>
+                        <xsl:element name="{$enumNodeName}">
+                            <xsl:value-of select="field[@name='UnderlyingStipValue']"/>
+                        </xsl:element>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
     </xsl:template>
 
 
