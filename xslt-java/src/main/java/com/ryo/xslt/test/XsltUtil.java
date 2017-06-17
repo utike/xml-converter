@@ -24,6 +24,13 @@ public class XsltUtil {
         PARTY_CONSTANT.put("CASH_ACCOUNT_NUMBER", "CashAccountNumber");
         PARTY_CONSTANT.put("ELIGIBLE_COUNTERPARTY", "EligibleCounterParty");
 
+        PARTY_CONSTANT.put("POSTAL_ADDRESS", "PostalAddress");
+        PARTY_CONSTANT.put("SHORT_LEGAL_NAME_OF_FIRM", "FirmShortName");
+        PARTY_CONSTANT.put("CASH_ACCOUNT_NAME", "CashAccountName");
+        PARTY_CONSTANT.put("SETTLEMENT_BANK_SORT_CODE", "SettlementBankSortCode");
+        PARTY_CONSTANT.put("TRADER_CHINESE_NAME", "TraderChineseName");
+        PARTY_CONSTANT.put("PHONE_NO_1", "PhoneNo");
+
         /**
          * DIALOGQUOTE(对话报价)
          */
