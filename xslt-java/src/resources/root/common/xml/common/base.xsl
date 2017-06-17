@@ -37,9 +37,11 @@
         <xsl:element name="Master">
             <xsl:for-each select="message/body/field[@name]">
                 <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-                <xsl:element name="{$nodeName}">
-                    <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
-                </xsl:element>
+                <xsl:if test="@tag != 453">
+                    <xsl:element name="{$nodeName}">
+                        <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
+                    </xsl:element>
+                </xsl:if>
             </xsl:for-each>
         </xsl:element>
     </xsl:template>

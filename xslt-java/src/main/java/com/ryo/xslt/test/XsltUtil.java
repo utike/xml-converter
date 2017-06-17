@@ -29,7 +29,7 @@ public class XsltUtil {
          */
         DIALOGQUOTE_CONSTANT.put("QuoteTransType", "TransType");
         DIALOGQUOTE_CONSTANT.put("OrderQty", "Qty");
-        DIALOGQUOTE_CONSTANT.put("", "");
+        DIALOGQUOTE_CONSTANT.put("QuoteID", "ID");
 
         /**
          * ExecutionReport(成交报价)

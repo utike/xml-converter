@@ -46,7 +46,7 @@
                 <xsl:for-each select="*">
                     <xsl:call-template name="values"/>
                 </xsl:for-each>
-                ,GUID()
+                ,NEWID()
             );
         </xsl:for-each>
 
