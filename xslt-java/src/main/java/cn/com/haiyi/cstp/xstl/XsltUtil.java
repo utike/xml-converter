@@ -58,6 +58,12 @@ public class XsltUtil {
         NOUNDERLYING_CONSTANT.put("UnderlyingQty", "Qty");
         NOUNDERLYING_CONSTANT.put("UnderlyingSymbol", "Symbol");
         NOUNDERLYING_CONSTANT.put("CONVERSION_PROPORTION", "HairCut");
+        NOUNDERLYING_CONSTANT.put("UnderlyingAccruedInterestAmt", "AccruedInterestAmt");
+        NOUNDERLYING_CONSTANT.put("UnderlyingAccruedInterestAmt2", "AccruedInterestAmt2");
+        NOUNDERLYING_CONSTANT.put("UnderlyingDirtyPrice", "DirtyPrice");
+        NOUNDERLYING_CONSTANT.put("UnderlyingDirtyPrice2", "DirtyPrice2");
+        NOUNDERLYING_CONSTANT.put("UnderlyingPx", "Px");
+        NOUNDERLYING_CONSTANT.put("UnderlyingPx2", "Px2");
     }
 
 

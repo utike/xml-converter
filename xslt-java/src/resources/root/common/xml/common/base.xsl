@@ -172,7 +172,7 @@
                 <xsl:element name="NoUnderlying">
                     <xsl:for-each select="field[@name]">
                         <xsl:variable name="nodeName" select="java:XsltUtil.getNoUnderlyingsMap(@name)"/>
-                        <xsl:if test="@tag != 887">
+                        <xsl:if test="@tag != 887 and @tag != 10243">
                             <xsl:element name="{$nodeName}">
                                 <xsl:value-of select="."/>
                             </xsl:element>
