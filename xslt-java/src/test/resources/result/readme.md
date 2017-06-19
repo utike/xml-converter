@@ -69,7 +69,7 @@ Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/12.result
 =====
 
-# 现券买卖
+# 4. 现券买卖
 
 NoStipulations 直接拉平。(信息量不是很大。)
 
