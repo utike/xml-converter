@@ -47,7 +47,7 @@ E:\CODE_GEN\Fork\result-converter\src\main\resources\original/30.result
 =====
 
 
-# 买断式回购
+# 3. 买断式回购
 
 Quote(MsgType=S)_OUTRIGHT_REPO_TRADEABLE(QuoteType=1)
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/4.result  (√)
