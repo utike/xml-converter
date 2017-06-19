@@ -58,7 +58,11 @@
             
                 ,[SequelIndicator]
             
-            ,[SysStatus]
+            ,[SysID]
+        
+            ,[SysOriMsg]
+        
+        ,[SysStatus]
         ) VALUES (
         
                 '994828487256773002'
@@ -117,7 +121,11 @@
             
                 ,'1'
             
-            ,0
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+        
+            ,'<root>123</root>'
+        
+        ,0
         );
     
             INSERT INTO [dbo].[details_parties]
@@ -163,7 +171,7 @@
             
                 ,'CFETS'
             
-            ,''
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         
             INSERT INTO [dbo].[details_parties]
@@ -197,7 +205,7 @@
             
                 ,'CFETS'
             
-            ,''
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -223,7 +231,7 @@
             
                 ,'0.080000'
             
-            ,''
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -249,7 +257,7 @@
             
                 ,'0.340000'
             
-            ,''
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -275,6 +283,6 @@
             
                 ,'0.080000'
             
-            ,''
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         

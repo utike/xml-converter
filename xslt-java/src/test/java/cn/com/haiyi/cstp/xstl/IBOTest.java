@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
+ * 信用拆借
  * Created by bbhou on 2017/6/17.
  */
 public class IBOTest extends BaseTest {

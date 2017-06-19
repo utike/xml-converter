@@ -9,7 +9,7 @@ http://blog.163.com/jiamei_lx/blog/static/120972534201153103342725/
 
 
 
-# 信用拆借
+# 1. 信用拆借
 
 ExecutionReport(MsgType=8)_INTER_BANK_OFFERING_
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/3.result (√) recheck
@@ -23,7 +23,7 @@ Quote(MsgType=S)_INTER_BANK_OFFERING_TRADEABLE(QuoteType=1)
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/23.result
 =====
 
-# 质押式回购
+# 2. 质押式回购
 
 Quote(MsgType=S)_COLLATERAL_REPO_TRADEABLE(QuoteType=1)
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/2.result (√) recheck

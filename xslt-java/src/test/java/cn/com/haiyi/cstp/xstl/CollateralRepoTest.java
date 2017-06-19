@@ -15,42 +15,28 @@ public class CollateralRepoTest extends BaseTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\collateralRepo\\";
 
-    private String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\xmlRoute.xsl";
-    private String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\sqlRoute.xsl";
-
-
     @Test
     @Override
     public void dialogQuote2XmlTest() throws IOException {
-        String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\2.xml";
-        String xslPath = xmlRoutePath;
-        String xmlResult = XmlConverterUtil.convertWithXsl(xmlPath, xslPath).asXML();
-
-        String resultPath = targetPath+"dialogQuote.xml";
-        Path path = Paths.get(resultPath);
-        Files.write(path, xmlResult.getBytes());
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\2.xml";
+        super.dialogQuote2Xml(xmlPath, this.targetPath);
     }
 
     @Test
     @Override
     public void dialogQuote2SqlTest() throws IOException {
-        super.dialogQuote2Sql(sqlRoutePath, targetPath);
+        super.dialogQuote2Sql(super.sqlRoutePath, this.targetPath);
     }
 
     @Test
     public void executionReport2XmlTest() throws IOException {
         final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\25.xml";
-        final String xslPath = xmlRoutePath;
-        String xmlResult = XmlConverterUtil.convertWithXsl(xmlPath, xslPath).asXML();
-
-        String resultPath = targetPath+"executionReport.xml";
-        Path path = Paths.get(resultPath);
-        Files.write(path, xmlResult.getBytes());
+        super.executionReport2Xml(xmlPath, this.targetPath);
     }
 
     @Test
     public void executionReport2SqlTest() throws IOException {
-        super.executionReport2Sql(sqlRoutePath, targetPath);
+        super.executionReport2Sql(super.sqlRoutePath, this.targetPath);
     }
 
 }
