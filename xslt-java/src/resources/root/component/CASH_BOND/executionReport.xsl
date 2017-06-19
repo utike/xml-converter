@@ -10,27 +10,24 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <xsl:template match="/" name="route-executionReport-ibo">
+    <xsl:template match="/" name="route-executionReport-cash-bond">
 
         <Order>
 
             <!--header-->
-            <xsl:for-each select="/">
-                <xsl:call-template name="header"/>
-            </xsl:for-each>
+            <xsl:call-template name="header"/>
 
-            <!--master-quote-->
             <Master>
-                <xsl:for-each select="/">
-                    <xsl:call-template name="master-executionReport-withRate"/>
-                </xsl:for-each>
+                <!--master-quote-->
+                <xsl:call-template name="master-executionReport-noRate"/>
+
+                <!--master-quote-NoStipulations-->
+                <xsl:call-template name="master-executionReport-NoStipulations"/>
             </Master>
 
             <Slave>
                 <!--parties-withContact-->
-                <xsl:for-each select="/">
-                    <xsl:call-template name="slave-parties-withContact"/>
-                </xsl:for-each>
+                <xsl:call-template name="slave-parties-withContact"/>
             </Slave>
 
         </Order>

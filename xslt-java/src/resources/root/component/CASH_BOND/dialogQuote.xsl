@@ -10,27 +10,24 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <xsl:template match="/" name="route-dialogQuote-ibo">
+    <xsl:template match="/" name="route-dialogQuote-cash-bond">
 
         <Quote>
 
             <!--header-->
-            <xsl:for-each select="/">
-                <xsl:call-template name="header"/>
-            </xsl:for-each>
+            <xsl:call-template name="header"/>
 
             <Master>
                 <!--master-quote-->
-                <xsl:for-each select="/">
-                    <xsl:call-template name="master-dialogQuote-withRate"/>
-                </xsl:for-each>
+                <xsl:call-template name="master-dialogQuote-noRate"/>
+
+                <!--master-quote-NoStipulations-->
+                <xsl:call-template name="master-dialogQuote-NoStipulations"/>
             </Master>
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:for-each select="/">
-                    <xsl:call-template name="slave-parties-noContact"/>
-                </xsl:for-each>
+                <xsl:call-template name="slave-parties-noContact"/>
             </Slave>
 
         </Quote>

@@ -22,32 +22,38 @@
     <!--================================= dialogQuote =================================-->
     <!--报价的主数据,没有利率-->
     <xsl:template name="master-dialogQuote-noRate">
-        <xsl:element name="Master">
-            <xsl:for-each select="message/body/field[@name]">
-                <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-                <xsl:if test="@tag != 453 and @tag != 711">
-                    <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
-                    </xsl:element>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:element>
+        <xsl:for-each select="message/body/field[@name]">
+            <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232">
+                <xsl:element name="{$nodeName}">
+                    <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
 
 
     <!--报价的主数据,具有利率-->
     <!--1.price 需要转化为rate-->
     <xsl:template name="master-dialogQuote-withRate">
-        <xsl:element name="Master">
-            <xsl:for-each select="message/body/field[@name]">
-                <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-                <xsl:if test="@tag != 453 and @tag != 711">
-                    <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
-                    </xsl:element>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:element>
+        <xsl:for-each select="message/body/field[@name]">
+            <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232">
+                <xsl:element name="{$nodeName}">
+                    <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+
+    <!--报价的主数据,NoStipulations信息-->
+    <xsl:template name="master-dialogQuote-NoStipulations">
+        <xsl:for-each select="message/body/groups[@name='NoStipulations']/group">
+            <xsl:variable name="nodeName" select="field[@name='StipulationType']"/>
+            <xsl:element name="{$nodeName}">
+                <xsl:value-of select="field[@name='StipulationValue']"/>
+            </xsl:element>
+        </xsl:for-each>
     </xsl:template>
 
 
@@ -117,40 +123,44 @@
     <!--================================= executionReport =================================-->
     <!--成交的主数据,没有利率-->
     <xsl:template name="master-executionReport-noRate">
-        <xsl:element name="Master">
-            <xsl:for-each select="message/body/field[@name]">
-                <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-                <xsl:if test="@tag != 453 and @tag != 711">
-                    <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
-                    </xsl:element>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:element>
+        <xsl:for-each select="message/body/field[@name]">
+            <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232">
+                <xsl:element name="{$nodeName}">
+                    <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
 
     <!--成交的主数据,具有利率-->
-    <!--1.price 需要转化为rate-->
+    <!--1.price 需要转化为rate TODO: 将公用的部分提取出来 便于修改-->
     <xsl:template name="master-executionReport-withRate">
-        <xsl:element name="Master">
-            <xsl:for-each select="message/body/field[@name]">
-                <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-                <xsl:if test="@tag != 453 and @tag != 711">
-                    <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
-                    </xsl:element>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:element>
+        <xsl:for-each select="message/body/field[@name]">
+            <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232">
+                <xsl:element name="{$nodeName}">
+                    <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
 
+    <!--报价的主数据,NoStipulations信息-->
+    <xsl:template name="master-executionReport-NoStipulations">
+        <xsl:for-each select="message/body/groups[@name='NoStipulations']/group">
+            <xsl:variable name="nodeName" select="field[@name='StipulationType']"/>
+            <xsl:element name="{$nodeName}">
+                <xsl:value-of select="field[@name='StipulationValue']"/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
 
     <!--================================= noUnderlyings =================================-->
     <!-- noUnderlyings 只有普通字段-->
     <xsl:template name="noUnderlyings-onlyFields">
         <xsl:element name="NoUnderlyings">
             <xsl:for-each select="message/body/groups[@name='NoUnderlyings']/group">
-
                 <xsl:element name="NoUnderlying">
                     <xsl:for-each select="field[@name]">
                         <xsl:variable name="nodeName" select="java:XsltUtil.getNoUnderlyingsMap(@name)"/>

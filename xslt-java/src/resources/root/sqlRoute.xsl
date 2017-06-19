@@ -12,6 +12,9 @@
     <xsl:import href="component/OUTRIGHT_REPO/dialogQuoteSql.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/executionReportSql.xsl"/>
 
+    <xsl:import href="component/CASH_BOND/dialogQuoteSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/executionReportSql.xsl"/>
+
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
@@ -38,6 +41,13 @@
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '10'">
                 <xsl:call-template name="route-executionReportSql-outright-repo"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'S' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-dialogQuoteSql-cash-bond"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-executionReportSql-cash-bond"/>
             </xsl:when>
 
             <xsl:otherwise>

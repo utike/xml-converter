@@ -19,10 +19,13 @@
                 <xsl:call-template name="header"/>
             </xsl:for-each>
 
+
             <!--master-quote-->
-            <xsl:for-each select="/">
-                <xsl:call-template name="master-dialogQuote-withRate"/>
-            </xsl:for-each>
+            <Master>
+                <xsl:for-each select="/">
+                    <xsl:call-template name="master-dialogQuote-withRate"/>
+                </xsl:for-each>
+            </Master>
 
             <Slave>
                 <!--parties-noContact-->

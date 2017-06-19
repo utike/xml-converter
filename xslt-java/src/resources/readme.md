@@ -82,6 +82,10 @@ NoStipulations 直接拉平。(信息量不是很大。)
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/13.result （√）
 =====
+ExecutionReport(MsgType=8)_CASH_BOND_
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/10.result（√）
+=====
+
 Quote(MsgType=S)_CASH_BOND_TRADEABLE(QuoteType=1)
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/14.result
 =====
@@ -90,11 +94,9 @@ E:\CODE_GEN\Fork\result-converter\src\main\resources\original/15.result
 =====
 
 ExecutionReport(MsgType=8)_CASH_BOND_
-E:\CODE_GEN\Fork\result-converter\src\main\resources\original/16.result
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/16.result  
 =====
-ExecutionReport(MsgType=8)_CASH_BOND_
-E:\CODE_GEN\Fork\result-converter\src\main\resources\original/10.result
-=====
+
 ExecutionReport(MsgType=8)_CASH_BOND_
 E:\CODE_GEN\Fork\result-converter\src\main\resources\original/11.result
 =====

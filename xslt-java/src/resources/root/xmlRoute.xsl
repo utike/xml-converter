@@ -11,6 +11,9 @@
     <xsl:import href="component/OUTRIGHT_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/executionReport.xsl"/>
 
+    <xsl:import href="component/CASH_BOND/dialogQuote.xsl"/>
+    <xsl:import href="component/CASH_BOND/executionReport.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -40,6 +43,13 @@
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'OUTRIGHT_REPO'">
                 <xsl:call-template name="route-executionReport-outright-repo"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'CASH_BOND'">
+                <xsl:call-template name="route-dialogQuote-cash-bond"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'CASH_BOND'">
+                <xsl:call-template name="route-executionReport-cash-bond"/>
             </xsl:when>
 
             <xsl:otherwise>
