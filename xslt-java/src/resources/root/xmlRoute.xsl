@@ -8,6 +8,9 @@
     <xsl:import href="component/COLLATERAL_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/executionReport.xsl"/>
 
+    <xsl:import href="component/OUTRIGHT_REPO/dialogQuote.xsl"/>
+    <xsl:import href="component/OUTRIGHT_REPO/executionReport.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -30,6 +33,13 @@
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'COLLATERAL_REPO'">
                 <xsl:call-template name="route-executionReport-collateral-repo"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'OUTRIGHT_REPO'">
+                <xsl:call-template name="route-dialogQuote-outright-repo"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'OUTRIGHT_REPO'">
+                <xsl:call-template name="route-executionReport-outright-repo"/>
             </xsl:when>
 
             <xsl:otherwise>

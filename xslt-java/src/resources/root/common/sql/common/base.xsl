@@ -94,6 +94,7 @@
     </xsl:template>
 
 
+    <!--================================= 成交报价 =================================-->
     <!--成交报价表-->
     <xsl:template name="sql-order">
         INSERT INTO [dbo].[cfets_orders]
@@ -135,5 +136,23 @@
         </xsl:for-each>
     </xsl:template>
 
+    <!--成交报价-NoUnderlyings-->
+    <xsl:template name="sql-order-noUnderlying">
+        <xsl:for-each select="Order/Slave/NoUnderlyings/NoUnderlying">
+            INSERT INTO [dbo].[details_underlyings]
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="fields"/>
+            </xsl:for-each>
+            ,[FkID]
+            ) VALUES
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="values"/>
+            </xsl:for-each>
+            ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
+            );
+        </xsl:for-each>
+    </xsl:template>
 
 </xsl:stylesheet>

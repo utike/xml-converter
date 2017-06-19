@@ -18,8 +18,10 @@ public class CollateralRepoTest extends BaseTest {
     private String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\xmlRoute.xsl";
     private String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\sqlRoute.xsl";
 
+
     @Test
-    public void dialog2XmlTest() throws IOException {
+    @Override
+    public void dialogQuote2XmlTest() throws IOException {
         String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\2.xml";
         String xslPath = xmlRoutePath;
         String xmlResult = XmlConverterUtil.convertWithXsl(xmlPath, xslPath).asXML();
@@ -29,14 +31,11 @@ public class CollateralRepoTest extends BaseTest {
         Files.write(path, xmlResult.getBytes());
     }
 
-    /**
-     * 需要确保首先生成了XML
-     */
     @Test
-    public void dialog2SqlTest() throws IOException {
+    @Override
+    public void dialogQuote2SqlTest() throws IOException {
         super.dialogQuote2Sql(sqlRoutePath, targetPath);
     }
-
 
     @Test
     public void executionReport2XmlTest() throws IOException {

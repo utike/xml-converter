@@ -6,9 +6,69 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
+ * 测试的基础类
+ * 1. 所有SQL的测试类，首先需要确保执行了XML的生成。
+ * @since 1.7
+ * @author houbb
+ * @date 2017-6-19 08:47:49
  * Created by bbhou on 2017/6/17.
  */
-public class BaseTest {
+public abstract class BaseTest {
+
+    /**
+     * xml 路由文件路径
+     */
+    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\xmlRoute.xsl";
+    /**
+     * sql 路由文件路径
+     */
+    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\sqlRoute.xsl";
+
+    /**
+     * 对话报价转换
+     */
+    public abstract void dialogQuote2XmlTest() throws IOException;
+    public abstract void dialogQuote2SqlTest() throws IOException;
+
+    /**
+     * 成交报价测试
+     */
+    public abstract void executionReport2XmlTest() throws IOException;
+    public abstract void executionReport2SqlTest() throws IOException;
+
+
+    /**
+     * 对话报价转XML
+     * @param originalXmlPath 原始的XML文件路径
+     * @param targetPath 目标文件路径
+     * @throws IOException
+     */
+    protected void dialogQuote2Xml(String originalXmlPath, String targetPath) throws IOException {
+//        String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\5.xml";
+        String xslPath = this.xmlRoutePath;
+        String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xslPath).asXML();
+
+        String resultPath = targetPath+"dialogQuote.xml";
+        Path path = Paths.get(resultPath);
+        Files.write(path, xmlResult.getBytes());
+    }
+
+    /**
+     * 成交报价转XML
+     * @param originalXmlPath
+     * @param targetPath
+     * @throws IOException
+     */
+    protected void executionReport2Xml(String originalXmlPath, String targetPath) throws IOException {
+//        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\25.xml";
+        final String xslPath = xmlRoutePath;
+        String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xslPath).asXML();
+
+        String resultPath = targetPath+"executionReport.xml";
+        Path path = Paths.get(resultPath);
+        Files.write(path, xmlResult.getBytes());
+    }
+
 
     /**
      * 对话报价转SQL

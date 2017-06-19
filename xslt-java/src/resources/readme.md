@@ -8,6 +8,12 @@ ExecutionReport/Quote
 http://blog.163.com/jiamei_lx/blog/static/120972534201153103342725/
 
 
+# Extern
+
+<MessageParam>
+        <SysID><![CDATA[AB387472-54D1-47AC-9618-DB1C851361BE]]></SysID>
+        <SysOriMsg><![CDATA[<root>123</root>]]></SysOriMsg>
+    </MessageParam>
 
 # 信用拆借
 
@@ -54,7 +60,7 @@ E:\CODE_GEN\Fork\result-converter\src\main\resources\original/4.result  (√)
 =====
 
 ExecutionReport(MsgType=8)_OUTRIGHT_REPO_
-E:\CODE_GEN\Fork\result-converter\src\main\resources\original/6.result
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/6.result   (√)
 =====
 
 ExecutionReport(MsgType=8)_OUTRIGHT_REPO_
