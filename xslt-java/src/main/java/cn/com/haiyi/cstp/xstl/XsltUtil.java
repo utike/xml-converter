@@ -14,6 +14,7 @@ public class XsltUtil {
     private static Map<String, String> DIALOGQUOTE_CONSTANT = new HashMap<>();
     private static Map<String, String> ExecutionReport_CONSTANT = new HashMap<>();
     private static Map<String, String> NOUNDERLYING_CONSTANT = new HashMap<>();
+    private static Map<String, String> NOMARGININFOS_CONSTANT = new HashMap<>();
 
     static {
         /**
@@ -64,6 +65,16 @@ public class XsltUtil {
         NOUNDERLYING_CONSTANT.put("UnderlyingDirtyPrice2", "DirtyPrice2");
         NOUNDERLYING_CONSTANT.put("UnderlyingPx", "Px");
         NOUNDERLYING_CONSTANT.put("UnderlyingPx2", "Px2");
+
+
+        /**
+         * marginInfos
+         */
+        NOMARGININFOS_CONSTANT.put("MarginType", "Type");
+        NOMARGININFOS_CONSTANT.put("MarginReplacement", "Replacement");
+        NOMARGININFOS_CONSTANT.put("MarginTotalAmt", "TotalAmt");
+        NOMARGININFOS_CONSTANT.put("MarginPartyRole", "PartyRole");
+        NOMARGININFOS_CONSTANT.put("MarginSubmitDate", "SubmitDate");
     }
 
 
@@ -177,4 +188,31 @@ public class XsltUtil {
         return defineMap(original, NOUNDERLYING_CONSTANT);
     }
 
+
+    /**
+     * 获取 NoMarginInfos 的映射
+     * @param original
+     * @return
+     */
+    public static String getNoMarginInfosMap(String original) {
+        return defineMap(original, NOMARGININFOS_CONSTANT);
+    }
+
+
+    /**
+     * 为普通的节点内容添加 <![CDATA[  ]]>
+     * @param marginSecuritiesID
+     * @param marginAMT
+     * @param marginSymbol
+     * @return
+     */
+    public static String getNoMarginSecurities(String marginSecuritiesID, String marginAMT, String marginSymbol) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("<Security>");
+        stringBuilder.append(String.format("<MarginSecuritiesID>%s</MarginSecuritiesID>", marginSecuritiesID));
+        stringBuilder.append(String.format("<MarginAMT>%s</MarginAMT>", marginAMT));
+        stringBuilder.append(String.format("<MarginSymbol>%s</MarginSymbol>", marginSymbol));
+        stringBuilder.append("</Security>");
+        return stringBuilder.toString();
+    }
 }

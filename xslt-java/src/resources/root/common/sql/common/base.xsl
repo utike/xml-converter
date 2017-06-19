@@ -2,6 +2,8 @@
 <xsl:stylesheet
         version="2.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:java="cn.com.haiyi.cstp.xstl"
+        exclude-result-prefixes="java"
 >
 
 
@@ -42,7 +44,7 @@
         <xsl:for-each select="Quote/MessageParam/*">
             ,[<xsl:value-of select="name()"/>]
         </xsl:for-each>
-            ,[SysStatus]
+        ,[SysStatus]
         ) VALUES (
         <xsl:for-each select="Quote/Master/*">
             <xsl:call-template name="values"/>
@@ -50,7 +52,7 @@
         <xsl:for-each select="Quote/MessageParam/*">
             ,'<xsl:value-of select="string()"/>'
         </xsl:for-each>
-            ,0
+        ,0
         );
     </xsl:template>
 
@@ -74,7 +76,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <!--对话报价-NoUnderlyings-->
+    <!--报价-NoUnderlyings-->
     <xsl:template name="sql-quote-noUnderlying">
         <xsl:for-each select="Quote/Slave/NoUnderlyings/NoUnderlying">
             INSERT INTO [dbo].[details_underlyings]
@@ -93,6 +95,44 @@
         </xsl:for-each>
     </xsl:template>
 
+    <!--报价-marginInfo-->
+    <xsl:template name="sql-quote-marginInfo">
+        <xsl:for-each select="Quote/Slave/NoMarginInfos/NoMarginInfo">
+            INSERT INTO [dbo].[details_marginInfos]
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="fields"/>
+            </xsl:for-each>
+            ,[FkID]
+            ) VALUES
+            (
+            <xsl:for-each select="*">
+                <xsl:if test="name() != 'Securities'">
+                    <xsl:call-template name="values"/>
+                </xsl:if>
+            </xsl:for-each>
+            ,
+            '&lt;Securities&gt;'+
+            '
+            <xsl:for-each select="Securities/Security">
+                <xsl:variable name="MarginSecuritiesID" select="MarginSecuritiesID[current()]"/>
+                <xsl:variable name="MarginAMT" select="MarginAMT[current()]"/>
+                <xsl:variable name="MarginSymbol" select="MarginSymbol[current()]"/>
+                <xsl:value-of
+                        select="java:XsltUtil.getNoMarginSecurities($MarginSecuritiesID, $MarginAMT, $MarginSymbol)"/>
+            </xsl:for-each>
+            '
+            +'&lt;/Securities&gt;'
+            ,'<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
+            );
+
+        </xsl:for-each>
+    </xsl:template>
+
+    <!--<MarginSecuritiesID>010011</MarginSecuritiesID>-->
+    <!--<MarginAMT>8600000</MarginAMT>-->
+    <!--<MarginSymbol>01国债11</MarginSymbol>-->
+
 
     <!--================================= 成交报价 =================================-->
     <!--成交报价表-->
@@ -105,7 +145,7 @@
         <xsl:for-each select="Order/MessageParam/*">
             ,[<xsl:value-of select="name()"/>]
         </xsl:for-each>
-            ,[SysStatus]
+        ,[SysStatus]
         ) VALUES (
         <xsl:for-each select="Order/Master/*">
             <xsl:call-template name="values"/>
@@ -113,7 +153,7 @@
         <xsl:for-each select="Order/MessageParam/*">
             ,'<xsl:value-of select="string()"/>'
         </xsl:for-each>
-            ,0
+        ,0
         );
     </xsl:template>
 
@@ -150,6 +190,39 @@
             <xsl:for-each select="*">
                 <xsl:call-template name="values"/>
             </xsl:for-each>
+            ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
+            );
+        </xsl:for-each>
+    </xsl:template>
+
+    <!--成交报价-marginInfo-->
+    <xsl:template name="sql-order-marginInfo">
+        <xsl:for-each select="Order/Slave/NoMarginInfos/NoMarginInfo">
+            INSERT INTO [dbo].[details_marginInfos]
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="fields"/>
+            </xsl:for-each>
+            ,[FkID]
+            ) VALUES
+            (
+            <xsl:for-each select="*">
+                <xsl:if test="name() != 'Securities'">
+                    <xsl:call-template name="values"/>
+                </xsl:if>
+            </xsl:for-each>
+            ,
+            '&lt;Securities&gt;'+
+            '
+            <xsl:for-each select="Securities/Security">
+                <xsl:variable name="MarginSecuritiesID" select="MarginSecuritiesID[current()]"/>
+                <xsl:variable name="MarginAMT" select="MarginAMT[current()]"/>
+                <xsl:variable name="MarginSymbol" select="MarginSymbol[current()]"/>
+                <xsl:value-of
+                        select="java:XsltUtil.getNoMarginSecurities($MarginSecuritiesID, $MarginAMT, $MarginSymbol)"/>
+            </xsl:for-each>
+            '
+            +'&lt;/Securities&gt;'
             ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>

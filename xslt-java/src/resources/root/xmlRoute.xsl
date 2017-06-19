@@ -5,6 +5,7 @@
 >
     <xsl:import href="component/INTER_BANK_OFFERING/dialogQuote.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/executionReport.xsl"/>
+
     <xsl:import href="component/COLLATERAL_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/executionReport.xsl"/>
 
@@ -13,6 +14,9 @@
 
     <xsl:import href="component/CASH_BOND/dialogQuote.xsl"/>
     <xsl:import href="component/CASH_BOND/executionReport.xsl"/>
+
+    <xsl:import href="component/SECURITY_LENDING/dialogQuote.xsl"/>
+    <xsl:import href="component/SECURITY_LENDING/executionReport.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -50,6 +54,13 @@
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'CASH_BOND'">
                 <xsl:call-template name="route-executionReport-cash-bond"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'SECURITY_LENDING'">
+                <xsl:call-template name="route-dialogQuote-securityLending"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'SECURITY_LENDING'">
+                <xsl:call-template name="route-executionReport-securityLending"/>
             </xsl:when>
 
             <xsl:otherwise>

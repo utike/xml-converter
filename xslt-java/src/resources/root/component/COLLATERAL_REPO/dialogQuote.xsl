@@ -35,7 +35,7 @@
 
                 <!--Underlyings-->
                 <xsl:for-each select="/">
-                    <xsl:call-template name="noUnderlyings-withStipValue"/>
+                    <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
                 </xsl:for-each>
 
             </Slave>
