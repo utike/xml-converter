@@ -24,7 +24,7 @@
     <xsl:template name="master-dialogQuote-noRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210">
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                 </xsl:element>
@@ -38,7 +38,7 @@
     <xsl:template name="master-dialogQuote-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210">
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>
@@ -132,7 +132,7 @@
     <xsl:template name="master-executionReport-noRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210">
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                 </xsl:element>
@@ -145,7 +145,7 @@
     <xsl:template name="master-executionReport-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210">
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>
@@ -241,6 +241,30 @@
                             </xsl:element>
                         </xsl:for-each>
                     </xsl:element>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
+
+    <!--================================= NoLegs =================================-->
+    <xsl:template name="slave-NoLegs">
+        <xsl:element name="NoLegs">
+            <xsl:for-each select="message/body/groups[@name='NoLegs']/group">
+                <xsl:element name="NoLeg">
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="java:XsltUtil.getNoLegsMap(@name)"/>
+                        <xsl:element name="{$nodeName}">
+                            <xsl:choose>
+                                <xsl:when test="$nodeName = 'Price'">
+                                    <xsl:value-of select="java:XsltUtil.getRate(current())"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="current()"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:element>
+                    </xsl:for-each>
                 </xsl:element>
             </xsl:for-each>
         </xsl:element>

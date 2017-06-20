@@ -15,6 +15,9 @@ public class XsltUtil {
     private static Map<String, String> ExecutionReport_CONSTANT = new HashMap<>();
     private static Map<String, String> NOUNDERLYING_CONSTANT = new HashMap<>();
     private static Map<String, String> NOMARGININFOS_CONSTANT = new HashMap<>();
+    private static Map<String, String> NOLEGS_CONSTANT = new HashMap<>();
+
+
 
     static {
         /**
@@ -75,6 +78,22 @@ public class XsltUtil {
         NOMARGININFOS_CONSTANT.put("MarginTotalAmt", "TotalAmt");
         NOMARGININFOS_CONSTANT.put("MarginPartyRole", "PartyRole");
         NOMARGININFOS_CONSTANT.put("MarginSubmitDate", "SubmitDate");
+
+
+        /**
+         * noLegs
+         */
+        NOLEGS_CONSTANT.put("LegSide", "Side");
+        NOLEGS_CONSTANT.put("LegPrice", "Price");
+        NOLEGS_CONSTANT.put("LegPriceType", "PriceType");
+        NOLEGS_CONSTANT.put("LegBenchmarkCurveName", "BenchmarkCurveName");
+        NOLEGS_CONSTANT.put("LegBenchmarkSpread", "BenchmarkSpread");
+        NOLEGS_CONSTANT.put("LegCouponPaymentDate", "CouponPaymentDate");
+        NOLEGS_CONSTANT.put("LegCouponPaymentFrequency", "CouponPaymentFrequency");
+        NOLEGS_CONSTANT.put("LegDayCount", "DayCount");
+        NOLEGS_CONSTANT.put("LegInterestAccrualDate", "InterestAccrualDate");
+        NOLEGS_CONSTANT.put("LegInterestAccrualMethod", "InterestAccrualMethod");
+        NOLEGS_CONSTANT.put("LegInterestAccrualResetFrequency", "InterestAccrualResetFrequency");
     }
 
 
@@ -198,6 +217,14 @@ public class XsltUtil {
         return defineMap(original, NOMARGININFOS_CONSTANT);
     }
 
+    /**
+     * 获取 NoLegs 的映射
+     * @param original
+     * @return
+     */
+    public static String getNoLegsMap(String original) {
+        return defineMap(original, NOLEGS_CONSTANT);
+    }
 
     /**
      * 为普通的节点内容添加 <![CDATA[  ]]>
@@ -215,4 +242,5 @@ public class XsltUtil {
         stringBuilder.append("</Security>");
         return stringBuilder.toString();
     }
+
 }

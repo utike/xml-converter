@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[947]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[66]]></field>
+<field enum="Quote" name="MsgType" tag="35"><![CDATA[S]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CFETS-RMB-CSTP]]></field>
+<field name="SendingTime" tag="52"><![CDATA[20170619-10:43:56.104]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454]]></field>
+<field name="TargetSubID" tag="57"><![CDATA[ahhycstp1]]></field>
+<field name="OnBehalfOfCompID" tag="115"><![CDATA[CFETS-RMB]]></field>
+<field name="DeliverToCompID" tag="128"><![CDATA[545454]]></field>
+<field name="DeliverToSubID" tag="129"><![CDATA[ahhycstp1]]></field>
+</header>
+<body>
+<field name="ClOrdID" tag="11"><![CDATA[993721497895609004]]></field>
+<field name="OrderQty" tag="38"><![CDATA[10000000]]></field>
+<field name="SecurityID" tag="48"><![CDATA[User-Defined]]></field>
+<field enum="FIXED_RATE_TO_FLOAT_RATE" name="Side" tag="54"><![CDATA[J]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170619-18:39:24.433]]></field>
+<field name="ValidUntilTime" tag="62"><![CDATA[20170619-19:00:00.000]]></field>
+<field name="QuoteID" tag="117"><![CDATA[201706190220000032]]></field>
+<field enum="FILLED" name="QuoteStatus" tag="297"><![CDATA[107]]></field>
+<field name="NoPartyIDs" tag="453"><![CDATA[2]]></field>
+<field enum="TRADEABLE" name="QuoteType" tag="537"><![CDATA[1]]></field>
+<field name="NoLegs" tag="555"><![CDATA[2]]></field>
+<field name="StartDate" tag="916"><![CDATA[20170619]]></field>
+<field name="EndDate" tag="917"><![CDATA[20180619]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="NO" name="MarginRequired" tag="10158"><![CDATA[N]]></field>
+<field enum="INTEREST_RATE_SWAP" name="MarketIndicator" tag="10176"><![CDATA[2]]></field>
+<field name="NegotiationCount" tag="10192"><![CDATA[1]]></field>
+<field name="QuoteTime" tag="10271"><![CDATA[20170619-18:27:04.773]]></field>
+<field enum="REPLACE" name="QuoteTransType" tag="10272"><![CDATA[R]]></field>
+<field enum="NO" name="RemarkIndicator" tag="10282"><![CDATA[N]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[1000000]]></field>
+<field enum="BOTH" name="CalculateAgency" tag="10346"><![CDATA[3]]></field>
+<field enum="SELF_DATA" name="DataCategoryIndicator" tag="10465"><![CDATA[0]]></field>
+<field enum="SELF_CLEARING" name="ClearingMethod" tag="11143"><![CDATA[13]]></field>
+<groups name="NoPartyIDs" tag="453">
+<group>
+<field name="PartyID" tag="448"><![CDATA[304161]]></field>
+<field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[6]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益测试对手方]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[124]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[1111]]></field>
+<field enum="SETTLEMENT_BANK_NAME" name="PartySubIDType" tag="803"><![CDATA[110]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[654321]]></field>
+<field enum="CASH_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[15]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[545454]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[4]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益首席交易员]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限责任公司]]></field>
+<field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[124]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益信息]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+</group>
+</groups>
+<groups name="NoLegs" tag="555">
+<group>
+<field enum="FIXED_PAYER_BENCHMARK_PAYER_TAKER_PAY" name="LegSide" tag="624"><![CDATA[4]]></field>
+<field name="LegPrice" tag="566"><![CDATA[3.5000]]></field>
+<field enum="FIXED_AMOUNT" name="LegPriceType" tag="686"><![CDATA[3]]></field>
+</group>
+<group>
+<field enum="BASE_LEG_FOR_TWO_WAY_QUOTE_IN_RMB_IRS_OR_FRA" name="LegSide" tag="624"><![CDATA[B]]></field>
+<field enum="SPREAD" name="LegPriceType" tag="686"><![CDATA[6]]></field>
+<field name="LegBenchmarkCurveName" tag="677"><![CDATA[1年定存（年付）利率互换收盘曲线(均值)_10年]]></field>
+<field name="LegBenchmarkSpread" tag="10090"><![CDATA[1.50]]></field>
+</group>
+</groups>
+</body>
+<!--<trailer>-->
+<!--<field name="SignatureLength" tag="93"><![CDATA[36]]></field>-->
+<!--<field name="Signature" tag="89"><![CDATA[ᐖᐬ䮐Ԯဖ㈂㙀ᛈ˘䁚䠊卤Ŋ搄沀ⶐֲ´㒖䠎夂ᨔƀ]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field>-->
+<!--<field name="CheckSum" tag="10"><![CDATA[179]]></field>-->
+<!--</trailer>-->
+</message>
+

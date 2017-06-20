@@ -21,6 +21,9 @@
     <xsl:import href="component/BOND_FORWARD/dialogQuote.xsl"/>
     <xsl:import href="component/BOND_FORWARD/executionReport.xsl"/>
 
+    <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuote.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReport.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -71,6 +74,22 @@
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'BOND_FORWARD'">
                 <xsl:call-template name="route-executionReport-bondForward"/>
+            </xsl:when>
+
+            <!--利率互换-对话报价-->
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTEREST_RATE_SWAP'">
+                <xsl:variable name="Side" select="message/body/field[@name='Side']/@enum"/>
+                <xsl:if test="$Side = 'FIXED_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-dialogQuote-interestRateSwap-fixFloat"/>
+                </xsl:if>
+            </xsl:when>
+
+            <!--利率互换-成交-->
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'INTEREST_RATE_SWAP'">
+                <xsl:variable name="Side" select="message/body/field[@name='Side']/@enum"/>
+                <xsl:if test="$Side = 'FIXED_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-executionReport-interestRateSwap-fixFloat"/>
+                </xsl:if>
             </xsl:when>
 
             <xsl:otherwise>

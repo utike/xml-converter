@@ -125,14 +125,27 @@
             +'&lt;/Securities&gt;'
             ,'<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             );
-
         </xsl:for-each>
     </xsl:template>
 
-    <!--<MarginSecuritiesID>010011</MarginSecuritiesID>-->
-    <!--<MarginAMT>8600000</MarginAMT>-->
-    <!--<MarginSymbol>01国债11</MarginSymbol>-->
-
+    <!--noLeg-->
+    <xsl:template name="sql-quote-noLeg">
+        <xsl:for-each select="Quote/Slave/NoLegs/NoLeg">
+            INSERT INTO [dbo].[details_legs]
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="fields"/>
+            </xsl:for-each>
+            ,[FkID]
+            ) VALUES
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="values"/>
+            </xsl:for-each>
+            ,'<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
+            );
+        </xsl:for-each>
+    </xsl:template>
 
     <!--================================= 成交报价 =================================-->
     <!--成交报价表-->
@@ -223,6 +236,25 @@
             </xsl:for-each>
             '
             +'&lt;/Securities&gt;'
+            ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
+            );
+        </xsl:for-each>
+    </xsl:template>
+
+    <!--noLeg-->
+    <xsl:template name="sql-order-noLeg">
+        <xsl:for-each select="Order/Slave/NoLegs/NoLeg">
+            INSERT INTO [dbo].[details_legs]
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="fields"/>
+            </xsl:for-each>
+            ,[FkID]
+            ) VALUES
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="values"/>
+            </xsl:for-each>
             ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>

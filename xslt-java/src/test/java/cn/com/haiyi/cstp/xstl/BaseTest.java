@@ -108,4 +108,34 @@ public abstract class BaseTest {
         }
     }
 
+
+    /**
+     * 转换成为XML
+     * @param originalXmlPath
+     * @param targetFilePath
+     * @param targetFileName
+     */
+    protected void toXml(String originalXmlPath, String targetFilePath, String targetFileName) throws IOException {
+        final String xslPath = this.xmlRoutePath;
+        String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xslPath).asXML();
+
+        String resultPath = targetFilePath+targetFileName;
+        Path path = Paths.get(resultPath);
+        Files.write(path, xmlResult.getBytes());
+    }
+
+    /**
+     * 转换成为SQL
+     * @param originalXmlPath
+     * @param targetFilePath
+     * @param targetFileName
+     */
+    protected void toSql(String originalXmlPath, String targetFilePath, String targetFileName) throws IOException {
+        final String xslPath = this.sqlRoutePath;
+        String xmlResult = XmlConverterUtil.transfer2CommonStr(originalXmlPath, xslPath);
+
+        String resultPath = targetFilePath+targetFileName;
+        Path path = Paths.get(resultPath);
+        Files.write(path, xmlResult.getBytes());
+    }
 }
