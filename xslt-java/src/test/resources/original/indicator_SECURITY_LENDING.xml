@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[981]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[2851]]></field>
+<field enum="IOI" name="MsgType" tag="35"><![CDATA[6]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CFETS-RMB-CSTP]]></field>
+<field name="SendingTime" tag="52"><![CDATA[20170620-10:01:02.886]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454]]></field>
+<field name="TargetSubID" tag="57"><![CDATA[ahhycstp1]]></field>
+<field name="OnBehalfOfCompID" tag="115"><![CDATA[CFETS-RMB]]></field>
+<field name="DeliverToCompID" tag="128"><![CDATA[545454]]></field>
+<field name="DeliverToSubID" tag="129"><![CDATA[ahhycstp1]]></field>
+</header>
+<body>
+<field name="ClOrdID" tag="11"><![CDATA[993721497952793018]]></field>
+<field name="IOIID" tag="23"><![CDATA[201706200810000008]]></field>
+<field name="IOIQty" tag="27"><![CDATA[10000000]]></field>
+<field enum="NEW" name="IOITransType" tag="28"><![CDATA[N]]></field>
+<field name="Price" tag="44"><![CDATA[15.0000]]></field>
+<field name="SecurityID" tag="48"><![CDATA[L007]]></field>
+<field enum="BUY_OR_BORROW_OR_REPURCHASE" name="Side" tag="54"><![CDATA[1]]></field>
+<field name="Symbol" tag="55"><![CDATA[L007]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170620-18:01:02.339]]></field>
+<field name="ValidUntilTime" tag="62"><![CDATA[20170620-19:20:00.000]]></field>
+<field enum="CASH_OR_TOD_OR_T_PLUS_0" name="SettlType" tag="63"><![CDATA[1]]></field>
+<field name="NoMiscFees" tag="136"><![CDATA[1]]></field>
+<field name="NoRoutingIDs" tag="215"><![CDATA[1]]></field>
+<field enum="NORMAL" name="QuoteStatus" tag="297"><![CDATA[16]]></field>
+<field name="NoPartyIDs" tag="453"><![CDATA[2]]></field>
+<field enum="INDICATIVE" name="QuoteType" tag="537"><![CDATA[0]]></field>
+<field name="NoUnderlyings" tag="711"><![CDATA[1]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="SECURITY_LENDING" name="MarketIndicator" tag="10176"><![CDATA[8]]></field>
+<field name="NoMarginInfo" tag="10210"><![CDATA[1]]></field>
+<field name="QuoteTime" tag="10271"><![CDATA[20170620-18:01:02.339]]></field>
+<field enum="NO" name="RemarkIndicator" tag="10282"><![CDATA[N]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[7]]></field>
+<field enum="SELF_DATA" name="DataCategoryIndicator" tag="10465"><![CDATA[0]]></field>
+<groups name="NoMiscFees" tag="136">
+<group>
+<field name="MiscFeeAmt" tag="137"><![CDATA[28767.12]]></field>
+<field enum="SECURITY_LENDING" name="MiscFeeType" tag="139"><![CDATA[13]]></field>
+</group>
+</groups>
+<groups name="NoRoutingIDs" tag="215">
+<group>
+<field enum="TARGETFIRM" name="RoutingType" tag="216"><![CDATA[1]]></field>
+<field name="RoutingID" tag="217"><![CDATA[304161]]></field>
+</group>
+</groups>
+<groups name="NoPartyIDs" tag="453">
+<group>
+<field name="PartyID" tag="448"><![CDATA[545454]]></field>
+<field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[4]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益首席交易员]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限责任公司]]></field>
+<field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[124]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益信息]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[304161]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[3]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益测试对手方]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+</group>
+</groups>
+<groups name="NoUnderlyings" tag="711">
+<group>
+<field name="UnderlyingSecurityID" tag="309"><![CDATA[100002]]></field>
+<field name="UnderlyingQty" tag="879"><![CDATA[10000000]]></field>
+<field name="UnderlyingSymbol" tag="311"><![CDATA[10附息国债02]]></field>
+</group>
+</groups>
+<groups name="NoMarginInfo" tag="10210">
+<group>
+<field enum="BOND" name="MarginType" tag="10175"><![CDATA[0]]></field>
+<field enum="NO" name="MarginReplacement" tag="10157"><![CDATA[N]]></field>
+<field name="MarginTotalAmt" tag="10161"><![CDATA[22000000]]></field>
+<field name="NoMarginSecurities" tag="10211"><![CDATA[2]]></field>
+<groups name="NoMarginSecurities" tag="10211">
+<group>
+<field name="MarginSecuritiesID" tag="10159"><![CDATA[100002]]></field>
+<field name="MarginAMT" tag="10150"><![CDATA[10000000]]></field>
+<field name="MarginSymbol" tag="10173"><![CDATA[10附息国债02]]></field>
+</group>
+<group>
+<field name="MarginSecuritiesID" tag="10159"><![CDATA[100003]]></field>
+<field name="MarginAMT" tag="10150"><![CDATA[12000000]]></field>
+<field name="MarginSymbol" tag="10173"><![CDATA[10附息国债03]]></field>
+</group>
+</groups>
+</group>
+</groups>
+</body>
+<trailer>
+<field name="SignatureLength" tag="93"><![CDATA[40]]></field>
+<field name="Signature" tag="89"><![CDATA[???????勤??搄沀???????搆椮????傠?????]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field>
+<field name="CheckSum" tag="10"><![CDATA[127]]></field>
+</trailer>
+</message>
+
