@@ -18,6 +18,9 @@
     <xsl:import href="component/SECURITY_LENDING/dialogQuote.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReport.xsl"/>
 
+    <xsl:import href="component/BOND_FORWARD/dialogQuote.xsl"/>
+    <xsl:import href="component/BOND_FORWARD/executionReport.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -61,6 +64,13 @@
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'SECURITY_LENDING'">
                 <xsl:call-template name="route-executionReport-securityLending"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'BOND_FORWARD'">
+                <xsl:call-template name="route-dialogQuote-bondForward"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'BOND_FORWARD'">
+                <xsl:call-template name="route-executionReport-bondForward"/>
             </xsl:when>
 
             <xsl:otherwise>

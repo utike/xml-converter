@@ -19,6 +19,9 @@
     <xsl:import href="component/SECURITY_LENDING/dialogQuoteSql.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReportSql.xsl"/>
 
+    <xsl:import href="component/BOND_FORWARD/dialogQuoteSql.xsl"/>
+    <xsl:import href="component/BOND_FORWARD/executionReportSql.xsl"/>
+
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
@@ -59,6 +62,13 @@
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '8'">
                 <xsl:call-template name="route-executionReportSql-securityLending"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'S' and $MarketIndicator = '5'">
+                <xsl:call-template name="route-dialogQuoteSql-bondForward"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = '8' and $MarketIndicator = '5'">
+                <xsl:call-template name="route-executionReportSql-bondForward"/>
             </xsl:when>
 
             <xsl:otherwise>
