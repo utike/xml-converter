@@ -58,7 +58,7 @@
         
             ,[SysOriMsg]
         
-            ,[SysStatus]
+        ,[SysStatus]
         ) VALUES (
         
                 'OR20170216000007'
@@ -117,7 +117,7 @@
         
             ,'<root>123</root>'
         
-            ,0
+        ,0
         );
     
             INSERT INTO [dbo].[details_parties]

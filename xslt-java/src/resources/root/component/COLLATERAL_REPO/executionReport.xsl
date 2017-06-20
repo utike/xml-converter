@@ -15,22 +15,16 @@
         <Order>
 
             <!--header-->
-            <xsl:for-each select="/">
-                <xsl:call-template name="header"/>
-            </xsl:for-each>
+            <xsl:call-template name="header"/>
 
             <!--master-quote-->
             <Master>
-                <xsl:for-each select="/">
-                    <xsl:call-template name="master-executionReport-withRate"/>
-                </xsl:for-each>
+                <xsl:call-template name="master-executionReport-withRate"/>
             </Master>
 
             <Slave>
                 <!--parties-withContact-->
-                <xsl:for-each select="/">
-                    <xsl:call-template name="slave-parties-withContact"/>
-                </xsl:for-each>
+                <xsl:call-template name="slave-parties-withContact"/>
             </Slave>
 
         </Order>

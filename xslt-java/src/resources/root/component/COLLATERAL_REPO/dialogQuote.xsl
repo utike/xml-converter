@@ -15,28 +15,21 @@
         <Quote>
 
             <!--header-->
-            <xsl:for-each select="/">
-                <xsl:call-template name="header"/>
-            </xsl:for-each>
+            <xsl:call-template name="header"/>
 
 
             <!--master-quote-->
             <Master>
-                <xsl:for-each select="/">
-                    <xsl:call-template name="master-dialogQuote-withRate"/>
-                </xsl:for-each>
+                <xsl:call-template name="master-dialogQuote-withRate"/>
             </Master>
 
             <Slave>
+
                 <!--parties-noContact-->
-                <xsl:for-each select="/">
-                    <xsl:call-template name="slave-parties-noContact"/>
-                </xsl:for-each>
+                <xsl:call-template name="slave-parties-noContact"/>
 
                 <!--Underlyings-->
-                <xsl:for-each select="/">
-                    <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
-                </xsl:for-each>
+                <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
 
             </Slave>
 
