@@ -60,11 +60,11 @@ E:\CODE_GEN\Fork\result-converter\src\main\resources\original/4.result  (√)
 =====
 
 ExecutionReport(MsgType=8)_OUTRIGHT_REPO_
-E:\CODE_GEN\Fork\result-converter\src\main\resources\original/6.result   (√)
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/6.result   
 =====
 
 ExecutionReport(MsgType=8)_OUTRIGHT_REPO_
-E:\CODE_GEN\Fork\result-converter\src\main\resources\original/28.result
+E:\CODE_GEN\Fork\result-converter\src\main\resources\original/28.result (√)
 =====
 
 Quote(MsgType=S)_OUTRIGHT_REPO_TRADEABLE(QuoteType=1)

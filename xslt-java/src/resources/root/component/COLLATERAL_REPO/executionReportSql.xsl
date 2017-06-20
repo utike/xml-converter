@@ -12,6 +12,8 @@
 
         <xsl:call-template name="sql-order-party"/>
 
+        <xsl:call-template name="sql-order-noUnderlying"/>
+
     </xsl:template>
 
 </xsl:stylesheet>

@@ -25,6 +25,8 @@
             <Slave>
                 <!--parties-withContact-->
                 <xsl:call-template name="slave-parties-withContact"/>
+
+                <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
             </Slave>
 
         </Order>
