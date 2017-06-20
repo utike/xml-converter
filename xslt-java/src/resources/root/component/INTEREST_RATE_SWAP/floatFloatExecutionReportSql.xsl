@@ -13,6 +13,8 @@
 
         <xsl:call-template name="sql-order-noLeg"/>
 
+        <xsl:call-template name="sql-order-marginInfo"/>
+
     </xsl:template>
 
 </xsl:stylesheet>

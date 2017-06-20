@@ -29,6 +29,8 @@
 
                 <!--slave-NoLegs-->
                 <xsl:call-template name="slave-NoLegs"/>
+
+                <xsl:call-template name="slave-NoMarginInfos"/>
             </Slave>
 
         </Order>

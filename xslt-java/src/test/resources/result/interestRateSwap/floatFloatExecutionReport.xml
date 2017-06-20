@@ -97,6 +97,7 @@
                 <BenchmarkSpread>1.20</BenchmarkSpread>
             </NoLeg>
         </NoLegs>
+        <NoMarginInfos/>
     </Slave>
     <MessageParam>
         <SysID><![CDATA[AB387472-54D1-47AC-9618-DB1C851361BE]]></SysID>
