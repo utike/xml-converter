@@ -23,6 +23,8 @@
 
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReport.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatDialogQuote.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReport.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -82,6 +84,9 @@
                 <xsl:if test="$Side = 'FIXED_RATE_TO_FLOAT_RATE'">
                     <xsl:call-template name="route-dialogQuote-interestRateSwap-fixFloat"/>
                 </xsl:if>
+                <xsl:if test="$Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-dialogQuote-interestRateSwap-floatFloat"/>
+                </xsl:if>
             </xsl:when>
 
             <!--利率互换-成交-->
@@ -89,6 +94,9 @@
                 <xsl:variable name="Side" select="message/body/field[@name='Side']/@enum"/>
                 <xsl:if test="$Side = 'FIXED_RATE_TO_FLOAT_RATE'">
                     <xsl:call-template name="route-executionReport-interestRateSwap-fixFloat"/>
+                </xsl:if>
+                <xsl:if test="$Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-executionReport-interestRateSwap-floatFloat"/>
                 </xsl:if>
             </xsl:when>
 

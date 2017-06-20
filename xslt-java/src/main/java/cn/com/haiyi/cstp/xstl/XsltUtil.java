@@ -84,16 +84,18 @@ public class XsltUtil {
          * noLegs
          */
         NOLEGS_CONSTANT.put("LegSide", "Side");
-        NOLEGS_CONSTANT.put("LegPrice", "Price");
         NOLEGS_CONSTANT.put("LegPriceType", "PriceType");
+        NOLEGS_CONSTANT.put("LegPrice", "Price");
+        NOLEGS_CONSTANT.put("LegCouponPaymentFrequency", "CouponPaymentFrequency");
+        NOLEGS_CONSTANT.put("LegCouponPaymentDate", "CouponPaymentDate");
+        NOLEGS_CONSTANT.put("LegDayCount", "DayCount");
         NOLEGS_CONSTANT.put("LegBenchmarkCurveName", "BenchmarkCurveName");
         NOLEGS_CONSTANT.put("LegBenchmarkSpread", "BenchmarkSpread");
-        NOLEGS_CONSTANT.put("LegCouponPaymentDate", "CouponPaymentDate");
-        NOLEGS_CONSTANT.put("LegCouponPaymentFrequency", "CouponPaymentFrequency");
-        NOLEGS_CONSTANT.put("LegDayCount", "DayCount");
         NOLEGS_CONSTANT.put("LegInterestAccrualDate", "InterestAccrualDate");
         NOLEGS_CONSTANT.put("LegInterestAccrualMethod", "InterestAccrualMethod");
         NOLEGS_CONSTANT.put("LegInterestAccrualResetFrequency", "InterestAccrualResetFrequency");
+        NOLEGS_CONSTANT.put("LegCouponPaymentDateReset", "CouponPaymentDateReset");
+        NOLEGS_CONSTANT.put("LegInterestAccuralDaysAdjustment", "InterestAccuralDaysAdjustment");
     }
 
 

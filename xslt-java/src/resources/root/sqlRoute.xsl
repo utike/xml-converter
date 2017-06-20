@@ -24,6 +24,8 @@
 
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReportSql.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatDialogQuoteSql.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReportSql.xsl"/>
 
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
@@ -80,6 +82,9 @@
                 <xsl:if test="$Side = 'J'">
                     <xsl:call-template name="route-dialogQuoteSql-interestRateSwap-fixFloat"/>
                 </xsl:if>
+                <xsl:if test="$Side = 'K'">
+                    <xsl:call-template name="route-dialogQuoteSql-interestRateSwap-floatFloat"/>
+                </xsl:if>
             </xsl:when>
 
             <!--利率互换-成交-->
@@ -87,6 +92,9 @@
                 <xsl:variable name="Side" select="*/Master/Side"/>
                 <xsl:if test="$Side = 'J'">
                     <xsl:call-template name="route-executionReportSql-interestRateSwap-fixFloat"/>
+                </xsl:if>
+                <xsl:if test="$Side = 'K'">
+                    <xsl:call-template name="route-executionReportSql-interestRateSwap-floatFloat"/>
                 </xsl:if>
             </xsl:when>
 

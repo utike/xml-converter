@@ -60,4 +60,33 @@ public class InterestRateSwapTest extends BaseTest {
         super.toSql(originalXmlPath, this.targetPath, targetFileName);
     }
 
+    @Test
+    public void floatFloatDialogQuote2XmlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\INTEREST_RATE_SWAP_K_S.xml";
+        String targetFileName = "floatFloatDialogQuote.xml";
+        super.toXml(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+    @Test
+    public void floatFloatDialogQuote2SqlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\floatFloatDialogQuote.xml";
+        String targetFileName = "floatFloatDialogQuote.sql";
+        super.toSql(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+
+    @Test
+    public void floatFloatExecutionReport2XmlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\INTEREST_RATE_SWAP_K_8.xml";
+        String targetFileName = "floatFloatExecutionReport.xml";
+        super.toXml(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+    @Test
+    public void floatFloatExecutionReport2SqlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\floatFloatExecutionReport.xml";
+        String targetFileName = "floatFloatExecutionReport.sql";
+        super.toSql(originalXmlPath, this.targetPath, targetFileName);
+    }
+
 }
