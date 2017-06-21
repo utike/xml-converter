@@ -11,13 +11,16 @@ public class SecurityLendingTest extends BaseTest {
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\securityLending\\";
 
     @Override
+    @Test
     public void indicatorQuote2XmlTest() throws IOException {
-
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_SECURITY_LENDING.xml";
+        super.indicatorQuote2Xml(xmlPath, this.targetPath);
     }
 
     @Override
+    @Test
     public void indicatorQuote2SqlTest() throws IOException {
-
+        super.indicatorQuote2Sql(this.targetPath);
     }
 
     @Test

@@ -13,6 +13,7 @@
 
     <xsl:import href="component/OUTRIGHT_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/executionReport.xsl"/>
+    <xsl:import href="component/OUTRIGHT_REPO/indicatorQuote.xsl"/>
 
     <xsl:import href="component/CASH_BOND/dialogQuote.xsl"/>
     <xsl:import href="component/CASH_BOND/executionReport.xsl"/>
@@ -20,6 +21,7 @@
 
     <xsl:import href="component/SECURITY_LENDING/dialogQuote.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReport.xsl"/>
+    <xsl:import href="component/SECURITY_LENDING/indicatorQuote.xsl"/>
 
     <xsl:import href="component/BOND_FORWARD/dialogQuote.xsl"/>
     <xsl:import href="component/BOND_FORWARD/executionReport.xsl"/>
@@ -27,8 +29,10 @@
 
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReport.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatIndicatorQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatDialogQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReport.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatIndicatorQuote.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -75,6 +79,12 @@
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'OUTRIGHT_REPO'">
                 <xsl:call-template name="route-executionReport-outrightRepo"/>
             </xsl:when>
+            <xsl:when test="$MsgType = 'IOI' and $MarketIndicator = 'OUTRIGHT_REPO'">
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'INDICATIVE'">
+                    <xsl:call-template name="route-indicatorQuote-outrightRepo"/>
+                </xsl:if>
+            </xsl:when>
 
             <!--================================= CASH_BOND =================================-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'CASH_BOND'">
@@ -96,6 +106,12 @@
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'SECURITY_LENDING'">
                 <xsl:call-template name="route-executionReport-securityLending"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'IOI' and $MarketIndicator = 'SECURITY_LENDING'">
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'INDICATIVE'">
+                    <xsl:call-template name="route-indicatorQuote-securityLending"/>
+                </xsl:if>
             </xsl:when>
 
             <!--================================= BOND_FORWARD =================================-->
@@ -132,6 +148,18 @@
                 </xsl:if>
                 <xsl:if test="$Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
                     <xsl:call-template name="route-executionReport-interestRateSwap-floatFloat"/>
+                </xsl:if>
+            </xsl:when>
+
+            <!--利率互换-IOI-->
+            <xsl:when test="$MsgType = 'IOI' and $MarketIndicator = 'INTEREST_RATE_SWAP'">
+                <xsl:variable name="Side" select="message/body/field[@name='Side']/@enum"/>
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'INDICATIVE' and $Side = 'FIXED_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-indicatorQuote-interestRateSwap-fixFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = 'INDICATIVE' and $Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-indicatorQuote-interestRateSwap-floatFloat"/>
                 </xsl:if>
             </xsl:when>
 

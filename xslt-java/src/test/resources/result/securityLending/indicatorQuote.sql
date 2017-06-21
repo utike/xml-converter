@@ -4,7 +4,11 @@
         
                 [ClOrdID]
             
+                ,[ID]
+            
                 ,[Qty]
+            
+                ,[TransType]
             
                 ,[Price]
             
@@ -20,103 +24,75 @@
             
                 ,[SettlType]
             
-                ,[SettlDate]
-            
-                ,[ID]
-            
-                ,[SettlCurrAmt]
-            
-                ,[SettlCurrency]
-            
                 ,[QuoteStatus]
             
                 ,[QuoteType]
             
-                ,[DeliveryType]
-            
                 ,[ContingencyIndicator]
-            
-                ,[DeliveryType2]
-            
-                ,[MarginRequired]
             
                 ,[MarketIndicator]
             
-                ,[NegotiationCount]
-            
                 ,[QuoteTime]
             
-                ,[TransType]
-            
                 ,[RemarkIndicator]
-            
-                ,[SettlCurrAmt2]
             
                 ,[TradeLimitDays]
             
                 ,[DataCategoryIndicator]
             
-                ,[ClearingMethod]
+                ,[MiscFeeAmt]
             
+            ,[SysID]
+        
+            ,[SysOriMsg]
+        
         ,[SysStatus]
         ) VALUES (
         
-                '994828487256773006'
+                '993721497952793018'
             
-                ,'6400000'
+                ,'201706200810000008'
             
-                ,'0.35001899999999997'
+                ,'10000000'
             
-                ,'OR007'
+                ,'N'
             
-                ,'4'
+                ,'0.15'
             
-                ,'OR007'
-            
-                ,'20170216 15:03:11.586'
-            
-                ,'20170216 19:20:00.000'
+                ,'L007'
             
                 ,'1'
             
-                ,'20170216'
+                ,'L007'
             
-                ,'201702161020000005'
+                ,'20170620 18:01:02.339'
             
-                ,'5709028.07'
+                ,'20170620 19:20:00.000'
             
-                ,'CNY'
+                ,'1'
             
                 ,'16'
             
-                ,'1'
-            
                 ,'0'
             
                 ,'N'
             
-                ,'0'
+                ,'8'
+            
+                ,'20170620 18:01:02.339'
             
                 ,'N'
-            
-                ,'10'
-            
-                ,'1'
-            
-                ,'20170216 15:03:11.586'
-            
-                ,'N'
-            
-                ,'N'
-            
-                ,'5747350.98'
             
                 ,'7'
             
                 ,'0'
             
-                ,'13'
+                ,'28767.12'
             
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+        
+            ,'<root>123</root>'
+        
         ,0
         );
     
@@ -133,37 +109,25 @@
             
                 ,[FirmShortChineseName]
             
-                ,[SettlementBankName]
-            
-                ,[CashAccountNumber]
-            
-                ,[SecuritiesAccNumber]
-            
                 ,[EligibleCounterParty]
             
             ,[FkID]
             ) VALUES
             (
             
-                '102445'
+                '545454'
             
                 ,'101'
             
-                ,'中原证券首席交易员'
+                ,'安徽海益首席交易员'
             
-                ,'中原证券股份有限公司'
+                ,'安徽海益信息科技有限责任公司'
             
-                ,'中原证券'
-            
-                ,'中国建设银行股份有限公司郑州期货城支行(105491000047)'
-            
-                ,'41001521010050006729'
-            
-                ,'00000002869'
+                ,'安徽海益信息'
             
                 ,'CFETS'
             
-            ,''
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         
             INSERT INTO [dbo].[details_parties]
@@ -174,8 +138,6 @@
                 ,[PartyRole]
             
                 ,[TraderName]
-            
-                ,[FirmFullChineseName]
             
                 ,[FirmShortChineseName]
             
@@ -189,15 +151,13 @@
             
                 ,'102'
             
-                ,'中原证券对手方'
-            
-                ,'恒天基金'
+                ,'安徽海益测试对手方'
             
                 ,'恒天基金'
             
                 ,'CFETS'
             
-            ,''
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -205,52 +165,50 @@
             
                 [SecurityID]
             
-                ,[AccruedInterestAmt]
-            
-                ,[AccruedInterestAmt2]
-            
-                ,[DirtyPrice]
-            
-                ,[DirtyPrice2]
-            
-                ,[Px]
-            
-                ,[Px2]
-            
                 ,[Qty]
             
                 ,[Symbol]
-            
-                ,[Yield]
-            
-                ,[Yield2]
             
             ,[FkID]
             ) VALUES
             (
             
-                '010216'
+                '100002'
             
-                ,'1.20356'
+                ,'10000000'
             
-                ,'1.28536'
+                ,'10附息国债02'
             
-                ,'89.2036'
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            );
+        
+            INSERT INTO [dbo].[details_marginInfos]
+            (
             
-                ,'89.8024'
+                [Type]
             
-                ,'88.0000'
+                ,[Replacement]
             
-                ,'88.5170'
+                ,[TotalAmt]
             
-                ,'6400000'
+                ,[Securities]
             
-                ,'01国开16'
+            ,[FkID]
+            ) VALUES
+            (
             
-                ,'7.2798'
+                '0'
             
-                ,'7.1494'
+                ,'N'
             
-            ,''
+                ,'22000000'
+            
+            ,
+            '<Securities>'+
+            '
+            <Security><MarginSecuritiesID>100002</MarginSecuritiesID><MarginAMT>10000000</MarginAMT><MarginSymbol>10附息国债02</MarginSymbol></Security><Security><MarginSecuritiesID>100003</MarginSecuritiesID><MarginAMT>12000000</MarginAMT><MarginSymbol>10附息国债03</MarginSymbol></Security>
+            '
+            +'</Securities>'
+            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );
         

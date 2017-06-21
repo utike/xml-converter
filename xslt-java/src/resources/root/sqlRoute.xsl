@@ -14,6 +14,7 @@
 
     <xsl:import href="component/OUTRIGHT_REPO/dialogQuoteSql.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/executionReportSql.xsl"/>
+    <xsl:import href="component/OUTRIGHT_REPO/indicatorQuoteSql.xsl"/>
 
     <xsl:import href="component/CASH_BOND/dialogQuoteSql.xsl"/>
     <xsl:import href="component/CASH_BOND/executionReportSql.xsl"/>
@@ -21,6 +22,7 @@
 
     <xsl:import href="component/SECURITY_LENDING/dialogQuoteSql.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReportSql.xsl"/>
+    <xsl:import href="component/SECURITY_LENDING/indicatorQuoteSql.xsl"/>
 
     <xsl:import href="component/BOND_FORWARD/dialogQuoteSql.xsl"/>
     <xsl:import href="component/BOND_FORWARD/executionReportSql.xsl"/>
@@ -28,8 +30,10 @@
 
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReportSql.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatIndicatorQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReportSql.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatIndicatorQuoteSql.xsl"/>
 
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
@@ -73,6 +77,12 @@
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '10'">
                 <xsl:call-template name="route-executionReportSql-outrightRepo"/>
             </xsl:when>
+            <xsl:when test="$MsgType = '6' and $MarketIndicator = '10'">
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '0'">
+                    <xsl:call-template name="route-indicatorQuoteSql-collateralRepo"/>
+                </xsl:if>
+            </xsl:when>
 
             <!--================================= CASH_BOND =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '4'">
@@ -94,6 +104,12 @@
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '8'">
                 <xsl:call-template name="route-executionReportSql-securityLending"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = '6' and $MarketIndicator = '8'">
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '0'">
+                    <xsl:call-template name="route-indicatorQuoteSql-securityLending"/>
+                </xsl:if>
             </xsl:when>
 
             <!--================================= BOND_FORWARD =================================-->
@@ -130,6 +146,18 @@
                 </xsl:if>
                 <xsl:if test="$Side = 'K'">
                     <xsl:call-template name="route-executionReportSql-interestRateSwap-floatFloat"/>
+                </xsl:if>
+            </xsl:when>
+
+            <!--利率互换-IOI-->
+            <xsl:when test="$MsgType = '6' and $MarketIndicator = '2'">
+                <xsl:variable name="Side" select="*/Master/Side"/>
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '0' and $Side = 'J'">
+                    <xsl:call-template name="route-indicatorQuoteSql-interestRateSwap-fixFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = '0' and $Side = 'K'">
+                    <xsl:call-template name="route-indicatorQuoteSql-interestRateSwap-floatFloat"/>
                 </xsl:if>
             </xsl:when>
 

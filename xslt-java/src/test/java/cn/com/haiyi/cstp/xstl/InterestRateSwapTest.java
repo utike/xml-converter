@@ -7,40 +7,51 @@ import java.io.IOException;
 /**
  * Created by bbhou on 2017/6/20.
  */
-public class InterestRateSwapTest extends BaseTest {
+public class InterestRateSwapTest extends AbstractBaseTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\";
 
-    @Override
-    public void indicatorQuote2XmlTest() throws IOException {
 
+    /**
+     * 固定-浮动 == 意向报价XML
+     */
+    @Test
+    public void fixFloatIndicatorQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_FIXED_RATE_TO_FLOAT_RATE.xml";
+        String targetFileName = "fixFloatIndicatorQuote.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
     }
 
-    @Override
-    public void indicatorQuote2SqlTest() throws IOException {
-
+    /**
+     * 固定-浮动 == 意向报价SQL
+     */
+    @Test
+    public void fixFloatIndicatorQuote2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\fixFloatIndicatorQuote.xml";
+        String targetFileName = "fixFloatIndicatorQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
     }
 
-    @Override
-    public void dialogQuote2XmlTest() throws IOException {
-
+    /**
+     * 浮动-浮动 == 意向报价XML
+     * @throws IOException
+     */
+    @Test
+    public void floatFloatIndicatorQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_FLOAT_RATE_TO_FLOAT_RATE.xml";
+        String targetFileName = "floatFloatIndicatorQuote.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
     }
 
-    @Override
-    public void dialogQuote2SqlTest() throws IOException {
-
+    /**
+     * 浮动-浮动 == 意向报价SQL
+     */
+    @Test
+    public void floatFloatIndicatorQuote2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\floatFloatIndicatorQuote.xml";
+        String targetFileName = "floatFloatIndicatorQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
     }
-
-    @Override
-    public void executionReport2XmlTest() throws IOException {
-
-    }
-
-    @Override
-    public void executionReport2SqlTest() throws IOException {
-
-    }
-
 
     @Test
     public void fixFloatDialogQuote2XmlTest() throws IOException {
