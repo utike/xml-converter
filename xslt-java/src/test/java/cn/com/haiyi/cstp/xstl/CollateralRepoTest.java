@@ -15,6 +15,19 @@ public class CollateralRepoTest extends BaseTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\collateralRepo\\";
 
+    @Override
+    @Test
+    public void indicatorQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_COLLATERAL_REPO.xml";
+        super.indicatorQuote2Xml(xmlPath, this.targetPath);
+    }
+
+    @Override
+    @Test
+    public void indicatorQuote2SqlTest() throws IOException {
+        super.indicatorQuote2Sql(this.targetPath);
+    }
+
     @Test
     @Override
     public void dialogQuote2XmlTest() throws IOException {

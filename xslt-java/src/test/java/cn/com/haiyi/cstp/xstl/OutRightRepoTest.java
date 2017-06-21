@@ -12,6 +12,16 @@ public class OutRightRepoTest extends BaseTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\outRightRepo\\";
 
+    @Override
+    public void indicatorQuote2XmlTest() throws IOException {
+
+    }
+
+    @Override
+    public void indicatorQuote2SqlTest() throws IOException {
+
+    }
+
     @Test
     @Override
     public void dialogQuote2XmlTest() throws IOException {

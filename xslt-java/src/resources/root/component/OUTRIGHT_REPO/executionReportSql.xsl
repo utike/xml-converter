@@ -5,7 +5,7 @@
     <xsl:output method="text" version="1.0" encoding="gb2312"
                 indent="yes" cdata-section-elements="DataContent" />
 
-    <xsl:template match="/" name="route-executionReportSql-outright-repo">
+    <xsl:template match="/" name="route-executionReportSql-outrightRepo">
 
 
         <xsl:call-template name="sql-order"/>

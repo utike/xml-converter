@@ -11,7 +11,7 @@ import java.util.Map;
 public class XsltUtil {
 
     private static Map<String, String> PARTY_CONSTANT = new HashMap<>();
-    private static Map<String, String> DIALOGQUOTE_CONSTANT = new HashMap<>();
+    private static Map<String, String> QUOTE_CONSTANT = new HashMap<>();
     private static Map<String, String> ExecutionReport_CONSTANT = new HashMap<>();
     private static Map<String, String> NOUNDERLYING_CONSTANT = new HashMap<>();
     private static Map<String, String> NOMARGININFOS_CONSTANT = new HashMap<>();
@@ -43,11 +43,17 @@ public class XsltUtil {
 
 
         /**
-         * DIALOGQUOTE(对话报价)
+         * GQUOTE
          */
-        DIALOGQUOTE_CONSTANT.put("QuoteTransType", "TransType");
-        DIALOGQUOTE_CONSTANT.put("OrderQty", "Qty");
-        DIALOGQUOTE_CONSTANT.put("QuoteID", "ID");
+        //1. 对话报价
+        QUOTE_CONSTANT.put("QuoteTransType", "TransType");
+        QUOTE_CONSTANT.put("OrderQty", "Qty");
+        QUOTE_CONSTANT.put("QuoteID", "ID");
+
+        //2. 意向报价
+        QUOTE_CONSTANT.put("IOIID", "ID");
+        QUOTE_CONSTANT.put("IOIQty", "Qty");
+        QUOTE_CONSTANT.put("IOITransType", "TransType");
 
         /**
          * ExecutionReport(成交报价)
@@ -179,7 +185,7 @@ public class XsltUtil {
      * @return
      */
     public static String getDialogQuoteMap(String original) {
-        return defineMap(original, DIALOGQUOTE_CONSTANT);
+        return defineMap(original, QUOTE_CONSTANT);
     }
 
     /**

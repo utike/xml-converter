@@ -6,21 +6,25 @@
 
     <xsl:import href="component/INTER_BANK_OFFERING/dialogQuoteSql.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/executionReportSql.xsl"/>
+    <xsl:import href="component/INTER_BANK_OFFERING/indicatorQuoteSql.xsl"/>
 
     <xsl:import href="component/COLLATERAL_REPO/dialogQuoteSql.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/executionReportSql.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/indicatorQuoteSql.xsl"/>
 
     <xsl:import href="component/OUTRIGHT_REPO/dialogQuoteSql.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/executionReportSql.xsl"/>
 
     <xsl:import href="component/CASH_BOND/dialogQuoteSql.xsl"/>
     <xsl:import href="component/CASH_BOND/executionReportSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/indicatorQuoteSql.xsl"/>
 
     <xsl:import href="component/SECURITY_LENDING/dialogQuoteSql.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReportSql.xsl"/>
 
     <xsl:import href="component/BOND_FORWARD/dialogQuoteSql.xsl"/>
     <xsl:import href="component/BOND_FORWARD/executionReportSql.xsl"/>
+    <xsl:import href="component/BOND_FORWARD/indicatorQuoteSql.xsl"/>
 
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReportSql.xsl"/>
@@ -34,34 +38,57 @@
         <xsl:variable name="MarketIndicator" select="*/Master/MarketIndicator"/>
 
         <xsl:choose>
+            <!--================================= INTER_BANK_OFFERING =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '1'">
                 <xsl:call-template name="route-dialogQuoteSql-ibo"/>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '1'">
                 <xsl:call-template name="route-executionReportSql-ibo"/>
             </xsl:when>
+            <xsl:when test="$MsgType = '6' and $MarketIndicator = '1'">
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '0'">
+                    <xsl:call-template name="route-indicatorQuoteSql-ibo"/>
+                </xsl:if>
+            </xsl:when>
 
+            <!--================================= COLLATERAL_REPO =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '9'">
-                <xsl:call-template name="route-dialogQuoteSql-collateral-repo"/>
+                <xsl:call-template name="route-dialogQuoteSql-collateralRepo"/>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '9'">
-                <xsl:call-template name="route-executionReportSql-collateral-repo"/>
+                <xsl:call-template name="route-executionReportSql-collateralRepo"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = '6' and $MarketIndicator = '9'">
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '0'">
+                    <xsl:call-template name="route-indicatorQuoteSql-collateralRepo"/>
+                </xsl:if>
             </xsl:when>
 
+            <!--================================= OUTRIGHT_REPO =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '10'">
-                <xsl:call-template name="route-dialogQuoteSql-outright-repo"/>
+                <xsl:call-template name="route-dialogQuoteSql-outrightRepo"/>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '10'">
-                <xsl:call-template name="route-executionReportSql-outright-repo"/>
+                <xsl:call-template name="route-executionReportSql-outrightRepo"/>
             </xsl:when>
 
+            <!--================================= CASH_BOND =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-dialogQuoteSql-cash-bond"/>
+                <xsl:call-template name="route-dialogQuoteSql-cashBond"/>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-executionReportSql-cash-bond"/>
+                <xsl:call-template name="route-executionReportSql-cashBond"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = '6' and $MarketIndicator = '4'">
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '0'">
+                    <xsl:call-template name="route-indicatorQuoteSql-cashBond"/>
+                </xsl:if>
             </xsl:when>
 
+            <!--================================= SECURITY_LENDING =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '8'">
                 <xsl:call-template name="route-dialogQuoteSql-securityLending"/>
             </xsl:when>
@@ -69,13 +96,21 @@
                 <xsl:call-template name="route-executionReportSql-securityLending"/>
             </xsl:when>
 
+            <!--================================= BOND_FORWARD =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '5'">
                 <xsl:call-template name="route-dialogQuoteSql-bondForward"/>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '5'">
                 <xsl:call-template name="route-executionReportSql-bondForward"/>
             </xsl:when>
+            <xsl:when test="$MsgType = '6' and $MarketIndicator = '5'">
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '0'">
+                    <xsl:call-template name="route-indicatorQuoteSql-bondForward"/>
+                </xsl:if>
+            </xsl:when>
 
+            <!--================================= INTEREST_RATE_SWAP =================================-->
             <!--利率互换-对话报价-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '2'">
                 <xsl:variable name="Side" select="*/Master/Side"/>

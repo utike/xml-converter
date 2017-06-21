@@ -5,8 +5,7 @@
     <xsl:output method="text" version="1.0" encoding="gb2312"
                 indent="yes" cdata-section-elements="DataContent"/>
 
-    <xsl:template match="/" name="route-dialogQuoteSql-collateralRepo">
-
+    <xsl:template match="/" name="route-indicatorQuoteSql-collateralRepo">
 
         <xsl:call-template name="sql-quote"/>
 

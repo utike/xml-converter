@@ -12,6 +12,19 @@ public class CashBondTest extends BaseTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\cashBond\\";
 
+    @Override
+    @Test
+    public void indicatorQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_CASH_BOND.xml";
+        super.indicatorQuote2Xml(xmlPath, this.targetPath);
+    }
+
+    @Override
+    @Test
+    public void indicatorQuote2SqlTest() throws IOException {
+        super.indicatorQuote2Sql(this.targetPath);
+    }
+
     @Test
     @Override
     public void dialogQuote2XmlTest() throws IOException {

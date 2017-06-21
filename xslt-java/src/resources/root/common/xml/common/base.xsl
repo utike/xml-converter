@@ -24,7 +24,7 @@
     <xsl:template name="master-dialogQuote-noRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555 and @tag != 215">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                 </xsl:element>
@@ -38,7 +38,7 @@
     <xsl:template name="master-dialogQuote-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
+            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555 and @tag != 215">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>
@@ -269,5 +269,23 @@
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
+
+    <!--================================= NoRoutingIDs =================================-->
+    <xsl:template name="slave-NoRoutingIDs">
+        <xsl:element name="NoRoutingIDs">
+            <xsl:for-each select="message/body/groups[@name='NoRoutingIDs']/group">
+                <xsl:element name="NoRoutingID">
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="@name"/>
+                        <xsl:element name="{$nodeName}">
+                            <xsl:value-of select="current()"/>
+                        </xsl:element>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
+    <!--================================= 共有方法 =================================-->
 
 </xsl:stylesheet>

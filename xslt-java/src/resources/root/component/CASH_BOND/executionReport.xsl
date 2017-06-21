@@ -10,7 +10,7 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <xsl:template match="/" name="route-executionReport-cash-bond">
+    <xsl:template match="/" name="route-executionReport-cashBond">
 
         <Order>
 

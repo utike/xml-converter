@@ -5,21 +5,25 @@
 >
     <xsl:import href="component/INTER_BANK_OFFERING/dialogQuote.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/executionReport.xsl"/>
+    <xsl:import href="component/INTER_BANK_OFFERING/indicatorQuote.xsl"/>
 
     <xsl:import href="component/COLLATERAL_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/executionReport.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/indicatorQuote.xsl"/>
 
     <xsl:import href="component/OUTRIGHT_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/executionReport.xsl"/>
 
     <xsl:import href="component/CASH_BOND/dialogQuote.xsl"/>
     <xsl:import href="component/CASH_BOND/executionReport.xsl"/>
+    <xsl:import href="component/CASH_BOND/indicatorQuote.xsl"/>
 
     <xsl:import href="component/SECURITY_LENDING/dialogQuote.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReport.xsl"/>
 
     <xsl:import href="component/BOND_FORWARD/dialogQuote.xsl"/>
     <xsl:import href="component/BOND_FORWARD/executionReport.xsl"/>
+    <xsl:import href="component/BOND_FORWARD/indicatorQuote.xsl"/>
 
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReport.xsl"/>
@@ -36,34 +40,57 @@
         <xsl:variable name="MarketIndicator" select="message/body/field[@name='MarketIndicator']/@enum"/>
 
         <xsl:choose>
+            <!--================================= INTER_BANK_OFFERING =================================-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTER_BANK_OFFERING'">
                 <xsl:call-template name="route-dialogQuote-ibo"/>
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'INTER_BANK_OFFERING'">
                 <xsl:call-template name="route-executionReport-ibo"/>
             </xsl:when>
+            <xsl:when test="$MsgType = 'IOI' and $MarketIndicator = 'INTER_BANK_OFFERING'">
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'INDICATIVE'">
+                    <xsl:call-template name="route-indicatorQuote-ibo"/>
+                </xsl:if>
+            </xsl:when>
 
+            <!--================================= COLLATERAL_REPO =================================-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'COLLATERAL_REPO'">
-                <xsl:call-template name="route-dialogQuote-collateral-repo"/>
+                <xsl:call-template name="route-dialogQuote-collateralRepo"/>
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'COLLATERAL_REPO'">
-                <xsl:call-template name="route-executionReport-collateral-repo"/>
+                <xsl:call-template name="route-executionReport-collateralRepo"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'IOI' and $MarketIndicator = 'COLLATERAL_REPO'">
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'INDICATIVE'">
+                    <xsl:call-template name="route-indicatorQuote-collateralRepo"/>
+                </xsl:if>
             </xsl:when>
 
+            <!--================================= OUTRIGHT_REPO =================================-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'OUTRIGHT_REPO'">
-                <xsl:call-template name="route-dialogQuote-outright-repo"/>
+                <xsl:call-template name="route-dialogQuote-outrightRepo"/>
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'OUTRIGHT_REPO'">
-                <xsl:call-template name="route-executionReport-outright-repo"/>
+                <xsl:call-template name="route-executionReport-outrightRepo"/>
             </xsl:when>
 
+            <!--================================= CASH_BOND =================================-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'CASH_BOND'">
-                <xsl:call-template name="route-dialogQuote-cash-bond"/>
+                <xsl:call-template name="route-dialogQuote-cashBond"/>
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'CASH_BOND'">
-                <xsl:call-template name="route-executionReport-cash-bond"/>
+                <xsl:call-template name="route-executionReport-cashBond"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'IOI' and $MarketIndicator = 'CASH_BOND'">
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'INDICATIVE'">
+                    <xsl:call-template name="route-indicatorQuote-cashBond"/>
+                </xsl:if>
             </xsl:when>
 
+            <!--================================= SECURITY_LENDING =================================-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'SECURITY_LENDING'">
                 <xsl:call-template name="route-dialogQuote-securityLending"/>
             </xsl:when>
@@ -71,13 +98,21 @@
                 <xsl:call-template name="route-executionReport-securityLending"/>
             </xsl:when>
 
+            <!--================================= BOND_FORWARD =================================-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'BOND_FORWARD'">
                 <xsl:call-template name="route-dialogQuote-bondForward"/>
             </xsl:when>
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'BOND_FORWARD'">
                 <xsl:call-template name="route-executionReport-bondForward"/>
             </xsl:when>
+            <xsl:when test="$MsgType = 'IOI' and $MarketIndicator = 'BOND_FORWARD'">
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'INDICATIVE'">
+                    <xsl:call-template name="route-indicatorQuote-bondForward"/>
+                </xsl:if>
+            </xsl:when>
 
+            <!--================================= INTEREST_RATE_SWAP =================================-->
             <!--利率互换-对话报价-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTEREST_RATE_SWAP'">
                 <xsl:variable name="Side" select="message/body/field[@name='Side']/@enum"/>

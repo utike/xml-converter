@@ -10,7 +10,7 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <xsl:template match="/" name="route-executionReport-collateral-repo">
+    <xsl:template match="/" name="route-executionReport-collateralRepo">
 
         <Order>
 

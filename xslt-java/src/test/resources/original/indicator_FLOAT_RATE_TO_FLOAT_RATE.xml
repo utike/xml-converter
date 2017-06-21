@@ -94,10 +94,10 @@
 </group>
 </groups>
 </body>
-<trailer>
-<field name="SignatureLength" tag="93"><![CDATA[32]]></field>
-<field name="Signature" tag="89"><![CDATA[????????夀婬?岀?????傠?????]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field>
-<field name="CheckSum" tag="10"><![CDATA[254]]></field>
-</trailer>
+<!--<trailer>-->
+<!--<field name="SignatureLength" tag="93"><![CDATA[32]]></field>-->
+<!--<field name="Signature" tag="89"><![CDATA[????????夀婬?岀?????傠?????]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field>-->
+<!--<field name="CheckSum" tag="10"><![CDATA[254]]></field>-->
+<!--</trailer>-->
 </message>
 

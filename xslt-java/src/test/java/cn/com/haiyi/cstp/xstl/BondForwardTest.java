@@ -12,6 +12,19 @@ public class BondForwardTest extends BaseTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\bondForward\\";
 
+    @Test
+    @Override
+    public void indicatorQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_BOND_FORWARD.xml";
+        super.indicatorQuote2Xml(xmlPath, this.targetPath);
+    }
+
+    @Test
+    @Override
+    public void indicatorQuote2SqlTest() throws IOException {
+        super.indicatorQuote2Sql(this.targetPath);
+    }
+
     @Override
     @Test
     public void dialogQuote2XmlTest() throws IOException {

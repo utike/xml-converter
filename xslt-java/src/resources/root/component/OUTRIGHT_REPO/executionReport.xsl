@@ -5,7 +5,7 @@
                 indent="yes" cdata-section-elements="DataContent "/>
 
 
-    <xsl:template match="/" name="route-executionReport-outright-repo">
+    <xsl:template match="/" name="route-executionReport-outrightRepo">
 
         <Order>
 

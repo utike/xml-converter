@@ -10,6 +10,16 @@ import java.io.IOException;
 public class SecurityLendingTest extends BaseTest {
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\securityLending\\";
 
+    @Override
+    public void indicatorQuote2XmlTest() throws IOException {
+
+    }
+
+    @Override
+    public void indicatorQuote2SqlTest() throws IOException {
+
+    }
+
     @Test
     @Override
     public void dialogQuote2XmlTest() throws IOException {
