@@ -13,6 +13,50 @@ public class InterestRateSwapTest extends AbstractBaseTest {
 
 
     /**
+     * 标准-SH
+     * @throws IOException
+     */
+    @Test
+    public void standardSHFixFloatIndicatorQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\STANDARD_INTEREST_RATE_SWAP_J_8_SH.xml";
+        String targetFileName = "standardSHFixFloatIndicatorQuote.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
+    }
+
+    /**
+     * 标准-SH
+     * @throws IOException
+     */
+    @Test
+    public void standardSHFixFloatIndicatorQuote2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\standardSHFixFloatIndicatorQuote.xml";
+        String targetFileName = "standardSHFixFloatIndicatorQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
+    }
+
+    /**
+     * 标准-SH
+     * @throws IOException
+     */
+    @Test
+    public void standardSelfFixFloatIndicatorQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\STANDARD_INTEREST_RATE_SWAP_J_8_SELF.xml";
+        String targetFileName = "standardSelfFixFloatIndicatorQuote.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
+    }
+
+    /**
+     * 标准-SH
+     * @throws IOException
+     */
+    @Test
+    public void standardSelfFixFloatIndicatorQuote2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\standardSelfFixFloatIndicatorQuote.xml";
+        String targetFileName = "standardSelfFixFloatIndicatorQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
+    }
+
+    /**
      * 固定-浮动 == 意向报价XML
      */
     @Test
