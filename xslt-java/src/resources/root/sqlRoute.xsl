@@ -28,6 +28,8 @@
     <xsl:import href="component/BOND_FORWARD/executionReportSql.xsl"/>
     <xsl:import href="component/BOND_FORWARD/indicatorQuoteSql.xsl"/>
 
+    <xsl:import href="component/STANDARD_BOND_FORWARD/executionReportSql.xsl"/>
+
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReportSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatIndicatorQuoteSql.xsl"/>
@@ -124,6 +126,11 @@
                 <xsl:if test="$QuoteType = '0'">
                     <xsl:call-template name="route-indicatorQuoteSql-bondForward"/>
                 </xsl:if>
+            </xsl:when>
+
+            <!--================================= STANDARD_BOND_FORWARD =================================-->
+            <xsl:when test="$MsgType = '8' and $MarketIndicator = '43'">
+                <xsl:call-template name="route-executionReportSql-standardBondForward"/>
             </xsl:when>
 
             <!--================================= INTEREST_RATE_SWAP =================================-->

@@ -27,6 +27,8 @@
     <xsl:import href="component/BOND_FORWARD/executionReport.xsl"/>
     <xsl:import href="component/BOND_FORWARD/indicatorQuote.xsl"/>
 
+    <xsl:import href="component/STANDARD_BOND_FORWARD/executionReport.xsl"/>
+
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReport.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatIndicatorQuote.xsl"/>
@@ -127,6 +129,12 @@
                     <xsl:call-template name="route-indicatorQuote-bondForward"/>
                 </xsl:if>
             </xsl:when>
+
+            <!--================================= STANDARD_BOND_FORWARD =================================-->
+            <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'STANDARD_BOND_FORWARD'">
+                <xsl:call-template name="route-executionReport-standardBondForward"/>
+            </xsl:when>
+
 
             <!--================================= INTEREST_RATE_SWAP =================================-->
             <!--利率互换-对话报价-->
