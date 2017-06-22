@@ -55,6 +55,9 @@ public class XsltUtil {
         QUOTE_CONSTANT.put("IOIQty", "Qty");
         QUOTE_CONSTANT.put("IOITransType", "TransType");
 
+        //3. 限价报价
+        QUOTE_CONSTANT.put("OrderID", "ID");
+
         /**
          * ExecutionReport(成交报价)
          */

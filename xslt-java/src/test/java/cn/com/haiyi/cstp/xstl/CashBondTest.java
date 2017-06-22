@@ -1,5 +1,7 @@
 package cn.com.haiyi.cstp.xstl;
 
+import cn.com.haiyi.cstp.xstl.base.ClickAndDealQuoteTest;
+import cn.com.haiyi.cstp.xstl.base.NewOrderSingleQuoteTest;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -8,7 +10,8 @@ import java.io.IOException;
  * 买断式回购测试
  * Created by bbhou on 2017/6/19.
  */
-public class CashBondTest extends BaseTest {
+public class CashBondTest extends BaseTest
+    implements ClickAndDealQuoteTest, NewOrderSingleQuoteTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\cashBond\\";
 
@@ -49,5 +52,37 @@ public class CashBondTest extends BaseTest {
     @Override
     public void executionReport2SqlTest() throws IOException {
         super.executionReport2Sql(super.sqlRoutePath, this.targetPath);
+    }
+
+    @Override
+    @Test
+    public void clickAndDealQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\CASH_BOND_S_CLICK_AND_DEAL_QUOTE.xml";
+        final String targetFileName = "clickAndDealQuote.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
+    }
+
+    @Override
+    @Test
+    public void clickAndDealQuote2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\cashBond\\clickAndDealQuote.xml";
+        final String targetFileName = "clickAndDealQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
+    }
+
+    @Override
+    @Test
+    public void newOrderSingleQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\CASH_BOND_D.xml";
+        final String targetFileName = "newOrderSingleQuote.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
+    }
+
+    @Override
+    @Test
+    public void newOrderSingleQuote2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\cashBond\\newOrderSingleQuote.xml";
+        final String targetFileName = "newOrderSingleQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
     }
 }

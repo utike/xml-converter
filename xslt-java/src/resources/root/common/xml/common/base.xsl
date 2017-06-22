@@ -287,6 +287,20 @@
         </xsl:element>
     </xsl:template>
 
-    <!--================================= 共有方法 =================================-->
+    <!--================================= NoDeliveryTypeOption =================================-->
+    <xsl:template name="slave-NoDeliveryTypeOptions">
+        <xsl:element name="NoDeliveryTypeOptions">
+            <xsl:for-each select="message/body/groups[@name='NoDeliveryTypeOption']/group">
+                <xsl:element name="NoDeliveryTypeOption">
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="@name"/>
+                        <xsl:element name="{$nodeName}">
+                            <xsl:value-of select="current()"/>
+                        </xsl:element>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
 
 </xsl:stylesheet>

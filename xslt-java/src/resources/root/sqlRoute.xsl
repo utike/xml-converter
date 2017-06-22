@@ -21,6 +21,8 @@
     <xsl:import href="component/CASH_BOND/dialogQuoteSql.xsl"/>
     <xsl:import href="component/CASH_BOND/executionReportSql.xsl"/>
     <xsl:import href="component/CASH_BOND/indicatorQuoteSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/clickAndDealQuoteSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/newOrderSingleQuoteSql.xsl"/>
 
     <xsl:import href="component/SECURITY_LENDING/dialogQuoteSql.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReportSql.xsl"/>
@@ -96,7 +98,13 @@
 
             <!--================================= CASH_BOND =================================-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-dialogQuoteSql-cashBond"/>
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:if test="$QuoteType = '1'">
+                    <xsl:call-template name="route-dialogQuoteSql-cashBond"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = '105'">
+                    <xsl:call-template name="route-clickAndDealQuoteSql-cashBond"/>
+                </xsl:if>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-executionReportSql-cashBond"/>
@@ -106,6 +114,9 @@
                 <xsl:if test="$QuoteType = '0'">
                     <xsl:call-template name="route-indicatorQuoteSql-cashBond"/>
                 </xsl:if>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'D' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-newOrderSingleQuoteSql-cashBond"/>
             </xsl:when>
 
             <!--================================= SECURITY_LENDING =================================-->
