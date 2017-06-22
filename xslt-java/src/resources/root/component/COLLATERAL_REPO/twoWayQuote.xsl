@@ -28,7 +28,7 @@
                 <!--parties-noContact-->
                 <xsl:call-template name="slave-parties-withoutContact"/>
 
-                <xsl:call-template name="slave-NoLegs"/>
+                <xsl:call-template name="slave-NoLegs-withRate"/>
 
                 <xsl:call-template name="slave-NoRoutingIDs"/>
             </Slave>

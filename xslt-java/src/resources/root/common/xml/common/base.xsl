@@ -248,8 +248,8 @@
 
 
     <!--================================= NoLegs =================================-->
-    <!--TODO: 检查所有的price字段-->
-    <xsl:template name="slave-NoLegs">
+    <!--TODO: 检查所有的price字段 有的没有利率，需要重新写-->
+    <xsl:template name="slave-NoLegs-withRate">
         <xsl:element name="NoLegs">
             <xsl:for-each select="message/body/groups[@name='NoLegs']/group">
                 <xsl:element name="NoLeg">
@@ -264,6 +264,22 @@
                                     <xsl:value-of select="current()"/>
                                 </xsl:otherwise>
                             </xsl:choose>
+                        </xsl:element>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
+    <!--NoLegs-没有利率-->
+    <xsl:template name="slave-NoLegs-withoutRate">
+        <xsl:element name="NoLegs">
+            <xsl:for-each select="message/body/groups[@name='NoLegs']/group">
+                <xsl:element name="NoLeg">
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="java:XsltUtil.getNoLegsMap(@name)"/>
+                        <xsl:element name="{$nodeName}">
+                            <xsl:value-of select="current()"/>
                         </xsl:element>
                     </xsl:for-each>
                 </xsl:element>

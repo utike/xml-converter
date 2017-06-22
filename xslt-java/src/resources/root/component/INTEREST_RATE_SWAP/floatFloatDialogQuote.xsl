@@ -29,7 +29,7 @@
                 <xsl:call-template name="slave-parties-withoutContact"/>
 
                 <!--slave-NoLegs-->
-                <xsl:call-template name="slave-NoLegs"/>
+                <xsl:call-template name="slave-NoLegs-withRate"/>
             </Slave>
 
         </Quote>

@@ -31,7 +31,7 @@
 
                 <xsl:call-template name="slave-NoRoutingIDs"/>
 
-                <xsl:call-template name="slave-NoLegs"/>
+                <xsl:call-template name="slave-NoLegs-withRate"/>
             </Slave>
 
         </Quote>
