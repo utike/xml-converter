@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+    <header>
+        <field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+        <field name="BodyLength" tag="9"><![CDATA[785]]></field>
+        <field name="MsgSeqNum" tag="34"><![CDATA[7487]]></field>
+        <field enum="Quote" name="MsgType" tag="35"><![CDATA[S]]></field>
+        <field name="SenderCompID" tag="49"><![CDATA[CFETS-RMB-CSTP]]></field>
+        <field name="SendingTime" tag="52"><![CDATA[20170622-01:02:35.745]]></field>
+        <field name="TargetCompID" tag="56"><![CDATA[545454]]></field>
+        <field name="TargetSubID" tag="57"><![CDATA[ahhycstp1]]></field>
+        <field name="OnBehalfOfCompID" tag="115"><![CDATA[CFETS-RMB]]></field>
+        <field name="DeliverToCompID" tag="128"><![CDATA[545454]]></field>
+        <field name="DeliverToSubID" tag="129"><![CDATA[ahhycstp1]]></field>
+    </header>
+
+    <body>
+        <field name="ClOrdID" tag="11"><![CDATA[993721498120973008]]></field>
+        <field name="OrderQty" tag="38"><![CDATA[10000000]]></field>
+        <field name="SecurityID" tag="48"><![CDATA[FR007_Shibor3M_10Y]]></field>
+        <field enum="FIXED_RATE_TO_FLOAT_RATE" name="Side" tag="54"><![CDATA[J]]></field>
+        <field name="Symbol" tag="55"><![CDATA[FR007_Shibor3M_10Y]]></field>
+        <field name="TransactTime" tag="60"><![CDATA[20170622-09:02:35.346]]></field>
+        <field name="ValidUntilTime" tag="62"><![CDATA[20170622-19:00:00.000]]></field>
+        <field name="QuoteID" tag="117"><![CDATA[201706220280000003]]></field>
+        <field name="NoRoutingIDs" tag="215"><![CDATA[1]]></field>
+        <field enum="NORMAL" name="QuoteStatus" tag="297"><![CDATA[16]]></field>
+        <field name="NoPartyIDs" tag="453"><![CDATA[1]]></field>
+        <field enum="CLICK_AND_NEGOTIATE_QUOTE" name="QuoteType" tag="537"><![CDATA[103]]></field>
+        <field name="NoLegs" tag="555"><![CDATA[2]]></field>
+        <field name="StartDate" tag="916"><![CDATA[20170623]]></field>
+        <field name="EndDate" tag="917"><![CDATA[20270623]]></field>
+        <field name="ClearingMethod" tag="916"><![CDATA[20170623]]></field>
+        <field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+        <field enum="INTEREST_RATE_SWAP" name="MarketIndicator" tag="10176"><![CDATA[2]]></field>
+        <field name="QuoteTime" tag="10271"><![CDATA[20170622-09:02:35.346]]></field>
+        <field enum="NEW" name="QuoteTransType" tag="10272"><![CDATA[N]]></field>
+        <field enum="NO" name="RemarkIndicator" tag="10282"><![CDATA[N]]></field>
+        <field name="TradeLimitDays" tag="10316"><![CDATA[10000000]]></field>
+        <field enum="SELF_DATA" name="DataCategoryIndicator" tag="10465"><![CDATA[0]]></field>
+
+        <groups name="NoRoutingIDs" tag="215">
+            <group>
+                <field enum="ALL" name="RoutingType" tag="216"><![CDATA[5]]></field>
+            </group>
+        </groups>
+
+        <groups name="NoPartyIDs" tag="453">
+            <group>
+                <field name="PartyID" tag="448"><![CDATA[545454]]></field>
+                <field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+                <field name="NoPartySubIDs" tag="802"><![CDATA[5]]></field>
+                <groups name="NoPartySubIDs" tag="802">
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益首席交易员]]></field>
+                        <field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限责任公司]]></field>
+                        <field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803">
+                            <![CDATA[124]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益信息]]></field>
+                        <field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803">
+                            <![CDATA[125]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限公司]]></field>
+                        <field enum="SETTLEMENT_BANK_NAME" name="PartySubIDType" tag="803"><![CDATA[110]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[123131]]></field>
+                        <field enum="CASH_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[15]]></field>
+                    </group>
+                </groups>
+            </group>
+        </groups>
+
+        <groups name="NoLegs" tag="555">
+            <group>
+                <field enum="FIXED_RECEIVER_BENCHMARK_RECEIVER_TAKER_RECEIVE" name="LegSide" tag="624"><![CDATA[1]]></field>
+                <field enum="SPREAD" name="LegPriceType" tag="686"><![CDATA[6]]></field>
+                <field name="LegBenchmarkCurveName" tag="677"><![CDATA[FR007]]></field>
+                <field name="LegBenchmarkSpread" tag="10090"><![CDATA[1.00]]></field>
+            </group>
+            <group>
+                <field enum="BASE_LEG_FOR_TWO_WAY_QUOTE_IN_RMB_IRS_OR_FRA" name="LegSide" tag="624"><![CDATA[B]]></field>
+                <field enum="SPREAD" name="LegPriceType" tag="686"><![CDATA[6]]></field>
+                <field name="LegBenchmarkCurveName" tag="677"><![CDATA[Shibor_3M]]></field>
+                <field name="LegBenchmarkSpread" tag="10090"><![CDATA[0.00]]></field>
+            </group>
+        </groups>
+
+    </body>
+    <trailer>
+        <!--<field name="SignatureLength" tag="93"><![CDATA[30]]></field>-->
+        <!--<field name="Signature" tag="89"><![CDATA[???Τ????夀嬠??椮????????]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field>-->
+        <!--<field name="CheckSum" tag="10"><![CDATA[088]]></field>-->
+    </trailer>
+</message>
+
