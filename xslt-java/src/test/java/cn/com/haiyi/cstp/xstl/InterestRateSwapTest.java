@@ -126,6 +126,20 @@ public class InterestRateSwapTest extends AbstractBaseTest {
     }
 
     @Test
+    public void fixFloatTwoWayQuote2XmlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\INTEREST_RATE_SWAP_IOI_J_TWO_WAY.xml";
+        String targetFileName = "fixFloatTwoWayQuote.xml";
+        super.toXml(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+    @Test
+    public void fixFloatTwoWayQuote2SqlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\fixFloatTwoWayQuote.xml";
+        String targetFileName = "fixFloatTwoWayQuote.sql";
+        super.toSql(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+    @Test
     public void floatFloatDialogQuote2XmlTest() throws IOException {
         final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\INTEREST_RATE_SWAP_K_S.xml";
         String targetFileName = "floatFloatDialogQuote.xml";
@@ -151,6 +165,20 @@ public class InterestRateSwapTest extends AbstractBaseTest {
     public void floatFloatExecutionReport2SqlTest() throws IOException {
         final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\floatFloatExecutionReport.xml";
         String targetFileName = "floatFloatExecutionReport.sql";
+        super.toSql(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+    @Test
+    public void floatFloatTwoWayQuote2XmlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\INTEREST_RATE_SWAP_IOI_K_TWO_WAY.xml";
+        String targetFileName = "floatFloatTwoWayQuote.xml";
+        super.toXml(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+    @Test
+    public void floatFloatTwoWayQuote2SqlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\floatFloatTwoWayQuote.xml";
+        String targetFileName = "floatFloatTwoWayQuote.sql";
         super.toSql(originalXmlPath, this.targetPath, targetFileName);
     }
 

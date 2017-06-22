@@ -36,9 +36,11 @@
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReport.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatIndicatorQuote.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatTwoWayQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatDialogQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReport.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatIndicatorQuote.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatTwoWayQuote.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -187,6 +189,12 @@
                 </xsl:if>
                 <xsl:if test="$QuoteType = 'INDICATIVE' and $Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
                     <xsl:call-template name="route-indicatorQuote-interestRateSwap-floatFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = 'TWO_WAY' and $Side = 'FIXED_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-twoWayQuote-interestRateSwap-fixFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = 'TWO_WAY' and $Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-twoWayQuote-interestRateSwap-floatFloat"/>
                 </xsl:if>
             </xsl:when>
 

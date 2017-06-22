@@ -37,9 +37,11 @@
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReportSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatIndicatorQuoteSql.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatTwoWayQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReportSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatIndicatorQuoteSql.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatTwoWayQuoteSql.xsl"/>
 
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
@@ -184,6 +186,12 @@
                 </xsl:if>
                 <xsl:if test="$QuoteType = '0' and $Side = 'K'">
                     <xsl:call-template name="route-indicatorQuoteSql-interestRateSwap-floatFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = '101' and $Side = 'J'">
+                    <xsl:call-template name="route-twoWayQuoteSql-interestRateSwap-fixFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = '101' and $Side = 'K'">
+                    <xsl:call-template name="route-twoWayQuoteSql-interestRateSwap-floatFloat"/>
                 </xsl:if>
             </xsl:when>
 
