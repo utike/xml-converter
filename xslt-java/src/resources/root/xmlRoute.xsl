@@ -41,6 +41,7 @@
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReport.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatIndicatorQuote.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatTwoWayQuote.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatClickAndDealQuote.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -161,11 +162,15 @@
             <!--利率互换-对话报价-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTEREST_RATE_SWAP'">
                 <xsl:variable name="Side" select="message/body/field[@name='Side']/@enum"/>
-                <xsl:if test="$Side = 'FIXED_RATE_TO_FLOAT_RATE'">
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
+                <xsl:if test="$QuoteType = 'TRADEABLE' and $Side = 'FIXED_RATE_TO_FLOAT_RATE'">
                     <xsl:call-template name="route-dialogQuote-interestRateSwap-fixFloat"/>
                 </xsl:if>
-                <xsl:if test="$Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
+                <xsl:if test="$QuoteType = 'TRADEABLE' and $Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
                     <xsl:call-template name="route-dialogQuote-interestRateSwap-floatFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = 'CLICK_AND_NEGOTIATE_QUOTE' and $Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
+                    <xsl:call-template name="route-clickAndDealQuote-interestRateSwap-floatFloat"/>
                 </xsl:if>
             </xsl:when>
 

@@ -182,4 +182,18 @@ public class InterestRateSwapTest extends AbstractBaseTest {
         super.toSql(originalXmlPath, this.targetPath, targetFileName);
     }
 
+    @Test
+    public void floatFloatClickAndDealQuote2XmlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\INTEREST_RATE_SWAP_S_K_CLICK_AND_NEGOTIATE_QUOTE.xml";
+        String targetFileName = "floatFloatClickAndDealQuote.xml";
+        super.toXml(originalXmlPath, this.targetPath, targetFileName);
+    }
+
+    @Test
+    public void floatFloatClickAndDealQuote2SqlTest() throws IOException {
+        final String originalXmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\interestRateSwap\\floatFloatClickAndDealQuote.xml";
+        String targetFileName = "floatFloatClickAndDealQuote.sql";
+        super.toSql(originalXmlPath, this.targetPath, targetFileName);
+    }
+
 }
