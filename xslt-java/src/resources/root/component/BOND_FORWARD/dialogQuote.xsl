@@ -20,12 +20,12 @@
             <Master>
                 <!--master-quote-->
                 <!--没有price字段，所以不涉及利率-->
-                <xsl:call-template name="master-dialogQuote-noRate"/>
+                <xsl:call-template name="master-dialogQuote-withoutRate"/>
             </Master>
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-noContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
 
                 <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
             </Slave>

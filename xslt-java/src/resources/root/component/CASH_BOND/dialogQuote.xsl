@@ -19,7 +19,7 @@
 
             <Master>
                 <!--master-quote-->
-                <xsl:call-template name="master-dialogQuote-noRate"/>
+                <xsl:call-template name="master-dialogQuote-withoutRate"/>
 
                 <!--master-quote-NoStipulations-->
                 <xsl:call-template name="master-dialogQuote-NoStipulations"/>
@@ -27,7 +27,7 @@
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-noContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
             </Slave>
 
         </Quote>

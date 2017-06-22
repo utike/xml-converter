@@ -24,7 +24,7 @@
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-noContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
             </Slave>
 
         </Quote>

@@ -6,7 +6,7 @@
 
     <!--================================= dialogQuote =================================-->
     <!--意向报价的主数据,没有利率-->
-    <xsl:template name="master-indicatorQuote-withoutRate">
+    <xsl:template name="master-twoWayQuote-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555 and @tag != 215">
@@ -20,7 +20,7 @@
 
     <!--意向报价的主数据,具有利率-->
     <!--1.price 需要转化为rate-->
-    <xsl:template name="master-indicatorQuote-withRate">
+    <xsl:template name="master-twoWayQuote-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555 and @tag != 215">
@@ -32,7 +32,7 @@
     </xsl:template>
 
     <!--意向报价的主数据,NoStipulations信息-->
-    <xsl:template name="master-indicatorQuote-NoStipulations">
+    <xsl:template name="master-twoWayQuote-NoStipulations">
         <xsl:for-each select="message/body/groups[@name='NoStipulations']/group">
             <xsl:variable name="nodeName" select="field[@name='StipulationType']"/>
             <xsl:element name="{$nodeName}">
@@ -42,7 +42,7 @@
     </xsl:template>
 
     <!--意向报价的主数据,NoMiscFees信息-->
-    <xsl:template name="master-indicatorQuote-NoMiscFees">
+    <xsl:template name="master-twoWayQuote-NoMiscFees">
         <xsl:element name="MiscFeeAmt">
             <xsl:value-of select="message/body/groups[@name='NoMiscFees']/group/field[@name='MiscFeeAmt']"/>
         </xsl:element>

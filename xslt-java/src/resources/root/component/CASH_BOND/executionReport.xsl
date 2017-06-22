@@ -19,7 +19,7 @@
 
             <Master>
                 <!--master-quote-->
-                <xsl:call-template name="master-executionReport-noRate"/>
+                <xsl:call-template name="master-executionReport-withoutRate"/>
 
                 <!--master-quote-NoStipulations-->
                 <xsl:call-template name="master-executionReport-NoStipulations"/>

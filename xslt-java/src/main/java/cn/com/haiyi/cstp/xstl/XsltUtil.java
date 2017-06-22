@@ -102,6 +102,11 @@ public class XsltUtil {
         NOLEGS_CONSTANT.put("LegInterestAccrualResetFrequency", "InterestAccrualResetFrequency");
         NOLEGS_CONSTANT.put("LegCouponPaymentDateReset", "CouponPaymentDateReset");
         NOLEGS_CONSTANT.put("LegInterestAccuralDaysAdjustment", "InterestAccuralDaysAdjustment");
+        NOLEGS_CONSTANT.put("LegAccruedInterestTotalAmt", "AccruedInterestTotalAmt");
+        NOLEGS_CONSTANT.put("LegSettlCurrAmt2", "SettlCurrAmt2");
+        NOLEGS_CONSTANT.put("LegIOIQty", "IOIQty");
+        NOLEGS_CONSTANT.put("LegDeliveryType", "DeliveryType");
+        NOLEGS_CONSTANT.put("LegDeliveryType2", "DeliveryType2");
     }
 
 

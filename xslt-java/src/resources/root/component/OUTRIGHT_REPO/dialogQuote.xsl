@@ -21,7 +21,7 @@
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-noContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
 
                 <!--Underlyings-->
                 <xsl:call-template name="slave-noUnderlyings-withStipValue"/>

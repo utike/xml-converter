@@ -1,5 +1,6 @@
 package cn.com.haiyi.cstp.xstl;
 
+import cn.com.haiyi.cstp.xstl.base.TwoWayQuoteTest;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.nio.file.Paths;
  * 信用拆借
  * Created by bbhou on 2017/6/17.
  */
-public class IBOTest extends BaseTest {
+public class IBOTest extends BaseTest implements TwoWayQuoteTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\ibo\\";
 
@@ -54,4 +55,19 @@ public class IBOTest extends BaseTest {
         super.executionReport2Sql(super.sqlRoutePath, this.targetPath);
     }
 
+    @Override
+    @Test
+    public void twoWayQuote2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\INTER_BANK_OFFERING_IOI_TWO_WAY.xml";
+        final String targetFileName = "twoWayQuote.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
+    }
+
+    @Override
+    @Test
+    public void twoWayQuote2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\ibo\\twoWayQuote.xml";
+        final String targetFileName = "twoWayQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
+    }
 }

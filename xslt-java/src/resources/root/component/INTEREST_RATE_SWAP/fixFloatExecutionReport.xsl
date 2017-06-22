@@ -20,7 +20,7 @@
             <Master>
                 <!--master-quote-->
                 <!--不涉及Price字段。-->
-                <xsl:call-template name="master-executionReport-noRate"/>
+                <xsl:call-template name="master-executionReport-withoutRate"/>
             </Master>
 
             <Slave>

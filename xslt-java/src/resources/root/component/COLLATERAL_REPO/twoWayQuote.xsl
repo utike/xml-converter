@@ -5,30 +5,35 @@
 >
 
     <xsl:import href="../../common/xml/common/base.xsl"/>
+    <xsl:import href="../../common/xml/common/twoWayQuoteBase.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <xsl:template match="/" name="route-executionReport-standardBondForward">
+    <xsl:template match="/" name="route-twoWayQuote-collateralRepo">
 
-        <Order>
+        <Quote>
 
             <!--header-->
             <xsl:call-template name="header"/>
 
             <Master>
                 <!--master-quote-->
-                <!--不涉及Price字段。-->
-                <xsl:call-template name="master-executionReport-withoutRate"/>
+                <!--没有price-->
+                <xsl:call-template name="master-twoWayQuote-withoutRate"/>
             </Master>
 
             <Slave>
-                <!--parties-withContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
+                <!--parties-noContact-->
+                <xsl:call-template name="slave-parties-withoutContact"/>
+
+                <xsl:call-template name="slave-NoLegs"/>
+
+                <xsl:call-template name="slave-NoRoutingIDs"/>
             </Slave>
 
-        </Order>
+        </Quote>
 
     </xsl:template>
 

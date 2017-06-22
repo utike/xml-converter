@@ -21,7 +21,7 @@
             <Master>
                 <!--master-quote-->
                 <!--价格为净价-->
-                <xsl:call-template name="master-indicatorQuote-noRate"/>
+                <xsl:call-template name="master-indicatorQuote-withoutRate"/>
 
                 <!--master-quote-NoStipulations-->
                 <xsl:call-template name="master-indicatorQuote-NoStipulations"/>
@@ -29,7 +29,7 @@
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-noContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
 
                 <xsl:call-template name="slave-NoRoutingIDs"/>
             </Slave>

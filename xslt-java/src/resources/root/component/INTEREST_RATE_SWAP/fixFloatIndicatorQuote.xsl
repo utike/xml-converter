@@ -21,12 +21,12 @@
             <Master>
                 <!--master-quote-->
                 <!--不涉及price-->
-                <xsl:call-template name="master-indicatorQuote-noRate"/>
+                <xsl:call-template name="master-indicatorQuote-withoutRate"/>
             </Master>
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-noContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
 
                 <!--slave-NoLegs-->
                 <xsl:call-template name="slave-NoLegs"/>

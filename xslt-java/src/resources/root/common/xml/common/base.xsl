@@ -21,7 +21,7 @@
 
     <!--================================= dialogQuote =================================-->
     <!--对话报价的主数据,没有利率-->
-    <xsl:template name="master-dialogQuote-noRate">
+    <xsl:template name="master-dialogQuote-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555 and @tag != 215">
@@ -66,7 +66,7 @@
 
     <!--================================= parties =================================-->
     <!--交易方从数据，不包含联系方式-->
-    <xsl:template name="slave-parties-noContact">
+    <xsl:template name="slave-parties-withoutContact">
         <xsl:element name="Parties">
             <xsl:for-each select="message/body/groups[@name='NoPartyIDs']/group">
                 <Party>
@@ -129,7 +129,7 @@
 
     <!--================================= executionReport =================================-->
     <!--成交的主数据,没有利率-->
-    <xsl:template name="master-executionReport-noRate">
+    <xsl:template name="master-executionReport-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
@@ -248,6 +248,7 @@
 
 
     <!--================================= NoLegs =================================-->
+    <!--TODO: 检查所有的price字段-->
     <xsl:template name="slave-NoLegs">
         <xsl:element name="NoLegs">
             <xsl:for-each select="message/body/groups[@name='NoLegs']/group">

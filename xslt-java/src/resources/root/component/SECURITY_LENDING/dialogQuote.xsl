@@ -27,7 +27,7 @@
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-noContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
 
                 <!--slave-noUnderlyings-onlyFields-->
                 <xsl:call-template name="slave-noUnderlyings-onlyFields"/>

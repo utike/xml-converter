@@ -6,10 +6,12 @@
     <xsl:import href="component/INTER_BANK_OFFERING/dialogQuote.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/executionReport.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/indicatorQuote.xsl"/>
+    <xsl:import href="component/INTER_BANK_OFFERING/twoWayQuote.xsl"/>
 
     <xsl:import href="component/COLLATERAL_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/executionReport.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/indicatorQuote.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/twoWayQuote.xsl"/>
 
     <xsl:import href="component/OUTRIGHT_REPO/dialogQuote.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/executionReport.xsl"/>
@@ -58,6 +60,9 @@
                 <xsl:if test="$QuoteType = 'INDICATIVE'">
                     <xsl:call-template name="route-indicatorQuote-ibo"/>
                 </xsl:if>
+                <xsl:if test="$QuoteType = 'TWO_WAY'">
+                    <xsl:call-template name="route-twoWayQuote-ibo"/>
+                </xsl:if>
             </xsl:when>
 
             <!--================================= COLLATERAL_REPO =================================-->
@@ -71,6 +76,9 @@
                 <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>
                 <xsl:if test="$QuoteType = 'INDICATIVE'">
                     <xsl:call-template name="route-indicatorQuote-collateralRepo"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = 'TWO_WAY'">
+                    <xsl:call-template name="route-twoWayQuote-collateralRepo"/>
                 </xsl:if>
             </xsl:when>
 
