@@ -30,7 +30,7 @@
         <field name="NoLegs" tag="555"><![CDATA[2]]></field>
         <field name="StartDate" tag="916"><![CDATA[20170623]]></field>
         <field name="EndDate" tag="917"><![CDATA[20270623]]></field>
-        <field name="ClearingMethod" tag="916"><![CDATA[20170623]]></field>
+        <field name="ClearingMethod" tag="916"><![CDATA[6]]></field>
         <field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
         <field enum="INTEREST_RATE_SWAP" name="MarketIndicator" tag="10176"><![CDATA[2]]></field>
         <field name="QuoteTime" tag="10271"><![CDATA[20170622-09:02:35.346]]></field>
@@ -81,18 +81,21 @@
             <group>
                 <field enum="FIXED_RECEIVER_BENCHMARK_RECEIVER_TAKER_RECEIVE" name="LegSide" tag="624"><![CDATA[1]]></field>
                 <field enum="SPREAD" name="LegPriceType" tag="686"><![CDATA[6]]></field>
+                <field name="LegPrice" tag="566"><![CDATA[81]]></field>
                 <field name="LegBenchmarkCurveName" tag="677"><![CDATA[FR007]]></field>
                 <field name="LegBenchmarkSpread" tag="10090"><![CDATA[1.00]]></field>
             </group>
             <group>
                 <field enum="BASE_LEG_FOR_TWO_WAY_QUOTE_IN_RMB_IRS_OR_FRA" name="LegSide" tag="624"><![CDATA[B]]></field>
                 <field enum="SPREAD" name="LegPriceType" tag="686"><![CDATA[6]]></field>
+                <field name="LegPrice" tag="566"><![CDATA[81]]></field>
                 <field name="LegBenchmarkCurveName" tag="677"><![CDATA[Shibor_3M]]></field>
                 <field name="LegBenchmarkSpread" tag="10090"><![CDATA[0.00]]></field>
             </group>
         </groups>
 
     </body>
+
     <trailer>
         <!--<field name="SignatureLength" tag="93"><![CDATA[30]]></field>-->
         <!--<field name="Signature" tag="89"><![CDATA[???Τ????夀嬠??椮????????]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field>-->

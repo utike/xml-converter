@@ -1,0 +1,224 @@
+<?result version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[1651]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[111]]></field>
+<field enum="ExecutionReport" name="MsgType" tag="35"><![CDATA[8]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CFETS-RMB-CSTP]]></field>
+<field name="SendingTime" tag="52"><![CDATA[20170216-07:14:07.339]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[102445]]></field>
+<field name="TargetSubID" tag="57"><![CDATA[zyzqcstp3]]></field>
+<field name="OnBehalfOfCompID" tag="115"><![CDATA[CFETS-RMB]]></field>
+<field name="DeliverToCompID" tag="128"><![CDATA[102445]]></field>
+<field name="DeliverToSubID" tag="129"><![CDATA[zyzqcstp3]]></field>
+</header>
+<body>
+<field name="ClOrdID" tag="11"><![CDATA[994828487256773010]]></field>
+<field name="ExecID" tag="17"><![CDATA[SL20170216000003]]></field>
+<field name="LastQty" tag="32"><![CDATA[6400000]]></field>
+<field name="Price" tag="44"><![CDATA[7.0000]]></field>
+<field name="SecurityID" tag="48"><![CDATA[L2M]]></field>
+<field enum="BUY_OR_BORROW_OR_REPURCHASE" name="Side" tag="54"><![CDATA[1]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170216-15:14:06.796]]></field>
+<field name="SettlDate" tag="64"><![CDATA[20170216]]></field>
+<field name="TradeDate" tag="75"><![CDATA[20170216]]></field>
+<field name="QuoteID" tag="117"><![CDATA[201702160820000005]]></field>
+<field name="SettlCurrency" tag="120"><![CDATA[CNY]]></field>
+<field name="NoMiscFees" tag="136"><![CDATA[1]]></field>
+<field enum="TRADE" name="ExecType" tag="150"><![CDATA[F]]></field>
+<field name="SettlDate2" tag="193"><![CDATA[20170324]]></field>
+<field name="NoPartyIDs" tag="453"><![CDATA[2]]></field>
+<field name="NoUnderlyings" tag="711"><![CDATA[1]]></field>
+<field enum="BVB" name="DeliveryType" tag="919"><![CDATA[6]]></field>
+<field name="CashHoldingDays" tag="10014"><![CDATA[36]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="BVP" name="DeliveryType2" tag="10045"><![CDATA[9]]></field>
+<field enum="ARBITRATION" name="DisputeSettlementMethod" tag="10051"><![CDATA[0]]></field>
+<field enum="NO" name="CouponPaymentIndicator" tag="10066"><![CDATA[N]]></field>
+<field enum="DEAL_ENTRY" name="DealTransType" tag="10105"><![CDATA[0]]></field>
+<field enum="SECURITY_LENDING" name="MarketIndicator" tag="10176"><![CDATA[8]]></field>
+<field name="NoMarginInfo" tag="10210"><![CDATA[1]]></field>
+<field enum="NO" name="RemarkIndicator" tag="10282"><![CDATA[N]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[36]]></field>
+<field enum="NEGOTIATION_NORMAL" name="TradeMethod" tag="10317"><![CDATA[1]]></field>
+<field name="TradeTime" tag="10318"><![CDATA[15:14:06]]></field>
+<field enum="SELF_DATA" name="DataCategoryIndicator" tag="10465"><![CDATA[0]]></field>
+<groups name="NoMiscFees" tag="136">
+<group>
+<field name="MiscFeeAmt" tag="137"><![CDATA[44186.30]]></field>
+<field enum="SECURITY_LENDING" name="MiscFeeType" tag="139"><![CDATA[13]]></field>
+</group>
+</groups>
+<groups name="NoPartyIDs" tag="453">
+<group>
+<field name="PartyID" tag="448"><![CDATA[102445]]></field>
+<field enum="BUYER_OR_BORROWER_OR_REVERSE_REPOER_OR_FIXED_PAYER_OR_BENCHMARK_1_PAYER" name="PartyRole" tag="452"><![CDATA[119]]></field>
+<field name="NoContactInfos" tag="10601"><![CDATA[1]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[14]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券]]></field>
+<field enum="POSTAL_ADDRESS" name="PartySubIDType" tag="803"><![CDATA[6]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券首席交易员]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券股份有限公司]]></field>
+<field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[124]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券]]></field>
+<field enum="SHORT_LEGAL_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[102]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[41001521010050006729]]></field>
+<field enum="CASH_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[15]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券股份有限公司]]></field>
+<field enum="CASH_ACCOUNT_NAME" name="PartySubIDType" tag="803"><![CDATA[23]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中国建设银行股份有限公司郑州期货城支行(105491000047)]]></field>
+<field enum="SETTLEMENT_BANK_NAME" name="PartySubIDType" tag="803"><![CDATA[110]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[-]]></field>
+<field enum="SETTLEMENT_BANK_SORT_CODE" name="PartySubIDType" tag="803"><![CDATA[112]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[国债登记结算公司]]></field>
+<field enum="CUSTODIAN_INSTITUTION_NAME" name="PartySubIDType" tag="803"><![CDATA[111]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[00000002869]]></field>
+<field enum="SECURITIES_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[10]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券股份有限公司]]></field>
+<field enum="SECURITIES_ACCOUNT_NAME" name="PartySubIDType" tag="803"><![CDATA[22]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券首席交易员]]></field>
+<field enum="TRADER_CHINESE_NAME" name="PartySubIDType" tag="803"><![CDATA[126]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+<groups name="NoContactInfos" tag="10601">
+<group>
+<field name="ContactInfoID" tag="10602"><![CDATA[-]]></field>
+<field enum="PHONE_NO_1" name="ContactInfoIDType" tag="10603"><![CDATA[6]]></field>
+</group>
+</groups>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[304161]]></field>
+<field enum="SELLER_OR_LENDER_OR_REPOER_OR_FIXED_RECEIVER_OR_BENCHMARK_1_RECEIVER" name="PartyRole" tag="452"><![CDATA[120]]></field>
+<field name="NoContactInfos" tag="10601"><![CDATA[1]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[14]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[-]]></field>
+<field enum="POSTAL_ADDRESS" name="PartySubIDType" tag="803"><![CDATA[6]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券对手方]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[124]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="SHORT_LEGAL_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[102]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[654321]]></field>
+<field enum="CASH_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[15]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天]]></field>
+<field enum="CASH_ACCOUNT_NAME" name="PartySubIDType" tag="803"><![CDATA[23]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[1111]]></field>
+<field enum="SETTLEMENT_BANK_NAME" name="PartySubIDType" tag="803"><![CDATA[110]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[0000]]></field>
+<field enum="SETTLEMENT_BANK_SORT_CODE" name="PartySubIDType" tag="803"><![CDATA[112]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[国债登记结算公司]]></field>
+<field enum="CUSTODIAN_INSTITUTION_NAME" name="PartySubIDType" tag="803"><![CDATA[111]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[A654321]]></field>
+<field enum="SECURITIES_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[10]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="SECURITIES_ACCOUNT_NAME" name="PartySubIDType" tag="803"><![CDATA[22]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券对手方]]></field>
+<field enum="TRADER_CHINESE_NAME" name="PartySubIDType" tag="803"><![CDATA[126]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+<groups name="NoContactInfos" tag="10601">
+<group>
+<field name="ContactInfoID" tag="10602"><![CDATA[-]]></field>
+<field enum="PHONE_NO_1" name="ContactInfoIDType" tag="10603"><![CDATA[6]]></field>
+</group>
+</groups>
+</group>
+</groups>
+<groups name="NoUnderlyings" tag="711">
+<group>
+<field name="UnderlyingSecurityID" tag="309"><![CDATA[010216]]></field>
+<field name="UnderlyingQty" tag="879"><![CDATA[6400000]]></field>
+<field name="UnderlyingSymbol" tag="311"><![CDATA[01国开16]]></field>
+</group>
+</groups>
+<groups name="NoMarginInfo" tag="10210">
+<group>
+<field enum="BOND" name="MarginType" tag="10175"><![CDATA[0]]></field>
+<field enum="NO" name="MarginReplacement" tag="10157"><![CDATA[N]]></field>
+<field name="MarginTotalAmt" tag="10161"><![CDATA[8600000]]></field>
+<field name="NoMarginSecurities" tag="10211"><![CDATA[1]]></field>
+<groups name="NoMarginSecurities" tag="10211">
+<group>
+<field name="MarginSecuritiesID" tag="10159"><![CDATA[010011]]></field>
+<field name="MarginAMT" tag="10150"><![CDATA[8600000]]></field>
+<field name="MarginSymbol" tag="10173"><![CDATA[01国债11]]></field>
+</group>
+</groups>
+</group>
+</groups>
+</body>
+<trailer>
+<field name="SignatureLength" tag="93"><![CDATA[66]]></field>
+<field name="Signature" tag="89"><![CDATA[ᐖᐴ䮐֤⹀ᒸ䁚ዤŬ‬搄沀ⶐֲ¶ဖ㈂㙀ᛈ˘䁚䠊夀嬠ୌ搄䮐֤⹀ᛈ˘䁚䠊夀嬠୤Ŭ‬搄沀ⶐֲ¶ဖ㈂㓒ᜠ཈岀㥲ô㐨̀µ]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field>
+<field name="CheckSum" tag="10"><![CDATA[095]]></field>
+</trailer>
+</message>
+

@@ -1,0 +1,138 @@
+<?result version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[1051]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[80]]></field>
+<field enum="Quote" name="MsgType" tag="35"><![CDATA[S]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CFETS-RMB-CSTP]]></field>
+<field name="SendingTime" tag="52"><![CDATA[20170216-07:03:27.825]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[102445]]></field>
+<field name="TargetSubID" tag="57"><![CDATA[zyzqcstp3]]></field>
+<field name="OnBehalfOfCompID" tag="115"><![CDATA[CFETS-RMB]]></field>
+<field name="DeliverToCompID" tag="128"><![CDATA[102445]]></field>
+<field name="DeliverToSubID" tag="129"><![CDATA[zyzqcstp3]]></field>
+</header>
+<body>
+<field name="ClOrdID" tag="11"><![CDATA[994828487256773006]]></field>
+<field name="OrderQty" tag="38"><![CDATA[6400000]]></field>
+<field name="Price" tag="44"><![CDATA[35.0019]]></field>
+<field name="SecurityID" tag="48"><![CDATA[OR007]]></field>
+<field enum="BUY_OR_BORROW_OR_REPURCHASE" name="Side" tag="54"><![CDATA[1]]></field>
+<field name="Symbol" tag="55"><![CDATA[OR007]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170216-15:03:27.399]]></field>
+<field name="ValidUntilTime" tag="62"><![CDATA[20170216-19:20:00.000]]></field>
+<field enum="CASH_OR_TOD_OR_T_PLUS_0" name="SettlType" tag="63"><![CDATA[1]]></field>
+<field name="SettlDate" tag="64"><![CDATA[20170216]]></field>
+<field name="QuoteID" tag="117"><![CDATA[201702161020000005]]></field>
+<field name="SettlCurrAmt" tag="119"><![CDATA[5709028.07]]></field>
+<field name="SettlCurrency" tag="120"><![CDATA[CNY]]></field>
+<field enum="FILLED" name="QuoteStatus" tag="297"><![CDATA[107]]></field>
+<field name="NoPartyIDs" tag="453"><![CDATA[2]]></field>
+<field enum="TRADEABLE" name="QuoteType" tag="537"><![CDATA[1]]></field>
+<field name="NoUnderlyings" tag="711"><![CDATA[1]]></field>
+<field enum="DVP" name="DeliveryType" tag="919"><![CDATA[0]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="DVP" name="DeliveryType2" tag="10045"><![CDATA[0]]></field>
+<field enum="NO" name="MarginRequired" tag="10158"><![CDATA[N]]></field>
+<field enum="OUTRIGHT_REPO" name="MarketIndicator" tag="10176"><![CDATA[10]]></field>
+<field name="NegotiationCount" tag="10192"><![CDATA[1]]></field>
+<field name="QuoteTime" tag="10271"><![CDATA[20170216-15:03:11.586]]></field>
+<field enum="REPLACE" name="QuoteTransType" tag="10272"><![CDATA[R]]></field>
+<field enum="NO" name="RemarkIndicator" tag="10282"><![CDATA[N]]></field>
+<field name="SettlCurrAmt2" tag="10289"><![CDATA[5747350.98]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[7]]></field>
+<field enum="SELF_DATA" name="DataCategoryIndicator" tag="10465"><![CDATA[0]]></field>
+<field enum="SELF_CLEARING" name="ClearingMethod" tag="11143"><![CDATA[13]]></field>
+<groups name="NoPartyIDs" tag="453">
+<group>
+<field name="PartyID" tag="448"><![CDATA[304161]]></field>
+<field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[7]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券对手方]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[124]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[1111]]></field>
+<field enum="SETTLEMENT_BANK_NAME" name="PartySubIDType" tag="803"><![CDATA[110]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[654321]]></field>
+<field enum="CASH_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[15]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[A654321]]></field>
+<field enum="SECURITIES_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[10]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[102445]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[4]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券首席交易员]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券股份有限公司]]></field>
+<field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[124]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[中原证券]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[CFETS]]></field>
+<field enum="ELIGIBLE_COUNTERPARTY" name="PartySubIDType" tag="803"><![CDATA[29]]></field>
+</group>
+</groups>
+</group>
+</groups>
+<groups name="NoUnderlyings" tag="711">
+<group>
+<field name="UnderlyingSecurityID" tag="309"><![CDATA[010216]]></field>
+<field name="UnderlyingAccruedInterestAmt" tag="10321"><![CDATA[1.20356]]></field>
+<field name="UnderlyingAccruedInterestAmt2" tag="10322"><![CDATA[1.28536]]></field>
+<field name="UnderlyingDirtyPrice" tag="882"><![CDATA[89.2036]]></field>
+<field name="UnderlyingDirtyPrice2" tag="10325"><![CDATA[89.8024]]></field>
+<field name="UnderlyingPx" tag="810"><![CDATA[88.0000]]></field>
+<field name="UnderlyingPx2" tag="10328"><![CDATA[88.5170]]></field>
+<field name="UnderlyingQty" tag="879"><![CDATA[6400000]]></field>
+<field name="UnderlyingSymbol" tag="311"><![CDATA[01国开16]]></field>
+<field name="NoUnderlyingStips" tag="887"><![CDATA[2]]></field>
+<groups name="NoUnderlyingStips" tag="887">
+<group>
+<field enum="YIELD_OR_1ST_LEG_YIELD" name="UnderlyingStipType" tag="888"><![CDATA[Yield]]></field>
+<field name="UnderlyingStipValue" tag="889"><![CDATA[7.2798]]></field>
+</group>
+<group>
+<field enum="SECOND_LEG_YIELD" name="UnderlyingStipType" tag="888"><![CDATA[Yield2]]></field>
+<field name="UnderlyingStipValue" tag="889"><![CDATA[7.1494]]></field>
+</group>
+</groups>
+</group>
+</groups>
+</body>
+<!-- <trailer> -->
+<!-- <field name="SignatureLength" tag="93"><![CDATA[39]]></field> -->
+<!-- <field name="Signature" tag="89"><![CDATA[ᐖᐸ䮐Ԯဖ㈂㙀ᛈ˘䁚䠊夀婬 岀ⶐֲ¶ဖ⚒㤄㋤Ŭ‬䴊À]]>&#4;<![CDATA[| ]]>&#4;<![CDATA[:]]>&#17;&#4;<![CDATA[@)]]></field> -->
+<!-- <field name="CheckSum" tag="10"><![CDATA[247]]></field> -->
+<!-- </trailer> -->
+</message>
+

@@ -38,6 +38,7 @@
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatExecutionReportSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatIndicatorQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatTwoWayQuoteSql.xsl"/>
+    <xsl:import href="component/INTEREST_RATE_SWAP/fixFloatClickAndDealQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatDialogQuoteSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatExecutionReportSql.xsl"/>
     <xsl:import href="component/INTEREST_RATE_SWAP/floatFloatIndicatorQuoteSql.xsl"/>
@@ -165,6 +166,9 @@
                 </xsl:if>
                 <xsl:if test="$QuoteType ='1' and $Side = 'K'">
                     <xsl:call-template name="route-dialogQuoteSql-interestRateSwap-floatFloat"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType ='103' and $Side = 'J'">
+                    <xsl:call-template name="route-clickAndDealQuoteSql-interestRateSwap-fixFloat"/>
                 </xsl:if>
                 <xsl:if test="$QuoteType ='103' and $Side = 'K'">
                     <xsl:call-template name="route-clickAndDealQuoteSql-interestRateSwap-floatFloat"/>
