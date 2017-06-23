@@ -1,6 +1,7 @@
 package cn.com.haiyi.cstp.xstl;
 
 import cn.com.haiyi.cstp.xstl.base.ClickAndDealQuoteTest;
+import cn.com.haiyi.cstp.xstl.base.MarketMakingTest;
 import cn.com.haiyi.cstp.xstl.base.NewOrderSingleQuoteTest;
 import org.junit.Test;
 
@@ -11,7 +12,8 @@ import java.io.IOException;
  * Created by bbhou on 2017/6/19.
  */
 public class CashBondTest extends BaseTest
-    implements ClickAndDealQuoteTest, NewOrderSingleQuoteTest {
+    implements ClickAndDealQuoteTest, NewOrderSingleQuoteTest,
+        MarketMakingTest {
 
     private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\cashBond\\";
 
@@ -83,6 +85,22 @@ public class CashBondTest extends BaseTest
     public void newOrderSingleQuote2SqlTest() throws IOException {
         final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\cashBond\\newOrderSingleQuote.xml";
         final String targetFileName = "newOrderSingleQuote.sql";
+        super.toSql(xmlPath, this.targetPath, targetFileName);
+    }
+
+    @Override
+    @Test
+    public void marketMaking2XmlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\CASH_BOND_Market_MARKING.xml";
+        final String targetFileName = "marketMaking.xml";
+        super.toXml(xmlPath, this.targetPath, targetFileName);
+    }
+
+    @Override
+    @Test
+    public void marketMaking2SqlTest() throws IOException {
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\cashBond\\marketMaking.xml";
+        final String targetFileName = "marketMaking.sql";
         super.toSql(xmlPath, this.targetPath, targetFileName);
     }
 }

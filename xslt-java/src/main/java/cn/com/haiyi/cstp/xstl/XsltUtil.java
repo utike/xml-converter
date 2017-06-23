@@ -110,6 +110,15 @@ public class XsltUtil {
         NOLEGS_CONSTANT.put("LegIOIQty", "IOIQty");
         NOLEGS_CONSTANT.put("LegDeliveryType", "DeliveryType");
         NOLEGS_CONSTANT.put("LegDeliveryType2", "DeliveryType2");
+        NOLEGS_CONSTANT.put("LegOrderQty", "OrderQty");
+        NOLEGS_CONSTANT.put("LegLastQty", "LastQty");
+        NOLEGS_CONSTANT.put("LegSettlType", "SettlType");
+        NOLEGS_CONSTANT.put("LegClearingMethod", "ClearingMethod");
+        NOLEGS_CONSTANT.put("LegDirtyPrice", "DirtyPrice");
+        NOLEGS_CONSTANT.put("LegAccruedInterestAmt", "AccruedInterestAmt");
+        NOLEGS_CONSTANT.put("LegSettlCurrAmt", "SettlCurrAmt");
+        NOLEGS_CONSTANT.put("LegTotalPrincipal", "TotalPrincipal");
+        NOLEGS_CONSTANT.put("LegTradeCashAmt", "TradeCashAmt");
     }
 
 

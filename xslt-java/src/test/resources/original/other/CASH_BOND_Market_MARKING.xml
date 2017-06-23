@@ -28,41 +28,27 @@
         <field enum="NEXT_DAY_OR_TOM_OR_T_PLUS_1" name="SettlType" tag="63"><![CDATA[2]]></field>
         <field ename="MaxFloor" tag="111"><![CDATA[5000000]]></field>
         <field name="QuoteID" tag="117"><![CDATA[201706220440000003]]></field>
-        <field name="QuoteStatus" tag="297"><![CDATA[16]]></field>
-
-        <field name="QuoteType" tag="537"><![CDATA[107]]></field>
         <field enum="NO" name="AnonymousIndicator" tag="10008"><![CDATA[N]]></field>
         <field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
         <field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
-
-
         <field name="SettlCurrAmt" tag="119"><![CDATA[10113753.42]]></field>
         <field name="AccruedInterestAmt" tag="159"><![CDATA[2.13753]]></field>
         <field name="NoRoutingIDs" tag="215"><![CDATA[1]]></field>
         <field enum="NORMAL" name="QuoteStatus" tag="297"><![CDATA[16]]></field>
         <field name="NoPartyIDs" tag="453"><![CDATA[1]]></field>
-        <field enum="CLICK_AND_DEAL_QUOTE" name="QuoteType" tag="537"><![CDATA[105]]></field>
+        <field enum="MARKET_MAKING" name="QuoteType" tag="537"><![CDATA[107]]></field>
         <field name="AccruedInterestTotalAmt" tag="10002"><![CDATA[213753.42]]></field>
         <field enum="YES" name="CashBondIndicator" tag="10351"><![CDATA[Y]]></field>
         <field name="Principal" tag="10239"><![CDATA[100.0]]></field>
         <field name="MinTickSize" tag="10188"><![CDATA[1000000]]></field>
-
-
         <field enum="SELF_CLEARING" name="ClearingMethod" tag="11143"><![CDATA[13]]></field>
         <field name="QuoteTime" tag="10271"><![CDATA[20170622-08:55:16.987]]></field>
         <field enum="NEW" name="QuoteTransType" tag="10272"><![CDATA[N]]></field>
         <field enum="NON_MARKET_MAKING" name="TradeType" tag="10319"><![CDATA[2]]></field>
         <field enum="SELF_DATA" name="DataCategoryIndicator" tag="10465"><![CDATA[0]]></field>
-
-
         <field name="DirtyPrice" tag="10048"><![CDATA[101.1375]]></field>
-
         <field name="NoDeliveryTypeOption" tag="10204"><![CDATA[1]]></field>
-
-
         <field name="TradeCashAmt" tag="10312"><![CDATA[9900000.00]]></field>
-
-
 
         <groups name="NoDeliveryTypeOption" tag="10204">
             <group>
@@ -136,19 +122,13 @@
                 <field name="LegDirtyPrice" tag="10100"><![CDATA[100.0000]]></field>
                 <field name="LegAccruedInterestAmt" tag="10088"><![CDATA[2000.0000]]></field>
                 <field name="LegSettlCurrAmt" tag="10133"><![CDATA[200020.0000]]></field>
-                <field name="LegTotalPrinciple" tag="10457"><![CDATA[200000.0000]]></field>
+                <field name="LegTotalPrincipal" tag="10457"><![CDATA[200000.0000]]></field>
                 <field name="LegAccruedInterestTotalAmt" tag="10089"><![CDATA[2000.0000]]></field>
                 <field name="LegTradeCashAmt" tag="10138"><![CDATA[2000.0000]]></field>
-
-                <!--<field name="LegCouponPaymentDate" tag="248"><![CDATA[20170719]]></field>-->
-                <!--<field enum="MONTHLY" name="LegCouponPaymentFrequency" tag="10096"><![CDATA[3]]></field>-->
-                <!--<field enum="A_DIVIDE_365" name="LegDayCount" tag="10097"><![CDATA[3]]></field>-->
-                <!--<field enum="FIXED_AMOUNT" name="LegPriceType" tag="686"><![CDATA[3]]></field>-->
-
                 <groups name="NoLegStipulations" tag="10208">
                     <group>
-                        <field enum="SECOND_LEG_YIELD" name="LegStipulationType" tag="10136"><![CDATA[Yield2]]></field>
-                        <field name="LegStipulationValue" tag="10137"><![CDATA[6.0624]]></field>
+                        <field enum="SECOND_LEG_YIELD" name="LegStipulationType" tag="10136"><![CDATA[StrikeYield]]></field>
+                        <field name="LegStipulationValue" tag="10137"><![CDATA[35.0624]]></field>
                     </group>
                     <group>
                         <field enum="SECOND_LEG_YIELD" name="LegStipulationType" tag="10136"><![CDATA[Yield2]]></field>

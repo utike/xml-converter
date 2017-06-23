@@ -23,6 +23,7 @@
     <xsl:import href="component/CASH_BOND/indicatorQuoteSql.xsl"/>
     <xsl:import href="component/CASH_BOND/clickAndDealQuoteSql.xsl"/>
     <xsl:import href="component/CASH_BOND/newOrderSingleQuoteSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/marketMakingQuoteSql.xsl"/>
 
     <xsl:import href="component/SECURITY_LENDING/dialogQuoteSql.xsl"/>
     <xsl:import href="component/SECURITY_LENDING/executionReportSql.xsl"/>
@@ -108,6 +109,9 @@
                 </xsl:if>
                 <xsl:if test="$QuoteType = '105'">
                     <xsl:call-template name="route-clickAndDealQuoteSql-cashBond"/>
+                </xsl:if>
+                <xsl:if test="$QuoteType = '107'">
+                    <xsl:call-template name="route-marketMakingQuoteSql-cashBond"/>
                 </xsl:if>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">

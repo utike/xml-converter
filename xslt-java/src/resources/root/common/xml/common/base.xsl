@@ -248,7 +248,6 @@
 
 
     <!--================================= NoLegs =================================-->
-    <!--TODO: 检查所有的price字段 有的没有利率，需要重新写-->
     <xsl:template name="slave-NoLegs-withRate">
         <xsl:element name="NoLegs">
             <xsl:for-each select="message/body/groups[@name='NoLegs']/group">
@@ -280,6 +279,31 @@
                         <xsl:variable name="nodeName" select="java:XsltUtil.getNoLegsMap(@name)"/>
                         <xsl:element name="{$nodeName}">
                             <xsl:value-of select="current()"/>
+                        </xsl:element>
+                    </xsl:for-each>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
+
+    <!--Leg_price 不需要利率处理-->
+    <!--拥有stipValue-->
+    <xsl:template name="slave-NoLegs-withoutRate-withStipValue">
+        <xsl:element name="NoLegs">
+            <xsl:for-each select="message/body/groups[@name='NoLegs']/group">
+                <xsl:element name="NoLeg">
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="java:XsltUtil.getNoLegsMap(@name)"/>
+                        <xsl:element name="{$nodeName}">
+                            <xsl:value-of select="current()"/>
+                        </xsl:element>
+                    </xsl:for-each>
+
+                    <xsl:for-each select="groups[@name='NoLegStipulations']/group">
+                        <xsl:variable name="typeNodeName" select="java:XsltUtil.getNoLegsMap(field[@name='LegStipulationType'])"/>
+                        <xsl:element name="{$typeNodeName}">
+                            <xsl:value-of select="field[@name='LegStipulationValue']"/>
                         </xsl:element>
                     </xsl:for-each>
                 </xsl:element>
