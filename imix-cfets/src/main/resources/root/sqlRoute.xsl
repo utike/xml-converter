@@ -16,6 +16,8 @@
     <xsl:import href="component/COLLATERAL_REPO/ExecutionReportSql.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/QuoteStatusReportSql.xsl"/>
 
+    <xsl:import href="component/ERROR/ErrorSql.xsl"/>
+
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
@@ -55,6 +57,11 @@
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '9'">
                 <xsl:call-template name="route-collateralRepo-ExecutionReportSql"/>
+            </xsl:when>
+
+            <!--================================= ERROR =================================-->
+            <xsl:when test="$MsgType = 'j'">
+                <xsl:call-template name="route-ErrorSql"/>
             </xsl:when>
 
             <xsl:otherwise>

@@ -15,6 +15,8 @@
     <xsl:import href="component/COLLATERAL_REPO/ExecutionReport.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/QuoteStatusReport.xsl"/>
 
+    <xsl:import href="component/ERROR/Error.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -57,6 +59,12 @@
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '9'">
                 <xsl:call-template name="route-collateralRepo-ExecutionReport"/>
+            </xsl:when>
+
+
+            <!--================================= ERROR =================================-->
+            <xsl:when test="$MsgType = 'j'">
+                <xsl:call-template name="route-Error"/>
             </xsl:when>
 
             <xsl:otherwise>
