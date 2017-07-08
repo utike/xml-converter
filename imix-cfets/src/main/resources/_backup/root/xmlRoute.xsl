@@ -3,17 +3,18 @@
         version="2.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
-    <xsl:import href="component/CASH_BOND/ExecutionReport.xsl"/>
-    <xsl:import href="component/CASH_BOND/ListMarketDataAck.xsl"/>
-    <xsl:import href="component/CASH_BOND/MarketDataSnapshotFullRefresh.xsl"/>
-    <xsl:import href="component/CASH_BOND/NewOrderSingleQuote.xsl"/>
-    <xsl:import href="component/CASH_BOND/QuoteRequest.xsl"/>
-    <xsl:import href="component/CASH_BOND/QuoteRequestAck.xsl"/>
-    <xsl:import href="component/CASH_BOND/QuoteRequestCancel.xsl"/>
-    <xsl:import href="component/CASH_BOND/QuoteStatusReport.xsl"/>
+    <xsl:import href="component/CASH_BOND/dialogOrder.xsl"/>
+    <xsl:import href="component/CASH_BOND/dialogQuoteCancel.xsl"/>
+    <xsl:import href="component/CASH_BOND/dialogQuoteCreateModify.xsl"/>
+    <xsl:import href="component/CASH_BOND/limitQuoteCancel.xsl"/>
+    <xsl:import href="component/CASH_BOND/limitQuoteCreateModify.xsl"/>
+    <xsl:import href="component/CASH_BOND/requestOrder.xsl"/>
+    <xsl:import href="component/CASH_BOND/requestQuoteCancel.xsl"/>
+    <xsl:import href="component/CASH_BOND/requestQuoteCreateModify.xsl"/>
 
-    <xsl:import href="component/COLLATERAL_REPO/ExecutionReport.xsl"/>
-    <xsl:import href="component/COLLATERAL_REPO/QuoteStatusReport.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/dialogOrder.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/dialogQuoteCancel.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/dialogQuoteCreateModify.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>

@@ -129,7 +129,7 @@
 
     <!--================================= executionReport =================================-->
     <!--成交的主数据,没有利率-->
-    <xsl:template name="master-executionReport-withoutRate">
+    <xsl:template name="master-order-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
@@ -142,7 +142,7 @@
 
     <!--成交的主数据,具有利率-->
     <!--1.price 需要转化为rate-->
-    <xsl:template name="master-executionReport-withRate">
+    <xsl:template name="master-order-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
@@ -154,7 +154,7 @@
     </xsl:template>
 
     <!--报价的主数据,NoStipulations信息-->
-    <xsl:template name="master-executionReport-NoStipulations">
+    <xsl:template name="master-order-NoStipulations">
         <xsl:for-each select="message/body/groups[@name='NoStipulations']/group">
             <xsl:variable name="nodeName" select="field[@name='StipulationType']"/>
             <xsl:element name="{$nodeName}">
@@ -164,7 +164,7 @@
     </xsl:template>
 
     <!--对话报价的主数据,NoMiscFees信息-->
-    <xsl:template name="master-executionReport-NoMiscFees">
+    <xsl:template name="master-order-NoMiscFees">
         <xsl:element name="MiscFeeAmt">
             <xsl:value-of select="message/body/groups[@name='NoMiscFees']/group/field[@name='MiscFeeAmt']"/>
         </xsl:element>

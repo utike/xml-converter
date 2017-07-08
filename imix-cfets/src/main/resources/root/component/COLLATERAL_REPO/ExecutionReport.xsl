@@ -9,25 +9,24 @@
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
-    <!--现券买卖-对话报价-成交(确认/拒绝)-->
-    <xsl:template match="/" name="route-cashBond-dialogOrder">
+
+    <xsl:template match="/" name="route-collateralRepo-ExecutionReport">
 
         <Order>
 
             <!--header-->
             <xsl:call-template name="header"/>
 
+            <!--master-quote-->
             <Master>
-                <!--master-quote-->
-                <xsl:call-template name="master-order-withoutRate"/>
-
-                <!--master-quote-NoStipulations-->
-                <xsl:call-template name="master-order-NoStipulations"/>
+                <xsl:call-template name="master-executionReport-withRate"/>
             </Master>
 
             <Slave>
                 <!--parties-withContact-->
                 <xsl:call-template name="slave-parties-withContact"/>
+
+                <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
             </Slave>
 
         </Order>
