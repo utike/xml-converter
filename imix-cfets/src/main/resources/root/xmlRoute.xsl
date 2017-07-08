@@ -26,14 +26,37 @@
 
         <xsl:choose>
             <!--================================= CASH_BOND =================================-->
-            <xsl:when test="$MsgType = 'AJ' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-cashBond-dialogOrder"/>
+            <xsl:when test="$MsgType = 'AI' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-QuoteStatusReport"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-ExecutionReport"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'D' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-NewOrderSingleQuote"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'U100' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-ListMarketDataAck"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'W' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-MarketDataSnapshotFullRefresh"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'R' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-QuoteRequest"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'U32' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-QuoteRequestCancel"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'U29' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-QuoteRequestAck"/>
             </xsl:when>
 
-
             <!--================================= COLLATERAL_REPO =================================-->
-            <xsl:when test="$MsgType = 'AJ' and $MarketIndicator = '9'">
-                <xsl:call-template name="route-collateralRepo-dialogOrder"/>
+            <xsl:when test="$MsgType = 'AI' and $MarketIndicator = '9'">
+                <xsl:call-template name="route-collateralRepo-QuoteStatusReport"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = '8' and $MarketIndicator = '9'">
+                <xsl:call-template name="route-collateralRepo-ExecutionReport"/>
             </xsl:when>
 
             <xsl:otherwise>
