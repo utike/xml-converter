@@ -6,7 +6,7 @@
                 indent="yes" cdata-section-elements="DataContent" />
 
     <!--质押式回购-对话报价-成交(确认/拒绝)-sql-->
-    <xsl:template match="/" name="route-collateralRepo-dialogOrderSql-">
+    <xsl:template match="/" name="route-collateralRepo-dialogOrderSql">
 
         <xsl:call-template name="sql-order"/>
 

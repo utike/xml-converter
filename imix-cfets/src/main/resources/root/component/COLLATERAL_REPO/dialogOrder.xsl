@@ -19,10 +19,10 @@
 
             <Master>
                 <!--master-quote-->
-                <xsl:call-template name="master-executionReport-withoutRate"/>
+                <xsl:call-template name="master-order-withRate"/>
 
                 <!--master-quote-NoStipulations-->
-                <xsl:call-template name="master-executionReport-NoStipulations"/>
+                <xsl:call-template name="master-order-NoStipulations"/>
             </Master>
 
             <Slave>
