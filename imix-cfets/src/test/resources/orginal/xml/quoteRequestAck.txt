@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[755]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[62]]></field>
+<field enum="QuoteRequestAck" name="MsgType" tag="35"><![CDATA[U29]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+<field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+<field name="SendingTime" tag="52"><![CDATA[20170710-08:21:02.366]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+<field name="TargetSubID" tag="57"><![CDATA[ahhytrd]]></field>
+</header>
+<body>
+<field name="ClOrdID" tag="11"><![CDATA[ODahhytrd000000010]]></field>
+<field name="QuoteReqID" tag="131"><![CDATA[201707100410000023]]></field>
+<field name="NoRelatedSym" tag="146"><![CDATA[1]]></field>
+<groups name="NoRelatedSym" tag="146">
+<group>
+<field name="Symbol" tag="55"><![CDATA[10附息国债02]]></field>
+<field name="SecurityID" tag="48"><![CDATA[100002]]></field>
+<field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
+<field enum="CASH_BOND" name="SecurityType" tag="167"><![CDATA[CBT]]></field>
+<field enum="NORMAL" name="QuoteStatus" tag="297"><![CDATA[16]]></field>
+<field enum="REQUEST_FOR_QUOTE" name="QuoteType" tag="537"><![CDATA[112]]></field>
+<field name="SettlDate" tag="64"><![CDATA[20170710]]></field>
+<field name="SettlType" tag="63"><![CDATA[1]]></field>
+<field enum="BUY" name="Side" tag="54"><![CDATA[1]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170710-16:21:02.086]]></field>
+<field name="ValidUntilTime" tag="62"><![CDATA[20170710-16:30:00.000]]></field>
+<field enum="SELF_CLEARING" name="ClearingMethod" tag="11143"><![CDATA[13]]></field>
+<field enum="VERSUS_PAYMENT_DELIVER_PAYMENT" name="DeliveryType" tag="919"><![CDATA[0]]></field>
+<field name="OrderQty" tag="38"><![CDATA[10000000]]></field>
+<field name="NoPartyIDs" tag="453"><![CDATA[6]]></field>
+<groups name="NoPartyIDs" tag="453">
+<group>
+<field name="PartyID" tag="448"><![CDATA[545454545454545454541]]></field>
+<field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[5]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[yaolei]]></field>
+<field enum="PERSON" name="PartySubIDType" tag="803"><![CDATA[2]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限公司]]></field>
+<field enum="SETTLEMENT_BANK_NAME" name="PartySubIDType" tag="803"><![CDATA[110]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[123131]]></field>
+<field enum="CASH_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[15]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[国债登记结算公司]]></field>
+<field enum="CUSTODIAN_INSTITUTION_NAME" name="PartySubIDType" tag="803"><![CDATA[111]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[125235454]]></field>
+<field enum="SECURITIES_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[10]]></field>
+</group>
+</groups>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[100000111000000101001]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[111111111111111111111]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[186000131000000106001]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[777777777777777777777]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+</group>
+<group>
+<field name="PartyID" tag="448"><![CDATA[888888888888888888888]]></field>
+<field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+</group>
+</groups>
+</group>
+</groups>
+</body>
+
+</message>

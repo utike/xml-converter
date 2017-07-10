@@ -1,0 +1,36 @@
+<message>
+<header>
+<field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[278]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[2]]></field>
+<field enum="ListMarketDataAck" name="MsgType" tag="35"><![CDATA[U100]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+<field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+<field name="SendingTime" tag="52"><![CDATA[20170710-09:40:23.325]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+<field name="TargetSubID" tag="57"><![CDATA[ahhymd]]></field>
+</header>
+<body>
+<field name="TransactTime" tag="60"><![CDATA[20170710-17:40:23]]></field>
+<field name="NoRelatedSym" tag="146"><![CDATA[1]]></field>
+<field name="MDReqID" tag="262"><![CDATA[MDahhymd0000000120]]></field>
+<field enum="SNAPSHOT_UPDATES" name="SubscriptionRequestType" tag="263"><![CDATA[1]]></field>
+<field name="NoPartyIDs" tag="453"><![CDATA[1]]></field>
+<field enum="PRICE_DEPTH" name="MDBookType" tag="1021"><![CDATA[2]]></field>
+<field enum="ACCEPTED" name="SubscriptionStatus" tag="10686"><![CDATA[0]]></field>
+<groups name="NoRelatedSym" tag="146">
+<group>
+<field name="SecurityID" tag="48"><![CDATA[-]]></field>
+<field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
+<field enum="TREASURY_BILL_NON_US" name="SecurityType" tag="167"><![CDATA[TB]]></field>
+</group>
+</groups>
+<groups name="NoPartyIDs" tag="453">
+<group>
+<field name="PartyID" tag="448"><![CDATA[545454545454545454541]]></field>
+<field enum="EXECUTING_FIRM" name="PartyRole" tag="452"><![CDATA[1]]></field>
+</group>
+</groups>
+</body>
+
+</message>
