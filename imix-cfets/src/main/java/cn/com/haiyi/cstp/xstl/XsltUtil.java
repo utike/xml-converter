@@ -180,6 +180,20 @@ public class XsltUtil {
         }
     }
 
+
+    /**
+     * 对原始内容进行格式化
+     * @param original 原始内容
+     * @return
+     */
+    public static String getFormatValue(String original) {
+        String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
+        if (original.matches(dateReg)) {
+            return original.replace('-', ' ');
+        }
+        return original;
+    }
+
     /**
      * 获取当前金额对应的利率
      *

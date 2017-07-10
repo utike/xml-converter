@@ -65,6 +65,31 @@
 
 
     <!--================================= parties =================================-->
+    <!--parties 信息放在 NoRelatedSym 节点之下-->
+    <xsl:template name="slave-NoRelatedSym-parties">
+        <xsl:element name="Parties">
+            <xsl:for-each select="message/body/NoRelatedSym/groups[@name='NoPartyIDs']/group">
+                <Party>
+                    <xsl:for-each select="field[@name]">
+                        <xsl:variable name="nodeName" select="@name"/>
+                        <xsl:if test="@tag != 802 and @tag != 453 and @tag != 10601">
+                            <xsl:element name="{$nodeName}">
+                                <xsl:value-of select="."/>
+                            </xsl:element>
+                        </xsl:if>
+                    </xsl:for-each>
+
+                    <xsl:for-each select="groups[@name='NoPartySubIDs']/group">
+                        <xsl:variable name="enumNodeName" select="java:XsltUtil.getPartyMap(field[@enum]/@enum)"/>
+                        <xsl:element name="{$enumNodeName}">
+                            <xsl:value-of select="field[@name='PartySubID']"/>
+                        </xsl:element>
+                    </xsl:for-each>
+                </Party>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
     <!--交易方从数据，不包含联系方式-->
     <xsl:template name="slave-parties-withoutContact">
         <xsl:element name="Parties">
@@ -132,7 +157,7 @@
     <xsl:template name="master-executionReport-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                 </xsl:element>
@@ -145,7 +170,7 @@
     <xsl:template name="master-executionReport-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>

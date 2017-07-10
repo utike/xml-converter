@@ -5,6 +5,7 @@
 >
 
     <xsl:import href="../../common/xml/common/base.xsl"/>
+    <xsl:import href="../../common/xml/common/quoteRequestBase.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -18,16 +19,13 @@
             <xsl:call-template name="header"/>
 
             <Master>
-                <!--master-quote-->
-                <xsl:call-template name="master-dialogQuote-withoutRate"/>
+                <xsl:call-template name="master-quoteRequest"/>
 
-                <!--master-quote-NoStipulations-->
-                <xsl:call-template name="master-dialogQuote-NoStipulations"/>
+                <xsl:call-template name="master-quoteRequest-NoRelatedSym"/>
             </Master>
 
             <Slave>
-                <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-withoutContact"/>
+                <xsl:call-template name="slave-NoRelatedSym-parties"/>
             </Slave>
 
         </Quote>

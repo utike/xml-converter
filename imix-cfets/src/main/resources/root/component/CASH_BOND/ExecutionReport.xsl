@@ -27,7 +27,7 @@
 
             <Slave>
                 <!--parties-withContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
+                <xsl:call-template name="slave-parties-withoutContact"/>
             </Slave>
 
         </Order>

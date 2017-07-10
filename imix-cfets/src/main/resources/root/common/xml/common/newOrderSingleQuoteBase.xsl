@@ -9,8 +9,7 @@
     <xsl:template name="master-newOrderSingleQuote-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555
-                and @tag != 215 and @tag != 10204">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                 </xsl:element>
@@ -24,8 +23,7 @@
     <xsl:template name="master-newOrderSingleQuote-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555
-            and @tag != 215 and @tag != 10204">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>

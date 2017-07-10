@@ -31,7 +31,7 @@
                 <!--parties-noContact-->
                 <xsl:call-template name="slave-parties-withoutContact"/>
 
-                <xsl:call-template name="slave-NoRoutingIDs"/>
+                <!--<xsl:call-template name="slave-NoRoutingIDs"/>-->
 
                 <xsl:call-template name="slave-NoDeliveryTypeOptions"/>
             </Slave>

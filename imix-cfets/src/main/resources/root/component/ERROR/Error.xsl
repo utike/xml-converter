@@ -12,7 +12,7 @@
 
     <xsl:template match="/" name="route-Error">
 
-        <Order>
+        <Error>
 
             <!--header-->
             <xsl:call-template name="header"/>
@@ -29,7 +29,7 @@
                 <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
             </Slave>
 
-        </Order>
+        </Error>
 
     </xsl:template>
 
