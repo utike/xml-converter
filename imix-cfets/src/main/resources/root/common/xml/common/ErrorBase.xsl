@@ -4,6 +4,8 @@
                 xmlns:java="cn.com.haiyi.cstp.xstl"
                 exclude-result-prefixes="java">
 
+    <xsl:import href="Base.xsl"/>
+
     <!--================================= dialogQuote =================================-->
     <!--意向报价的主数据,没有利率-->
     <xsl:template name="master-error">
