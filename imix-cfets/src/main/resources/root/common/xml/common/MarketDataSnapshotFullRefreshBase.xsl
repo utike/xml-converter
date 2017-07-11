@@ -9,7 +9,7 @@
     <!--================================= ListMarketDataAck =================================-->
 
     <!--行情订阅主数据-->
-    <xsl:template name="master-MarketDataSnapshotFullRefreshBase">
+    <xsl:template name="master-MarketDataSnapshotFullRefresh">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="@name"/>
             <xsl:if test="@tag != 146 and @tag != 453">

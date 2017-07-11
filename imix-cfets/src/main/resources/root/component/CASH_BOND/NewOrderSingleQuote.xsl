@@ -4,7 +4,6 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
 
-    <xsl:import href="../../common/xml/common/Base.xsl"/>
     <xsl:import href="../../common/xml/common/NewOrderSingleQuoteBase.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
@@ -21,19 +20,17 @@
             <Master>
                 <!--master-quote-->
                 <!--价格为净价-->
-                <!--<xsl:call-template name="master-newOrderSingleQuote-withoutRate"/>-->
+                <xsl:call-template name="master-NewOrderSingleQuote"/>
 
-                <!--master-quote-NoStipulations-->
-                <!--<xsl:call-template name="master-newOrderSingleQuote-NoStipulations"/>-->
+                <xsl:call-template name="master-dialogQuote-NoStipulations"/>
+
+                <xsl:call-template name="master-NoDeliveryTypeOption"/>
             </Master>
 
             <Slave>
                 <!--parties-noContact-->
                 <xsl:call-template name="slave-parties-withoutContact"/>
 
-                <!--<xsl:call-template name="slave-NoRoutingIDs"/>-->
-
-                <xsl:call-template name="slave-NoDeliveryTypeOptions"/>
             </Slave>
 
         </Quote>

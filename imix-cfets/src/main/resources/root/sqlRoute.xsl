@@ -42,6 +42,8 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+
+            <!--限价报价-->
             <xsl:when test="$MsgType = 'D' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-NewOrderSingleQuoteSql"/>
             </xsl:when>

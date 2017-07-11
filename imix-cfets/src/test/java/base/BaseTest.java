@@ -1,6 +1,6 @@
 package base;
 
-import cn.com.haiyi.cstp.xstl.XmlConverterUtil;
+import cn.com.haiyi.trade.xstl.XmlConverterUtil;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,11 +18,15 @@ public abstract class BaseTest {
     /**
      * xml 路由文件路径
      */
-    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\xmlRoute.xsl";
+//    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\xmlRoute.xsl";
+
+    protected String xmlRoutePath = "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/main/resources/root/xmlRoute.xsl";
     /**
      * sql 路由文件路径
      */
-    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\sqlRoute.xsl";
+    protected String sqlRoutePath = "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/main/resources/root/sqlRoute.xsl";
+
+//    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\sqlRoute.xsl";
 
     /**
      * 转换成为XML
@@ -39,6 +43,7 @@ public abstract class BaseTest {
         try {
             Files.write(path, xmlResult.getBytes());
         } catch (IOException e) {
+            System.out.println(originalXmlPath);
             e.printStackTrace();
         }
     }

@@ -21,7 +21,7 @@
             <Master>
                 <xsl:call-template name="master-LimitQuoteStatusReport"/>
 
-                <xsl:call-template name="master-LimitQuoteStatusReport-NoDeliveryTypeOption"/>
+                <xsl:call-template name="master-NoDeliveryTypeOption"/>
             </Master>
 
             <Slave>

@@ -10,4 +10,17 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
+    <!--限价报价的主数据-->
+    <xsl:template name="master-NewOrderSingleQuote">
+        <xsl:for-each select="message/body/field[@name]">
+            <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 232 and @tag != 10204">
+                <xsl:element name="{$nodeName}">
+                    <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+
+
 </xsl:stylesheet>

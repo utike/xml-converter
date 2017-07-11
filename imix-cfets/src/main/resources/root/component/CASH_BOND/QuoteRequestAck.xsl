@@ -4,7 +4,7 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
 
-    <xsl:import href="../../common/xml/common/Base.xsl"/>
+    <xsl:import href="../../common/xml/common/QuoteRequestAckBase.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -19,15 +19,15 @@
 
             <Master>
                 <!--master-quote-->
-                <xsl:call-template name="master-dialogQuote-withoutRate"/>
+                <xsl:call-template name="master-QuoteRequestAck"/>
 
                 <!--master-quote-NoStipulations-->
-                <xsl:call-template name="master-dialogQuote-NoStipulations"/>
+                <xsl:call-template name="master-QuoteRequestAck-NoRelatedSym"/>
             </Master>
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-withoutContact"/>
+                <xsl:call-template name="slave-NoRelatedSym-parties"/>
             </Slave>
 
         </Quote>

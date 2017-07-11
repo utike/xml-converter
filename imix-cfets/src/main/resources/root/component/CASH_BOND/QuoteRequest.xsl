@@ -4,8 +4,7 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
 
-    <xsl:import href="../../common/xml/common/Base.xsl"/>
-    <!--<xsl:import href="../../common/xml/common/quoteRequestBase.xsl"/>-->
+    <xsl:import href="../../common/xml/common/QuoteRequestBase.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -19,9 +18,9 @@
             <xsl:call-template name="header"/>
 
             <Master>
-                <!--<xsl:call-template name="master-quoteRequest"/>-->
+                <xsl:call-template name="master-QuoteRequest"/>
 
-                <!--<xsl:call-template name="master-quoteRequest-NoRelatedSym"/>-->
+                <xsl:call-template name="master-QuoteRequest-NoRelatedSym"/>
             </Master>
 
             <Slave>

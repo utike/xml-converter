@@ -11,7 +11,9 @@ public class CashBondTest extends BaseTest {
 
     @Override
     protected String getTargetFilePath() {
-        return "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\";
+//        return "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\";
+
+        return "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/test/resources/result/CASH_BOND/";
     }
 
     //----------------------------------------------对话报价
@@ -74,6 +76,19 @@ public class CashBondTest extends BaseTest {
     }
 
 
+
+
+    //-------------------------------------------请求报价
+    @Test
+    public void quoteRequestAckToXmlTest() {
+        final String filePath = "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/test/resources/orginal/CASH_BOND/quoteRequestAck.xml";
+        final String targetFileName = "quoteRequestAck.xml";
+        super.toXml(filePath, targetFileName);
+    }
+    @Test
+    public void quoteRequestAckToSqlTest() {
+
+    }
 
     //-------------------------------------------深度行情
     @Test

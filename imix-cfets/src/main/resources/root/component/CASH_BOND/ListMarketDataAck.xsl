@@ -21,7 +21,6 @@
                 <!--master-quote-->
                 <xsl:call-template name="master-ListMarketDataAck"/>
 
-                <!--master-quote-NoStipulations-->
                 <xsl:call-template name="master-NoRelatedSym"/>
             </Master>
 

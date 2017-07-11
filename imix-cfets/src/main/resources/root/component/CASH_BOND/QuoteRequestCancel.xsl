@@ -4,8 +4,7 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
 
-    <xsl:import href="../../common/xml/common/Base.xsl"/>
-    <!--<xsl:import href="../../common/xml/common/quoteRequestCancelBase.xsl"/>-->
+    <xsl:import href="../../common/xml/common/QuoteRequestCancelBase.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -20,15 +19,15 @@
 
             <Master>
                 <!--master-quote-->
-                <!--<xsl:call-template name="master-quoteRequestCancel"/>-->
+                <xsl:call-template name="master-QuoteRequestCancel"/>
 
                 <!--master-quote-NoStipulations-->
-                <!--<xsl:call-template name="master-quoteRequestCancel-NoQuoteEntries"/>-->
+                <xsl:call-template name="master-QuoteRequestCancel-NoRelatedSym"/>
             </Master>
 
             <Slave>
                 <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-withoutContact"/>
+                <xsl:call-template name="slave-NoRelatedSym-parties"/>
             </Slave>
 
         </Quote>

@@ -63,8 +63,8 @@
         </xsl:element>
     </xsl:template>
 
-    <!--================================= LimitQuote =================================-->
-    <xsl:template name="master-LimitQuoteStatusReport-NoDeliveryTypeOption">
+    <!--================================= NoDeliveryTypeOption =================================-->
+    <xsl:template name="master-NoDeliveryTypeOption">
         <xsl:for-each select="message/body/groups[@name='NoDeliveryTypeOption']/group">
             <xsl:variable name="value" select="field[@name='DeliveryOptionDirection']"/>
             <!--买入-->
@@ -87,13 +87,13 @@
     <!--parties 信息放在 NoRelatedSym 节点之下-->
     <xsl:template name="slave-NoRelatedSym-parties">
         <xsl:element name="Parties">
-            <xsl:for-each select="message/body/NoRelatedSym/groups[@name='NoPartyIDs']/group">
+            <xsl:for-each select="message/body/groups[@name='NoRelatedSym']/group/groups[@name='NoPartyIDs']/group">
                 <Party>
                     <xsl:for-each select="field[@name]">
                         <xsl:variable name="nodeName" select="@name"/>
-                        <xsl:if test="@tag != 802 and @tag != 453 and @tag != 10601">
+                        <xsl:if test="@tag != 802">
                             <xsl:element name="{$nodeName}">
-                                <xsl:value-of select="."/>
+                                <xsl:value-of select="current()"/>
                             </xsl:element>
                         </xsl:if>
                     </xsl:for-each>
@@ -213,6 +213,7 @@
             <xsl:value-of select="message/body/groups[@name='NoMiscFees']/group/field[@name='MiscFeeAmt']"/>
         </xsl:element>
     </xsl:template>
+
 
     <!--================================= noUnderlyings =================================-->
     <!-- noUnderlyings 只有普通字段-->
@@ -360,22 +361,6 @@
         <xsl:element name="NoRoutingIDs">
             <xsl:for-each select="message/body/groups[@name='NoRoutingIDs']/group">
                 <xsl:element name="NoRoutingID">
-                    <xsl:for-each select="field[@name]">
-                        <xsl:variable name="nodeName" select="@name"/>
-                        <xsl:element name="{$nodeName}">
-                            <xsl:value-of select="current()"/>
-                        </xsl:element>
-                    </xsl:for-each>
-                </xsl:element>
-            </xsl:for-each>
-        </xsl:element>
-    </xsl:template>
-
-    <!--================================= NoDeliveryTypeOption =================================-->
-    <xsl:template name="slave-NoDeliveryTypeOptions">
-        <xsl:element name="NoDeliveryTypeOptions">
-            <xsl:for-each select="message/body/groups[@name='NoDeliveryTypeOption']/group">
-                <xsl:element name="NoDeliveryTypeOption">
                     <xsl:for-each select="field[@name]">
                         <xsl:variable name="nodeName" select="@name"/>
                         <xsl:element name="{$nodeName}">

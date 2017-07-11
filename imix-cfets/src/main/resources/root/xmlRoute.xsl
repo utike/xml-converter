@@ -46,12 +46,14 @@
                 </xsl:choose>
             </xsl:when>
 
+            <!--限价报价 NewOrderSingleQuote-->
             <xsl:when test="$MsgType = 'D' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-NewOrderSingleQuote"/>
             </xsl:when>
 
             <!--深度行情订阅反馈: 此处取 market 较为麻烦，省略-->
             <xsl:when test="$MsgType = 'U100'">
+                <!--<xsl:variable name="MarketIndicatorLocal" select="message/body/field[@name='QuoteType']"/>-->
                 <xsl:call-template name="route-cashBond-ListMarketDataAck"/>
             </xsl:when>
 
@@ -59,6 +61,7 @@
                 <xsl:call-template name="route-cashBond-MarketDataSnapshotFullRefresh"/>
             </xsl:when>
 
+            <!--请求报价 QuoteRequest-->
             <xsl:when test="$MsgType = 'R' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-QuoteRequest"/>
             </xsl:when>
@@ -67,7 +70,8 @@
                 <xsl:call-template name="route-cashBond-QuoteRequestCancel"/>
             </xsl:when>
 
-            <xsl:when test="$MsgType = 'U29' and $MarketIndicator = '4'">
+            <!--接收非做事方-新增撤销请求报价反馈-->
+            <xsl:when test="$MsgType = 'U29'">
                 <xsl:call-template name="route-cashBond-QuoteRequestAck"/>
             </xsl:when>
 
