@@ -285,6 +285,11 @@ public class XsltUtil {
         if (original.matches(dateReg)) {
             return original.replace('-', ' ');
         }
+
+        String dateWithOutMillsReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}";
+        if (original.matches(dateWithOutMillsReg)) {
+            return original.replace('-', ' ');
+        }
         return original;
     }
 

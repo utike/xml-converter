@@ -4,7 +4,7 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
 
-    <xsl:import href="../../common/xml/common/Base.xsl"/>
+    <xsl:import href="../../common/xml/common/ListMarketDataAckBase.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -12,17 +12,17 @@
 
     <xsl:template match="/" name="route-cashBond-ListMarketDataAck">
 
-        <Quote>
+        <DataAck>
 
             <!--header-->
             <xsl:call-template name="header"/>
 
             <Master>
                 <!--master-quote-->
-                <xsl:call-template name="master-dialogQuote-withoutRate"/>
+                <xsl:call-template name="master-ListMarketDataAck"/>
 
                 <!--master-quote-NoStipulations-->
-                <xsl:call-template name="master-dialogQuote-NoStipulations"/>
+                <xsl:call-template name="master-NoRelatedSym"/>
             </Master>
 
             <Slave>
@@ -30,7 +30,7 @@
                 <xsl:call-template name="slave-parties-withoutContact"/>
             </Slave>
 
-        </Quote>
+        </DataAck>
 
     </xsl:template>
 

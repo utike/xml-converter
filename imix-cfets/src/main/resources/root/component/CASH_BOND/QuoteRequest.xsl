@@ -5,7 +5,7 @@
 >
 
     <xsl:import href="../../common/xml/common/Base.xsl"/>
-    <xsl:import href="../../common/xml/common/quoteRequestBase.xsl"/>
+    <!--<xsl:import href="../../common/xml/common/quoteRequestBase.xsl"/>-->
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -19,9 +19,9 @@
             <xsl:call-template name="header"/>
 
             <Master>
-                <xsl:call-template name="master-quoteRequest"/>
+                <!--<xsl:call-template name="master-quoteRequest"/>-->
 
-                <xsl:call-template name="master-quoteRequest-NoRelatedSym"/>
+                <!--<xsl:call-template name="master-quoteRequest-NoRelatedSym"/>-->
             </Master>
 
             <Slave>

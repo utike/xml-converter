@@ -50,7 +50,8 @@
                 <xsl:call-template name="route-cashBond-NewOrderSingleQuote"/>
             </xsl:when>
 
-            <xsl:when test="$MsgType = 'U100' and $MarketIndicator = '4'">
+            <!--深度行情订阅反馈: 此处取 market 较为麻烦，省略-->
+            <xsl:when test="$MsgType = 'U100'">
                 <xsl:call-template name="route-cashBond-ListMarketDataAck"/>
             </xsl:when>
 

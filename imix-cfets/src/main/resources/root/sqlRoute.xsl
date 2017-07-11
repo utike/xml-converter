@@ -45,9 +45,11 @@
             <xsl:when test="$MsgType = 'D' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-NewOrderSingleQuoteSql"/>
             </xsl:when>
-            <xsl:when test="$MsgType = 'U100' and $MarketIndicator = '4'">
+
+            <xsl:when test="$MsgType = 'U100'">
                 <xsl:call-template name="route-cashBond-ListMarketDataAckSql"/>
             </xsl:when>
+
             <xsl:when test="$MsgType = 'W' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-MarketDataSnapshotFullRefreshSql"/>
             </xsl:when>

@@ -21,10 +21,10 @@
             <Master>
                 <!--master-quote-->
                 <!--价格为净价-->
-                <xsl:call-template name="master-newOrderSingleQuote-withoutRate"/>
+                <!--<xsl:call-template name="master-newOrderSingleQuote-withoutRate"/>-->
 
                 <!--master-quote-NoStipulations-->
-                <xsl:call-template name="master-newOrderSingleQuote-NoStipulations"/>
+                <!--<xsl:call-template name="master-newOrderSingleQuote-NoStipulations"/>-->
             </Master>
 
             <Slave>

@@ -5,7 +5,7 @@
 >
 
     <xsl:import href="../../common/xml/common/Base.xsl"/>
-    <xsl:import href="../../common/xml/common/quoteRequestCancelBase.xsl"/>
+    <!--<xsl:import href="../../common/xml/common/quoteRequestCancelBase.xsl"/>-->
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
@@ -20,10 +20,10 @@
 
             <Master>
                 <!--master-quote-->
-                <xsl:call-template name="master-quoteRequestCancel"/>
+                <!--<xsl:call-template name="master-quoteRequestCancel"/>-->
 
                 <!--master-quote-NoStipulations-->
-                <xsl:call-template name="master-quoteRequestCancel-NoQuoteEntries"/>
+                <!--<xsl:call-template name="master-quoteRequestCancel-NoQuoteEntries"/>-->
             </Master>
 
             <Slave>

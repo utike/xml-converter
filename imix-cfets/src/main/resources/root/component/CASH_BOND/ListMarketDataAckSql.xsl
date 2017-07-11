@@ -8,9 +8,9 @@
     <xsl:template match="/" name="route-cashBond-ListMarketDataAckSql">
 
 
-        <xsl:call-template name="sql-quote"/>
+        <xsl:call-template name="sql-marketData-ack"/>
 
-        <xsl:call-template name="sql-quote-party"/>
+        <xsl:call-template name="sql-marketData-party"/>
 
     </xsl:template>
 
