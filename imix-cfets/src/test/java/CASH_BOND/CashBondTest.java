@@ -16,30 +16,30 @@ public class CashBondTest extends BaseTest {
 
     //----------------------------------------------对话报价
     @Test
-    public void dialogOrderToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\dialogOrder.xml";
-        final String targetFileName = "dialogOrder.xml";
+    public void QuoteStatusReportToXmlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\createDialogQuote.xml";
+        final String targetFileName = "QuoteStatusReport.xml";
         super.toXml(filePath, targetFileName);
     }
 
     @Test
-    public void dialogOrderToSqlTest() {
-        final String filePath = "";
-        final String targetFileName = "";
+    public void QuoteStatusReportToSqlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\QuoteStatusReport.xml";
+        final String targetFileName = "QuoteStatusReport.sql";
+        super.toSql(filePath, targetFileName);
+    }
+
+    @Test
+    public void ExecutionReportToXmlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\confirmDialogQuote.xml";
+        final String targetFileName = "ExecutionReport.xml";
         super.toXml(filePath, targetFileName);
     }
 
     @Test
-    public void dialogQuoteCreateModifyToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\dialogQuoteCreateModify.xml";
-        final String targetFileName = "dialogQuoteCreateModify.xml";
-        super.toXml(filePath, targetFileName);
-    }
-
-    @Test
-    public void dialogQuoteCreateModifyToSqlTest() {
-        final String filePath = "";
-        final String targetFileName = "";
+    public void ExecutionReportToSqlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\ExecutionReport.xml";
+        final String targetFileName = "ExecutionReport.sql";
         super.toSql(filePath, targetFileName);
     }
 
@@ -60,32 +60,20 @@ public class CashBondTest extends BaseTest {
 
     //----------------------------------------------限价报价
     @Test
-    public void limitQuoteCreateModifyToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\limitQuoteCreateModify.xml";
-        final String targetFileName = "limitQuoteCreateModify.xml";
+    public void limitQuoteCreateToXmlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\createLimitQuote.xml";
+        final String targetFileName = "createLimitQuote.xml";
         super.toXml(filePath, targetFileName);
     }
 
     @Test
-    public void limitQuoteCreateModifyToSqlTest() {
-        final String filePath = "";
-        final String targetFileName = "";
+    public void limitQuoteCreateToSqlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\createLimitQuote.xml";
+        final String targetFileName = "createLimitQuote.sql";
         super.toSql(filePath, targetFileName);
     }
 
-    @Test
-    public void limitQuoteCancelToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\limitQuoteCancel.xml";
-        final String targetFileName = "limitQuoteCancel.xml";
-        super.toXml(filePath, targetFileName);
-    }
 
-    @Test
-    public void limitQuoteCancelToSqlTest() {
-        final String filePath = "";
-        final String targetFileName = "";
-        super.toSql(filePath, targetFileName);
-    }
 
     //-------------------------------------------对话报价
     @Test

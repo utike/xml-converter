@@ -4,8 +4,8 @@
                 xmlns:java="cn.com.haiyi.cstp.xstl"
                 exclude-result-prefixes="java">
 
-    <!--================================= dialogQuote =================================-->
-    <!--意向报价的主数据,没有利率-->
+    <!--================================= newOrderSingleQuote =================================-->
+    <!--限价报价的主数据,没有利率-->
     <xsl:template name="master-newOrderSingleQuote-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
@@ -19,7 +19,7 @@
     </xsl:template>
 
 
-    <!--意向报价的主数据,具有利率-->
+    <!--限价报价的主数据,具有利率-->
     <!--1.price 需要转化为rate-->
     <xsl:template name="master-newOrderSingleQuote-withRate">
         <xsl:for-each select="message/body/field[@name]">
@@ -33,7 +33,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <!--意向报价的主数据,NoStipulations信息-->
+    <!--限价报价的主数据,NoStipulations信息-->
     <xsl:template name="master-newOrderSingleQuote-NoStipulations">
         <xsl:for-each select="message/body/groups[@name='NoStipulations']/group">
             <xsl:variable name="nodeName" select="field[@name='StipulationType']"/>
@@ -43,7 +43,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <!--意向报价的主数据,NoMiscFees信息-->
+    <!--限价报价的主数据,NoMiscFees信息-->
     <xsl:template name="master-newOrderSingleQuote-NoMiscFees">
         <xsl:element name="MiscFeeAmt">
             <xsl:value-of select="message/body/groups[@name='NoMiscFees']/group/field[@name='MiscFeeAmt']"/>

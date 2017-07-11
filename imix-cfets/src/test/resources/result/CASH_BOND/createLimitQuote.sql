@@ -4,15 +4,9 @@
         
                 [ClOrdID]
             
-                ,[LastQty]
-            
                 ,[ID]
             
-                ,[Qty]
-            
                 ,[OrdStatus]
-            
-                ,[OrdType]
             
                 ,[Price]
             
@@ -28,9 +22,19 @@
             
                 ,[SettlType]
             
+                ,[SettlDate]
+            
                 ,[SettlCurrAmt]
             
+                ,[TransType]
+            
+                ,[LeavesQty]
+            
                 ,[AccruedInterestAmt]
+            
+                ,[Yield]
+            
+                ,[QuoteType]
             
                 ,[AccruedInterestTotalAmt]
             
@@ -40,21 +44,15 @@
             
                 ,[MarketIndicator]
             
-                ,[QuoteTime]
+                ,[MinTickSize]
             
                 ,[SplitIndicator]
             
                 ,[TradeCashAmt]
             
-                ,[CashBondIndicator]
-            
-                ,[DataCategoryIndicator]
-            
                 ,[ClearingMethod]
             
                 ,[BDeliveryTypeOption]
-            
-                ,[StopYield]
             
             ,[SysID]
         
@@ -63,19 +61,13 @@
         ,[SysStatus]
         ) VALUES (
         
-                '993721498120973009'
+                'ODahhytrd000000007'
+            
+                ,'201707100460000001'
             
                 ,'0'
             
-                ,'201706220460000001'
-            
-                ,'10000000'
-            
-                ,'0'
-            
-                ,'2'
-            
-                ,'98.0000'
+                ,'99.0000'
             
                 ,'1080001'
             
@@ -83,39 +75,43 @@
             
                 ,'10华润电力01'
             
-                ,'20170622 09:05:22.011'
+                ,'20170710 15:28:04.890'
             
-                ,'20170622 19:20:00.000'
+                ,'20170710 19:20:00.000'
             
                 ,'2'
             
-                ,'10013753.42'
+                ,'20170711'
             
-                ,'2.13753'
-            
-                ,'213753.42'
+                ,'10136931.51'
             
                 ,'N'
             
-                ,'100.1375'
+                ,'10000000'
+            
+                ,'2.36932'
+            
+                ,'5.1242'
+            
+                ,'102'
+            
+                ,'236931.51'
+            
+                ,'N'
+            
+                ,'101.3693'
             
                 ,'4'
             
-                ,'20170622 09:05:22.011'
+                ,'1000000'
             
                 ,'Y'
             
-                ,'9800000.00'
-            
-                ,'Y'
-            
-                ,'0'
+                ,'9900000.00'
             
                 ,'13'
             
-                ,'0'
-            
-                ,'5.5506'
+                ,'1'
             
             ,'AB387472-54D1-47AC-9618-DB1C851361BE'
         
@@ -131,9 +127,9 @@
             
                 ,[PartyRole]
             
-                ,[TraderName]
+                ,[TraderCode]
             
-                ,[FirmShortChineseName]
+                ,[TraderName]
             
                 ,[SettlementBankName]
             
@@ -141,19 +137,21 @@
             
                 ,[SecuritiesAccNumber]
             
-                ,[EligibleCounterParty]
+                ,[FirmFullChineseName]
+            
+                ,[CustodianInstitutionName]
             
             ,[FkID]
             ) VALUES
             (
             
-                '545454'
+                '545454545454545454541'
             
                 ,'101'
             
-                ,'安徽海益首席交易员'
+                ,'yaolei'
             
-                ,'安徽海益信息'
+                ,'yaolei'
             
                 ,'安徽海益信息科技有限公司'
             
@@ -161,7 +159,9 @@
             
                 ,'125235454'
             
-                ,'CFETS'
+                ,'安徽海益信息科技有限责任公司'
+            
+                ,'国债登记结算公司'
             
             ,'AB387472-54D1-47AC-9618-DB1C851361BE'
             );

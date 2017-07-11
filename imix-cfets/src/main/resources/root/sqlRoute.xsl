@@ -5,6 +5,7 @@
 >
 
     <xsl:import href="component/CASH_BOND/ExecutionReportSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/LimitQuoteStatusReportSql.xsl"/>
     <xsl:import href="component/CASH_BOND/ListMarketDataAckSql.xsl"/>
     <xsl:import href="component/CASH_BOND/MarketDataSnapshotFullRefreshSql.xsl"/>
     <xsl:import href="component/CASH_BOND/NewOrderSingleQuoteSql.xsl"/>
@@ -30,7 +31,16 @@
                 <xsl:call-template name="route-cashBond-QuoteStatusReportSql"/>
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-cashBond-ExecutionReportSql"/>
+                <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
+                <xsl:choose>
+                    <!--对于限价报价，对应的都是 报价，不是成交。-->
+                    <xsl:when test="$QuoteType = '102'">
+                        <xsl:call-template name="route-cashBond-LimitQuoteStatusReportSql"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="route-cashBond-ExecutionReportSql"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="$MsgType = 'D' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-NewOrderSingleQuoteSql"/>

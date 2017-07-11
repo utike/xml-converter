@@ -7,7 +7,6 @@ import java.util.Map;
  * @author xml转换工具类
  * @since 1.7
  * Created by bbhou on 2017/6/16.
- * todo: 添加新的映射关系。
  */
 public class XsltUtil {
 
@@ -17,8 +16,6 @@ public class XsltUtil {
     private static Map<String, String> NOUNDERLYING_CONSTANT = new HashMap<>();
     private static Map<String, String> NOMARGININFOS_CONSTANT = new HashMap<>();
     private static Map<String, String> NOLEGS_CONSTANT = new HashMap<>();
-
-
 
     static {
         /**
@@ -42,6 +39,9 @@ public class XsltUtil {
         PARTY_CONSTANT.put("SECURITIES_ACCOUNT_NUMBER", "SecuritiesAccNumber");
         PARTY_CONSTANT.put("SECURITIES_ACCOUNT_NAME", "SecuritiesAccName");
 
+        PARTY_CONSTANT.put("TRADE_NAME", "TraderName");
+        PARTY_CONSTANT.put("PERSON", "TraderCode");
+
 
         /**
          * GQUOTE
@@ -50,6 +50,7 @@ public class XsltUtil {
         QUOTE_CONSTANT.put("QuoteTransType", "TransType");
         QUOTE_CONSTANT.put("OrderQty", "Qty");
         QUOTE_CONSTANT.put("QuoteID", "ID");
+        QUOTE_CONSTANT.put("YieldType", "Yield2");
 
         //2. 意向报价
         QUOTE_CONSTANT.put("IOIID", "ID");
@@ -58,12 +59,16 @@ public class XsltUtil {
 
         //3. 限价报价
         QUOTE_CONSTANT.put("OrderID", "ID");
+        QUOTE_CONSTANT.put("ExecType", "TransType");
+        QUOTE_CONSTANT.put("DeliveryOptionDirection", "Side");
 
         /**
          * ExecutionReport(成交报价)
          */
         ExecutionReport_CONSTANT.put("QuoteTransType", "TransType");
         ExecutionReport_CONSTANT.put("OrderQty", "Qty");
+        ExecutionReport_CONSTANT.put("Yield", "Yield2");
+        ExecutionReport_CONSTANT.put("GrossTradeAmt", "TradeCashAmt");
 
         /**
          * noUnderlyings(质押债券的种类)
@@ -136,6 +141,7 @@ public class XsltUtil {
         return false;
     }
 
+    //------------------------------------------------------------节点名称的映射
     /**
      * 自定义映射
      *
@@ -149,67 +155,6 @@ public class XsltUtil {
         }
         return value;
     }
-
-    /**
-     * 获取格式化的日期。如果不需要对利率进行互换，使用这个。
-     *
-     * @param original 原始日期。如：20170216-14:53:35.026
-     * @returns {*} 将-替换后的日期。如：20170216 14:53:35.026
-     */
-    public static String getFormatDate(String original) {
-        String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
-        if (original.matches(dateReg)) {
-            return original.replace('-', ' ');
-        }
-        return original;
-    }
-
-
-    /**
-     * 对日期进行格式化；对利率进行处理。
-     *
-     * @param nodeName 节点名称
-     * @param original 原始值
-     * @return
-     */
-    public static String getFormatDateAndRate(String nodeName, String original) {
-        if ("Price".equals(nodeName)) {
-            return getRate(original);
-        } else {
-            return getFormatDate(original);
-        }
-    }
-
-
-    /**
-     * 对原始内容进行格式化
-     * @param original 原始内容
-     * @return
-     */
-    public static String getFormatValue(String original) {
-        String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
-        if (original.matches(dateReg)) {
-            return original.replace('-', ' ');
-        }
-        return original;
-    }
-
-    /**
-     * 获取当前金额对应的利率
-     *
-     * @param original 原始金额
-     * @return 对金额进行运算之后的结果
-     */
-    public static String getRate(String original) {
-        try {
-            Double value = Double.valueOf(original);
-            Double rateVal = value / 100.0;
-            return rateVal.toString();
-        } catch (NumberFormatException e) {
-            return original;
-        }
-    }
-
 
     /**
      * 获取对话报价的映射结果
@@ -281,6 +226,94 @@ public class XsltUtil {
         stringBuilder.append(String.format("<MarginSymbol>%s</MarginSymbol>", marginSymbol));
         stringBuilder.append("</Security>");
         return stringBuilder.toString();
+    }
+
+
+    //------------------------------------------------------------对数据的格式化
+
+    /**
+     * 获取格式化的日期。如果不需要对利率进行互换，使用这个。
+     *
+     * @param original 原始日期。如：20170216-14:53:35.026
+     * @returns {*} 将-替换后的日期。如：20170216 14:53:35.026
+     */
+    public static String getFormatDate(String original) {
+        String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
+        if (original.matches(dateReg)) {
+            return original.replace('-', ' ');
+        }
+        return original;
+    }
+
+
+    /**
+     * 对日期进行格式化；对利率进行处理。
+     *
+     * @param nodeName 节点名称
+     * @param original 原始值
+     * @return
+     */
+    public static String getFormatDateAndRate(String nodeName, String original) {
+        if ("Price".equals(nodeName)) {
+            return getRate(original);
+        } else {
+            return getFormatDate(original);
+        }
+    }
+
+    /**
+     * 获取交易方式-格式化数据
+     * @param originalVal
+     * @return
+     */
+    public static String getTransTypeFormatValue(final String originalVal) {
+        if("0".equals(originalVal)) {
+            return "N"; //新建
+        } else if("5".equals(originalVal)) {
+            return "R"; //修改
+        }
+        return originalVal;
+    }
+
+    /**
+     * 对原始内容进行格式化
+     * @param original 原始内容
+     * @return
+     */
+    public static String getFormatValue(String original) {
+        String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
+        if (original.matches(dateReg)) {
+            return original.replace('-', ' ');
+        }
+        return original;
+    }
+
+    /**
+     * 获取当前金额对应的利率
+     *
+     * @param original 原始金额
+     * @return 对金额进行运算之后的结果
+     */
+    public static String getRate(String original) {
+        try {
+            Double value = Double.valueOf(original);
+            Double rateVal = value / 100.0;
+            return rateVal.toString();
+        } catch (NumberFormatException e) {
+            return original;
+        }
+    }
+
+    /**
+     * 获取交易方式的格式化的内容
+     * @param nodeName 节点名称
+     * @param originalVal 原始的节点值。
+     * @return 格式化后的内容
+     */
+    public static String getNoDeliveryTypeOptionFormatVal(final String nodeName, final String originalVal) {
+        String result = originalVal;
+
+        return result;
     }
 
 }

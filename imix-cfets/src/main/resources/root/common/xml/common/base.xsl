@@ -63,6 +63,25 @@
         </xsl:element>
     </xsl:template>
 
+    <!--================================= LimitQuote =================================-->
+    <xsl:template name="master-LimitQuoteStatusReport-NoDeliveryTypeOption">
+        <xsl:for-each select="message/body/groups[@name='NoDeliveryTypeOption']/group">
+            <xsl:variable name="value" select="field[@name='DeliveryOptionDirection']"/>
+            <!--买入-->
+            <xsl:if test="$value = '1'">
+                <xsl:element name="BDeliveryTypeOption">
+                    <xsl:value-of select="field[@name='DeliveryTypeOption']"/>
+                </xsl:element>
+            </xsl:if>
+
+            <!--卖出-->
+            <xsl:if test="$value = '4'">
+                <xsl:element name="SDeliveryTypeOption">
+                    <xsl:value-of select="field[@name='DeliveryTypeOption']"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
 
     <!--================================= parties =================================-->
     <!--parties 信息放在 NoRelatedSym 节点之下-->

@@ -39,6 +39,7 @@
         <CashBondIndicator>Y</CashBondIndicator>
         <DataCategoryIndicator>0</DataCategoryIndicator>
         <ClearingMethod>13</ClearingMethod>
+        <BDeliveryTypeOption>0</BDeliveryTypeOption>
         <StopYield>5.5506</StopYield>
     </Master>
     <Slave>
