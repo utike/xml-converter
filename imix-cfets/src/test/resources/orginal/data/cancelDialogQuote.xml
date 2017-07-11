@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+    <header>
+        <field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+        <field name="BodyLength" tag="9"><![CDATA[536]]></field>
+        <field name="MsgSeqNum" tag="34"><![CDATA[6]]></field>
+        <field enum="QuoteStatusReport" name="MsgType" tag="35"><![CDATA[AI]]></field>
+        <field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+        <field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+        <field name="SendingTime" tag="52"><![CDATA[20170710-06:29:11.348]]></field>
+        <field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+        <field name="TargetSubID" tag="57"><![CDATA[ahhytrd]]></field>
+    </header>
+    <body>
+        <field name="ClOrdID" tag="11"><![CDATA[ODahhytrd000000002]]></field>
+        <field name="TransactTime" tag="60"><![CDATA[20170710-14:29:11.290]]></field>
+        <field name="QuoteID" tag="117"><![CDATA[201707100420000016]]></field>
+        <field enum="CASH_BOND" name="SecurityType" tag="167"><![CDATA[CBT]]></field>
+        <field enum="CANCELLED" name="QuoteStatus" tag="297"><![CDATA[19]]></field>
+        <field name="NoPartyIDs" tag="453"><![CDATA[2]]></field>
+        <field enum="TRADEABLE" name="QuoteType" tag="537"><![CDATA[1]]></field>
+        <field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
+        <groups name="NoPartyIDs" tag="453">
+            <group>
+                <field name="PartyID" tag="448"><![CDATA[545454545454545454541]]></field>
+                <field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+                <field name="NoPartySubIDs" tag="802"><![CDATA[3]]></field>
+                <groups name="NoPartySubIDs" tag="802">
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限责任公司]]></field>
+                        <field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803">
+                            <![CDATA[124]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[yaolei]]></field>
+                        <field enum="PERSON" name="PartySubIDType" tag="803"><![CDATA[2]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[yaolei]]></field>
+                        <field enum="TRADE_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+                    </group>
+                </groups>
+            </group>
+            <group>
+                <field name="PartyID" tag="448"><![CDATA[888888888888888888888]]></field>
+                <field enum="COUNTERPARTY" name="PartyRole" tag="452"><![CDATA[102]]></field>
+                <field name="NoPartySubIDs" tag="802"><![CDATA[3]]></field>
+                <groups name="NoPartySubIDs" tag="802">
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[恒天基金]]></field>
+                        <field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803">
+                            <![CDATA[124]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[htjjdealerahhy]]></field>
+                        <field enum="PERSON" name="PartySubIDType" tag="803"><![CDATA[2]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益测试对手方]]></field>
+                        <field enum="TRADE_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+                    </group>
+                </groups>
+            </group>
+        </groups>
+    </body>
+
+</message>

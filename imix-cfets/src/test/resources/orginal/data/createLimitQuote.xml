@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+    <header>
+        <field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+        <field name="BodyLength" tag="9"><![CDATA[804]]></field>
+        <field name="MsgSeqNum" tag="34"><![CDATA[25]]></field>
+        <field enum="ExecutionReport" name="MsgType" tag="35"><![CDATA[8]]></field>
+        <field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+        <field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+        <field name="SendingTime" tag="52"><![CDATA[20170710-07:28:09.221]]></field>
+        <field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+        <field name="TargetSubID" tag="57"><![CDATA[ahhytrd]]></field>
+    </header>
+    <body>
+        <field name="ClOrdID" tag="11"><![CDATA[ODahhytrd000000007]]></field>
+        <field name="OrderID" tag="37"><![CDATA[201707100460000001]]></field>
+        <field enum="NEW" name="OrdStatus" tag="39"><![CDATA[0]]></field>
+        <field name="Price" tag="44"><![CDATA[99.0000]]></field>
+        <field name="SecurityID" tag="48"><![CDATA[1080001]]></field>
+        <field enum="BUY" name="Side" tag="54"><![CDATA[1]]></field>
+        <field name="Symbol" tag="55"><![CDATA[10华润电力01]]></field>
+        <field name="TransactTime" tag="60"><![CDATA[20170710-15:28:04.890]]></field>
+        <field name="ValidUntilTime" tag="62"><![CDATA[20170710-19:20:00.000]]></field>
+        <field name="SettlType" tag="63"><![CDATA[2]]></field>
+        <field name="SettlDate" tag="64"><![CDATA[20170711]]></field>
+        <field name="SettlCurrAmt" tag="119"><![CDATA[10136931.51]]></field>
+        <field enum="NEW" name="ExecType" tag="150"><![CDATA[0]]></field>
+        <field name="LeavesQty" tag="151"><![CDATA[10000000]]></field>
+        <field name="AccruedInterestAmt" tag="159"><![CDATA[2.36932]]></field>
+        <field enum="CASH_BOND" name="SecurityType" tag="167"><![CDATA[CBT]]></field>
+        <field enum="YIELD_TO_MATURITY" name="YieldType" tag="235"><![CDATA[MATURITY]]></field>
+        <field name="Yield" tag="236"><![CDATA[5.1242]]></field>
+        <field name="NoPartyIDs" tag="453"><![CDATA[1]]></field>
+        <field enum="PRICE_LIMIT_ORDER" name="QuoteType" tag="537"><![CDATA[102]]></field>
+        <field name="AccruedInterestTotalAmt" tag="10002"><![CDATA[236931.51]]></field>
+        <field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+        <field name="DirtyPrice" tag="10048"><![CDATA[101.3693]]></field>
+        <field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
+        <field name="MinTickSize" tag="10188"><![CDATA[1000000]]></field>
+        <field name="NoDeliveryTypeOption" tag="10204"><![CDATA[1]]></field>
+        <field enum="YES" name="SplitIndicator" tag="10295"><![CDATA[Y]]></field>
+        <field name="TradeCashAmt" tag="10312"><![CDATA[9900000.00]]></field>
+        <field enum="SELF_CLEARING" name="ClearingMethod" tag="11143"><![CDATA[13]]></field>
+        <groups name="NoPartyIDs" tag="453">
+            <group>
+                <field name="PartyID" tag="448"><![CDATA[545454545454545454541]]></field>
+                <field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+                <field name="NoPartySubIDs" tag="802"><![CDATA[7]]></field>
+                <groups name="NoPartySubIDs" tag="802">
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[yaolei]]></field>
+                        <field enum="PERSON" name="PartySubIDType" tag="803"><![CDATA[2]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[yaolei]]></field>
+                        <field enum="TRADE_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限公司]]></field>
+                        <field enum="SETTLEMENT_BANK_NAME" name="PartySubIDType" tag="803"><![CDATA[110]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[123131]]></field>
+                        <field enum="CASH_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[15]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[125235454]]></field>
+                        <field enum="SECURITIES_ACCOUNT_NUMBER" name="PartySubIDType" tag="803"><![CDATA[10]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[安徽海益信息科技有限责任公司]]></field>
+                        <field enum="FULL_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803">
+                            <![CDATA[124]]></field>
+                    </group>
+                    <group>
+                        <field name="PartySubID" tag="523"><![CDATA[国债登记结算公司]]></field>
+                        <field enum="CUSTODIAN_INSTITUTION_NAME" name="PartySubIDType" tag="803"><![CDATA[111]]></field>
+                    </group>
+                </groups>
+            </group>
+        </groups>
+        <groups name="NoDeliveryTypeOption" tag="10204">
+            <group>
+                <field enum="BUY" name="DeliveryOptionDirection" tag="10044"><![CDATA[1]]></field>
+                <field enum="DVP" name="DeliveryTypeOption" tag="10047"><![CDATA[0]]></field>
+            </group>
+        </groups>
+    </body>
+
+</message>
