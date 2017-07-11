@@ -7,11 +7,7 @@
 
     <xsl:template match="/" name="route-ErrorSql">
 
-        <xsl:call-template name="sql-order"/>
-
-        <xsl:call-template name="sql-order-party"/>
-
-        <xsl:call-template name="sql-order-noUnderlying"/>
+        <xsl:call-template name="sql-error"/>
 
     </xsl:template>
 

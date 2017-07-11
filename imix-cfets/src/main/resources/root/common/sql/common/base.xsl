@@ -305,7 +305,26 @@
     <!--================================= 行情订阅-内容 =================================-->
 
     <!--================================= 错误异常 =================================-->
-
+    <xsl:template name="sql-error">
+        INSERT INTO [dbo].[cfets_error]
+        (
+        <xsl:for-each select="Error/Master/*">
+            <xsl:call-template name="fields"/>
+        </xsl:for-each>
+        <xsl:for-each select="Error/MessageParam/*">
+            ,[<xsl:value-of select="name()"/>]
+        </xsl:for-each>
+        ,[SysStatus]
+        ) VALUES (
+        <xsl:for-each select="Error/Master/*">
+            <xsl:call-template name="values"/>
+        </xsl:for-each>
+        <xsl:for-each select="Error/MessageParam/*">
+            ,'<xsl:value-of select="string()"/>'
+        </xsl:for-each>
+        ,0
+        );
+    </xsl:template>
 
 
 </xsl:stylesheet>

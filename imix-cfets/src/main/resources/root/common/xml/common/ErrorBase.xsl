@@ -8,7 +8,7 @@
 
     <!--================================= dialogQuote =================================-->
     <!--意向报价的主数据,没有利率-->
-    <xsl:template name="master-error">
+    <xsl:template name="master-Error">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555

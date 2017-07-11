@@ -19,15 +19,8 @@
 
             <!--master-quote-->
             <Master>
-                <xsl:call-template name="master-executionReport-withRate"/>
+                <xsl:call-template name="master-Error"/>
             </Master>
-
-            <Slave>
-                <!--parties-withContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
-
-                <xsl:call-template name="slave-noUnderlyings-withStipValue"/>
-            </Slave>
 
         </Error>
 
