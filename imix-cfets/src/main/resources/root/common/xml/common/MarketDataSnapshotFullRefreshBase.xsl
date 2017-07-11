@@ -9,7 +9,7 @@
     <!--================================= ListMarketDataAck =================================-->
 
     <!--行情订阅主数据-->
-    <xsl:template name="master-ListMarketDataAck">
+    <xsl:template name="master-MarketDataSnapshotFullRefreshBase">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="@name"/>
             <xsl:if test="@tag != 146 and @tag != 453">
@@ -21,15 +21,15 @@
     </xsl:template>
 
     <!--主数据，不相关的系统变量-->
-    <xsl:template name="master-NoRelatedSym">
-        <xsl:for-each select="message/body/groups[@name='NoRelatedSym']/group">
-            <xsl:for-each select="field[@name]">
-                <xsl:variable name="nodeName" select="@name"/>
-                <xsl:element name="{$nodeName}">
-                    <xsl:value-of select="current()"/>
-                </xsl:element>
-            </xsl:for-each>
-        </xsl:for-each>
-    </xsl:template>
+    <!--<xsl:template name="master-NoRelatedSym">-->
+        <!--<xsl:for-each select="message/body/groups[@name='NoRelatedSym']/group">-->
+            <!--<xsl:for-each select="field[@name]">-->
+                <!--<xsl:variable name="nodeName" select="@name"/>-->
+                <!--<xsl:element name="{$nodeName}">-->
+                    <!--<xsl:value-of select="current()"/>-->
+                <!--</xsl:element>-->
+            <!--</xsl:for-each>-->
+        <!--</xsl:for-each>-->
+    <!--</xsl:template>-->
 
 </xsl:stylesheet>

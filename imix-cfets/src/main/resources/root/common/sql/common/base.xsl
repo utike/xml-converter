@@ -2,7 +2,7 @@
 <xsl:stylesheet
         version="2.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:java="cn.com.haiyi.cstp.xstl"
+        xmlns:java="cn.com.haiyi.trade.xstl"
         exclude-result-prefixes="java"
 >
 

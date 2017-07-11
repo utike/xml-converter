@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+    <header>
+        <field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+        <field name="BodyLength" tag="9"><![CDATA[516]]></field>
+        <field name="MsgSeqNum" tag="34"><![CDATA[3]]></field>
+        <field enum="MarketDataSnapshotFullRefresh" name="MsgType" tag="35"><![CDATA[W]]></field>
+        <field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+        <field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+        <field name="SendingTime" tag="52"><![CDATA[20170710-09:40:23.439]]></field>
+        <field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+        <field name="TargetSubID" tag="57"><![CDATA[ahhymd]]></field>
+    </header>
+    <body>
+        <field name="SecurityID" tag="48"><![CDATA[010011]]></field>
+        <field name="Symbol" tag="55"><![CDATA[01国债11]]></field>
+        <field name="TransactTime" tag="60"><![CDATA[20170710-15:28:08]]></field>
+        <field enum="TREASURY_BILL_NON_US" name="SecurityType" tag="167"><![CDATA[TB]]></field>
+        <field enum="TEN_BOOK_DEPTH" name="MarketDepth" tag="264"><![CDATA[10]]></field>
+        <field name="NoMDEntries" tag="268"><![CDATA[2]]></field>
+        <field enum="PRICE_DEPTH" name="MDBookType" tag="1021"><![CDATA[2]]></field>
+        <field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
+
+        <groups name="NoMDEntries" tag="268">
+
+            <group>
+                <field enum="OFFER" name="MDEntryType" tag="269"><![CDATA[1]]></field>
+                <field name="LastPx" tag="31"><![CDATA[101.0000]]></field>
+                <field name="MDEntryDate" tag="272"><![CDATA[20170710]]></field>
+                <field name="MDEntryPx" tag="270"><![CDATA[101.8310]]></field>
+                <field name="MDEntrySize" tag="271"><![CDATA[5000000]]></field>
+                <field name="MDEntryTime" tag="273"><![CDATA[13:45:52.513]]></field>
+                <field name="MDPriceLevel" tag="1023"><![CDATA[1]]></field>
+                <field enum="MARKET_MAKING" name="MDQuoteType" tag="1070"><![CDATA[107]]></field>
+                <field name="QuoteEntryID" tag="299"><![CDATA[201707100440000008]]></field>
+                <field name="SettlCurrency" tag="120"><![CDATA[CNY]]></field>
+                <field name="SettlDate" tag="64"><![CDATA[20170711]]></field>
+                <field name="SettlType" tag="63"><![CDATA[2]]></field>
+                <field enum="SELF_CLEARING" name="ClearingMethod" tag="11143"><![CDATA[13]]></field>
+                <field name="NoDeliveryTypeOption" tag="10204"><![CDATA[1]]></field>
+                <field name="NoPartyIDs" tag="453"><![CDATA[1]]></field>
+                <groups name="NoPartyIDs" tag="453">
+                    <group>
+                        <field name="PartyID" tag="448"><![CDATA[346234623462346234621]]></field>
+                        <field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+                        <field name="NoPartySubIDs" tag="802"><![CDATA[2]]></field>
+                        <groups name="NoPartySubIDs" tag="802">
+                            <group>
+                                <field name="PartySubID" tag="523"><![CDATA[htcsdealer]]></field>
+                                <field enum="PERSON" name="PartySubIDType" tag="803"><![CDATA[2]]></field>
+                            </group>
+                            <group>
+                                <field name="PartySubID" tag="523"><![CDATA[a080]]></field>
+                                <field enum="TRADE_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+                            </group>
+                        </groups>
+                    </group>
+                </groups>
+                <groups name="NoDeliveryTypeOption" tag="10204">
+                    <group>
+                        <field enum="SELL" name="DeliveryOptionDirection" tag="10044"><![CDATA[4]]></field>
+                        <field enum="DVP" name="DeliveryTypeOption" tag="10047"><![CDATA[0]]></field>
+                    </group>
+                </groups>
+            </group>
+
+            <group>
+                <field enum="BID" name="MDEntryType" tag="269"><![CDATA[0]]></field>
+                <field name="MDPriceLevel" tag="1023"><![CDATA[1]]></field>
+                <field name="SettlType" tag="63"><![CDATA[2]]></field>
+            </group>
+
+        </groups>
+    </body>
+
+</message>

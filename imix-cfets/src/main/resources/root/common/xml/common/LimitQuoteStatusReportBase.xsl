@@ -1,7 +1,7 @@
 <?result version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:java="cn.com.haiyi.cstp.xstl"
+                xmlns:java="cn.com.haiyi.trade.xstl"
                 exclude-result-prefixes="java">
 
     <xsl:import href="Base.xsl"/>
