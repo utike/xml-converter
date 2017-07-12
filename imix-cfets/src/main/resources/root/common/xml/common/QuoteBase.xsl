@@ -6,18 +6,21 @@
 
     <xsl:import href="Base.xsl"/>
 
-    <!--================================= dialogQuote =================================-->
-    <!--意向报价的主数据,没有利率-->
-    <xsl:template name="master-Error">
+    <xsl:output method="xml" version="1.0" encoding="UTF-8"
+                indent="yes" cdata-section-elements="DataContent"/>
+
+
+    <!--限价报价的主数据-->
+    <xsl:template name="master-Quote">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 711 and @tag != 232 and @tag != 136 and @tag != 10210 and @tag != 555
-                and @tag != 215 and @tag != 10204">
+            <xsl:if test="@tag != 453">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
+
 
 </xsl:stylesheet>

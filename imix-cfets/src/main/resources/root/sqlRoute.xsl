@@ -9,6 +9,7 @@
     <xsl:import href="component/CASH_BOND/ListMarketDataAckSql.xsl"/>
     <xsl:import href="component/CASH_BOND/MarketDataSnapshotFullRefreshSql.xsl"/>
     <xsl:import href="component/CASH_BOND/NewOrderSingleQuoteSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/QuoteSql.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteCancelSql.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestSql.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestAckSql.xsl"/>
@@ -31,6 +32,7 @@
             <xsl:when test="$MsgType = 'AI' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-QuoteStatusReportSql"/>
             </xsl:when>
+
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">
                 <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
                 <xsl:choose>
@@ -42,6 +44,11 @@
                         <xsl:call-template name="route-cashBond-ExecutionReportSql"/>
                     </xsl:otherwise>
                 </xsl:choose>
+            </xsl:when>
+
+            <!--报价 Quote-->
+            <xsl:when test="$MsgType = 'S' and $MarketIndicator = '4'">
+                <xsl:call-template name="route-cashBond-QuoteSql"/>
             </xsl:when>
 
             <!--限价报价-->

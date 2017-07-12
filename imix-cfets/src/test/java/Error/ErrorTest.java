@@ -9,13 +9,13 @@ import org.junit.Test;
 public class ErrorTest extends BaseTest {
     @Override
     protected String getTargetFilePath() {
-        return "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\Error";
+        return "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\Error\\";
     }
 
 
     @Test
     public void ErrorToXmlTest() {
-        final String filePath = "";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\Error\\error.xml";
         final String targetFileName = "Error.xml";
         super.toXml(filePath, targetFileName);
     }

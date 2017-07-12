@@ -62,6 +62,10 @@ public class XsltUtil {
         QUOTE_CONSTANT.put("ExecType", "TransType");
         QUOTE_CONSTANT.put("DeliveryOptionDirection", "Side");
 
+        //4. NewOrderSingle
+        QUOTE_CONSTANT.put("ExpireTime", "ValidUntilTime");
+        QUOTE_CONSTANT.put("LeavesTotalQty", "LeavesQty");
+
         /**
          * ExecutionReport(成交报价)
          */
@@ -233,11 +237,12 @@ public class XsltUtil {
 
     /**
      * 获取格式化的日期。如果不需要对利率进行互换，使用这个。
-     *
+     * @see #getFormatValue(String)
      * @param original 原始日期。如：20170216-14:53:35.026
      * @returns {*} 将-替换后的日期。如：20170216 14:53:35.026
      */
-    public static String getFormatDate(String original) {
+    @Deprecated
+    private static String getFormatDate(String original) {
         String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
         if (original.matches(dateReg)) {
             return original.replace('-', ' ');
@@ -257,7 +262,7 @@ public class XsltUtil {
         if ("Price".equals(nodeName)) {
             return getRate(original);
         } else {
-            return getFormatDate(original);
+            return getFormatValue(original);
         }
     }
 
@@ -281,11 +286,13 @@ public class XsltUtil {
      * @return
      */
     public static String getFormatValue(String original) {
+        //1. yyyyMMdd-HH:mm:ss.SSS
         String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
         if (original.matches(dateReg)) {
             return original.replace('-', ' ');
         }
 
+        //2. yyyyMMdd-HH:mm:ss
         String dateWithOutMillsReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}";
         if (original.matches(dateWithOutMillsReg)) {
             return original.replace('-', ' ');
@@ -307,18 +314,6 @@ public class XsltUtil {
         } catch (NumberFormatException e) {
             return original;
         }
-    }
-
-    /**
-     * 获取交易方式的格式化的内容
-     * @param nodeName 节点名称
-     * @param originalVal 原始的节点值。
-     * @return 格式化后的内容
-     */
-    public static String getNoDeliveryTypeOptionFormatVal(final String nodeName, final String originalVal) {
-        String result = originalVal;
-
-        return result;
     }
 
 }

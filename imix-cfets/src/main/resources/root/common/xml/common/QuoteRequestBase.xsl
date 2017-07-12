@@ -16,7 +16,7 @@
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
             <xsl:if test="@tag != 146">
                 <xsl:element name="{$nodeName}">
-                    <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                    <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>
             </xsl:if>
         </xsl:for-each>
@@ -27,10 +27,10 @@
     <xsl:template name="master-QuoteRequest-NoRelatedSym">
         <xsl:for-each select="message/body/groups[@name='NoRelatedSym']/group">
             <xsl:for-each select="field[@name]">
-                <xsl:if test="@tag != 146 and @tag != 453">
-                    <xsl:variable name="nodeName" select="@name"/>
+                <xsl:if test="@tag != 146 and @tag != 453 and @tag != 167">
+                    <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
                     <xsl:element name="{$nodeName}">
-                        <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                        <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                     </xsl:element>
                 </xsl:if>
             </xsl:for-each>

@@ -12,7 +12,7 @@
             <xsl:for-each select="message/header/field[@name]">
                 <xsl:variable name="nodeName" select="@name"/>
                 <xsl:element name="{$nodeName}">
-                    <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                    <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>
             </xsl:for-each>
         </xsl:element>
@@ -26,7 +26,7 @@
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
                 <xsl:element name="{$nodeName}">
-                    <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                    <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>
             </xsl:if>
         </xsl:for-each>
@@ -178,7 +178,7 @@
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
                 <xsl:element name="{$nodeName}">
-                    <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
+                    <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>
             </xsl:if>
         </xsl:for-each>

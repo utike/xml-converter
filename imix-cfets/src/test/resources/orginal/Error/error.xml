@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+    <header>
+        <field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+        <field name="BodyLength" tag="9"><![CDATA[252]]></field>
+        <field name="MsgSeqNum" tag="34"><![CDATA[80]]></field>
+        <field enum="BusinessMessageReject" name="MsgType" tag="35"><![CDATA[j]]></field>
+        <field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+        <field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+        <field name="SendingTime" tag="52"><![CDATA[20170710-08:41:44.704]]></field>
+        <field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+        <field name="TargetSubID" tag="57"><![CDATA[ahhytrd]]></field>
+    </header>
+    <body>
+        <field name="ClOrdID" tag="11"><![CDATA[ODahhytrd000000014]]></field>
+        <field name="TransactTime" tag="60"><![CDATA[20170710-16:41:44.160]]></field>
+        <field enum="QUOTEREQUEST" name="RefMsgType" tag="372"><![CDATA[R]]></field>
+        <field name="ApplErrorCode" tag="11251"><![CDATA[530013]]></field>
+        <field name="ApplErrorDesc" tag="11261"><![CDATA[报价有效时间小于当前时间错误]]></field>
+    </body>
+
+</message>
