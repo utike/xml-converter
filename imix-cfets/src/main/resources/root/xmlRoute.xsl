@@ -60,8 +60,11 @@
 
             <!--深度行情订阅反馈: 此处取 market 较为麻烦，省略-->
             <xsl:when test="$MsgType = 'U100'">
-                <!--<xsl:variable name="MarketIndicatorLocal" select="message/body/field[@name='QuoteType']"/>-->
-                <xsl:call-template name="route-cashBond-ListMarketDataAck"/>
+                <xsl:variable name="MarketIndicatorLocal"
+                              select="message/body/groups[@name='NoRelatedSym']/group/field[@name='MarketIndicator']"/>
+                <xsl:if test="$MarketIndicatorLocal = '4'">
+                    <xsl:call-template name="route-cashBond-ListMarketDataAck"/>
+                </xsl:if>
             </xsl:when>
 
             <xsl:when test="$MsgType = 'W' and $MarketIndicator = '4'">
@@ -70,8 +73,11 @@
 
             <!--请求报价 QuoteRequest-->
             <xsl:when test="$MsgType = 'R'">
-                <!--and $MarketIndicator = '4'-->
-                <xsl:call-template name="route-cashBond-QuoteRequest"/>
+                <xsl:variable name="MarketIndicatorLocal"
+                              select="message/body/groups[@name='NoRelatedSym']/group/field[@name='MarketIndicator']"/>
+                <xsl:if test="$MarketIndicatorLocal = '4'">
+                    <xsl:call-template name="route-cashBond-QuoteRequest"/>
+                </xsl:if>
             </xsl:when>
 
             <xsl:when test="$MsgType = 'U32' and $MarketIndicator = '4'">
@@ -80,11 +86,20 @@
 
             <!--接收非做事方-新增撤销请求报价反馈-->
             <xsl:when test="$MsgType = 'U29'">
-                <xsl:call-template name="route-cashBond-QuoteRequestAck"/>
+                <xsl:variable name="MarketIndicatorLocal"
+                              select="message/body/groups[@name='NoRelatedSym']/group/field[@name='MarketIndicator']"/>
+                <xsl:if test="$MarketIndicatorLocal = '4'">
+                    <xsl:call-template name="route-cashBond-QuoteRequestAck"/>
+                </xsl:if>
             </xsl:when>
+
             <!--请求报价取消-->
             <xsl:when test="$MsgType = 'Z'">
-                <xsl:call-template name="route-cashBond-QuoteCancel"/>
+                <xsl:variable name="MarketIndicatorLocal"
+                              select="message/body/groups[@name='NoQuoteEntries']/group/field[@name='MarketIndicator']"/>
+                <xsl:if test="$MarketIndicatorLocal = '4'">
+                    <xsl:call-template name="route-cashBond-QuoteCancel"/>
+                </xsl:if>
             </xsl:when>
 
             <!--================================= COLLATERAL_REPO =================================-->

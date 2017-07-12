@@ -56,7 +56,7 @@
                 <xsl:call-template name="route-cashBond-NewOrderSingleQuoteSql"/>
             </xsl:when>
 
-            <xsl:when test="$MsgType = 'U100'">
+            <xsl:when test="$MsgType = 'U100' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-ListMarketDataAckSql"/>
             </xsl:when>
 
@@ -73,7 +73,7 @@
                 <xsl:call-template name="route-cashBond-QuoteRequestAckSql"/>
             </xsl:when>
             <!--请求报价取消-->
-            <xsl:when test="$MsgType = 'Z'">
+            <xsl:when test="$MsgType = 'Z' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-QuoteCancelSql"/>
             </xsl:when>
 

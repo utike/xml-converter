@@ -126,7 +126,6 @@ public class CashBondTest extends BaseTest {
         final String targetFileName = "quoteRequestAck.xml";
         super.toXml(filePath, targetFileName);
     }
-
     @Test
     public void quoteRequestAckToSqlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\quoteRequestAck.xml";
