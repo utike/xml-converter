@@ -9,6 +9,7 @@
     <xsl:import href="component/CASH_BOND/ListMarketDataAckSql.xsl"/>
     <xsl:import href="component/CASH_BOND/MarketDataSnapshotFullRefreshSql.xsl"/>
     <xsl:import href="component/CASH_BOND/NewOrderSingleQuoteSql.xsl"/>
+    <xsl:import href="component/CASH_BOND/QuoteCancelSql.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestSql.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestAckSql.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestCancelSql.xsl"/>
@@ -63,6 +64,10 @@
             </xsl:when>
             <xsl:when test="$MsgType = 'U29' and $MarketIndicator = '4'">
                 <xsl:call-template name="route-cashBond-QuoteRequestAckSql"/>
+            </xsl:when>
+            <!--请求报价取消-->
+            <xsl:when test="$MsgType = 'Z'">
+                <xsl:call-template name="route-cashBond-QuoteCancelSql"/>
             </xsl:when>
 
             <!--================================= COLLATERAL_REPO =================================-->

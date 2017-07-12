@@ -10,11 +10,11 @@
                 indent="yes" cdata-section-elements="DataContent"/>
 
 
-    <!--新增/撤销请求报价成功反馈的主数据-->
-    <xsl:template name="master-QuoteRequestAck">
+    <!--请求报价的主数据-->
+    <xsl:template name="master-QuoteCancel">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 146">
+            <xsl:if test="@tag != 453 and @tag != 295">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                 </xsl:element>
@@ -23,11 +23,12 @@
     </xsl:template>
 
     <!--请求报价的 NoRelatedSym 节点下主数据-->
-    <xsl:template name="master-QuoteRequestAck-NoRelatedSym">
-        <xsl:for-each select="message/body/groups[@name='NoRelatedSym']/group">
-            <xsl:for-each select="field[@name]">
-                <xsl:if test="@tag != 146 and @tag != 453 and @tag != 167">
-                    <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
+    <!--1. 本场景固定为1 -->
+    <xsl:template name="master-QuoteCancel-NoQuoteEntries">
+        <xsl:for-each select="message/body/groups[@name='NoQuoteEntries']/group">
+            <xsl:for-each select="field">
+                <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
+                <xsl:if test="@tag != 167">
                     <xsl:element name="{$nodeName}">
                         <xsl:value-of select="java:XsltUtil.getFormatDate(current())"/>
                     </xsl:element>

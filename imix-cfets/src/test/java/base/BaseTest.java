@@ -18,15 +18,15 @@ public abstract class BaseTest {
     /**
      * xml 路由文件路径
      */
-//    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\xmlRoute.xsl";
+    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\xmlRoute.xsl";
 
-    protected String xmlRoutePath = "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/main/resources/root/xmlRoute.xsl";
+//    protected String xmlRoutePath = "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/main/resources/root/xmlRoute.xsl";
     /**
      * sql 路由文件路径
      */
-    protected String sqlRoutePath = "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/main/resources/root/sqlRoute.xsl";
+//    protected String sqlRoutePath = "/Users/houbinbin/IT/fork/xml-converter/imix-cfets/src/main/resources/root/sqlRoute.xsl";
 
-//    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\sqlRoute.xsl";
+    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\main\\resources\\root\\sqlRoute.xsl";
 
     /**
      * 转换成为XML

@@ -263,7 +263,7 @@
 
     <!--================================= 行情订阅-反馈 =================================-->
     <!--深度行情反馈-->
-    <xsl:template name="sql-marketData-ack">
+    <xsl:template name="sql-marketDataAck">
         INSERT INTO [dbo].[cfets_marketdata_ack]
         (
         <xsl:for-each select="DataAck/Master/*">
@@ -283,8 +283,8 @@
         ,0
         );
     </xsl:template>
-    <!--深度行情-交易方表-->
-    <xsl:template name="sql-marketData-party">
+    <!--深度行情反馈-交易方表-->
+    <xsl:template name="sql-marketDataAck-party">
         <xsl:for-each select="DataAck/Slave/Parties/Party">
             INSERT INTO [dbo].[details_parties]
             (
@@ -303,6 +303,65 @@
     </xsl:template>
 
     <!--================================= 行情订阅-内容 =================================-->
+    <!--深度行情数据-->
+    <xsl:template name="sql-marketData">
+        INSERT INTO [dbo].[cfets_marketdata]
+        (
+        <xsl:for-each select="MarketData/Master/*">
+            <xsl:call-template name="fields"/>
+        </xsl:for-each>
+        <xsl:for-each select="MarketData/MessageParam/*">
+            ,[<xsl:value-of select="name()"/>]
+        </xsl:for-each>
+        ,[SysStatus]
+        ) VALUES (
+        <xsl:for-each select="MarketData/Master/*">
+            <xsl:call-template name="values"/>
+        </xsl:for-each>
+        <xsl:for-each select="MarketData/MessageParam/*">
+            ,'<xsl:value-of select="string()"/>'
+        </xsl:for-each>
+        ,0
+        );
+    </xsl:template>
+
+    <!--深度行情反馈-各档行情从数据-->
+    <xsl:template name="sql-marketData-mdEntries">
+        <xsl:for-each select="MarketData/Slave/NoMDEntries/NoMDEntry">
+            INSERT INTO [dbo].[details_mdEntries]
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="fields"/>
+            </xsl:for-each>
+            ,[FkID]
+            ) VALUES
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="values"/>
+            </xsl:for-each>
+            ,'<xsl:value-of select="/MarketData/MessageParam/SysID[current()]"/>'
+            );
+        </xsl:for-each>
+    </xsl:template>
+
+    <!--深度行情反馈-交易方表-->
+    <xsl:template name="sql-marketData-party">
+        <xsl:for-each select="MarketData/Slave/Parties/Party">
+            INSERT INTO [dbo].[details_parties]
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="fields"/>
+            </xsl:for-each>
+            ,[FkID]
+            ) VALUES
+            (
+            <xsl:for-each select="*">
+                <xsl:call-template name="values"/>
+            </xsl:for-each>
+            ,'<xsl:value-of select="/MarketData/MessageParam/SysID[current()]"/>'
+            );
+        </xsl:for-each>
+    </xsl:template>
 
     <!--================================= 错误异常 =================================-->
     <xsl:template name="sql-error">

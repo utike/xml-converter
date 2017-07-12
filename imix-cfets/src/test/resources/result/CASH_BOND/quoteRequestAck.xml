@@ -17,7 +17,6 @@
         <Symbol>10附息国债02</Symbol>
         <SecurityID>100002</SecurityID>
         <MarketIndicator>4</MarketIndicator>
-        <SecurityType>CBT</SecurityType>
         <QuoteStatus>16</QuoteStatus>
         <QuoteType>112</QuoteType>
         <SettlDate>20170710</SettlDate>
@@ -27,7 +26,7 @@
         <ValidUntilTime>20170710 16:30:00.000</ValidUntilTime>
         <ClearingMethod>13</ClearingMethod>
         <DeliveryType>0</DeliveryType>
-        <OrderQty>10000000</OrderQty>
+        <Qty>10000000</Qty>
     </Master>
     <Slave>
         <Parties>
@@ -62,4 +61,8 @@
             </Party>
         </Parties>
     </Slave>
+    <MessageParam>
+        <SysID><![CDATA[AB387472-54D1-47AC-9618-DB1C851361BE]]></SysID>
+        <SysOriMsg><![CDATA[<root>123</root>]]></SysOriMsg>
+    </MessageParam>
 </Quote>

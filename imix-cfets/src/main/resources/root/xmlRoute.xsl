@@ -8,6 +8,7 @@
     <xsl:import href="component/CASH_BOND/ListMarketDataAck.xsl"/>
     <xsl:import href="component/CASH_BOND/MarketDataSnapshotFullRefresh.xsl"/>
     <xsl:import href="component/CASH_BOND/NewOrderSingleQuote.xsl"/>
+    <xsl:import href="component/CASH_BOND/QuoteCancel.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequest.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestAck.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestCancel.xsl"/>
@@ -73,6 +74,10 @@
             <!--接收非做事方-新增撤销请求报价反馈-->
             <xsl:when test="$MsgType = 'U29'">
                 <xsl:call-template name="route-cashBond-QuoteRequestAck"/>
+            </xsl:when>
+            <!--请求报价取消-->
+            <xsl:when test="$MsgType = 'Z'">
+                <xsl:call-template name="route-cashBond-QuoteCancel"/>
             </xsl:when>
 
             <!--================================= COLLATERAL_REPO =================================-->
