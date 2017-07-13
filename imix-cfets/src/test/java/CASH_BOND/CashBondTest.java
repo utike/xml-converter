@@ -17,6 +17,7 @@ public class CashBondTest extends BaseTest {
     }
 
     //----------------------------------------------对话报价
+    //quote (S)
     @Test
     public void QuoteToXmlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\Quote.xml";
@@ -30,6 +31,7 @@ public class CashBondTest extends BaseTest {
         super.toSql(filePath, targetFileName);
     }
 
+    //quote 报价(AI)
     @Test
     public void QuoteStatusReportToXmlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\createDialogQuote.xml";
@@ -43,13 +45,13 @@ public class CashBondTest extends BaseTest {
         super.toSql(filePath, targetFileName);
     }
 
+    //quote 成交(8)
     @Test
     public void ExecutionReportToXmlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\confirmDialogQuote.xml";
         final String targetFileName = "ExecutionReport.xml";
         super.toXml(filePath, targetFileName);
     }
-
     @Test
     public void ExecutionReportToSqlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\ExecutionReport.xml";
@@ -57,13 +59,13 @@ public class CashBondTest extends BaseTest {
         super.toSql(filePath, targetFileName);
     }
 
+    //
     @Test
     public void dialogQuoteCancelToXmlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\orginal\\CASH_BOND\\dialogQuoteCancel.xml";
         final String targetFileName = "dialogQuoteCancel.xml";
         super.toXml(filePath, targetFileName);
     }
-
     @Test
     public void dialogQuoteCancelToSqlTest() {
         final String filePath = "";
@@ -79,7 +81,6 @@ public class CashBondTest extends BaseTest {
         final String targetFileName = "newOrderSingle.xml";
         super.toXml(filePath, targetFileName);
     }
-
     @Test
     public void newOrderSingleToSqlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\newOrderSingle.xml";
@@ -111,7 +112,6 @@ public class CashBondTest extends BaseTest {
         final String targetFileName = "quoteCancel.xml";
         super.toXml(filePath, targetFileName);
     }
-
     @Test
     public void quoteCancelToSqlTest() {
         final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cfets\\src\\test\\resources\\result\\CASH_BOND\\quoteCancel.xml";
