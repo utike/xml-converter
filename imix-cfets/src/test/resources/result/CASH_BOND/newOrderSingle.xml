@@ -15,7 +15,7 @@
         <ClOrdID>ODahhytrd000000003</ClOrdID>
         <ID>201707120460000005</ID>
         <Qty>10000000</Qty>
-        <OrdStatus>0</OrdStatus>
+        <QuoteStatus>0</QuoteStatus>
         <OrdType>2</OrdType>
         <Price>99.0000</Price>
         <SecurityID>1080001</SecurityID>

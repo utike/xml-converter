@@ -8,7 +8,7 @@
             
                 ,[Qty]
             
-                ,[OrdStatus]
+                ,[QuoteStatus]
             
                 ,[OrdType]
             
