@@ -24,7 +24,7 @@
     <xsl:template name="master-dialogQuote-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167 and @tag != 711">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>
@@ -38,7 +38,7 @@
     <xsl:template name="master-dialogQuote-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167 and @tag != 711 ">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>
@@ -176,7 +176,7 @@
     <xsl:template name="master-executionReport-withoutRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167 and @tag != 711">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>
@@ -189,7 +189,7 @@
     <xsl:template name="master-executionReport-withRate">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getExecutionReportMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 167 and @tag != 711">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatDateAndRate($nodeName, current())"/>
                 </xsl:element>
