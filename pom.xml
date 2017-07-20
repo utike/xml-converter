@@ -15,6 +15,7 @@
         <module>xslt-java</module>
         <module>xslt-util</module>
         <module>imix-cfets</module>
+        <module>imix-cmds</module>
     </modules>
 
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Description: 交易结算日信息
+-->
+<IMIXML>
+    <ParameterDefinition ParameterDefinitionType="6">
+        <Instrmt MarketIndicator="2"/>
+        <ParameterDefinitionGrp
+                NoParameterDefinitions="1"
+                ParameterType="Holidays"
+                ParameterValue="20121212"/>
+        <ParameterDefinitionGrp
+                NoParameterDefinitions="2"
+                ParameterType="Holidays"
+                ParameterValue="20121213"/>
+        <ParameterDefinitionGrp
+                NoParameterDefinitions="3"
+                ParameterType="Holidays"
+                ParameterValue="20121214"/>
+    </ParameterDefinition>
+</IMIXML>
