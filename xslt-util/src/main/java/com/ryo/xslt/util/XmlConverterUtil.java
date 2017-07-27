@@ -2,10 +2,13 @@ package com.ryo.xslt.util;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
+import org.dom4j.DocumentHelper;
 import org.dom4j.io.*;
 
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -161,6 +164,36 @@ public class XmlConverterUtil {
 //        Document document = reader.read(new File(xmlPath));
 //        Element element= document.getRootElement();
 //        System.out.println(element.getName());
+    }
+
+    /**
+     * 进行转换
+     * @param xmlPath result 文件路径
+     * @param xslPath xsl 文件路径
+     * @return
+     */
+    public static String transfer2CommonStr(String xmlPath, String xslPath) {
+        String srcStr = FileUtil.getFileContent(xmlPath);
+        return transfer2WithSrc(srcStr, xslPath);
+    }
+
+    public static String transfer2WithSrc(String srcStr, String xslPath) {
+        try {
+            StreamSource s = new StreamSource(new File(xslPath));
+            TransformerFactory tf = TransformerFactory.newInstance(); //转换器工厂
+            Transformer t = tf.newTransformer(s); //转换器对象，并绑定XSLT对象
+            Document document = DocumentHelper.parseText(srcStr); //读取XML源文件
+
+            DocumentSource source = new DocumentSource(document); //XML源文件对象
+//		DocumentResult result = new DocumentResult(); //转换结果对象
+            ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
+            t.transform(source, new StreamResult(arrayOutputStream)); //进行转换操作
+//        System.out.println(new String(arrayOutputStream.toByteArray(),"gb2312")); //显示转换结果对象内容
+            return new String(arrayOutputStream.toByteArray(),"gb2312");
+        } catch (DocumentException | UnsupportedEncodingException | TransformerException e) {
+            e.printStackTrace();
+            return "";
+        }
     }
 
 }

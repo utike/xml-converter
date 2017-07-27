@@ -1,4 +1,4 @@
-package cn.com.haiyi.cmds.xstl;
+package com.haiyi.cmds.xstl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -246,8 +246,7 @@ public class XsltUtil {
      * @param original 原始日期。如：20170216-14:53:35.026
      * @returns {*} 将-替换后的日期。如：20170216 14:53:35.026
      */
-    @Deprecated
-    private static String getFormatDate(String original) {
+    public static String getFormatDate(String original) {
         String dateReg = "^[0-9]{8}-[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}$";
         if (original.matches(dateReg)) {
             return original.replace('-', ' ');

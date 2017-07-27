@@ -2,7 +2,7 @@
 <xsl:stylesheet
         version="2.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:java="cn.com.haiyi.cmds.xstl"
+        xmlns:java="com.haiyi.cmds.xstl"
         exclude-result-prefixes="java"
 >
 
@@ -36,7 +36,7 @@
     <!--================================= 对话报价 =================================-->
     <!--对话报价表-->
     <xsl:template name="sql-quote">
-        INSERT INTO [dbo].[cfets_quotes]
+        INSERT INTO [dbo].[CMDS_Quotes]
         (
         <xsl:for-each select="Quote/Master/*">
             <xsl:call-template name="fields"/>
@@ -44,7 +44,6 @@
         <xsl:for-each select="Quote/MessageParam/*">
             ,[<xsl:value-of select="name()"/>]
         </xsl:for-each>
-        ,[SysStatus]
         ) VALUES (
         <xsl:for-each select="Quote/Master/*">
             <xsl:call-template name="values"/>
@@ -52,7 +51,6 @@
         <xsl:for-each select="Quote/MessageParam/*">
             ,'<xsl:value-of select="string()"/>'
         </xsl:for-each>
-        ,0
         );
     </xsl:template>
 
@@ -60,7 +58,7 @@
     <!--报价-交易方表-->
     <xsl:template name="sql-quote-party">
         <xsl:for-each select="Quote/Slave/Parties/Party">
-            INSERT INTO [dbo].[details_parties]
+            INSERT INTO [dbo].[CMDS_Details_Parties]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>
@@ -79,7 +77,7 @@
     <!--报价-NoUnderlyings-->
     <xsl:template name="sql-quote-noUnderlying">
         <xsl:for-each select="Quote/Slave/NoUnderlyings/NoUnderlying">
-            INSERT INTO [dbo].[details_underlyings]
+            INSERT INTO [dbo].[CMDS_Details_Underlyings]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>
@@ -98,7 +96,7 @@
     <!--报价-marginInfo-->
     <xsl:template name="sql-quote-marginInfo">
         <xsl:for-each select="Quote/Slave/NoMarginInfos/NoMarginInfo">
-            INSERT INTO [dbo].[details_marginInfos]
+            INSERT INTO [dbo].[CMDS_Details_MarginInfos]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>
@@ -131,7 +129,7 @@
     <!--noLeg-->
     <xsl:template name="sql-quote-noLeg">
         <xsl:for-each select="Quote/Slave/NoLegs/NoLeg">
-            INSERT INTO [dbo].[details_legs]
+            INSERT INTO [dbo].[CMDS_Details_Legs]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>
@@ -150,7 +148,7 @@
     <!--================================= 成交报价 =================================-->
     <!--成交报价表-->
     <xsl:template name="sql-order">
-        INSERT INTO [dbo].[cfets_orders]
+        INSERT INTO [dbo].[CMDS_Orders]
         (
         <xsl:for-each select="Order/Master/*">
             <xsl:call-template name="fields"/>
@@ -158,7 +156,6 @@
         <xsl:for-each select="Order/MessageParam/*">
             ,[<xsl:value-of select="name()"/>]
         </xsl:for-each>
-        ,[SysStatus]
         ) VALUES (
         <xsl:for-each select="Order/Master/*">
             <xsl:call-template name="values"/>
@@ -166,14 +163,13 @@
         <xsl:for-each select="Order/MessageParam/*">
             ,'<xsl:value-of select="string()"/>'
         </xsl:for-each>
-        ,0
         );
     </xsl:template>
 
     <!--成交报价-交易方表-->
     <xsl:template name="sql-order-party">
         <xsl:for-each select="Order/Slave/Parties/Party">
-            INSERT INTO [dbo].[details_parties]
+            INSERT INTO [dbo].[CMDS_Details_Parties]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>
@@ -192,7 +188,7 @@
     <!--成交报价-NoUnderlyings-->
     <xsl:template name="sql-order-noUnderlying">
         <xsl:for-each select="Order/Slave/NoUnderlyings/NoUnderlying">
-            INSERT INTO [dbo].[details_underlyings]
+            INSERT INTO [dbo].[CMDS_Details_Underlyings]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>
@@ -211,7 +207,7 @@
     <!--成交报价-marginInfo-->
     <xsl:template name="sql-order-marginInfo">
         <xsl:for-each select="Order/Slave/NoMarginInfos/NoMarginInfo">
-            INSERT INTO [dbo].[details_marginInfos]
+            INSERT INTO [dbo].[CMDS_Details_MarginInfos]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>
@@ -244,7 +240,7 @@
     <!--noLeg-->
     <xsl:template name="sql-order-noLeg">
         <xsl:for-each select="Order/Slave/NoLegs/NoLeg">
-            INSERT INTO [dbo].[details_legs]
+            INSERT INTO [dbo].[CMDS_Details_Legs]
             (
             <xsl:for-each select="*">
                 <xsl:call-template name="fields"/>

@@ -114,7 +114,7 @@
 
 
             <!--================================= INTEREST_RATE_SWAP =================================-->
-            <!--利率互换-对话报价-->
+            <!--利率互换-点击成交报价-->
             <xsl:when test="$MsgType = 'Quote' and $MarketIndicator = 'INTEREST_RATE_SWAP'">
                 <xsl:variable name="Side" select="message/body/field[@name='Side']/@enum"/>
                 <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']/@enum"/>

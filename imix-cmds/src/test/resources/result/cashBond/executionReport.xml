@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order>
+    <Header>
+        <BeginString>IMIX.1.0</BeginString>
+        <BodyLength>240</BodyLength>
+        <MsgSeqNum>30</MsgSeqNum>
+        <MsgType>8</MsgType>
+        <SenderCompID>CMDS</SenderCompID>
+        <TargetCompID>545454545454545454541</TargetCompID>
+    </Header>
+    <Master>
+        <ExecID>CBT20170724000082</ExecID>
+        <LastQty>20000000</LastQty>
+        <Price>70.0000</Price>
+        <SecurityID>160006</SecurityID>
+        <Symbol>16附息国债06</Symbol>
+        <TransactTime>20170724 17:28:30.020</TransactTime>
+        <TradeDate>20170724</TradeDate>
+        <ExecType>F</ExecType>
+        <ContingencyIndicator>N</ContingencyIndicator>
+        <MarketIndicator>4</MarketIndicator>
+        <TradeMethod>4</TradeMethod>
+        <TradeTime>17:28:30.020</TradeTime>
+        <TradeType>5</TradeType>
+        <Yield2>9.9388</Yield2>
+    </Master>
+
+    <Slave>
+        <Parties/>
+    </Slave>
+
+    <MessageParam>
+        <SysID><![CDATA[AB387472-54D1-47AC-9618-DB1C851361BE]]></SysID>
+        <SysOriMsg><![CDATA[<root>123</root>]]></SysOriMsg>
+    </MessageParam>
+
+</Order>
