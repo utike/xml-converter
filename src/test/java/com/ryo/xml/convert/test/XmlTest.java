@@ -48,6 +48,7 @@ public class XmlTest {
                 String msgType = "";
                 String MarketIndicator = "";
                 String QuoteType = "";
+                String side = "";   //利率互换会用到。
                 //获取根节点元素对象
                 Element root = document.getRootElement();
                 List<Element> eles = root.element("header").elements("field");
@@ -66,9 +67,12 @@ public class XmlTest {
                     if (element.attributeValue("name").equals("QuoteType")) {
                         QuoteType = element.attributeValue("enum")+"(QuoteType="+element.getStringValue()+")";
                     }
+                    if(element.attributeValue("name").equals("Side")) {
+                        side = element.attributeValue("enum");
+                    }
                 }
 
-                String value = String.format("%s_%s_%s", msgType, MarketIndicator, QuoteType);
+                String value = String.format("%s-%s-%s-%s", msgType, MarketIndicator, QuoteType, side);
                 System.out.println(value);
                 System.out.println(fullPath);
                 stringSet.add(value);
