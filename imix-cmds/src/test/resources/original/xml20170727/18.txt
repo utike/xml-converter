@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[425]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[79]]></field>
+<field enum="IOI" name="MsgType" tag="35"><![CDATA[6]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CMDS]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+</header>
+<body>
+<field name="IOIID" tag="23"><![CDATA[201707270930000025]]></field>
+<field enum="NEW" name="IOITransType" tag="28"><![CDATA[N]]></field>
+<field name="SecurityID" tag="48"><![CDATA[7天回购]]></field>
+<field enum="AS_DEFINED" name="Side" tag="54"><![CDATA[B]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170727-14:49:17.230]]></field>
+<field name="ValidUntilTime" tag="62"><![CDATA[20170727-19:20:00.000]]></field>
+<field enum="CASH_OR_TOD_OR_T_PLUS_0" name="SettlType" tag="63"><![CDATA[1]]></field>
+<field name="NoRoutingIDs" tag="215"><![CDATA[1]]></field>
+<field enum="NORMAL" name="QuoteStatus" tag="297"><![CDATA[16]]></field>
+<field name="NoPartyIDs" tag="453"><![CDATA[1]]></field>
+<field enum="TWO_WAY" name="QuoteType" tag="537"><![CDATA[101]]></field>
+<field name="NoLegs" tag="555"><![CDATA[2]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="COLLATERAL_REPO" name="MarketIndicator" tag="10176"><![CDATA[9]]></field>
+<field name="QuoteTime" tag="10271"><![CDATA[20170727-14:49:17.230]]></field>
+<field enum="NO" name="RemarkIndicator" tag="10282"><![CDATA[N]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[7]]></field>
+<groups name="NoRoutingIDs" tag="215">
+<group>
+<field enum="ALL" name="RoutingType" tag="216"><![CDATA[5]]></field>
+</group>
+</groups>
+<groups name="NoPartyIDs" tag="453">
+<group>
+<field name="PartyID" tag="448"><![CDATA[-]]></field>
+<field enum="INITIATOR" name="PartyRole" tag="452"><![CDATA[101]]></field>
+<field name="NoPartySubIDs" tag="802"><![CDATA[2]]></field>
+<groups name="NoPartySubIDs" tag="802">
+<group>
+<field name="PartySubID" tag="523"><![CDATA[lwyhdealerccb]]></field>
+<field enum="TRADER_NAME" name="PartySubIDType" tag="803"><![CDATA[101]]></field>
+</group>
+<group>
+<field name="PartySubID" tag="523"><![CDATA[卢湾银行]]></field>
+<field enum="SHORT_LEGAL_CHINESE_NAME_OF_FIRM" name="PartySubIDType" tag="803"><![CDATA[125]]></field>
+</group>
+</groups>
+</group>
+</groups>
+<groups name="NoLegs" tag="555">
+<group>
+<field enum="FIXED_RECEIVER_BENCHMARK_RECEIVER_TAKER_RECEIVE" name="LegSide" tag="624"><![CDATA[1]]></field>
+<field name="LegAccruedInterestTotalAmt" tag="10089"><![CDATA[1.15]]></field>
+<field name="LegSettlCurrAmt2" tag="10134"><![CDATA[401.15]]></field>
+<field name="LegTradeCashAmt" tag="10138"><![CDATA[400.00]]></field>
+<field name="LegPrice" tag="566"><![CDATA[15.0000]]></field>
+</group>
+<group>
+<field enum="FIXED_PAYER_BENCHMARK_PAYER_TAKER_PAY" name="LegSide" tag="624"><![CDATA[4]]></field>
+<field name="LegAccruedInterestTotalAmt" tag="10089"><![CDATA[0.86]]></field>
+<field name="LegSettlCurrAmt2" tag="10134"><![CDATA[300.86]]></field>
+<field name="LegTradeCashAmt" tag="10138"><![CDATA[300.00]]></field>
+<field name="LegPrice" tag="566"><![CDATA[15.0000]]></field>
+</group>
+</groups>
+</body>
+<trailer>
+<field name="CheckSum" tag="10"><![CDATA[171]]></field>
+</trailer>
+</message>
+

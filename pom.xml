@@ -37,6 +37,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.ryo</groupId>
+            <artifactId>xslt-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--self-->
         <!--<dependency>-->
             <!--<groupId>com.ryo</groupId>-->

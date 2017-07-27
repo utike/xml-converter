@@ -1,11 +1,7 @@
 package com.ryo.xml.converter.util;
 
-import com.ryo.xml.converter.vo.GroupVo;
-import org.dom4j.DocumentException;
 import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
 
-import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,34 +27,34 @@ public class XslGeneratorUtil {
      * @param xmlPath result 文件路径
      * @return
      */
-    private static GroupVo generatorXslContent(final String xmlPath)  {
-        GroupVo groupVo = new GroupVo();
-
-        //创建SAXReader对象
-        SAXReader reader = new SAXReader();
-        //读取文件 转换成Document
-        org.dom4j.Document document = null;
-        try {
-            document = reader.read(new File(xmlPath));
-            //获取根节点元素对象
-            Element root = document.getRootElement();
-            List<Element> eles = root.element("body").elements("groups");
-            for (Element element : eles) {
-                String groupName = element.attribute("name").getValue();
-                if("NoUnderlyings".equals(groupName)) {
-                    String content = getNoUnderlyingsXslContent(element);
-                    groupVo.setNoUnderlyings(content);
-                } else if("NoPartyIDs".equals(groupName)) {
-                    String content = getNoPartyIDsXslContent(element);
-                    groupVo.setNoPartyIDs(content);
-                }
-            }
-            return groupVo;
-        } catch (DocumentException e) {
-            e.printStackTrace();
-            return groupVo;
-        }
-    }
+//    private static GroupVo generatorXslContent(final String xmlPath)  {
+//        GroupVo groupVo = new GroupVo();
+//
+//        //创建SAXReader对象
+//        SAXReader reader = new SAXReader();
+//        //读取文件 转换成Document
+//        org.dom4j.Document document = null;
+//        try {
+//            document = reader.read(new File(xmlPath));
+//            //获取根节点元素对象
+//            Element root = document.getRootElement();
+//            List<Element> eles = root.element("body").elements("groups");
+//            for (Element element : eles) {
+//                String groupName = element.attribute("name").getValue();
+//                if("NoUnderlyings".equals(groupName)) {
+//                    String content = getNoUnderlyingsXslContent(element);
+//                    groupVo.setNoUnderlyings(content);
+//                } else if("NoPartyIDs".equals(groupName)) {
+//                    String content = getNoPartyIDsXslContent(element);
+//                    groupVo.setNoPartyIDs(content);
+//                }
+//            }
+//            return groupVo;
+//        } catch (DocumentException e) {
+//            e.printStackTrace();
+//            return groupVo;
+//        }
+//    }
 
     /**
      * 生成 NoUnderlyings xsl 内容
@@ -98,18 +94,6 @@ public class XslGeneratorUtil {
 
         return stringBuilder.toString();
     }
-
-    public static void main(String[] args) {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\original\\1.txt";
-        GroupVo groupVo = generatorXslContent(xmlPath);
-//
-//        String templateContent = FileUtil.getFileContent("E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\result\\template.xsl");
-//        String resultXsl = String.format(templateContent, groupVo.getNoPartyIDs(), groupVo.getNoUnderlyings());
-//        System.out.println(resultXsl);
-
-
-    }
-
 
 
 }

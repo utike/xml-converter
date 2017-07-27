@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[184]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[35]]></field>
+<field enum="ExecutionReport" name="MsgType" tag="35"><![CDATA[8]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CMDS]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+</header>
+<body>
+<field name="ExecID" tag="17"><![CDATA[CR20170727000014]]></field>
+<field name="Price" tag="44"><![CDATA[3.0000]]></field>
+<field name="SecurityID" tag="48"><![CDATA[R014]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170727-14:41:50.130]]></field>
+<field name="TradeDate" tag="75"><![CDATA[20170727]]></field>
+<field enum="TRADE" name="ExecType" tag="150"><![CDATA[F]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="COLLATERAL_REPO" name="MarketIndicator" tag="10176"><![CDATA[9]]></field>
+<field name="TradeCashAmt" tag="10312"><![CDATA[990000.00]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[9]]></field>
+<field name="TradeTime" tag="10318"><![CDATA[14:41:50.130]]></field>
+</body>
+<trailer>
+<field name="CheckSum" tag="10"><![CDATA[173]]></field>
+</trailer>
+</message>
+
