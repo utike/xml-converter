@@ -63,7 +63,7 @@ public class CategoryFilesUtil {
 
 
     public static void main(String[] args) {
-        final String dataPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\data\\imix.data";
+        final String dataPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\data\\20170728\\imix.data";
         trimImixData(dataPath);
     }
 

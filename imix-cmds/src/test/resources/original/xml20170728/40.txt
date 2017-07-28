@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[249]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[402]]></field>
+<field enum="ExecutionReport" name="MsgType" tag="35"><![CDATA[8]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CMDS]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+</header>
+<body>
+<field name="ExecID" tag="17"><![CDATA[IRS20170728800007]]></field>
+<field name="LastQty" tag="32"><![CDATA[20000000]]></field>
+<field name="SecurityID" tag="48"><![CDATA[FR007_5Y]]></field>
+<field enum="FIXED_RATE_TO_FLOAT_RATE" name="Side" tag="54"><![CDATA[J]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170728-11:35:09.150]]></field>
+<field name="TradeDate" tag="75"><![CDATA[20170728]]></field>
+<field enum="TRADE" name="ExecType" tag="150"><![CDATA[F]]></field>
+<field name="NoLegs" tag="555"><![CDATA[2]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="INTEREST_RATE_SWAP" name="MarketIndicator" tag="10176"><![CDATA[2]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[5000000]]></field>
+<field name="TradeTime" tag="10318"><![CDATA[11:35:09.150]]></field>
+<groups name="NoLegs" tag="555">
+<group>
+<field enum="FIXED_RECEIVER_BENCHMARK_RECEIVER_TAKER_RECEIVE" name="LegSide" tag="624"><![CDATA[1]]></field>
+<field name="LegPrice" tag="566"><![CDATA[3.2190]]></field>
+<field enum="FIXED_AMOUNT" name="LegPriceType" tag="686"><![CDATA[3]]></field>
+</group>
+<group>
+<field enum="BASE_LEG_FOR_TWO_WAY_QUOTE_IN_RMB_IRS_OR_FRA" name="LegSide" tag="624"><![CDATA[B]]></field>
+<field enum="SPREAD" name="LegPriceType" tag="686"><![CDATA[6]]></field>
+<field name="LegBenchmarkCurveName" tag="677"><![CDATA[FR007]]></field>
+<field name="LegBenchmarkSpread" tag="10090"><![CDATA[0.00]]></field>
+</group>
+</groups>
+</body>
+<trailer>
+<field name="CheckSum" tag="10"><![CDATA[105]]></field>
+</trailer>
+</message>
+

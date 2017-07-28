@@ -32,7 +32,7 @@ public class XmlTest {
         Set<String> stringSet = new HashSet<>();
 
 //        String dir = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/original";
-        String dir = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\xml20170727";
+        String dir = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\xml20170728";
         List<Path> pathList = FilePathUtil.getPathList(dir, "*.txt");
 
         System.out.println(pathList.size());

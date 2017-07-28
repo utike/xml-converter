@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[333]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[930]]></field>
+<field enum="ExecutionReport" name="MsgType" tag="35"><![CDATA[8]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CMDS]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+</header>
+<body>
+<field name="ExecID" tag="17"><![CDATA[OR20170728000005]]></field>
+<field name="LastQty" tag="32"><![CDATA[2000000]]></field>
+<field name="Price" tag="44"><![CDATA[1.2305]]></field>
+<field name="SecurityID" tag="48"><![CDATA[OR1M]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170728-15:14:24.040]]></field>
+<field name="TradeDate" tag="75"><![CDATA[20170728]]></field>
+<field name="SettlCurrAmt" tag="119"><![CDATA[2003100.00]]></field>
+<field enum="TRADE" name="ExecType" tag="150"><![CDATA[F]]></field>
+<field name="NoUnderlyings" tag="711"><![CDATA[1]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="OUTRIGHT_REPO" name="MarketIndicator" tag="10176"><![CDATA[10]]></field>
+<field name="SettlCurrAmt2" tag="10289"><![CDATA[2005193.33]]></field>
+<field name="TradeLimitDays" tag="10316"><![CDATA[30]]></field>
+<field name="TradeTime" tag="10318"><![CDATA[15:14:24.040]]></field>
+<groups name="NoUnderlyings" tag="711">
+<group>
+<field name="UnderlyingSecurityID" tag="309"><![CDATA[010214]]></field>
+<field name="UnderlyingPx" tag="810"><![CDATA[99.0000]]></field>
+<field name="UnderlyingPx2" tag="10328"><![CDATA[98.7430]]></field>
+<field name="UnderlyingQty" tag="879"><![CDATA[2000000]]></field>
+<field name="UnderlyingSymbol" tag="311"><![CDATA[01国开14]]></field>
+<field name="NoUnderlyingStips" tag="887"><![CDATA[2]]></field>
+<groups name="NoUnderlyingStips" tag="887">
+<group>
+<field enum="YIELD_OR_1ST_LEG_YIELD" name="UnderlyingStipType" tag="888"><![CDATA[Yield]]></field>
+<field name="UnderlyingStipValue" tag="889"><![CDATA[4.5225]]></field>
+</group>
+<group>
+<field enum="SECOND_LEG_YIELD" name="UnderlyingStipType" tag="888"><![CDATA[Yield2]]></field>
+<field name="UnderlyingStipValue" tag="889"><![CDATA[4.5966]]></field>
+</group>
+</groups>
+</group>
+</groups>
+</body>
+<trailer>
+<field name="CheckSum" tag="10"><![CDATA[207]]></field>
+</trailer>
+</message>
+

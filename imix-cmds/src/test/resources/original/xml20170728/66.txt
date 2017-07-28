@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[242]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[832]]></field>
+<field enum="ExecutionReport" name="MsgType" tag="35"><![CDATA[8]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CMDS]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+</header>
+<body>
+<field name="ExecID" tag="17"><![CDATA[CBT20170728000033]]></field>
+<field name="LastQty" tag="32"><![CDATA[20000000]]></field>
+<field name="Price" tag="44"><![CDATA[102.3321]]></field>
+<field name="SecurityID" tag="48"><![CDATA[160004]]></field>
+<field name="Symbol" tag="55"><![CDATA[16附息国债04]]></field>
+<field name="TransactTime" tag="60"><![CDATA[20170728-14:25:09.760]]></field>
+<field name="TradeDate" tag="75"><![CDATA[20170728]]></field>
+<field enum="TRADE" name="ExecType" tag="150"><![CDATA[F]]></field>
+<field name="NoStipulations" tag="232"><![CDATA[1]]></field>
+<field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+<field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
+<field enum="ONE_CLICK_NORMAL" name="TradeMethod" tag="10317"><![CDATA[5]]></field>
+<field name="TradeTime" tag="10318"><![CDATA[14:25:09.760]]></field>
+<field enum="SELL_MARKET_MAKING" name="TradeType" tag="10319"><![CDATA[5]]></field>
+<groups name="NoStipulations" tag="232">
+<group>
+<field enum="SECOND_LEG_YIELD" name="StipulationType" tag="233"><![CDATA[Yield2]]></field>
+<field name="StipulationValue" tag="234"><![CDATA[2.5429]]></field>
+</group>
+</groups>
+</body>
+<trailer>
+<field name="CheckSum" tag="10"><![CDATA[132]]></field>
+</trailer>
+</message>
+

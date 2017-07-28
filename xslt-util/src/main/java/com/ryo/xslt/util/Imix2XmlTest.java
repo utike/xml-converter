@@ -15,11 +15,12 @@ import java.util.List;
 
 /**
  * Created by bbhou on 2017/6/13.
+ * @see XmlTest
  */
 public class Imix2XmlTest {
 
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get("E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\data\\imixTrim.data");
+        Path path = Paths.get("E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\data\\20170728\\imixTrim.data");
         List<String> stringList = Files.readAllLines(path);
 
 //            String msgBody = "8=IMIX.1.09=79035=S34=1149=CFETS-RMB-CSTP52=20160928-07:49:49.78656=10159057=stkecstp1115=CFETS-RMB128=101590129=stkecstp111=99376847507549000138=400000.0044=3.000048=IBO00754=160=20160928-15:19:34.19062=20160928-19:20:00.00063=1117=201609280120000037297=16537=110002=333.3310176=110192=110271=20160928-15:19:34.19010272=N10282=N10289=400333.3310316=510465=0453=2448=101590452=101802=6523=浙商证券首席交易员803=101523=浙商证券股份有限公司803=124523=浙商证券803=125523=建行杭州市庆春支行803=110523=33001617835059888666803=15523=CFETS803=29448=304162452=102802=4523=a028803=101523=恒天银行803=124523=恒天银行803=125523=CFETS803=2993=3389=???????????卤?搄沀??′??????| :@)10=065";
@@ -53,7 +54,7 @@ public class Imix2XmlTest {
             System.out.println(message.toXML(dd));
 
             i++;
-            Path targetPath = Paths.get("E:\\Test\\_imix\\xml20170727\\"+i+".txt");
+            Path targetPath = Paths.get("E:\\Test\\_imix\\xml20170728\\"+i+".txt");
 
             Files.write(targetPath, Arrays.asList(message.toXML(dd)));
         }
