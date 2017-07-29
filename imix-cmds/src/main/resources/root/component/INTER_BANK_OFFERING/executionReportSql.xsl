@@ -9,8 +9,6 @@
 
         <xsl:call-template name="sql-order"/>
 
-        <xsl:call-template name="sql-order-party"/>
-
     </xsl:template>
 
 </xsl:stylesheet>

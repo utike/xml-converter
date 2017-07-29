@@ -22,11 +22,6 @@
                 <xsl:call-template name="master-executionReport-withRate"/>
             </Master>
 
-            <Slave>
-                <!--parties-withContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
-            </Slave>
-
         </Order>
 
     </xsl:template>
