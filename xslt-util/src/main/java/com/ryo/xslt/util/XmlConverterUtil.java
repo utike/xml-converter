@@ -3,6 +3,7 @@ package com.ryo.xslt.util;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
 import org.dom4j.io.*;
 
 import javax.xml.transform.Transformer;
@@ -15,11 +16,13 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.UUID;
 
 /**
  * Created by bbhou on 2017/6/13.
  */
 public class XmlConverterUtil {
+
 
     /**
      * 通过xsl对xml文件进行转换
@@ -28,18 +31,39 @@ public class XmlConverterUtil {
      * @return
      */
     public static Document convertWithXsl(final String originalPath, final String xslPath) {
+
         try {
             Path path = Paths.get(originalPath);
             SAXReader reader = new SAXReader();
             ByteArrayInputStream bais = new ByteArrayInputStream(Files.readAllBytes(path));
             Document doc = reader.read(bais);
             Document transformDoc = transformDocument(doc,xslPath);
-            return transformDoc;
+
+            String msgId = UUID.randomUUID().toString();
+            Document documentWithFooter = addFooter(transformDoc, msgId);
+            return documentWithFooter;
         } catch (Exception e) {
             System.out.println("error: " +e);
         }
-
         return null;
+    }
+
+    /**
+     * 为xml添加尾巴。
+     * @param document
+     * @param msgId
+     * @return
+     */
+    private static Document addFooter(final Document document, final String msgId) throws DocumentException {
+        String originalXmlStr = document.getRootElement().asXML();
+        Element element = document.getRootElement();
+        Element foot = element.addElement("MessageParam");
+        Element clientId = foot.addElement("SysID");
+        clientId.addCDATA(msgId);
+        Element SysOriMsg = foot.addElement("SysOriMsg");
+        SysOriMsg.addCDATA(originalXmlStr);
+
+        return document;
     }
 
 
@@ -133,37 +157,6 @@ public class XmlConverterUtil {
         }
 //		System.out.println(result); //显示转换结果对象内容
 
-    }
-
-    public static String getDateStr() {
-        return "";
-    }
-
-    public static void main(String[] args) throws DocumentException {
-//        String xmlPath = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/original/5.result";
-//        String xslPath = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/common/INTER_BANK_OFFERING/_dialogQuote.xsl";
-
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-util\\src\\main\\resources\\root\\test.result";
-        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-util\\src\\main\\resources\\root\\newtest.xsl";
-//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-java\\src\\main\\resources\\root\\java.xsl";
-//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\test\\resources\\withJava\\fruit.xsl";
-        Document document = convertWithXsl(xmlPath, xslPath);
-//        System.out.println(write2XMLString(document));
-        System.out.println(write2CommonString(document));
-
-
-
-//        StreamSource s = new StreamSource(new File("D:\\imix\\root\\sqlRoute.xsl"));
-//        TransformerFactory tf = TransformerFactory.newInstance(); //转换器工厂
-//        Transformer t = tf.newTransformer(s); //转换器对象，并绑定XSLT对象
-
-
-        //创建SAXReader对象
-//        SAXReader reader = new SAXReader();
-//        //读取文件 转换成Document
-//        Document document = reader.read(new File(xmlPath));
-//        Element element= document.getRootElement();
-//        System.out.println(element.getName());
     }
 
     /**

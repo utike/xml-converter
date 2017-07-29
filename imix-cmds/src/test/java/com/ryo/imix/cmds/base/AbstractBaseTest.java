@@ -1,12 +1,15 @@
 package com.ryo.imix.cmds.base;
 
 
+import com.ryo.xslt.util.DaoUtil;
 import com.ryo.xslt.util.XmlConverterUtil;
+import org.dom4j.Document;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 
 /**
  * Created by bbhou on 2017/7/8.
@@ -37,12 +40,32 @@ public abstract class AbstractBaseTest {
     /**
      * xml 路由文件路径
      */
-    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\main\\resources\\root\\xmlRoute.xsl";
+    protected static String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\main\\resources\\root\\xmlRoute.xsl";
 
     /**
      * sql 路由文件路径
      */
-    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\main\\resources\\root\\sqlRoute.xsl";
+    protected static String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\main\\resources\\root\\sqlRoute.xsl";
+
+    /**
+     * 执行SQL脚本。
+     * @param originalXmlPath
+     * @throws SQLException
+     */
+    public static void execute(final String originalXmlPath) {
+        //1. 获取转换模板
+        String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xmlRoutePath).asXML();
+
+        //2. 获取转换SQL
+        String sqlResult = XmlConverterUtil.transfer2WithSrc(xmlResult, sqlRoutePath);
+
+        //3. 执行脚本
+        try {
+            DaoUtil.execute(sqlResult);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * 转换成为XML
