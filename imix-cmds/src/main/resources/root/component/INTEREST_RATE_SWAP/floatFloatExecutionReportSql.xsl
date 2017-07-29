@@ -9,11 +9,9 @@
 
         <xsl:call-template name="sql-order"/>
 
-        <xsl:call-template name="sql-order-party"/>
 
         <xsl:call-template name="sql-order-noLeg"/>
 
-        <xsl:call-template name="sql-order-marginInfo"/>
 
     </xsl:template>
 

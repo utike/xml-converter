@@ -21,19 +21,14 @@
                 <!--master-executionReport-withRate-->
                 <xsl:call-template name="master-executionReport-withRate"/>
 
-                <!--master-executionReport-NoMiscFees-->
-                <xsl:call-template name="master-executionReport-NoMiscFees"/>
+
             </Master>
 
             <Slave>
-                <!--parties-withContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
 
                 <!--slave-noUnderlyings-onlyFields-->
                 <xsl:call-template name="slave-noUnderlyings-onlyFields"/>
 
-                <!--slave-NoMarginInfos-->
-                <xsl:call-template name="slave-NoMarginInfos"/>
             </Slave>
 
         </Order>

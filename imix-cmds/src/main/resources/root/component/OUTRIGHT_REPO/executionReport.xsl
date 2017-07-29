@@ -20,8 +20,6 @@
             </Master>
 
             <Slave>
-                <!--parties-noContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
 
                 <!--Underlyings-->
                 <xsl:call-template name="slave-noUnderlyings-withStipValue"/>

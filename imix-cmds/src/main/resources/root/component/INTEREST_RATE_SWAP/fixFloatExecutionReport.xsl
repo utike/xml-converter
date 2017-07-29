@@ -24,8 +24,6 @@
             </Master>
 
             <Slave>
-                <!--parties-withContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
 
                 <!--slave-NoLegs-->
                 <xsl:call-template name="slave-NoLegs-withRate"/>
