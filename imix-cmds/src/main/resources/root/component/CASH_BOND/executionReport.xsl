@@ -25,11 +25,6 @@
                 <xsl:call-template name="master-executionReport-NoStipulations"/>
             </Master>
 
-            <Slave>
-                <!--parties-withContact-->
-                <xsl:call-template name="slave-parties-withContact"/>
-            </Slave>
-
         </Order>
 
     </xsl:template>
