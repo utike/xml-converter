@@ -1,4 +1,3 @@
-114
 ExecutionReport(MsgType=8)-INTEREST_RATE_SWAP--FIXED_RATE_TO_FLOAT_RATE
 E:\CODE_GEN\Fork\xml-converter\imix-cmds\src\test\resources\original\xml20170728/1.txt
 =====
@@ -341,4 +340,3 @@ E:\CODE_GEN\Fork\xml-converter\imix-cmds\src\test\resources\original\xml20170728
 ExecutionReport(MsgType=8)-COLLATERAL_REPO--
 E:\CODE_GEN\Fork\xml-converter\imix-cmds\src\test\resources\original\xml20170728/99.txt
 =====
-5

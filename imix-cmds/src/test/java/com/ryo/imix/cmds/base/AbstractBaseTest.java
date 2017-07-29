@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by bbhou on 2017/7/8.
@@ -18,7 +19,6 @@ public abstract class AbstractBaseTest {
 
 
     protected abstract String getTargetFilePath();
-
 
     /**
      * 意向报价-测试
@@ -52,7 +52,7 @@ public abstract class AbstractBaseTest {
      * @param originalXmlPath
      * @throws SQLException
      */
-    public static void execute(final String originalXmlPath) {
+    public void execute(final String originalXmlPath) {
         //1. 获取转换模板
         String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xmlRoutePath).asXML();
 
