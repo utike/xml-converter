@@ -24,6 +24,9 @@ public class XsltUtil {
     private static Map<String, String> NOMARGININFOS_CONSTANT = new HashMap<>();
     private static Map<String, String> NOLEGS_CONSTANT = new HashMap<>();
 
+    private static Map<String, String> CMDS_Details_MDEntries_CONSTANT = new HashMap<>();
+    private static Map<String, String> CMDS_Details_Benchmarks_CONSTANT = new HashMap<>();
+
 
     /**
      * 数据库字段列表
@@ -36,6 +39,9 @@ public class XsltUtil {
     private static List<String> CMDS_MarketDataSnapshot_List = new LinkedList<>();
     private static List<String> CMDS_Orders_List = new LinkedList<>();
     private static List<String> CMDS_Quotes_List = new LinkedList<>();
+    private static List<String> CMDS_Details_Benchmarks_List = new LinkedList<>();
+    private static List<String> CMDS_Details_MDEntries_List = new LinkedList<>();
+    private static List<String> CMDS_MarketData_List = new LinkedList<>();
 
     static {
         /**
@@ -154,6 +160,79 @@ public class XsltUtil {
         NOLEGS_CONSTANT.put("LegTotalPrincipal", "TotalPrincipal");
         NOLEGS_CONSTANT.put("LegTradeCashAmt", "TradeCashAmt");
 
+        /**
+         * CMDS_Details_MDEntries
+         */
+        CMDS_Details_MDEntries_CONSTANT.put("LAST_DEALT_RATE","LastDealtRate");
+        CMDS_Details_MDEntries_CONSTANT.put("BEST_RATE","BestRate");
+        CMDS_Details_MDEntries_CONSTANT.put("LAST_ALL_IN_DEALT_RATE","LastAllInDealtRate");
+        CMDS_Details_MDEntries_CONSTANT.put("INDEX_VALUE_OR_BENCHMARK_VALUE","IndexValueOrBenchmarkValue");
+        CMDS_Details_MDEntries_CONSTANT.put("OPENING_PRICE","OpeningPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("CLOSING_PRICE","ClosingPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("OTHER","Other");
+        CMDS_Details_MDEntries_CONSTANT.put("TRADING_SESSION_HIGH_DEALT_PRICE","TradingSessionHighDealtPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("TRADING_SESSION_LOW_DEALT_PRICE","TradingSessionLowDealtPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("NEAR_LEG_HIGH","NearLegHigh");
+        CMDS_Details_MDEntries_CONSTANT.put("FAR_LEG_HIGH","FarLegHigh");
+        CMDS_Details_MDEntries_CONSTANT.put("TRADE_VOLUME","TradeVolume");
+        CMDS_Details_MDEntries_CONSTANT.put("NEAR_LEG_LOW","NearLegLow");
+        CMDS_Details_MDEntries_CONSTANT.put("FAR_LEG_LOW","FarLegLow");
+        CMDS_Details_MDEntries_CONSTANT.put("NEAR_LEG_OPEN","NearLegOpen");
+        CMDS_Details_MDEntries_CONSTANT.put("FAR_LEG_OPEN","FarLegOpen");
+        CMDS_Details_MDEntries_CONSTANT.put("NEAR_LEG_LAST","NearLegLast");
+        CMDS_Details_MDEntries_CONSTANT.put("MID_PRICE_OR_CENTRAL_PARITY_RATE","MidPriceOrCentralParityRate");
+        CMDS_Details_MDEntries_CONSTANT.put("FAR_LEG_LAST","FarLegLast");
+        CMDS_Details_MDEntries_CONSTANT.put("NET_BASIS_CHANGE_OVER_PREVIOUS","NetBasisChangeOverPrevious");
+        CMDS_Details_MDEntries_CONSTANT.put("NET_PERCENTAGE_CHANGE_OVER_MID_PRICE","NetPercentageChangeOverMidPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("NET_BASIS_CHANGE_OVER_MID_PRICE","NetBasisChangeOverMidPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("NET_PERCENTAGE_CHANGE_OVER_YIELD","NetPercentageChangeOverYield");
+        CMDS_Details_MDEntries_CONSTANT.put("NET_BASIS_CHANGE_OVER_YIELD","NetBasisChangeOverYield");
+        CMDS_Details_MDEntries_CONSTANT.put("GOLD_BENCHMARK_VALUE","GoldBenchmarkValue");
+        CMDS_Details_MDEntries_CONSTANT.put("VALUATION_PRICE","ValuationPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("REFERENCE_PRICE","ReferencePrice");
+        CMDS_Details_MDEntries_CONSTANT.put("LAST_EXPECTED_ALL_IN_PRICE","LastExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_CLOSING_EXPECTED_ALL_IN_PRICE","PreviousClosingExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("CLOSING_EXPECTED_ALL_IN_PRICE","ClosingExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("WEIGHTED_AVERAGE_EXPECTED_ALL_IN_PRICE","WeightedAverageExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_WEIGHTED_AVERAGE_EXPECTED_ALL_IN_PRICE","PreviousWeightedAverageExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("OPEN_EXPECTED_ALL_IN_PRICE","OpenExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("HIGHEST_EXPECTED_ALL_IN_PRICE","HighestExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("LOWEST_EXPECTED_ALL_IN_PRICE","LowestExpectedAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("SETTLEMENT_DATE","SettlementDate");
+        CMDS_Details_MDEntries_CONSTANT.put("CHANGE_OVER","ChangeOver");
+        CMDS_Details_MDEntries_CONSTANT.put("TRADE_AMOUT","TradeAmout");
+        CMDS_Details_MDEntries_CONSTANT.put("TRADING_BANK_UPPER_LIMIT","TradingBankUpperLimit");
+        CMDS_Details_MDEntries_CONSTANT.put("TRADING_BANK_LOWER_LIMIT","TradingBankLowerLimit");
+        CMDS_Details_MDEntries_CONSTANT.put("LATEST_PRICE","LatestPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_CLOSING_PRICE","PreviousClosingPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("WEIGHTED_AVERAGE_PRICE","WeightedAveragePrice");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_WEIGHTED_AVERAGE_PRICE","PreviousWeightedAveragePrice");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_CLOSING_YIELD","PreviousClosingYield");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_WEIGHTED_AVERAGE_YIELD","PreviousWeightedAverageYield");
+        CMDS_Details_MDEntries_CONSTANT.put("OPEN_YIELD","OpenYield");
+        CMDS_Details_MDEntries_CONSTANT.put("LAST_YIELD","LastYield");
+        CMDS_Details_MDEntries_CONSTANT.put("HIGHEST_YIELD","HighestYield");
+        CMDS_Details_MDEntries_CONSTANT.put("LOWEST_YIELD","LowestYield");
+        CMDS_Details_MDEntries_CONSTANT.put("CLOSING_YIELD","ClosingYield");
+        CMDS_Details_MDEntries_CONSTANT.put("WEIGHTED_AVERAGE_YIELD","WeightedAverageYield");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_CLOSING_SPREAD","PreviousClosingSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("PREVIOUS_WEIGHTED_AVERAGE_SPREAD","PreviousWeightedAverageSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("OPEN_SPREAD","OpenSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("LAST_SPREAD","LastSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("LOWEST_SPREAD","LowestSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("HIGHEST_SPREAD","HighestSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("CLOSING_SPREAD","ClosingSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("WEIGHTED_AVERAGE_SPREAD","WeightedAverageSpread");
+        CMDS_Details_MDEntries_CONSTANT.put("BEST_ALL_IN_PRICE","BestAllInPrice");
+        CMDS_Details_MDEntries_CONSTANT.put("SESSION_REFERENCE_PRICE","SessionReferencePrice");
+        CMDS_Details_MDEntries_CONSTANT.put("MDBookType","BookType");
+        CMDS_Details_MDEntries_CONSTANT.put("MDEntrySide","Side");
+        CMDS_Details_MDEntries_CONSTANT.put("MDPriceLevel","PriceLevel");
+
+        /**
+         * CMDS_Details_Benchmarks
+         */
+        CMDS_Details_Benchmarks_CONSTANT.put("BenchmarkCurveName", "CurveName");
 
         //------------------------------------------------------------------------------数据库表字段的添加
         CMDS_Details_Legs_List.add("IID");
@@ -428,6 +507,108 @@ public class XsltUtil {
         CMDS_Quotes_List.add("SDeliveryTypeOption");
         CMDS_Quotes_List.add("QuoteReqID");
         CMDS_Quotes_List.add("QueryRequestID");
+
+        CMDS_Details_Benchmarks_List.add("IID");
+        CMDS_Details_Benchmarks_List.add("CurveName");
+        CMDS_Details_Benchmarks_List.add("SysCreateTime");
+        CMDS_Details_Benchmarks_List.add("SysUpdateTime");
+        CMDS_Details_Benchmarks_List.add("FkID");
+
+        CMDS_Details_MDEntries_List.add("IID");
+        CMDS_Details_MDEntries_List.add("SecurityID");
+        CMDS_Details_MDEntries_List.add("SecurityGroup");
+        CMDS_Details_MDEntries_List.add("BookType");
+        CMDS_Details_MDEntries_List.add("MarketDepth");
+        CMDS_Details_MDEntries_List.add("Symbol");
+        CMDS_Details_MDEntries_List.add("TermToMaturity");
+        CMDS_Details_MDEntries_List.add("AvgTerm");
+        CMDS_Details_MDEntries_List.add("TransactionNum");
+        CMDS_Details_MDEntries_List.add("Side");
+        CMDS_Details_MDEntries_List.add("PriceLevel");
+        CMDS_Details_MDEntries_List.add("OrdType");
+        CMDS_Details_MDEntries_List.add("NumberOfOrders");
+        CMDS_Details_MDEntries_List.add("OptPayoutType");
+        CMDS_Details_MDEntries_List.add("MaturityDate");
+        CMDS_Details_MDEntries_List.add("LastDealtRate");
+        CMDS_Details_MDEntries_List.add("BestRate");
+        CMDS_Details_MDEntries_List.add("LastAllInDealtRate");
+        CMDS_Details_MDEntries_List.add("IndexValueOrBenchmarkValue");
+        CMDS_Details_MDEntries_List.add("OpeningPrice");
+        CMDS_Details_MDEntries_List.add("ClosingPrice");
+        CMDS_Details_MDEntries_List.add("TradingSessionHighDealtPrice");
+        CMDS_Details_MDEntries_List.add("TradingSessionLowDealtPrice");
+        CMDS_Details_MDEntries_List.add("NearLegHigh");
+        CMDS_Details_MDEntries_List.add("FarLegHigh");
+        CMDS_Details_MDEntries_List.add("TradeVolume");
+        CMDS_Details_MDEntries_List.add("NearLegLow");
+        CMDS_Details_MDEntries_List.add("FarLegLow");
+        CMDS_Details_MDEntries_List.add("NearLegOpen");
+        CMDS_Details_MDEntries_List.add("FarLegOpen");
+        CMDS_Details_MDEntries_List.add("NearLegLast");
+        CMDS_Details_MDEntries_List.add("MidPriceOrCentralParityRate");
+        CMDS_Details_MDEntries_List.add("FarLegLast");
+        CMDS_Details_MDEntries_List.add("NetBasisChangeOverPrevious");
+        CMDS_Details_MDEntries_List.add("NetPercentageChangeOverMidPrice");
+        CMDS_Details_MDEntries_List.add("NetBasisChangeOverMidPrice");
+        CMDS_Details_MDEntries_List.add("NetPercentageChangeOverYield");
+        CMDS_Details_MDEntries_List.add("NetBasisChangeOverYield");
+        CMDS_Details_MDEntries_List.add("GoldBenchmarkValue");
+        CMDS_Details_MDEntries_List.add("ValuationPrice");
+        CMDS_Details_MDEntries_List.add("ReferencePrice");
+        CMDS_Details_MDEntries_List.add("LastExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("PreviousClosingExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("ClosingExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("WeightedAverageExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("PreviousWeightedAverageExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("OpenExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("HighestExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("LowestExpectedAllInPrice");
+        CMDS_Details_MDEntries_List.add("SettlementDate");
+        CMDS_Details_MDEntries_List.add("ChangeOver");
+        CMDS_Details_MDEntries_List.add("TradeAmout");
+        CMDS_Details_MDEntries_List.add("TradingBankUpperLimit");
+        CMDS_Details_MDEntries_List.add("TradingBankLowerLimit");
+        CMDS_Details_MDEntries_List.add("LatestPrice");
+        CMDS_Details_MDEntries_List.add("PreviousClosingPrice");
+        CMDS_Details_MDEntries_List.add("WeightedAveragePrice");
+        CMDS_Details_MDEntries_List.add("PreviousWeightedAveragePrice");
+        CMDS_Details_MDEntries_List.add("PreviousClosingYield");
+        CMDS_Details_MDEntries_List.add("PreviousWeightedAverageYield");
+        CMDS_Details_MDEntries_List.add("OpenYield");
+        CMDS_Details_MDEntries_List.add("LastYield");
+        CMDS_Details_MDEntries_List.add("HighestYield");
+        CMDS_Details_MDEntries_List.add("LowestYield");
+        CMDS_Details_MDEntries_List.add("ClosingYield");
+        CMDS_Details_MDEntries_List.add("WeightedAverageYield");
+        CMDS_Details_MDEntries_List.add("PreviousClosingSpread");
+        CMDS_Details_MDEntries_List.add("PreviousWeightedAverageSpread");
+        CMDS_Details_MDEntries_List.add("OpenSpread");
+        CMDS_Details_MDEntries_List.add("LastSpread");
+        CMDS_Details_MDEntries_List.add("LowestSpread");
+        CMDS_Details_MDEntries_List.add("HighestSpread");
+        CMDS_Details_MDEntries_List.add("ClosingSpread");
+        CMDS_Details_MDEntries_List.add("WeightedAverageSpread");
+        CMDS_Details_MDEntries_List.add("BestAllInPrice");
+        CMDS_Details_MDEntries_List.add("SessionReferencePrice");
+        CMDS_Details_MDEntries_List.add("SysCreateTime");
+        CMDS_Details_MDEntries_List.add("SysUpdateTime");
+        CMDS_Details_MDEntries_List.add("FkID");
+
+        CMDS_MarketData_List.add("IID");
+        CMDS_MarketData_List.add("SysID");
+        CMDS_MarketData_List.add("TransactTime");
+        CMDS_MarketData_List.add("MDType");
+        CMDS_MarketData_List.add("IOPValue");
+        CMDS_MarketData_List.add("MarketIndicator");
+        CMDS_MarketData_List.add("MDSubType");
+        CMDS_MarketData_List.add("TradeMethod");
+        CMDS_MarketData_List.add("ClearingMethod");
+        CMDS_MarketData_List.add("TradeFwdDays");
+        CMDS_MarketData_List.add("TradeLimitDays");
+        CMDS_MarketData_List.add("StartDate");
+        CMDS_MarketData_List.add("EndDate");
+        CMDS_MarketData_List.add("SysCreateTime");
+        CMDS_MarketData_List.add("SysUpdateTime");
     }
 
 
@@ -512,6 +693,24 @@ public class XsltUtil {
      */
     public static String getNoLegsMap(String original) {
         return defineMap(original, NOLEGS_CONSTANT);
+    }
+
+    /**
+     * 获取 CMDS NoMDEntries 的映射
+     * @param original
+     * @return
+     */
+    public static String getNoMDEntriesMap(String original) {
+        return defineMap(original, CMDS_Details_MDEntries_CONSTANT);
+    }
+
+    /**
+     * 获取 CMDS NoBenchmarks 的映射
+     * @param original
+     * @return
+     */
+    public static String getNoBenchmarksMap(String original) {
+        return defineMap(original, CMDS_Details_Benchmarks_CONSTANT);
     }
 
     /**
@@ -676,6 +875,34 @@ public class XsltUtil {
      */
     public static String isOrderContains(String xmlFieldName) {
         return listContains(CMDS_Orders_List, xmlFieldName);
+    }
+
+
+    /**
+     * 主数据-DetailsBenchmarks-是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isDetailsBenchmarksContains(String xmlFieldName) {
+        return listContains(CMDS_Details_Benchmarks_List, xmlFieldName);
+    }
+
+    /**
+     * 主数据-DetailsMDEntries-是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isDetailsMDEntriesContains(String xmlFieldName) {
+        return listContains(CMDS_Details_MDEntries_List, xmlFieldName);
+    }
+
+    /**
+     * 主数据-DetailsBenchmarks-是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isMarketDataContains(String xmlFieldName) {
+        return listContains(CMDS_MarketData_List, xmlFieldName);
     }
 
     /**
