@@ -3,10 +3,6 @@
         version="2.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
-    <xsl:import href="common/xml/common/marketDataBase.xsl"/>
-    
-    
-    
     <xsl:import href="component/INTER_BANK_OFFERING/executionReport.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/indicatorQuote.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/twoWayQuote.xsl"/>
@@ -14,8 +10,6 @@
     <xsl:import href="component/COLLATERAL_REPO/executionReport.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/indicatorQuote.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/twoWayQuote.xsl"/>
-    <xsl:import href="component/COLLATERAL_REPO/rateMarketData.xsl"/>
-    <xsl:import href="component/COLLATERAL_REPO/savingInsititutionmdMarketData.xsl"/>
 
     <xsl:import href="component/OUTRIGHT_REPO/executionReport.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/indicatorQuote.xsl"/>
@@ -44,10 +38,7 @@
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
         <xsl:variable name="MsgType" select="message/header/field[@name='MsgType']/@enum"/>
-        
         <xsl:variable name="MarketIndicator" select="message/body/field[@name='MarketIndicator']/@enum"/>
-        
-        <xsl:variable name="DataMarketIndicator" select="message/body/groups[@name='NoMDTypes']/group/field[@name='MarketIndicator']/@enum"/>
 
         <xsl:choose>
             <!--================================= INTER_BANK_OFFERING =================================-->
@@ -63,7 +54,6 @@
                     <xsl:call-template name="route-ibo-twoWayQuote"/>
                 </xsl:if>
             </xsl:when>
-            
 
             <!--================================= COLLATERAL_REPO =================================-->
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'COLLATERAL_REPO'">
@@ -78,18 +68,6 @@
                     <xsl:call-template name="route-twoWayQuote-collateralRepo"/>
                 </xsl:if>
             </xsl:when>
-            <xsl:when test="$MsgType='MarketDataSnapshotFullRefresh' and $DataMarketIndicator = 'COLLATERAL_REPO'">
-            <xsl:variable name="MDSubType" select="message/body/groups[@name='NoMDTypes']/group/field[@name='MDSubType']/@enum"/>
-            <xsl:if test="$MDSubType='REPO_RATE_STATISTICS'">
-             <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
-            <xsl:if test="$MDSubType='SAVINGINSITITUTIONMD'">
-              <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
-            <xsl:if test="$MDSubType='TOP_OF_BOOK'">
-              <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
-            </xsl:when>
 
             <!--================================= OUTRIGHT_REPO =================================-->
             <xsl:when test="$MsgType = 'ExecutionReport' and $MarketIndicator = 'OUTRIGHT_REPO'">
@@ -100,19 +78,6 @@
                 <xsl:if test="$QuoteType = 'INDICATIVE'">
                     <xsl:call-template name="route-outrightRepo-indicatorQuote"/>
                 </xsl:if>
-            </xsl:when>
-            
-            <xsl:when test="$MsgType='MarketDataSnapshotFullRefresh' and $DataMarketIndicator = 'OUTRIGHT_REPO'">
-            <xsl:variable name="MDSubType" select="message/body/groups[@name='NoMDTypes']/group/field[@name='MDSubType']/@enum"/>
-            <xsl:if test="$MDSubType='REPO_RATE_STATISTICS'">
-             <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
-            <xsl:if test="$MDSubType='FIRST_LEG_CLEAN_PRICE_STATISTICS'">
-              <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
-            <xsl:if test="$MDSubType='SECOND_LEG_CLEAN_PRICE_STATISTICS'">
-              <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
             </xsl:when>
 
             <!--================================= CASH_BOND =================================-->
@@ -133,13 +98,6 @@
                 <xsl:if test="$QuoteType = 'INDICATIVE'">
                     <xsl:call-template name="route-cashBond-indicatorQuote"/>
                 </xsl:if>
-            </xsl:when>
-            
-            <xsl:when test="$MsgType='MarketDataSnapshotFullRefresh' and $DataMarketIndicator = 'CASH_BOND'">
-            <xsl:variable name="MDSubType" select="message/body/groups[@name='NoMDTypes']/group/field[@name='MDSubType']/@enum"/>
-            <xsl:if test="$MDSubType='MARKETSTATISTICS_EXCLUDING_ABNORMAL'">
-             <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
             </xsl:when>
 
 
@@ -195,16 +153,6 @@
                 <xsl:if test="$QuoteType = 'TWO_WAY' and $Side = 'FLOAT_RATE_TO_FLOAT_RATE'">
                     <xsl:call-template name="route-interestRateSwap-twoWayQuote-floatFloat"/>
                 </xsl:if>
-            </xsl:when>
-            
-            <xsl:when test="$MsgType='MarketDataSnapshotFullRefresh' and $DataMarketIndicator = 'INTEREST_RATE_SWAP'">
-            <xsl:variable name="MDSubType" select="message/body/groups[@name='NoMDTypes']/group/field[@name='MDSubType']/@enum"/>
-            <xsl:if test="$MDSubType='DEAL_MARKET_STATISTICS_FLOATING_VS_FLOATING'">
-             <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
-            <xsl:if test="$MDSubType='DEAL_MARKET_STATISTICS_FIXED_VS_FLOATING'">
-             <xsl:call-template name="route-MaketData-base"/>
-            </xsl:if>
             </xsl:when>
 
             <xsl:otherwise>

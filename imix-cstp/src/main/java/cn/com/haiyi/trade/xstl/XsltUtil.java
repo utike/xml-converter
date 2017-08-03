@@ -1,6 +1,8 @@
 package cn.com.haiyi.trade.xstl;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,6 +20,12 @@ public class XsltUtil {
     private static Map<String, String> NOLEGS_CONSTANT = new HashMap<>();
 
 
+    private static List<String> cfets_orders_List = new LinkedList<>();
+    private static List<String> cfets_quotes_List = new LinkedList<>();
+    private static List<String> details_legs_List = new LinkedList<>();
+    private static List<String> details_underlyings_List = new LinkedList<>();
+    private static List<String> details_marginInfos_List = new LinkedList<>();
+    private static List<String> details_parties_List = new LinkedList<>();
 
     static {
         /**
@@ -119,6 +127,282 @@ public class XsltUtil {
         NOLEGS_CONSTANT.put("LegSettlCurrAmt", "SettlCurrAmt");
         NOLEGS_CONSTANT.put("LegTotalPrincipal", "TotalPrincipal");
         NOLEGS_CONSTANT.put("LegTradeCashAmt", "TradeCashAmt");
+
+        //-------------------------------------------------------------------------------field List
+        cfets_orders_List.add("IID");
+        cfets_orders_List.add("SysID");
+        cfets_orders_List.add("SysOriMsg");
+        cfets_orders_List.add("SysDirect");
+        cfets_orders_List.add("SysStatus");
+        cfets_orders_List.add("SysSenderApp");
+        cfets_orders_List.add("SysSender");
+        cfets_orders_List.add("SysTimestamp");
+        cfets_orders_List.add("ClOrdID");
+        cfets_orders_List.add("ExecID");
+        cfets_orders_List.add("Price");
+        cfets_orders_List.add("SecurityID");
+        cfets_orders_List.add("Side");
+        cfets_orders_List.add("Text");
+        cfets_orders_List.add("TransactTime");
+        cfets_orders_List.add("SettlDate");
+        cfets_orders_List.add("TradeDate");
+        cfets_orders_List.add("QuoteID");
+        cfets_orders_List.add("ExecType");
+        cfets_orders_List.add("AccruedInterestTotalAmt");
+        cfets_orders_List.add("SettlDate2");
+        cfets_orders_List.add("CashHoldingDays");
+        cfets_orders_List.add("MarketIndicator");
+        cfets_orders_List.add("RemarkIndicator");
+        cfets_orders_List.add("SettlCurrAmt2");
+        cfets_orders_List.add("LastQty");
+        cfets_orders_List.add("ContingencyIndicator");
+        cfets_orders_List.add("DealTransType");
+        cfets_orders_List.add("TradeLimitDays");
+        cfets_orders_List.add("TradeTime");
+        cfets_orders_List.add("TradeType");
+        cfets_orders_List.add("TradeMethod");
+        cfets_orders_List.add("DataCategoryIndicator");
+        cfets_orders_List.add("SettlCurrency");
+        cfets_orders_List.add("RepoMethod");
+        cfets_orders_List.add("DeliveryType");
+        cfets_orders_List.add("DeliveryType2");
+        cfets_orders_List.add("ClearingMethod");
+        cfets_orders_List.add("SequelIndicator");
+        cfets_orders_List.add("OrigTradeID");
+        cfets_orders_List.add("TradeCashAmt");
+        cfets_orders_List.add("MarginRequired");
+        cfets_orders_List.add("Reference");
+        cfets_orders_List.add("AccruedInterestAmt");
+        cfets_orders_List.add("DirtyPrice");
+        cfets_orders_List.add("Principal");
+        cfets_orders_List.add("TotalPrincipal");
+        cfets_orders_List.add("TermToMaturity");
+        cfets_orders_List.add("CashBondIndicator");
+        cfets_orders_List.add("SettlCurrAmt");
+        cfets_orders_List.add("SecurityGroup");
+        cfets_orders_List.add("LastPx");
+        cfets_orders_List.add("ClosePositionIndicator");
+        cfets_orders_List.add("Symbol");
+        cfets_orders_List.add("StartDate");
+        cfets_orders_List.add("EndDate");
+        cfets_orders_List.add("CouponPaymentDateReset");
+        cfets_orders_List.add("InterestAccuralDaysAdjustment");
+        cfets_orders_List.add("FirstPeriodStartDate");
+        cfets_orders_List.add("TrdType");
+        cfets_orders_List.add("DisputeSettlementMethod");
+        cfets_orders_List.add("CouponPaymentIndicator");
+        cfets_orders_List.add("BenchmarkCurveName");
+        cfets_orders_List.add("CouponPaymentDate");
+        cfets_orders_List.add("DayCount");
+        cfets_orders_List.add("InterestFixDate");
+        cfets_orders_List.add("TradeFwdDays");
+        cfets_orders_List.add("PaymentDate");
+        cfets_orders_List.add("StrikePrice");
+        cfets_orders_List.add("DeliveryForm");
+        cfets_orders_List.add("OptPayoutType");
+        cfets_orders_List.add("MaturityDate");
+        cfets_orders_List.add("OptPremiumAmt");
+        cfets_orders_List.add("Spread");
+        cfets_orders_List.add("CouponPaymentFrequency");
+        cfets_orders_List.add("StrikeYield");
+        cfets_orders_List.add("Yield2");
+        cfets_orders_List.add("StopYield");
+        cfets_orders_List.add("Discount");
+        cfets_orders_List.add("IniExReqIndicator");
+        cfets_orders_List.add("IniExAmount");
+        cfets_orders_List.add("IniExDate");
+        cfets_orders_List.add("IniExDirIndicator");
+        cfets_orders_List.add("MiscFeeAmt");
+        cfets_orders_List.add("CalculateAgency");
+        cfets_orders_List.add("OrdQtyResetFrequency");
+        cfets_orders_List.add("OrdQtyResetPercentage");
+        cfets_orders_List.add("OrdQtyResetDate");
+        cfets_orders_List.add("OrdQtyResetType");
+        cfets_orders_List.add("OrdQtyResetAmount");
+        cfets_orders_List.add("OrdQtyResetRequired");
+        cfets_orders_List.add("StubIndicator");
+        cfets_orders_List.add("StubRateFixedDate2");
+        cfets_orders_List.add("StubRateFixedDate");
+        cfets_orders_List.add("SettlType");
+        cfets_quotes_List.add("IID");
+        cfets_quotes_List.add("SysID");
+        cfets_quotes_List.add("SysOriMsg");
+        cfets_quotes_List.add("SysDirect");
+        cfets_quotes_List.add("SysStatus");
+        cfets_quotes_List.add("SysSenderApp");
+        cfets_quotes_List.add("SysSender");
+        cfets_quotes_List.add("SysTimestamp");
+        cfets_quotes_List.add("ClOrdID");
+        cfets_quotes_List.add("TransType");
+        cfets_quotes_List.add("ID");
+        cfets_quotes_List.add("Qty");
+        cfets_quotes_List.add("Price");
+        cfets_quotes_List.add("SecurityID");
+        cfets_quotes_List.add("Side");
+        cfets_quotes_List.add("TransactTime");
+        cfets_quotes_List.add("Text");
+        cfets_quotes_List.add("ValidUntilTime");
+        cfets_quotes_List.add("SettlType");
+        cfets_quotes_List.add("QuoteStatus");
+        cfets_quotes_List.add("QuoteType");
+        cfets_quotes_List.add("DeliveryType");
+        cfets_quotes_List.add("AccruedInterestTotalAmt");
+        cfets_quotes_List.add("ContingencyIndicator");
+        cfets_quotes_List.add("DeliveryType2");
+        cfets_quotes_List.add("MarketIndicator");
+        cfets_quotes_List.add("QuoteTime");
+        cfets_quotes_List.add("RemarkIndicator");
+        cfets_quotes_List.add("SettlCurrAmt2");
+        cfets_quotes_List.add("TradeCashAmt");
+        cfets_quotes_List.add("TradeLimitDays");
+        cfets_quotes_List.add("DataCategoryIndicator");
+        cfets_quotes_List.add("SettlCurrency");
+        cfets_quotes_List.add("RepoMethod");
+        cfets_quotes_List.add("ClearingMethod");
+        cfets_quotes_List.add("NegotiationCount");
+        cfets_quotes_List.add("SequelIndicator");
+        cfets_quotes_List.add("OrigTradeID");
+        cfets_quotes_List.add("Symbol");
+        cfets_quotes_List.add("SettlDate");
+        cfets_quotes_List.add("SettlCurrAmt");
+        cfets_quotes_List.add("MarginRequired");
+        cfets_quotes_List.add("AccruedInterestAmt");
+        cfets_quotes_List.add("DirtyPrice");
+        cfets_quotes_List.add("Principal");
+        cfets_quotes_List.add("TotalPrincipal");
+        cfets_quotes_List.add("CashBondIndicator");
+        cfets_quotes_List.add("LastQty");
+        cfets_quotes_List.add("MaxFloor");
+        cfets_quotes_List.add("AnonymousIndicator");
+        cfets_quotes_List.add("MinTickSize");
+        cfets_quotes_List.add("TradeType");
+        cfets_quotes_List.add("OrdStatus");
+        cfets_quotes_List.add("OrdType");
+        cfets_quotes_List.add("SplitIndicator");
+        cfets_quotes_List.add("StartDate");
+        cfets_quotes_List.add("EndDate");
+        cfets_quotes_List.add("CalculateAgency");
+        cfets_quotes_List.add("SettlDate2");
+        cfets_quotes_List.add("CashHoldingDays");
+        cfets_quotes_List.add("DisputeSettlementMethod");
+        cfets_quotes_List.add("BenchmarkCurveName");
+        cfets_quotes_List.add("TradeFwdDays");
+        cfets_quotes_List.add("InterestFixDate");
+        cfets_quotes_List.add("MiscFeeAmt");
+        cfets_quotes_List.add("IniExReqIndicator");
+        cfets_quotes_List.add("IniExAmount");
+        cfets_quotes_List.add("IniExDate");
+        cfets_quotes_List.add("IniExDirIndicator");
+        cfets_quotes_List.add("OrdQtyResetFrequency");
+        cfets_quotes_List.add("OrdQtyResetPercentage");
+        cfets_quotes_List.add("OrdQtyResetDate");
+        cfets_quotes_List.add("OrdQtyResetType");
+        cfets_quotes_List.add("OrdQtyResetAmount");
+        cfets_quotes_List.add("OrdQtyResetRequired");
+        cfets_quotes_List.add("StubIndicator");
+        cfets_quotes_List.add("StrikeYield");
+        cfets_quotes_List.add("Yield2");
+        cfets_quotes_List.add("StopYield");
+        cfets_quotes_List.add("Yield");
+        cfets_quotes_List.add("Discount");
+        cfets_quotes_List.add("BClearingMethod");
+        cfets_quotes_List.add("SClearingMethod");
+        cfets_quotes_List.add("LeavesQty");
+        cfets_quotes_List.add("BDeliveryTypeOption");
+        cfets_quotes_List.add("SDeliveryTypeOption");
+        cfets_quotes_List.add("QuoteReqID");
+        cfets_quotes_List.add("QueryRequestID");
+        details_legs_List.add("IID");
+        details_legs_List.add("Side");
+        details_legs_List.add("PriceType");
+        details_legs_List.add("BenchmarkCurveName");
+        details_legs_List.add("BenchmarkSpread");
+        details_legs_List.add("CouponPaymentFrequency");
+        details_legs_List.add("DayCount");
+        details_legs_List.add("InterestAccrualMethod");
+        details_legs_List.add("InterestAccrualResetFrequency");
+        details_legs_List.add("AccruedInterestAmt");
+        details_legs_List.add("AccruedInterestTotalAmt");
+        details_legs_List.add("ClearingMethod");
+        details_legs_List.add("CouponPaymentDate");
+        details_legs_List.add("CouponPaymentDateReset");
+        details_legs_List.add("DeliveryType");
+        details_legs_List.add("DeliveryType2");
+        details_legs_List.add("DirtyPrice");
+        details_legs_List.add("InterestAccrualDate");
+        details_legs_List.add("InterestAccuralDaysAdjustment");
+        details_legs_List.add("IOIQty");
+        details_legs_List.add("LastQty");
+        details_legs_List.add("OrderQty");
+        details_legs_List.add("Price");
+        details_legs_List.add("SettlCurrAmt");
+        details_legs_List.add("SettlCurrAmt2");
+        details_legs_List.add("SettlType");
+        details_legs_List.add("TotalPrincipal");
+        details_legs_List.add("TradeCashAmt");
+        details_legs_List.add("StrikeYield");
+        details_legs_List.add("Yield2");
+        details_legs_List.add("FkID");
+        details_underlyings_List.add("IID");
+        details_underlyings_List.add("SecurityID");
+        details_underlyings_List.add("Symbol");
+        details_underlyings_List.add("Qty");
+        details_underlyings_List.add("HairCut");
+        details_underlyings_List.add("Yield");
+        details_underlyings_List.add("Yield2");
+        details_underlyings_List.add("StrikeYield");
+        details_underlyings_List.add("Px");
+        details_underlyings_List.add("Px2");
+        details_underlyings_List.add("AccruedInterestAmt");
+        details_underlyings_List.add("DirtyPrice");
+        details_underlyings_List.add("AccruedInterestAmt2");
+        details_underlyings_List.add("DirtyPrice2");
+        details_underlyings_List.add("CouponPaymentDate");
+        details_underlyings_List.add("CouponRate");
+        details_underlyings_List.add("Discount");
+        details_underlyings_List.add("FkID");
+        details_marginInfos_List.add("IID");
+        details_marginInfos_List.add("Type");
+        details_marginInfos_List.add("PartyRole");
+        details_marginInfos_List.add("Replacement");
+        details_marginInfos_List.add("TotalAmt");
+        details_marginInfos_List.add("SubmitDate");
+        details_marginInfos_List.add("Securities");
+        details_marginInfos_List.add("FkID");
+        details_parties_List.add("IID");
+        details_parties_List.add("PartyID");
+        details_parties_List.add("PartyRole");
+        details_parties_List.add("TraderName");
+        details_parties_List.add("SettlementBankName");
+        details_parties_List.add("CashAccountNumber");
+        details_parties_List.add("FirmFullChineseName");
+        details_parties_List.add("FirmShortChineseName");
+        details_parties_List.add("EligibleCounterParty");
+        details_parties_List.add("SecuritiesAccNumber");
+        details_parties_List.add("PostalAddress");
+        details_parties_List.add("FirmShortName");
+        details_parties_List.add("SecuritiesAccName");
+        details_parties_List.add("CashAccountName");
+        details_parties_List.add("MarginSettlementAccNumber");
+        details_parties_List.add("MarginCustodianAccNumber");
+        details_parties_List.add("MarginSettlementBankName");
+        details_parties_List.add("MarginCustodianInstitutionName");
+        details_parties_List.add("CustodianInstitutionName");
+        details_parties_List.add("SettlementBankSortCode");
+        details_parties_List.add("MarginSettlementAccName");
+        details_parties_List.add("MarginCustodianAccName");
+        details_parties_List.add("MarginSettlementBankSortCode");
+        details_parties_List.add("MarginCustodianEntityCode");
+        details_parties_List.add("TraderChineseName");
+        details_parties_List.add("CfetsMarginSettlementAccNumber");
+        details_parties_List.add("CollateralManagementInstitutionID");
+        details_parties_List.add("OtherSystemCode");
+        details_parties_List.add("FarLegCashAccName");
+        details_parties_List.add("FarLegSettlementBankName");
+        details_parties_List.add("FarLegCashAccNumber");
+        details_parties_List.add("PhoneNo");
+        details_parties_List.add("FkID");
+        details_parties_List.add("TraderCode");
     }
 
 
@@ -268,4 +552,67 @@ public class XsltUtil {
         return stringBuilder.toString();
     }
 
+
+    /**
+     * cfets_orders是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isCfetsOrdersContains(String xmlFieldName) {
+        return listContains(cfets_orders_List, xmlFieldName);
+    }
+    /**
+     * cfets_quotes是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isCfetsQuotesContains(String xmlFieldName) {
+        return listContains(cfets_quotes_List, xmlFieldName);
+    }
+    /**
+     * details_legs是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isDetailsLegsContains(String xmlFieldName) {
+        return listContains(details_legs_List, xmlFieldName);
+    }
+    /**
+     * details_underlyings是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isDetailsUnderlyingsContains(String xmlFieldName) {
+        return listContains(details_underlyings_List, xmlFieldName);
+    }
+    /**
+     * details_marginInfos是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isDetailsMarginInfosContains(String xmlFieldName) {
+        return listContains(details_marginInfos_List, xmlFieldName);
+    }
+    /**
+     * details_parties是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isDetailsPartiesContains(String xmlFieldName) {
+        return listContains(details_parties_List, xmlFieldName);
+    }
+
+    /**
+     * 判断字符串列表是否包含字段。
+     * @param strings 字符串列表
+     * @param string 字符串
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    private static String listContains(List<String> strings, String string) {
+        boolean isContains = strings.contains(string);
+        if(isContains) {
+            return "1";
+        }
+        return "0";
+    }
 }

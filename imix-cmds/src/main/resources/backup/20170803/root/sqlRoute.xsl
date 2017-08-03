@@ -4,9 +4,6 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
 
-    <xsl:import href="common/sql/common/MarketDataSqlBase.xsl"/>
-    
-    
     <xsl:import href="component/INTER_BANK_OFFERING/executionReportSql.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/indicatorQuoteSql.xsl"/>
     <xsl:import href="component/INTER_BANK_OFFERING/twoWayQuoteSql.xsl"/>
@@ -14,7 +11,6 @@
     <xsl:import href="component/COLLATERAL_REPO/executionReportSql.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/indicatorQuoteSql.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/twoWayQuoteSql.xsl"/>
-    <xsl:import href="component/COLLATERAL_REPO/rateMarketDataSql.xsl"/>
 
     <xsl:import href="component/OUTRIGHT_REPO/executionReportSql.xsl"/>
     <xsl:import href="component/OUTRIGHT_REPO/indicatorQuoteSql.xsl"/>
@@ -41,7 +37,6 @@
     <xsl:template match="/">
         <xsl:variable name="MsgType" select="*/Header/MsgType"/>
         <xsl:variable name="MarketIndicator" select="*/Master/MarketIndicator"/>
-        <xsl:variable name="MDSubType" select="*/Master/MDSubType"/>
 
         <xsl:choose>
             <!--================================= INTER_BANK_OFFERING =================================-->
@@ -71,12 +66,6 @@
                     <xsl:call-template name="route-twoWayQuoteSql-collateralRepo"/>
                 </xsl:if>
             </xsl:when>
-            
-            <xsl:when test="$MsgType = 'W' and $MarketIndicator = '9'">
-                <xsl:if test="$MDSubType = '8' or $MDSubType = '37' or $MDSubType = '38'">
-                    <xsl:call-template name="route-MarketDataSql-Base"/>
-                </xsl:if>
-            </xsl:when>
 
             <!--================================= OUTRIGHT_REPO =================================-->
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '10'">
@@ -86,12 +75,6 @@
                 <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
                 <xsl:if test="$QuoteType = '0'">
                     <xsl:call-template name="route-indicatorQuoteSql-collateralRepo"/>
-                </xsl:if>
-            </xsl:when>
-            
-             <xsl:when test="$MsgType = 'W' and $MarketIndicator = '10'">
-                <xsl:if test="$MDSubType = '8' or $MDSubType = '9' or $MDSubType = '10'">
-                    <xsl:call-template name="route-MarketDataSql-Base"/>
                 </xsl:if>
             </xsl:when>
 
@@ -112,12 +95,6 @@
                 <xsl:variable name="QuoteType" select="*/Master/QuoteType"/>
                 <xsl:if test="$QuoteType = '0'">
                     <xsl:call-template name="route-cashBond-indicatorQuoteSql"/>
-                </xsl:if>
-            </xsl:when>
-            
-             <xsl:when test="$MsgType = 'W' and $MarketIndicator = '4'">
-                <xsl:if test="$MDSubType = '44'">
-                    <xsl:call-template name="route-MarketDataSql-Base"/>
                 </xsl:if>
             </xsl:when>
 
@@ -172,11 +149,6 @@
                 </xsl:if>
                 <xsl:if test="$QuoteType = '101' and $Side = 'K'">
                     <xsl:call-template name="route-interestRateSwap-twoWayQuoteSql-floatFloat"/>
-                </xsl:if>
-            </xsl:when>
-             <xsl:when test="$MsgType = 'W' and $MarketIndicator = '2'">
-                <xsl:if test="$MDSubType = '1' or $MDSubType = '2'">
-                    <xsl:call-template name="route-MarketDataSql-Base"/>
                 </xsl:if>
             </xsl:when>
 
