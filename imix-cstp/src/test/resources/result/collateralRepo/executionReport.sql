@@ -289,7 +289,13 @@
             
                 [SecurityID]
             
+                [SecurityID]
+            
                 ,[Qty]
+            
+                ,[Qty]
+            
+                ,[Symbol]
             
                 ,[Symbol]
             
@@ -304,8 +310,6 @@
                 ,'5200000'
             
                 ,'16世行EUR01'
-            
-                ,'0.7700'
             
             ,''
             );

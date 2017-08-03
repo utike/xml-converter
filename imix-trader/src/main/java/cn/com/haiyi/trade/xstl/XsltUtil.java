@@ -82,9 +82,6 @@ public class XsltUtil {
         QUOTE_CONSTANT.put("ExpireTime", "ValidUntilTime");
         QUOTE_CONSTANT.put("LeavesTotalQty", "LeavesQty");
 
-        //5. QuoteRequestAck
-        QUOTE_CONSTANT.put("QuoteReqID", "ID"); //合并为ID
-
         /**
          * ExecutionReport(成交报价)
          */

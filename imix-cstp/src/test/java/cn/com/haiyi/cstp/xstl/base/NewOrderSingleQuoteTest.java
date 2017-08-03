@@ -1,4 +1,4 @@
-package cn.com.haiyi.trade.xstl.base;
+package cn.com.haiyi.cstp.xstl.base;
 
 import java.io.IOException;
 

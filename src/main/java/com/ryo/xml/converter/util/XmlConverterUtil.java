@@ -116,7 +116,7 @@ public class XmlConverterUtil {
 
         final String xmlPath = "E:\\_java\\test.result";
         final String xslPath = "E:\\_java\\test.xsl";
-//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-java\\src\\main\\resources\\root\\java.xsl";
+//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\imix-cstp\\src\\main\\resources\\root\\java.xsl";
 //        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\test\\resources\\withJava\\fruit.xsl";
         Document document = convertWithXsl(xmlPath, xslPath);
         System.out.println(write2XMLString(document));

@@ -12,10 +12,10 @@
             
                 ,[ApplErrorDesc]
             
-            ,[SysID]
-        
-            ,[SysOriMsg]
-        
+                ,[SysID]
+            
+                ,[SysOriMsg]
+            
         ,[SysStatus]
         ) VALUES (
         
@@ -29,10 +29,10 @@
             
                 ,'报价有效时间小于当前时间错误'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
-        
-            ,'<root>123</root>'
-        
+                ,'23867d00-1989-4cde-976c-2ee5d4d5a16d'
+            
+                ,'<Error><Header><BeginString>IMIX.2.0</BeginString><BodyLength>252</BodyLength><MsgSeqNum>80</MsgSeqNum><MsgType>j</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 08:41:44.704</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><ClOrdID>ODahhytrd000000014</ClOrdID><TransactTime>20170710 16:41:44.160</TransactTime><RefMsgType>R</RefMsgType><ApplErrorCode>530013</ApplErrorCode><ApplErrorDesc>报价有效时间小于当前时间错误</ApplErrorDesc></Master></Error>'
+            
         ,0
         );
     

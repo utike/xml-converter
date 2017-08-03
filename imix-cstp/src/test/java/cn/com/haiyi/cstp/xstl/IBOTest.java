@@ -1,23 +1,22 @@
-package cn.com.haiyi.trade.xstl;
+package cn.com.haiyi.cstp.xstl;
 
-import cn.com.haiyi.trade.xstl.base.TwoWayQuoteTest;
+import cn.com.haiyi.cstp.xstl.base.TwoWayQuoteTest;
 import org.junit.Test;
 
 import java.io.IOException;
 
 /**
- * 抵押式回购
+ * 信用拆借
  * Created by bbhou on 2017/6/17.
  */
-public class CollateralRepoTest extends BaseTest
-    implements TwoWayQuoteTest {
+public class IBOTest extends BaseTest implements TwoWayQuoteTest {
 
-    private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\collateralRepo\\";
+    private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\result\\ibo\\";
 
     @Override
     @Test
     public void indicatorQuote2XmlTest() throws IOException {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_COLLATERAL_REPO.xml";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\indicator_INTER_BANK_OFFERING.xml";
         super.indicatorQuote2Xml(xmlPath, this.targetPath);
     }
 
@@ -30,7 +29,7 @@ public class CollateralRepoTest extends BaseTest
     @Test
     @Override
     public void dialogQuote2XmlTest() throws IOException {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\2.xml";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\5.xml";
         super.dialogQuote2Xml(xmlPath, this.targetPath);
     }
 
@@ -41,12 +40,14 @@ public class CollateralRepoTest extends BaseTest
     }
 
     @Test
+    @Override
     public void executionReport2XmlTest() throws IOException {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\25.xml";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\3.xml";
         super.executionReport2Xml(xmlPath, this.targetPath);
     }
 
     @Test
+    @Override
     public void executionReport2SqlTest() throws IOException {
         super.executionReport2Sql(super.sqlRoutePath, this.targetPath);
     }
@@ -54,7 +55,7 @@ public class CollateralRepoTest extends BaseTest
     @Override
     @Test
     public void twoWayQuote2XmlTest() throws IOException {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\other\\COLLATERAL_REPO_IOI_TWO_WAY.xml";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\other\\INTER_BANK_OFFERING_IOI_TWO_WAY.xml";
         final String targetFileName = "twoWayQuote.xml";
         super.toXml(xmlPath, this.targetPath, targetFileName);
     }
@@ -62,7 +63,7 @@ public class CollateralRepoTest extends BaseTest
     @Override
     @Test
     public void twoWayQuote2SqlTest() throws IOException {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\collateralRepo\\twoWayQuote.xml";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\result\\ibo\\twoWayQuote.xml";
         final String targetFileName = "twoWayQuote.sql";
         super.toSql(xmlPath, this.targetPath, targetFileName);
     }

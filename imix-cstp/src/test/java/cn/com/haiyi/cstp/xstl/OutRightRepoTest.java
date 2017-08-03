@@ -1,52 +1,52 @@
-package cn.com.haiyi.trade.xstl;
+package cn.com.haiyi.cstp.xstl;
 
 import org.junit.Test;
 
 import java.io.IOException;
 
 /**
- * 债券远期测试
- * Created by bbhou on 2017/6/20.
+ * 买断式回购测试
+ * Created by bbhou on 2017/6/19.
  */
-public class BondForwardTest extends BaseTest {
+public class OutRightRepoTest extends BaseTest {
 
-    private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\bondForward\\";
+    private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\result\\outRightRepo\\";
 
-    @Test
     @Override
+    @Test
     public void indicatorQuote2XmlTest() throws IOException {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\indicator_BOND_FORWARD.xml";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\indicator_OUTRIGHT_REPO.xml";
         super.indicatorQuote2Xml(xmlPath, this.targetPath);
     }
 
-    @Test
     @Override
+    @Test
     public void indicatorQuote2SqlTest() throws IOException {
         super.indicatorQuote2Sql(this.targetPath);
     }
 
-    @Override
     @Test
+    @Override
     public void dialogQuote2XmlTest() throws IOException {
-        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\BOND_FORWARD_S.xml";
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\4.xml";
         super.dialogQuote2Xml(xmlPath, this.targetPath);
     }
 
-    @Override
     @Test
+    @Override
     public void dialogQuote2SqlTest() throws IOException {
         super.dialogQuote2Sql(super.sqlRoutePath, this.targetPath);
     }
 
-    @Override
     @Test
+    @Override
     public void executionReport2XmlTest() throws IOException {
-       final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\BOND_FORWARD_8.xml";
-       super.executionReport2Xml(xmlPath, this.targetPath);
+        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\6.xml";
+        super.executionReport2Xml(xmlPath, this.targetPath);
     }
 
-    @Override
     @Test
+    @Override
     public void executionReport2SqlTest() throws IOException {
         super.executionReport2Sql(super.sqlRoutePath, this.targetPath);
     }

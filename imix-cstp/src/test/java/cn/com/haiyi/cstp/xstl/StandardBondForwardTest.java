@@ -1,4 +1,4 @@
-package cn.com.haiyi.trade.xstl;
+package cn.com.haiyi.cstp.xstl;
 
 import org.junit.Test;
 
@@ -10,13 +10,13 @@ import java.io.IOException;
  */
 public class StandardBondForwardTest extends AbstractBaseTest {
 
-    private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\result\\standardBondForward\\";
+    private String targetPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\result\\standardBondForward\\";
 
 
     @Override
     @Test
     public void executionReport2XmlTest() throws IOException {
-       final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\STANDARD_BOND_FORWARD_8_SELF.xml";
+       final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\test\\resources\\original\\STANDARD_BOND_FORWARD_8_SELF.xml";
        super.executionReport2Xml(xmlPath, this.targetPath);
     }
 

@@ -22,10 +22,10 @@
             
                 ,[MarketIndicator]
             
-            ,[SysID]
-        
-            ,[SysOriMsg]
-        
+                ,[SysID]
+            
+                ,[SysOriMsg]
+            
         ,[SysStatus]
         ) VALUES (
         
@@ -49,10 +49,10 @@
             
                 ,'4'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
-        
-            ,'<root>123</root>'
-        
+                ,'3f75354f-385f-47b6-9439-9cb755cd4bee'
+            
+                ,'<Quote><Header><BeginString>IMIX.2.0</BeginString><BodyLength>294</BodyLength><MsgSeqNum>78</MsgSeqNum><MsgType>Z</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 08:40:01.042</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><Side>2</Side><TransactTime>20170710 16:40:00.683</TransactTime><ID>201707100420000026</ID><QuoteReqID>201707100410000025</QuoteReqID><QuoteStatus>19</QuoteStatus><QuoteType>113</QuoteType><ContingencyIndicator>N</ContingencyIndicator><Symbol>10附息国债02</Symbol><SecurityID>100002</SecurityID><MarketIndicator>4</MarketIndicator></Master><Slave><Parties/></Slave></Quote>'
+            
         ,0
         );
     

@@ -7,4 +7,17 @@ public class StringUtils {
 
     public static final String EMPTY = "";
 
+    public static boolean isEmpty(final String string) {
+        if(null == string
+                || string.trim().equals("")) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+
+
 }

@@ -1,4 +1,4 @@
-package cn.com.haiyi.trade.xstl;
+package cn.com.haiyi.cstp.xstl;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,11 +19,11 @@ public abstract class BaseTest {
     /**
      * xml 路由文件路径
      */
-    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\xmlRoute.xsl";
+    protected String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\resources\\root\\xmlRoute.xsl";
     /**
      * sql 路由文件路径
      */
-    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\resources\\root\\sqlRoute.xsl";
+    protected String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cstp\\src\\resources\\root\\sqlRoute.xsl";
 
     /**
      * 意向报价
@@ -88,7 +88,7 @@ public abstract class BaseTest {
      * @throws IOException
      */
     protected void dialogQuote2Xml(String originalXmlPath, String targetPath) throws IOException {
-//        String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\5.xml";
+//        String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-cstp\\src\\test\\resources\\original\\5.xml";
         String xslPath = this.xmlRoutePath;
         String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xslPath).asXML();
 
@@ -105,7 +105,7 @@ public abstract class BaseTest {
      * @throws IOException
      */
     protected void executionReport2Xml(String originalXmlPath, String targetPath) throws IOException {
-//        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-java\\src\\test\\resources\\original\\25.xml";
+//        final String xmlPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-cstp\\src\\test\\resources\\original\\25.xml";
         final String xslPath = xmlRoutePath;
         String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xslPath).asXML();
 

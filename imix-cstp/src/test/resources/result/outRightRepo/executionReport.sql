@@ -273,23 +273,45 @@
             
                 [SecurityID]
             
+                [SecurityID]
+            
                 ,[AccruedInterestAmt]
+            
+                ,[AccruedInterestAmt]
+            
+                ,[AccruedInterestAmt2]
             
                 ,[AccruedInterestAmt2]
             
                 ,[DirtyPrice]
             
+                ,[DirtyPrice]
+            
                 ,[DirtyPrice2]
+            
+                ,[DirtyPrice2]
+            
+                ,[Px]
             
                 ,[Px]
             
                 ,[Px2]
             
+                ,[Px2]
+            
+                ,[Qty]
+            
                 ,[Qty]
             
                 ,[Symbol]
             
+                ,[Symbol]
+            
                 ,[Yield]
+            
+                ,[Yield]
+            
+                ,[Yield2]
             
                 ,[Yield2]
             

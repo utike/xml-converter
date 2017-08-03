@@ -1,4 +1,4 @@
-package cn.com.haiyi.trade.xstl.util;
+package cn.com.haiyi.cstp.xstl.util;
 
 
 import java.io.File;

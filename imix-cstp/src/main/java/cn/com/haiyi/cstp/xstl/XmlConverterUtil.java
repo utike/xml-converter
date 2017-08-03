@@ -1,6 +1,6 @@
-package cn.com.haiyi.trade.xstl;
+package cn.com.haiyi.cstp.xstl;
 
-import cn.com.haiyi.trade.xstl.util.FileUtil;
+import cn.com.haiyi.cstp.xstl.util.FileUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -174,7 +174,7 @@ public class XmlConverterUtil {
 
 //        final String xmlPath = "/Users/houbinbin/IT/fork/result-converter/src/main/resources/original/5.result";
 //        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-util\\src\\main\\resources\\root\\newtest.xsl";
-//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-java\\src\\main\\resources\\root\\java.xsl";
+//        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\imix-cstp\\src\\main\\resources\\root\\java.xsl";
 //        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\test\\resources\\withJava\\fruit.xsl";
 
 //        String result = transfer2CommonStr(xmlPath, xslPath);
@@ -185,7 +185,7 @@ public class XmlConverterUtil {
 
 
         final String xmlPath = "E:\\CODE_GEN\\Fork\\result-converter\\src\\main\\resources\\original\\3.result";
-        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\xslt-java\\src\\resources\\root\\xmlRoute.xsl";
+        final String xslPath = "E:\\CODE_GEN\\Fork\\result-converter\\imix-cstp\\src\\resources\\root\\xmlRoute.xsl";
         String xmlResult = convertWithXsl(xmlPath, xslPath).asXML();
         System.out.println(xmlResult);
     }

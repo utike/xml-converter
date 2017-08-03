@@ -58,10 +58,6 @@
             
                 ,[SequelIndicator]
             
-            ,[SysID]
-        
-            ,[SysOriMsg]
-        
         ,[SysStatus]
         ) VALUES (
         
@@ -121,10 +117,6 @@
             
                 ,'1'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
-        
-            ,'<root>123</root>'
-        
         ,0
         );
     
@@ -171,7 +163,7 @@
             
                 ,'CFETS'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
             INSERT INTO [dbo].[details_parties]
@@ -205,7 +197,7 @@
             
                 ,'CFETS'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -216,8 +208,6 @@
                 ,[Qty]
             
                 ,[Symbol]
-            
-                ,[Haircut]
             
             ,[FkID]
             ) VALUES
@@ -229,9 +219,7 @@
             
                 ,'01国债11'
             
-                ,'0.080000'
-            
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -242,8 +230,6 @@
                 ,[Qty]
             
                 ,[Symbol]
-            
-                ,[Haircut]
             
             ,[FkID]
             ) VALUES
@@ -255,9 +241,7 @@
             
                 ,'01国开14'
             
-                ,'0.340000'
-            
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -269,8 +253,6 @@
             
                 ,[Symbol]
             
-                ,[Haircut]
-            
             ,[FkID]
             ) VALUES
             (
@@ -281,8 +263,6 @@
             
                 ,'01国开16'
             
-                ,'0.080000'
-            
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         

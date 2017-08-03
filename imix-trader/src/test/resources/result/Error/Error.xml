@@ -1,25 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Error>
-    <Header>
-        <BeginString>IMIX.2.0</BeginString>
-        <BodyLength>252</BodyLength>
-        <MsgSeqNum>80</MsgSeqNum>
-        <MsgType>j</MsgType>
-        <SenderCompID>CFETS-TRADING-INFT</SenderCompID>
-        <SenderSubID>RMB</SenderSubID>
-        <SendingTime>20170710 08:41:44.704</SendingTime>
-        <TargetCompID>545454545454545454541</TargetCompID>
-        <TargetSubID>ahhytrd</TargetSubID>
-    </Header>
-    <Master>
-        <ClOrdID>ODahhytrd000000014</ClOrdID>
-        <TransactTime>20170710 16:41:44.160</TransactTime>
-        <RefMsgType>R</RefMsgType>
-        <ApplErrorCode>530013</ApplErrorCode>
-        <ApplErrorDesc>报价有效时间小于当前时间错误</ApplErrorDesc>
-    </Master>
-    <MessageParam>
-        <SysID><![CDATA[AB387472-54D1-47AC-9618-DB1C851361BE]]></SysID>
-        <SysOriMsg><![CDATA[<root>123</root>]]></SysOriMsg>
-    </MessageParam>
-</Error>
+<Error><Header><BeginString>IMIX.2.0</BeginString><BodyLength>252</BodyLength><MsgSeqNum>80</MsgSeqNum><MsgType>j</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 08:41:44.704</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><ClOrdID>ODahhytrd000000014</ClOrdID><TransactTime>20170710 16:41:44.160</TransactTime><RefMsgType>R</RefMsgType><ApplErrorCode>530013</ApplErrorCode><ApplErrorDesc>报价有效时间小于当前时间错误</ApplErrorDesc></Master><MessageParam><SysID><![CDATA[96a058d3-693c-434f-a465-d0b4ff37f55a]]></SysID><SysOriMsg><![CDATA[<Error><Header><BeginString>IMIX.2.0</BeginString><BodyLength>252</BodyLength><MsgSeqNum>80</MsgSeqNum><MsgType>j</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 08:41:44.704</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><ClOrdID>ODahhytrd000000014</ClOrdID><TransactTime>20170710 16:41:44.160</TransactTime><RefMsgType>R</RefMsgType><ApplErrorCode>530013</ApplErrorCode><ApplErrorDesc>报价有效时间小于当前时间错误</ApplErrorDesc></Master></Error>]]></SysOriMsg></MessageParam></Error>

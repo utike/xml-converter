@@ -58,10 +58,6 @@
             
                 ,[MiscFeeAmt]
             
-            ,[SysID]
-        
-            ,[SysOriMsg]
-        
         ,[SysStatus]
         ) VALUES (
         
@@ -121,10 +117,6 @@
             
                 ,'44186.30'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
-        
-            ,'<root>123</root>'
-        
         ,0
         );
     
@@ -171,7 +163,7 @@
             
                 ,'CFETS'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
             INSERT INTO [dbo].[details_parties]
@@ -205,7 +197,7 @@
             
                 ,'CFETS'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
             INSERT INTO [dbo].[details_underlyings]
@@ -227,7 +219,7 @@
             
                 ,'01国开16'
             
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
             INSERT INTO [dbo].[details_marginInfos]
@@ -257,6 +249,6 @@
             <Security><MarginSecuritiesID>010011</MarginSecuritiesID><MarginAMT>8600000</MarginAMT><MarginSymbol>01国债11</MarginSymbol></Security>
             '
             +'</Securities>'
-            ,'AB387472-54D1-47AC-9618-DB1C851361BE'
+            ,''
             );
         
