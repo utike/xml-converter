@@ -9,12 +9,12 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>imix-mapping</module>
-        <module>xsl-learn</module>
-        <module>imix-xslt</module>
-        <module>xslt-java</module>
+        <module>xslt-learn</module>
         <module>xslt-util</module>
-        <module>imix-cfets</module>
+
+        <module>imix-xslt</module>
+        <module>imix-cstp</module>
+        <module>imix-trader</module>
         <module>imix-cmds</module>
     </modules>
 
