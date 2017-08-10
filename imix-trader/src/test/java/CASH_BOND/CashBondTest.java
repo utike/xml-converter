@@ -182,4 +182,19 @@ public class CashBondTest extends BaseTest {
         final String targetFileName = "MarketDataSnapshotFullRefresh.sql";
         super.toSql(filePath, targetFileName);
     }
+
+    //aj
+    @Test
+    public void QuoteResponseToXmlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\quoteResponse.xml";
+        final String targetFileName = "quoteResponse.xml";
+        super.toXml(filePath, targetFileName);
+    }
+    @Test
+    public void QuoteResponseToSqlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\quoteResponse.xml";
+        final String targetFileName = "quoteResponse.sql";
+        super.toSql(filePath, targetFileName);
+    }
+
 }

@@ -14,6 +14,7 @@
     <xsl:import href="component/CASH_BOND/QuoteRequestAck.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteRequestCancel.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteStatusReport.xsl"/>
+    <xsl:import href="component/CASH_BOND/QuoteResponse.xsl"/>
 
     <xsl:import href="component/COLLATERAL_REPO/ExecutionReport.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/QuoteStatusReport.xsl"/>
@@ -99,6 +100,13 @@
                               select="message/body/groups[@name='NoQuoteEntries']/group/field[@name='MarketIndicator']"/>
                 <xsl:if test="$MarketIndicatorLocal = '4'">
                     <xsl:call-template name="route-cashBond-QuoteCancel"/>
+                </xsl:if>
+            </xsl:when>
+
+            <!--确认或者拒绝成交及询价通知-->
+            <xsl:when test="$MsgType = 'AJ'">
+                <xsl:if test="$MarketIndicator = '4'">
+                    <xsl:call-template name="route-cashBond-QuoteResponse"/>
                 </xsl:if>
             </xsl:when>
 
