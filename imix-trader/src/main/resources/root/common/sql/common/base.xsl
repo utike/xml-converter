@@ -51,6 +51,7 @@
             </xsl:if>
         </xsl:for-each>
         ,[SysStatus]
+        ,[MsgType]
         ) VALUES (
         <xsl:for-each select="Quote/Master/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isCfetsQuotesContains(name())"/>
@@ -64,7 +65,8 @@
                 ,'<xsl:value-of select="string()"/>'
             </xsl:if>
         </xsl:for-each>
-        ,0
+        ,'0'
+        ,'<xsl:value-of select="/Quote/Header/MsgType"/>'
         );
     </xsl:template>
 

@@ -39,9 +39,18 @@
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '4'">
                 <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']"/>
                 <xsl:choose>
-                    <!--对于限价报价，对应的都是 报价，不是成交。-->
+                    <!--对于限价报价，对应的都是 报价，不是成交。且ExecId不存在-->
                     <xsl:when test="$QuoteType = '102'">
-                        <xsl:call-template name="route-cashBond-LimitQuoteStatusReport"/>
+                        <xsl:variable name="ExecId" select="message/body/field[@name='ExecId']"/>
+                        <xsl:choose>
+                            <xsl:when test="$ExecId != ''">
+                                <xsl:call-template name="route-cashBond-ExecutionReport"/>
+                            </xsl:when>
+                            <!--对于限价报价，对应的都是 报价，不是成交。且ExecId不存在-->
+                            <xsl:otherwise>
+                                <xsl:call-template name="route-cashBond-LimitQuoteStatusReport"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="route-cashBond-ExecutionReport"/>
