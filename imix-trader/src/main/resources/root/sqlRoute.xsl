@@ -22,6 +22,8 @@
 
     <xsl:import href="component/ERROR/ErrorSql.xsl"/>
 
+    <xsl:import href="component/OTHER/OrderToQuoteSql.xsl"/>
+
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
@@ -95,6 +97,11 @@
             <!--================================= ERROR =================================-->
             <xsl:when test="$MsgType = 'j'">
                 <xsl:call-template name="route-ErrorSql"/>
+            </xsl:when>
+
+            <!--================================= Other-Order2Quote =================================-->
+            <xsl:when test="$MsgType = 'FINAL'">
+                <xsl:call-template name="route-orderToQuoteSql"/>
             </xsl:when>
 
             <xsl:otherwise>
