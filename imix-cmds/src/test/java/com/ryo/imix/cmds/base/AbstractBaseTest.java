@@ -40,12 +40,12 @@ public abstract class AbstractBaseTest {
     /**
      * xml 路由文件路径
      */
-    protected static String xmlRoutePath = "D:\\CODE\\H.Broker\\trunk\\01.Requirement\\CMDS_XSL_20\\root\\xmlRoute.xsl";
+    protected static String xmlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\main\\resources\\root\\xmlRoute.xsl";
 
     /**
      * sql 路由文件路径
      */
-    protected static String sqlRoutePath = "D:\\CODE\\H.Broker\\trunk\\01.Requirement\\CMDS_XSL_20\\root\\sqlRoute.xsl";
+    protected static String sqlRoutePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\main\\resources\\root\\sqlRoute.xsl";
 
     /**
      * 执行SQL脚本。

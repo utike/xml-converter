@@ -9,7 +9,7 @@
 
     <!--================================= 公共方法 =================================-->
     <!--对于字段的SQL构建-->
-    <xsl:template name="fields">
+    <xsl:template name="fieldsWithPosition">
         <xsl:choose>
             <xsl:when test="position() = 1">
                 [<xsl:value-of select="name()"/>]
@@ -20,8 +20,12 @@
         </xsl:choose>
     </xsl:template>
 
+    <xsl:template name="fields">
+        ,[<xsl:value-of select="name()"/>]
+    </xsl:template>
+
     <!--对于值的SQL构建-->
-    <xsl:template name="values">
+    <xsl:template name="valuesWithPosition">
         <xsl:choose>
             <xsl:when test="position() = 1">
                 '<xsl:value-of select="current()"/>'
@@ -32,12 +36,17 @@
         </xsl:choose>
     </xsl:template>
 
+    <xsl:template name="values">
+        ,'<xsl:value-of select="current()"/>'
+    </xsl:template>
+
 
     <!--================================= 对话报价 =================================-->
     <!--对话报价表-->
     <xsl:template name="sql-quote">
         INSERT INTO [dbo].[cfets_quotes]
         (
+        [SysStatus]
         <xsl:for-each select="Quote/Master/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isCfetsQuotesContains(name())"/>
             <xsl:if test="$isHas ='1'">
@@ -50,8 +59,8 @@
                 ,[<xsl:value-of select="name()"/>]
             </xsl:if>
         </xsl:for-each>
-        ,[SysStatus]
         ) VALUES (
+        0
         <xsl:for-each select="Quote/Master/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isCfetsQuotesContains(name())"/>
             <xsl:if test="$isHas ='1'">
@@ -64,7 +73,6 @@
                 ,'<xsl:value-of select="string()"/>'
             </xsl:if>
         </xsl:for-each>
-        ,0
         );
     </xsl:template>
 
@@ -74,22 +82,22 @@
         <xsl:for-each select="Quote/Slave/Parties/Party">
             INSERT INTO [dbo].[details_parties]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsPartiesContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsPartiesContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="values"/>
                 </xsl:if>
             </xsl:for-each>
-            ,'<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
@@ -99,22 +107,22 @@
         <xsl:for-each select="Quote/Slave/NoUnderlyings/NoUnderlying">
             INSERT INTO [dbo].[details_underlyings]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsUnderlyingsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsUnderlyingsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="values"/>
                 </xsl:if>
             </xsl:for-each>
-            ,'<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
@@ -124,15 +132,16 @@
         <xsl:for-each select="Quote/Slave/NoMarginInfos/NoMarginInfo">
             INSERT INTO [dbo].[details_marginInfos]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsMarginInfosContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:if test="name() != 'Securities'">
                     <xsl:variable name="isHas" select="java:XsltUtil.isDetailsMarginInfosContains(name())"/>
@@ -143,17 +152,14 @@
             </xsl:for-each>
             ,
             '&lt;Securities&gt;'+
-            '
-            <xsl:for-each select="Securities/Security">
+            '<xsl:for-each select="Securities/Security">
                 <xsl:variable name="MarginSecuritiesID" select="MarginSecuritiesID[current()]"/>
                 <xsl:variable name="MarginAMT" select="MarginAMT[current()]"/>
                 <xsl:variable name="MarginSymbol" select="MarginSymbol[current()]"/>
                 <xsl:value-of
                         select="java:XsltUtil.getNoMarginSecurities($MarginSecuritiesID, $MarginAMT, $MarginSymbol)"/>
-            </xsl:for-each>
-            '
+            </xsl:for-each>'
             +'&lt;/Securities&gt;'
-            ,'<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
@@ -163,22 +169,22 @@
         <xsl:for-each select="Quote/Slave/NoLegs/NoLeg">
             INSERT INTO [dbo].[details_legs]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsLegsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsLegsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="values"/>
                 </xsl:if>
             </xsl:for-each>
-            ,'<xsl:value-of select="/Quote/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
@@ -188,6 +194,7 @@
     <xsl:template name="sql-order">
         INSERT INTO [dbo].[cfets_orders]
         (
+        [SysStatus]
         <xsl:for-each select="Order/Master/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isCfetsOrdersContains(name())"/>
             <xsl:if test="$isHas ='1'">
@@ -200,8 +207,8 @@
                 ,[<xsl:value-of select="name()"/>]
             </xsl:if>
         </xsl:for-each>
-        ,[SysStatus]
         ) VALUES (
+        0
         <xsl:for-each select="Order/Master/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isCfetsOrdersContains(name())"/>
             <xsl:if test="$isHas ='1'">
@@ -214,7 +221,6 @@
                 ,'<xsl:value-of select="string()"/>'
             </xsl:if>
         </xsl:for-each>
-        ,0
         );
     </xsl:template>
 
@@ -223,22 +229,22 @@
         <xsl:for-each select="Order/Slave/Parties/Party">
             INSERT INTO [dbo].[details_parties]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsPartiesContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsPartiesContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="values"/>
                 </xsl:if>
             </xsl:for-each>
-            ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
@@ -248,22 +254,22 @@
         <xsl:for-each select="Order/Slave/NoUnderlyings/NoUnderlying">
             INSERT INTO [dbo].[details_underlyings]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsUnderlyingsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsUnderlyingsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="values"/>
                 </xsl:if>
             </xsl:for-each>
-            ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
@@ -273,15 +279,16 @@
         <xsl:for-each select="Order/Slave/NoMarginInfos/NoMarginInfo">
             INSERT INTO [dbo].[details_marginInfos]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsMarginInfosContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:if test="name() != 'Securities'">
                     <xsl:variable name="isHas" select="java:XsltUtil.isDetailsMarginInfosContains(name())"/>
@@ -292,17 +299,14 @@
             </xsl:for-each>
             ,
             '&lt;Securities&gt;'+
-            '
-            <xsl:for-each select="Securities/Security">
+            '<xsl:for-each select="Securities/Security">
                 <xsl:variable name="MarginSecuritiesID" select="MarginSecuritiesID[current()]"/>
                 <xsl:variable name="MarginAMT" select="MarginAMT[current()]"/>
                 <xsl:variable name="MarginSymbol" select="MarginSymbol[current()]"/>
                 <xsl:value-of
                         select="java:XsltUtil.getNoMarginSecurities($MarginSecuritiesID, $MarginAMT, $MarginSymbol)"/>
-            </xsl:for-each>
-            '
+            </xsl:for-each>'
             +'&lt;/Securities&gt;'
-            ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
@@ -312,22 +316,22 @@
         <xsl:for-each select="Order/Slave/NoLegs/NoLeg">
             INSERT INTO [dbo].[details_legs]
             (
+            [FkID]
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsLegsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="fields"/>
                 </xsl:if>
             </xsl:for-each>
-            ,[FkID]
             ) VALUES
             (
+            '<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             <xsl:for-each select="*">
                 <xsl:variable name="isHas" select="java:XsltUtil.isDetailsLegsContains(name())"/>
                 <xsl:if test="$isHas ='1'">
                     <xsl:call-template name="values"/>
                 </xsl:if>
             </xsl:for-each>
-            ,'<xsl:value-of select="/Order/MessageParam/SysID[current()]"/>'
             );
         </xsl:for-each>
     </xsl:template>
