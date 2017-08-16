@@ -19,6 +19,11 @@ public class XsltUtil {
     private static Map<String, String> NOMARGININFOS_CONSTANT = new HashMap<>();
     private static Map<String, String> NOLEGS_CONSTANT = new HashMap<>();
 
+    /**
+     * 将报价转化为订单映射
+     */
+    private static Map<String, String> QUOTE_TO_ORDER_CONSTANT = new HashMap<>();
+
     private static List<String> cfets_error_List = new LinkedList<>();
     private static List<String> details_mdEntries_List = new LinkedList<>();
     private static List<String> cfets_marketdata_ack_List = new LinkedList<>();
@@ -33,6 +38,14 @@ public class XsltUtil {
     private static List<String> details_parties_List = new LinkedList<>();
 
     static {
+        /**
+         * quote to order;
+         * 1. 根据原始的报文内容进行转换
+         */
+        QUOTE_TO_ORDER_CONSTANT.put("ID", "QuoteID");
+        QUOTE_TO_ORDER_CONSTANT.put("", "");
+        QUOTE_TO_ORDER_CONSTANT.put("", "");
+
         /**
          * party
          */

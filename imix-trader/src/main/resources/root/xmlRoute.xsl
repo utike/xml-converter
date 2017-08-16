@@ -21,6 +21,8 @@
 
     <xsl:import href="component/ERROR/Error.xsl"/>
 
+    <xsl:import href="component/OTHER/OrderToQuote.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -132,6 +134,11 @@
             <!--================================= ERROR =================================-->
             <xsl:when test="$MsgType = 'j'">
                 <xsl:call-template name="route-Error"/>
+            </xsl:when>
+
+            <!--================================= Other-Order2Quote =================================-->
+            <xsl:when test="$MsgType = 'FINAL'">
+                <xsl:call-template name="route-orderToQuote"/>
             </xsl:when>
 
             <xsl:otherwise>
