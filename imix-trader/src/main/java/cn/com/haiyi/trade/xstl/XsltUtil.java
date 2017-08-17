@@ -71,8 +71,8 @@ public class XsltUtil {
          */
         ORDER_TO_QUOTE_CONSTANT.put("QuoteTransType", "TransType");
         ORDER_TO_QUOTE_CONSTANT.put("LastQty", "Qty");
-        ORDER_TO_QUOTE_CONSTANT.put("Yield", "Yield2");
         ORDER_TO_QUOTE_CONSTANT.put("GrossTradeAmt", "TradeCashAmt");
+        ORDER_TO_QUOTE_CONSTANT.put("QuoteID", "ID");
 
 
         /**
@@ -653,18 +653,15 @@ public class XsltUtil {
 
 
     /**
-     * 对日期进行格式化；对利率进行处理。
+     * 1. 对日期进行格式化；
+     * 2. 对利率进行处理。(暂时不做处理)
      *
      * @param nodeName 节点名称
      * @param original 原始值
      * @return
      */
     public static String getFormatDateAndRate(String nodeName, String original) {
-        if ("Price".equals(nodeName)) {
-            return getRate(original);
-        } else {
-            return getFormatValue(original);
-        }
+        return getFormatValue(original);
     }
 
     /**
@@ -709,7 +706,8 @@ public class XsltUtil {
      * @param original 原始金额
      * @return 对金额进行运算之后的结果
      */
-    public static String getRate(String original) {
+    @Deprecated
+    private static String getRate(String original) {
         try {
             Double value = Double.valueOf(original);
             Double rateVal = value / 100.0;

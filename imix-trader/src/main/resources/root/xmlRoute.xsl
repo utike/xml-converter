@@ -62,7 +62,7 @@
 
             <!--报价 Quote-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-cashBond-NewOrderSingleQuote"/>
+                <xsl:call-template name="route-cashBond-Quote"/>
             </xsl:when>
 
             <!--限价报价 NewOrderSingleQuote-->
