@@ -15,7 +15,7 @@ public class OtherTest extends BaseTest {
     //orderToQuote 成交(8)
     @Test
     public void OrderToQuoteToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\Other\\OrderToQuote.xml";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\Other\\OrderToQuoteCase.xml";
         final String targetFileName = "OrderToQuote.xml";
         super.toXml(filePath, targetFileName);
     }

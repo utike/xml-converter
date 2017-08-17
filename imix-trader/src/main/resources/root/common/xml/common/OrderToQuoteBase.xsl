@@ -14,7 +14,7 @@
     <xsl:template name="master-OrderToQuote">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getOrderToQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 17">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 17 and @tag != 711">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>

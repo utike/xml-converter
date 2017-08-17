@@ -1,2 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Quote><Header><BeginString>IMIX.2.0</BeginString><BodyLength>1018</BodyLength><MsgSeqNum>18</MsgSeqNum><MsgType>FINAL</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 06:45:21.122</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><Qty>10000000</Qty><Price>99.0000</Price><SecurityID>1080001</SecurityID><Side>2</Side><TransactTime>20170710 14:45:20.860</TransactTime><SettlType>2</SettlType><SettlDate>20170711</SettlDate><TradeDate>20170710</TradeDate><QuoteID>201707100420000017</QuoteID><SettlCurrAmt>10136931.51</SettlCurrAmt><SettlCurrency>CNY</SettlCurrency><ExecType>F</ExecType><AccruedInterestAmt>2.36932</AccruedInterestAmt><SecurityType>CBT</SecurityType><Yield2>5.1242</Yield2><TradeCashAmt>9900000.00</TradeCashAmt><DeliveryType>0</DeliveryType><AccruedInterestTotalAmt>236931.51</AccruedInterestTotalAmt><ContingencyIndicator>N</ContingencyIndicator><DirtyPrice>101.3693</DirtyPrice><MarketIndicator>4</MarketIndicator><TradeMethod>1</TradeMethod><TradeTime>14:45:20.860</TradeTime><TradeType>1</TradeType><ClearingMethod>13</ClearingMethod><QuoteStatus>107</QuoteStatus></Master><Slave><Parties><Party><PartyID>888888888888888888888</PartyID><PartyRole>119</PartyRole><FirmFullChineseName>恒天基金</FirmFullChineseName><FirmShortChineseName>恒天基金</FirmShortChineseName><TraderName>安徽海益测试对手方</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>A654321</SecuritiesAccNumber><SettlementBankName>1111</SettlementBankName><CashAccountNumber>654321</CashAccountNumber></Party><Party><PartyID>545454545454545454541</PartyID><PartyRole>120</PartyRole><FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName><FirmShortChineseName>安徽海益信息</FirmShortChineseName><TraderName>yaolei</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>125235454</SecuritiesAccNumber><SettlementBankName>安徽海益信息科技有限公司</SettlementBankName><CashAccountNumber>123131</CashAccountNumber></Party></Parties></Slave><MessageParam><SysID><![CDATA[fbd1e392-ba3f-4b12-8656-4bb1b11b20a7]]></SysID><SysOriMsg><![CDATA[<Quote><Header><BeginString>IMIX.2.0</BeginString><BodyLength>1018</BodyLength><MsgSeqNum>18</MsgSeqNum><MsgType>FINAL</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 06:45:21.122</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><Qty>10000000</Qty><Price>99.0000</Price><SecurityID>1080001</SecurityID><Side>2</Side><TransactTime>20170710 14:45:20.860</TransactTime><SettlType>2</SettlType><SettlDate>20170711</SettlDate><TradeDate>20170710</TradeDate><QuoteID>201707100420000017</QuoteID><SettlCurrAmt>10136931.51</SettlCurrAmt><SettlCurrency>CNY</SettlCurrency><ExecType>F</ExecType><AccruedInterestAmt>2.36932</AccruedInterestAmt><SecurityType>CBT</SecurityType><Yield2>5.1242</Yield2><TradeCashAmt>9900000.00</TradeCashAmt><DeliveryType>0</DeliveryType><AccruedInterestTotalAmt>236931.51</AccruedInterestTotalAmt><ContingencyIndicator>N</ContingencyIndicator><DirtyPrice>101.3693</DirtyPrice><MarketIndicator>4</MarketIndicator><TradeMethod>1</TradeMethod><TradeTime>14:45:20.860</TradeTime><TradeType>1</TradeType><ClearingMethod>13</ClearingMethod><QuoteStatus>107</QuoteStatus></Master><Slave><Parties><Party><PartyID>888888888888888888888</PartyID><PartyRole>119</PartyRole><FirmFullChineseName>恒天基金</FirmFullChineseName><FirmShortChineseName>恒天基金</FirmShortChineseName><TraderName>安徽海益测试对手方</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>A654321</SecuritiesAccNumber><SettlementBankName>1111</SettlementBankName><CashAccountNumber>654321</CashAccountNumber></Party><Party><PartyID>545454545454545454541</PartyID><PartyRole>120</PartyRole><FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName><FirmShortChineseName>安徽海益信息</FirmShortChineseName><TraderName>yaolei</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>125235454</SecuritiesAccNumber><SettlementBankName>安徽海益信息科技有限公司</SettlementBankName><CashAccountNumber>123131</CashAccountNumber></Party></Parties></Slave></Quote>]]></SysOriMsg></MessageParam></Quote>
+<Quote>
+    <Header>
+        <BeginString>IMIX.2.0</BeginString>
+        <BodyLength>1008</BodyLength>
+        <MsgSeqNum>379</MsgSeqNum>
+        <MsgType>AI</MsgType>
+        <SenderCompID>CFETS-TRADING-INFT</SenderCompID>
+        <SenderSubID>RMB</SenderSubID>
+        <SendingTime>20170817 10:16:00.612</SendingTime>
+        <TargetCompID>545454545454545454541</TargetCompID>
+        <TargetSubID>ahhytrd</TargetSubID>
+    </Header>
+    <Master>
+        <ClOrdID>ODahhytrd000000116</ClOrdID>
+        <Price>2.6000</Price>
+        <SecurityID>R001</SecurityID>
+        <Side>2</Side>
+        <TransactTime>20170817 18:16:00.472</TransactTime>
+        <ValidUntilTime>20170817 19:20:00.000</ValidUntilTime>
+        <SettlType>1</SettlType>
+        <SettlDate>20170817</SettlDate>
+        <ID>201708170920000093</ID>
+        <SettlCurrency>CNY</SettlCurrency>
+        <AccruedInterestAmt>3561.64384</AccruedInterestAmt>
+        <SettlDate2>20170818</SettlDate2>
+        <QuoteStatus>16</QuoteStatus>
+        <QuoteType>1</QuoteType>
+        <DeliveryType>0</DeliveryType>
+        <CashHoldingDays>1</CashHoldingDays>
+        <DeliveryType2>0</DeliveryType2>
+        <MarketIndicator>9</MarketIndicator>
+        <TransType>R</TransType>
+        <SettlCurrAmt2>50003561.64</SettlCurrAmt2>
+        <TradeCashAmt>50000000.00</TradeCashAmt>
+        <TradeLimitDays>1</TradeLimitDays>
+        <ClearingMethod>13</ClearingMethod>
+    </Master>
+    <Slave>
+        <Parties>
+            <Party>
+                <PartyID>545454545454545454541</PartyID>
+                <PartyRole>101</PartyRole>
+                <FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName>
+                <TraderCode>yaolei</TraderCode>
+                <TraderName>yaolei</TraderName>
+                <CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName>
+                <SecuritiesAccNumber>125235454</SecuritiesAccNumber>
+                <SettlementBankName>安徽海益信息科技有限公司</SettlementBankName>
+                <CashAccountNumber>123131</CashAccountNumber>
+            </Party>
+            <Party>
+                <PartyID>888888888888888888888</PartyID>
+                <PartyRole>102</PartyRole>
+                <FirmFullChineseName>恒天基金</FirmFullChineseName>
+                <TraderCode>htjjdealerahhy</TraderCode>
+                <TraderName>安徽海益测试对手方</TraderName>
+            </Party>
+        </Parties>
+        <NoUnderlyings>
+            <NoUnderlying>
+                <Symbol>-</Symbol>
+                <Qty>30000000</Qty>
+                <SecurityID>160207</SecurityID>
+                <HAIRCUT>100.0000</HAIRCUT>
+            </NoUnderlying>
+            <NoUnderlying>
+                <Symbol>-</Symbol>
+                <Qty>20000000</Qty>
+                <SecurityID>160206</SecurityID>
+                <HAIRCUT>100.0000</HAIRCUT>
+            </NoUnderlying>
+        </NoUnderlyings>
+    </Slave>
+    <MessageParam>
+        <SysID><![CDATA[5cd4f7e9-37bc-451e-a2c9-578af3d17eaa]]></SysID>
+        <SysOriMsg>
+            <![CDATA[<Quote><Header><BeginString>IMIX.2.0</BeginString><BodyLength>1008</BodyLength><MsgSeqNum>379</MsgSeqNum><MsgType>AI</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170817 10:16:00.612</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><ClOrdID>ODahhytrd000000116</ClOrdID><Price>2.6000</Price><SecurityID>R001</SecurityID><Side>2</Side><TransactTime>20170817 18:16:00.472</TransactTime><ValidUntilTime>20170817 19:20:00.000</ValidUntilTime><SettlType>1</SettlType><SettlDate>20170817</SettlDate><ID>201708170920000093</ID><SettlCurrency>CNY</SettlCurrency><AccruedInterestAmt>3561.64384</AccruedInterestAmt><SettlDate2>20170818</SettlDate2><QuoteStatus>16</QuoteStatus><QuoteType>1</QuoteType><DeliveryType>0</DeliveryType><CashHoldingDays>1</CashHoldingDays><DeliveryType2>0</DeliveryType2><MarketIndicator>9</MarketIndicator><TransType>R</TransType><SettlCurrAmt2>50003561.64</SettlCurrAmt2><TradeCashAmt>50000000.00</TradeCashAmt><TradeLimitDays>1</TradeLimitDays><ClearingMethod>13</ClearingMethod></Master><Slave><Parties><Party><PartyID>545454545454545454541</PartyID><PartyRole>101</PartyRole><FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName><TraderCode>yaolei</TraderCode><TraderName>yaolei</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>125235454</SecuritiesAccNumber><SettlementBankName>安徽海益信息科技有限公司</SettlementBankName><CashAccountNumber>123131</CashAccountNumber></Party><Party><PartyID>888888888888888888888</PartyID><PartyRole>102</PartyRole><FirmFullChineseName>恒天基金</FirmFullChineseName><TraderCode>htjjdealerahhy</TraderCode><TraderName>安徽海益测试对手方</TraderName></Party></Parties><NoUnderlyings><NoUnderlying><Symbol>-</Symbol><Qty>30000000</Qty><SecurityID>160207</SecurityID><HAIRCUT>100.0000</HAIRCUT></NoUnderlying><NoUnderlying><Symbol>-</Symbol><Qty>20000000</Qty><SecurityID>160206</SecurityID><HAIRCUT>100.0000</HAIRCUT></NoUnderlying></NoUnderlyings></Slave></Quote>]]></SysOriMsg>
+    </MessageParam>
+</Quote>
