@@ -13,7 +13,7 @@
     <!--成交转为报价的主数据-->
     <xsl:template name="master-OrderToQuote">
         <xsl:for-each select="message/body/field[@name]">
-            <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
+            <xsl:variable name="nodeName" select="java:XsltUtil.getOrderToQuoteMap(@name)"/>
             <xsl:if test="@tag != 453 and @tag != 235 and @tag != 17">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>

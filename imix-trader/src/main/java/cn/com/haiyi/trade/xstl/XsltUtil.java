@@ -12,6 +12,9 @@ import java.util.Map;
  */
 public class XsltUtil {
 
+    /**
+     * xml 和 table 字段之间的映射
+     */
     private static Map<String, String> PARTY_CONSTANT = new HashMap<>();
     private static Map<String, String> QUOTE_CONSTANT = new HashMap<>();
     private static Map<String, String> ExecutionReport_CONSTANT = new HashMap<>();
@@ -19,6 +22,11 @@ public class XsltUtil {
     private static Map<String, String> NOMARGININFOS_CONSTANT = new HashMap<>();
     private static Map<String, String> NOLEGS_CONSTANT = new HashMap<>();
 
+    private static Map<String, String> ORDER_TO_QUOTE_CONSTANT = new HashMap<>();   //订单转化为报价
+
+    /**
+     * 数据库表字段列表
+     */
     private static List<String> cfets_error_List = new LinkedList<>();
     private static List<String> details_mdEntries_List = new LinkedList<>();
     private static List<String> cfets_marketdata_ack_List = new LinkedList<>();
@@ -56,6 +64,15 @@ public class XsltUtil {
 
         PARTY_CONSTANT.put("TRADE_NAME", "TraderName");
         PARTY_CONSTANT.put("PERSON", "TraderCode");
+
+
+        /**
+         * 订单转化为报价
+         */
+        ORDER_TO_QUOTE_CONSTANT.put("QuoteTransType", "TransType");
+        ORDER_TO_QUOTE_CONSTANT.put("LastQty", "Qty");
+        ORDER_TO_QUOTE_CONSTANT.put("Yield", "Yield2");
+        ORDER_TO_QUOTE_CONSTANT.put("GrossTradeAmt", "TradeCashAmt");
 
 
         /**
@@ -379,6 +396,7 @@ public class XsltUtil {
         cfets_quotes_List.add("SDeliveryTypeOption");
         cfets_quotes_List.add("QuoteReqID");
         cfets_quotes_List.add("QueryRequestID");
+        cfets_quotes_List.add("TradeMethod");
         details_legs_List.add("IID");
         details_legs_List.add("Side");
         details_legs_List.add("PriceType");
@@ -524,6 +542,15 @@ public class XsltUtil {
             return original;
         }
         return value;
+    }
+
+    /**
+     * 获取订单转化为报价的映射结果
+     * @param original
+     * @return
+     */
+    public static String getOrderToQuoteMap(String original) {
+        return defineMap(original, ORDER_TO_QUOTE_CONSTANT);
     }
 
     /**

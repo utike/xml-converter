@@ -10,26 +10,12 @@
     <!--================================= 公共方法 =================================-->
     <!--对于字段的SQL构建-->
     <xsl:template name="fields">
-        <!--<xsl:choose>-->
-            <!--<xsl:when test="position() = 1">-->
-                <!--[<xsl:value-of select="name()"/>]-->
-            <!--</xsl:when>-->
-            <!--<xsl:otherwise>-->
-                ,[<xsl:value-of select="name()"/>]
-            <!--</xsl:otherwise>-->
-        <!--</xsl:choose>-->
+        ,[<xsl:value-of select="name()"/>]
     </xsl:template>
 
     <!--对于值的SQL构建-->
     <xsl:template name="values">
-        <!--<xsl:choose>-->
-            <!--<xsl:when test="position() = 1">-->
-                <!--'<xsl:value-of select="current()"/>'-->
-            <!--</xsl:when>-->
-            <!--<xsl:otherwise>-->
-                ,'<xsl:value-of select="current()"/>'
-            <!--</xsl:otherwise>-->
-        <!--</xsl:choose>-->
+        ,'<xsl:value-of select="current()"/>'
     </xsl:template>
 
 
