@@ -148,7 +148,20 @@ public class CashBondTest extends BaseTest {
         super.toSql(filePath, targetFileName);
     }
 
-    //(U32)
+    @Test
+    public void quoteU32CBTToXmlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\U32BT.xml";
+        final String targetFileName = "U32BT.xml";
+        super.toXml(filePath, targetFileName);
+    }
+    @Test
+    public void quoteU32CBTToSqlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\U32BT.xml";
+        final String targetFileName = "U32BT.sql";
+        super.toSql(filePath, targetFileName);
+    }
+
+    //(Z)
     //请求报价撤销请求报价
     //接收交易完成通知
     //请求报价过期

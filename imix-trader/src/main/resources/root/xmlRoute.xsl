@@ -104,8 +104,18 @@
                 </xsl:choose>
             </xsl:when>
 
-            <xsl:when test="$MsgType = 'U32' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-cashBond-QuoteRequestCancel"/>
+
+            <xsl:when test="$MsgType = 'U32'">
+                <xsl:variable name="MarketIndicatorLocal"
+                              select="message/body/groups[@name='NoRelatedSym']/group/field[@name='MarketIndicator']"/>
+                <xsl:choose>
+                    <xsl:when test="$MarketIndicatorLocal = '4'">
+                        <xsl:call-template name="route-cashBond-QuoteRequestCancel"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="NOT-FOUND"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
 
             <!--接收非做事方-新增撤销请求报价反馈-->
