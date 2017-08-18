@@ -37,11 +37,17 @@ public class XmlConverterUtil {
             SAXReader reader = new SAXReader();
             ByteArrayInputStream bais = new ByteArrayInputStream(Files.readAllBytes(path));
             Document doc = reader.read(bais);
-            Document transformDoc = transformDocument(doc,xslPath);
+            System.out.println("【originalDoc】"+doc.asXML());
 
-            String msgId = UUID.randomUUID().toString();
-            Document documentWithFooter = addFooter(transformDoc, msgId);
-            return documentWithFooter;
+            Document transformDoc = transformDocument(doc,xslPath);
+            System.out.println("【transformDoc】"+transformDoc.asXML());
+
+            return transformDoc;
+//            String msgId = UUID.randomUUID().toString();
+//            Document documentWithFooter = addFooter(transformDoc, msgId);
+//            System.out.println("【documentWithFooter】"+transformDoc.asXML());
+//            return documentWithFooter;
+//            return null;
         } catch (Exception e) {
             System.out.println("error: " +e);
         }
@@ -167,6 +173,7 @@ public class XmlConverterUtil {
      */
     public static String transfer2CommonStr(String xmlPath, String xslPath) {
         String srcStr = FileUtil.getFileContent(xmlPath);
+        System.out.println("【srcStr】："+srcStr);
         return transfer2WithSrc(srcStr, xslPath);
     }
 

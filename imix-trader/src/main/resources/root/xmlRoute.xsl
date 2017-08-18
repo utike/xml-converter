@@ -18,6 +18,8 @@
 
     <xsl:import href="component/COLLATERAL_REPO/ExecutionReport.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/QuoteStatusReport.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/Quote.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/QuoteResponse.xsl"/>
 
     <xsl:import href="component/ERROR/Error.xsl"/>
 
@@ -115,10 +117,8 @@
             </xsl:when>
 
             <!--确认或者拒绝成交及询价通知-->
-            <xsl:when test="$MsgType = 'AJ'">
-                <xsl:if test="$MarketIndicator = '4'">
-                    <xsl:call-template name="route-cashBond-QuoteResponse"/>
-                </xsl:if>
+            <xsl:when test="$MsgType = 'AJ' and $MarketIndicator='4'">
+                <xsl:call-template name="route-cashBond-QuoteResponse"/>
             </xsl:when>
 
             <!--================================= COLLATERAL_REPO =================================-->
@@ -128,6 +128,15 @@
 
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '9'">
                 <xsl:call-template name="route-collateralRepo-ExecutionReport"/>
+            </xsl:when>
+
+            <xsl:when test="$MsgType = 'AJ' and $MarketIndicator = '9'">
+                <xsl:call-template name="route-collateralRepo-QuoteResponse"/>
+            </xsl:when>
+
+            <!--报价 Quote-->
+            <xsl:when test="$MsgType = 'S' and $MarketIndicator = '9'">
+                <xsl:call-template name="route-collateralRepo-Quote"/>
             </xsl:when>
 
 

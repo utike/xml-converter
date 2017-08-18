@@ -19,6 +19,8 @@
 
     <xsl:import href="component/COLLATERAL_REPO/ExecutionReportSql.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/QuoteStatusReportSql.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/QuoteSql.xsl"/>
+    <xsl:import href="component/COLLATERAL_REPO/QuoteResponseSql.xsl"/>
 
     <xsl:import href="component/ERROR/ErrorSql.xsl"/>
 
@@ -80,10 +82,8 @@
                 <xsl:call-template name="route-cashBond-QuoteCancelSql"/>
             </xsl:when>
             <!--确认或者拒绝成交及询价通知-->
-            <xsl:when test="$MsgType = 'AJ'">
-                <xsl:if test="$MarketIndicator = '4'">
-                    <xsl:call-template name="route-cashBond-QuoteResponseSql"/>
-                </xsl:if>
+            <xsl:when test="$MsgType = 'AJ' and $MarketIndicator='4'">
+                <xsl:call-template name="route-cashBond-QuoteResponseSql"/>
             </xsl:when>
 
             <!--================================= COLLATERAL_REPO =================================-->
@@ -92,6 +92,13 @@
             </xsl:when>
             <xsl:when test="$MsgType = '8' and $MarketIndicator = '9'">
                 <xsl:call-template name="route-collateralRepo-ExecutionReportSql"/>
+            </xsl:when>
+            <xsl:when test="$MsgType = 'AJ' and $MarketIndicator = '9'">
+                <xsl:call-template name="route-collateralRepo-QuoteResponseSql"/>
+            </xsl:when>
+            <!--报价 Quote-->
+            <xsl:when test="$MsgType = 'S' and $MarketIndicator = '9'">
+                <xsl:call-template name="route-collateralRepo-QuoteSql"/>
             </xsl:when>
 
             <!--================================= ERROR =================================-->

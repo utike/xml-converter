@@ -40,4 +40,19 @@ public class CollateralRepoTest extends BaseTest {
     protected String getTargetFilePath() {
         return "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\COLLATERAL_REPO\\";
     }
+
+    @Test
+    public void AJToXmlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\COLLATERAL_REPO\\cr.xml";
+        final String targetFileName = "CRAJ.xml";
+        super.toXml(filePath, targetFileName);
+    }
+
+    @Test
+    public void AJToSqlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\COLLATERAL_REPO\\CRAJ.xml";
+        final String targetFileName = "CRAJ.sql";
+        super.toSql(filePath, targetFileName);
+    }
+
 }
