@@ -112,7 +112,7 @@
             </xsl:when>
 
             <xsl:otherwise>
-                <ROOT>NOT FOUND</ROOT>
+                <xsl:call-template name="NOT-FOUND"/>
             </xsl:otherwise>
         </xsl:choose>
 

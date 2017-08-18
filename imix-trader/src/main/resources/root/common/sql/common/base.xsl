@@ -499,5 +499,9 @@
         );
     </xsl:template>
 
+    <!--================================= NOT-FOUND =================================-->
+    <xsl:template name="NOT-FOUND">
+        <ROOT>NOT FOUND</ROOT>
+    </xsl:template>
 
 </xsl:stylesheet>
