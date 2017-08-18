@@ -37,17 +37,12 @@ public class XmlConverterUtil {
             SAXReader reader = new SAXReader();
             ByteArrayInputStream bais = new ByteArrayInputStream(Files.readAllBytes(path));
             Document doc = reader.read(bais);
-            System.out.println("【originalDoc】"+doc.asXML());
 
             Document transformDoc = transformDocument(doc,xslPath);
-            System.out.println("【transformDoc】"+transformDoc.asXML());
 
-            return transformDoc;
-//            String msgId = UUID.randomUUID().toString();
-//            Document documentWithFooter = addFooter(transformDoc, msgId);
-//            System.out.println("【documentWithFooter】"+transformDoc.asXML());
-//            return documentWithFooter;
-//            return null;
+            String msgId = UUID.randomUUID().toString();
+            Document documentWithFooter = addFooter(transformDoc, msgId);
+            return documentWithFooter;
         } catch (Exception e) {
             System.out.println("error: " +e);
         }

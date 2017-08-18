@@ -76,9 +76,14 @@
             <xsl:when test="$MsgType = 'U100'">
                 <xsl:variable name="MarketIndicatorLocal"
                               select="message/body/groups[@name='NoRelatedSym']/group/field[@name='MarketIndicator']"/>
-                <xsl:if test="$MarketIndicatorLocal = '4'">
-                    <xsl:call-template name="route-cashBond-ListMarketDataAck"/>
-                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="$MarketIndicatorLocal = '4'">
+                        <xsl:call-template name="route-cashBond-ListMarketDataAck"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="NOT-FOUND"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
 
             <xsl:when test="$MsgType = 'W' and $MarketIndicator = '4'">
@@ -89,9 +94,14 @@
             <xsl:when test="$MsgType = 'R'">
                 <xsl:variable name="MarketIndicatorLocal"
                               select="message/body/groups[@name='NoRelatedSym']/group/field[@name='MarketIndicator']"/>
-                <xsl:if test="$MarketIndicatorLocal = '4'">
-                    <xsl:call-template name="route-cashBond-QuoteRequest"/>
-                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="$MarketIndicatorLocal = '4'">
+                        <xsl:call-template name="route-cashBond-QuoteRequest"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="NOT-FOUND"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
 
             <xsl:when test="$MsgType = 'U32' and $MarketIndicator = '4'">
@@ -102,18 +112,29 @@
             <xsl:when test="$MsgType = 'U29'">
                 <xsl:variable name="MarketIndicatorLocal"
                               select="message/body/groups[@name='NoRelatedSym']/group/field[@name='MarketIndicator']"/>
-                <xsl:if test="$MarketIndicatorLocal = '4'">
-                    <xsl:call-template name="route-cashBond-QuoteRequestAck"/>
-                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="$MarketIndicatorLocal = '4'">
+                        <xsl:call-template name="route-cashBond-QuoteRequestAck"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="NOT-FOUND"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
 
             <!--请求报价取消-->
             <xsl:when test="$MsgType = 'Z'">
                 <xsl:variable name="MarketIndicatorLocal"
                               select="message/body/groups[@name='NoQuoteEntries']/group/field[@name='MarketIndicator']"/>
-                <xsl:if test="$MarketIndicatorLocal = '4'">
-                    <xsl:call-template name="route-cashBond-QuoteCancel"/>
-                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="$MarketIndicatorLocal = '4'">
+                        <xsl:call-template name="route-cashBond-QuoteCancel"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="NOT-FOUND"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+
             </xsl:when>
 
             <!--确认或者拒绝成交及询价通知-->
