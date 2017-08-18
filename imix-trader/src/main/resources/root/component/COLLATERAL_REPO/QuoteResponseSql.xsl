@@ -11,6 +11,8 @@
 
         <xsl:call-template name="sql-quote-party"/>
 
+        <xsl:call-template name="sql-quote-noUnderlying"/>
+
     </xsl:template>
 
 </xsl:stylesheet>
