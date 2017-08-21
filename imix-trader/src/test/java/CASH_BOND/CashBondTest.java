@@ -33,6 +33,20 @@ public class CashBondTest extends BaseTest {
         super.toSql(filePath, targetFileName);
     }
 
+    //请求报价(S) QuoteType=113
+    @Test
+    public void RequestQuoteToXmlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\requestQuote.xml";
+        final String targetFileName = "requestQuote.xml";
+        super.toXml(filePath, targetFileName);
+    }
+    @Test
+    public void RequestQuoteToSqlTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\requestQuote.xml";
+        final String targetFileName = "requestQuote.sql";
+        super.toSql(filePath, targetFileName);
+    }
+
     //quote 报价(AI)
     @Test
     public void QuoteStatusReportToXmlTest() {

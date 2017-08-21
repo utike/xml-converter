@@ -15,6 +15,7 @@
     <xsl:import href="component/CASH_BOND/QuoteRequestCancel.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteStatusReport.xsl"/>
     <xsl:import href="component/CASH_BOND/QuoteResponse.xsl"/>
+    <xsl:import href="component/CASH_BOND/RequestQuote.xsl"/>
 
     <xsl:import href="component/COLLATERAL_REPO/ExecutionReport.xsl"/>
     <xsl:import href="component/COLLATERAL_REPO/QuoteStatusReport.xsl"/>
@@ -62,9 +63,18 @@
                 </xsl:choose>
             </xsl:when>
 
-            <!--报价 Quote-->
+            <!--询价报价 Quote-->
             <xsl:when test="$MsgType = 'S' and $MarketIndicator = '4'">
-                <xsl:call-template name="route-cashBond-Quote"/>
+                <xsl:variable name="QuoteType" select="message/body/field[@name='QuoteType']"/>
+                <xsl:choose>
+                    <!--113 为请求报价-->
+                    <xsl:when test="$QuoteType = '113'">
+                        <xsl:call-template name="route-cashBond-RequestQuote"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="route-cashBond-Quote"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
 
             <!--限价报价 NewOrderSingleQuote-->

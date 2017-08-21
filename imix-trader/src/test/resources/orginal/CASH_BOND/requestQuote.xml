@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+    <header>
+        <field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+        <field name="BodyLength" tag="9"><![CDATA[483]]></field>
+        <field name="MsgSeqNum" tag="34"><![CDATA[100]]></field>
+        <field enum="Quote" name="MsgType" tag="35"><![CDATA[S]]></field>
+        <field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+        <field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+        <field name="SendingTime" tag="52"><![CDATA[20170821-05:51:57.686]]></field>
+        <field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+        <field name="TargetSubID" tag="57"><![CDATA[ahhytrd]]></field>
+    </header>
+    <body>
+        <field name="OrderQty" tag="38"><![CDATA[40000000]]></field>
+        <field name="Price" tag="44"><![CDATA[101.0000]]></field>
+        <field name="SecurityID" tag="48"><![CDATA[160206]]></field>
+        <field enum="SELL" name="Side" tag="54"><![CDATA[2]]></field>
+        <field name="Symbol" tag="55"><![CDATA[16xxx06]]></field>
+        <field name="TransactTime" tag="60"><![CDATA[20170821-13:51:57.514]]></field>
+        <field name="ValidUntilTime" tag="62"><![CDATA[20170821-13:56:00.000]]></field>
+        <field name="SettlType" tag="63"><![CDATA[1]]></field>
+        <field name="SettlDate" tag="64"><![CDATA[20170821]]></field>
+        <field name="QuoteID" tag="117"><![CDATA[201708210420000033]]></field>
+        <field name="SettlCurrAmt" tag="119"><![CDATA[40996865.75]]></field>
+        <field name="SettlCurrency" tag="120"><![CDATA[CNY]]></field>
+        <field name="QuoteReqID" tag="131"><![CDATA[201708210410000032]]></field>
+        <field name="AccruedInterestAmt" tag="159"><![CDATA[1.49216]]></field>
+        <field enum="CASH_BOND" name="SecurityType" tag="167"><![CDATA[CBT]]></field>
+        <field enum="YIELD_TO_MATURITY" name="YieldType" tag="235"><![CDATA[MATURITY]]></field>
+        <field name="Yield" tag="236"><![CDATA[2.6538]]></field>
+        <field enum="NORMAL" name="QuoteStatus" tag="297"><![CDATA[16]]></field>
+        <field enum="REQUEST_RESPONSE" name="QuoteType" tag="537"><![CDATA[113]]></field>
+        <field enum="VERSUS_PAYMENT_DELIVER_PAYMENT" name="DeliveryType" tag="919"><![CDATA[0]]></field>
+        <field name="AccruedInterestTotalAmt" tag="10002"><![CDATA[596865.75]]></field>
+        <field enum="NO" name="AnonymousIndicator" tag="10008"><![CDATA[N]]></field>
+        <field enum="NO" name="ContingencyIndicator" tag="10022"><![CDATA[N]]></field>
+        <field name="DirtyPrice" tag="10048"><![CDATA[102.4922]]></field>
+        <field enum="CASH_BOND" name="MarketIndicator" tag="10176"><![CDATA[4]]></field>
+        <field enum="NEW" name="QuoteTransType" tag="10272"><![CDATA[N]]></field>
+        <field name="TradeCashAmt" tag="10312"><![CDATA[40400000.00]]></field>
+        <field enum="SELF_CLEARING" name="ClearingMethod" tag="11143"><![CDATA[13]]></field>
+    </body>
+
+</message>
