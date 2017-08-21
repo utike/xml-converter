@@ -2,6 +2,7 @@ package com.ryo.imix.cmds;
 
 import com.ryo.imix.cmds.base.AbstractBaseTest;
 import com.ryo.imix.cmds.util.CmdsDataUtil;
+import imix.field.MDSubType;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class CashBondTest extends AbstractBaseTest {
 
     @Override
     public void indicatorQuote2XmlTest() throws IOException {
-
+//        MDSubType
     }
 
     @Override

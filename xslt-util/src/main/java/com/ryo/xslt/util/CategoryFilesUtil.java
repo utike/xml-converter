@@ -3,6 +3,10 @@ package com.ryo.xslt.util;
 import java.util.List;
 
 /**
+ * imix 消息工具方法
+ * @see DaoUtil 数据入库
+ * @see Imix2XmlTest imix=>xml
+ * @see XmlFilterUtil 内容过滤
  * Created by bbhou on 2017/7/27.
  */
 public class CategoryFilesUtil {
@@ -44,6 +48,20 @@ public class CategoryFilesUtil {
     }
 
     /**
+     * 市场行情数据
+     * @param filePath
+     */
+    private static void trimImixForMarketData(final String filePath) {
+        List<String> stringList = FileUtil.getFileContentEachLine(filePath, 0);
+
+        for(String string : stringList) {
+            if(string.contains("35=W")) {
+                System.out.println(string);
+            }
+        }
+    }
+
+    /**
      * 生成对应的 xml 信息
      * @param filePath
      */
@@ -64,7 +82,7 @@ public class CategoryFilesUtil {
 
     public static void main(String[] args) {
         final String dataPath = "E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\data\\20170728\\imix.data";
-        trimImixData(dataPath);
+        trimImixForMarketData(dataPath);
     }
 
 }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+<header>
+<field enum="BEGINSTRING_VALUE_IMIX10" name="BeginString" tag="8"><![CDATA[IMIX.1.0]]></field>
+<field name="BodyLength" tag="9"><![CDATA[343]]></field>
+<field name="MsgSeqNum" tag="34"><![CDATA[616]]></field>
+<field enum="MarketDataSnapshotFullRefresh" name="MsgType" tag="35"><![CDATA[W]]></field>
+<field name="SenderCompID" tag="49"><![CDATA[CMDS]]></field>
+<field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+</header>
+<body>
+<field name="TransactTime" tag="60"><![CDATA[20170727-00:00:00.000]]></field>
+<field name="NoMDTypes" tag="10163"><![CDATA[1]]></field>
+<groups name="NoMDTypes" tag="10163">
+<group>
+<field enum="RMB_MARKET_DATA_STATISTICS" name="MDType" tag="10164"><![CDATA[R]]></field>
+<field enum="TWO_WAY_QUOTE_MARKET_STATISTICS_FIXED_VS_FLOATING" name="MDSubType" tag="10337"><![CDATA[6]]></field>
+<field enum="INTEREST_RATE_SWAP" name="MarketIndicator" tag="10176"><![CDATA[2]]></field>
+<field name="NoRelatedSym" tag="146"><![CDATA[1]]></field>
+<field name="NoLegs" tag="555"><![CDATA[2]]></field>
+<groups name="NoRelatedSym" tag="146">
+<group>
+<field name="SecurityID" tag="48"><![CDATA[FR007_5Y]]></field>
+</group>
+</groups>
+<groups name="NoLegs" tag="555">
+<group>
+<field enum="MEANS_PER_LEGSIDE" name="LegSign" tag="10094"><![CDATA[O]]></field>
+<field enum="FIXED_AMOUNT" name="LegPriceType" tag="686"><![CDATA[3]]></field>
+<field enum="FIXED_RECEIVER_BENCHMARK_RECEIVER_TAKER_RECEIVE" name="LegSide" tag="624"><![CDATA[1]]></field>
+<field name="NoMDEntries" tag="268"><![CDATA[7]]></field>
+<groups name="NoMDEntries" tag="268">
+<group>
+<field enum="PREVIOUS_CLOSING_PRICE" name="MDEntryType" tag="269"><![CDATA[f]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="PREVIOUS_WEIGHTED_AVERAGE_PRICE" name="MDEntryType" tag="269"><![CDATA[h]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="OPENING_PRICE" name="MDEntryType" tag="269"><![CDATA[4]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="LATEST_PRICE" name="MDEntryType" tag="269"><![CDATA[e]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="TRADING_SESSION_HIGH_DEALT_PRICE" name="MDEntryType" tag="269"><![CDATA[7]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[3.21900000]]></field>
+</group>
+<group>
+<field enum="TRADING_SESSION_LOW_DEALT_PRICE" name="MDEntryType" tag="269"><![CDATA[8]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="WEIGHTED_AVERAGE_PRICE" name="MDEntryType" tag="269"><![CDATA[g]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+</groups>
+</group>
+<group>
+<field enum="MEANS_PER_LEGSIDE" name="LegSign" tag="10094"><![CDATA[O]]></field>
+<field enum="FIXED_AMOUNT" name="LegPriceType" tag="686"><![CDATA[3]]></field>
+<field enum="FIXED_PAYER_BENCHMARK_PAYER_TAKER_PAY" name="LegSide" tag="624"><![CDATA[4]]></field>
+<field name="NoMDEntries" tag="268"><![CDATA[6]]></field>
+<groups name="NoMDEntries" tag="268">
+<group>
+<field enum="PREVIOUS_CLOSING_PRICE" name="MDEntryType" tag="269"><![CDATA[f]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="PREVIOUS_WEIGHTED_AVERAGE_PRICE" name="MDEntryType" tag="269"><![CDATA[h]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="OPENING_PRICE" name="MDEntryType" tag="269"><![CDATA[4]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="LATEST_PRICE" name="MDEntryType" tag="269"><![CDATA[e]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="TRADING_SESSION_HIGH_DEALT_PRICE" name="MDEntryType" tag="269"><![CDATA[7]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+<group>
+<field enum="WEIGHTED_AVERAGE_PRICE" name="MDEntryType" tag="269"><![CDATA[g]]></field>
+<field name="MDEntryPx" tag="270"><![CDATA[0]]></field>
+</group>
+</groups>
+</group>
+</groups>
+</group>
+</groups>
+</body>
+<trailer>
+<field name="CheckSum" tag="10"><![CDATA[034]]></field>
+</trailer>
+</message>
+
