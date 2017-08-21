@@ -18,6 +18,21 @@ public class CashBondTest extends BaseTest {
 //        return "/Users/houbinbin/IT/fork/xml-converter/imix-trader/src/test/resources/result/CASH_BOND/";
     }
 
+    //----------------------------------------------限价报价-8
+    @Test
+    public void limitQuoteExecutionReportTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\limitQuoteExecutionReport.xml";
+        final String targetFileName = "limitQuoteExecutionReport.xml";
+        super.toXml(filePath, targetFileName);
+    }
+
+    @Test
+    public void limitQuoteExecutionReportWithoutIDTest() {
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\limitQuoteExecutionReportWithOutID.xml";
+        final String targetFileName = "limitQuoteExecutionReportWithOutID.xml";
+        super.toXml(filePath, targetFileName);
+    }
+
     //----------------------------------------------对话报价
     //quote (S)
     @Test
