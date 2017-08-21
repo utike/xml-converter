@@ -46,9 +46,9 @@
                 <xsl:choose>
                     <!--对于限价报价，对应的都是 报价，不是成交。且ExecId不存在-->
                     <xsl:when test="$QuoteType = '102'">
-                        <xsl:variable name="ExecId" select="message/body/field[@name='ExecId']"/>
+                        <xsl:variable name="ExecID" select="message/body/field[@name='ExecID']"/>
                         <xsl:choose>
-                            <xsl:when test="$ExecId != ''">
+                            <xsl:when test="$ExecID != ''">
                                 <xsl:call-template name="route-cashBond-ExecutionReport"/>
                             </xsl:when>
                             <!--对于限价报价，对应的都是 报价，不是成交。且ExecId不存在-->
