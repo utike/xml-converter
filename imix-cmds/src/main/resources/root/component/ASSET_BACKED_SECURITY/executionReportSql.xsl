@@ -7,9 +7,9 @@
 
     <xsl:template match="/" name="route-abs-executionReportSql">
 
-        <xsl:call-template name="sql-order"/>
+        <xsl:call-template name="sql-master-order"/>
 
-        <xsl:call-template name="sql-order-party"/>
+        <xsl:call-template name="sql-slave-order-party"/>
 
     </xsl:template>
 

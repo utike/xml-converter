@@ -59,6 +59,7 @@ public abstract class AbstractBaseTest {
 
         //2. 获取转换SQL
         String sqlResult = XmlConverterUtil.transfer2WithSrc(xmlResult, sqlRoutePath);
+        System.out.println(sqlResult);
 
         //3. 执行脚本
         try {

@@ -7,13 +7,13 @@
 
     <xsl:template match="/" name="route-securityLending-indicatorQuoteSql">
 
-        <xsl:call-template name="sql-quote"/>
+        <xsl:call-template name="sql-master-quote"/>
 
-        <xsl:call-template name="sql-quote-party"/>
+        <xsl:call-template name="sql-slave-quote-party"/>
 
-        <xsl:call-template name="sql-quote-noUnderlying"/>
+        <xsl:call-template name="sql-slave-quote-noUnderlying"/>
 
-        <xsl:call-template name="sql-quote-marginInfo"/>
+        <xsl:call-template name="sql-slave-quote-marginInfo"/>
 
     </xsl:template>
 

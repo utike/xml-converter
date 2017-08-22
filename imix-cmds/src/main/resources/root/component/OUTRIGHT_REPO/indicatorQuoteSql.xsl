@@ -8,11 +8,11 @@
 
     <xsl:template match="/" name="route-outrightRepo-indicatorQuoteSql">
 
-        <xsl:call-template name="sql-quote"/>
+        <xsl:call-template name="sql-master-quote"/>
 
-        <xsl:call-template name="sql-quote-party"/>
+        <xsl:call-template name="sql-slave-quote-party"/>
 
-        <xsl:call-template name="sql-quote-noUnderlying"/>
+        <xsl:call-template name="sql-slave-quote-noUnderlying"/>
 
     </xsl:template>
 

@@ -619,6 +619,7 @@ public class XsltUtil {
 
         CMDS_MarketData_List.add("IID");
         CMDS_MarketData_List.add("SysID");
+        CMDS_MarketData_List.add("SysOriMsg");
         CMDS_MarketData_List.add("TransactTime");
         CMDS_MarketData_List.add("MDType");
         CMDS_MarketData_List.add("IOPValue");

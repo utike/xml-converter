@@ -7,12 +7,12 @@
 
     <xsl:template match="/" name="route-MarketDataSql-Base">
 
-        <xsl:call-template name="sql-marketData"/>
-        <xsl:call-template name="sql-Entries"/>
-        <xsl:call-template name="sql-mdParty"/>
-        <xsl:call-template name="sql-mdUnderlying"/>
-        <xsl:call-template name="sql-mdLegs"/>
-        <xsl:call-template name="sql-benchmarks"/>
+        <xsl:call-template name="sql-master-marketData"/>
+        <xsl:call-template name="sql-slave-Entries"/>
+        <xsl:call-template name="sql-slave-mdParty"/>
+        <xsl:call-template name="sql-slave-mdUnderlying"/>
+        <xsl:call-template name="sql-slave-mdLegs"/>
+        <xsl:call-template name="sql-slave-benchmarks"/>
 
 
     </xsl:template>

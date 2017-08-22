@@ -40,7 +40,7 @@
 
     <!--================================= 对话报价 ================================= -->
     <!--对话报价表 -->
-    <xsl:template name="sql-quote">
+    <xsl:template name="sql-master-quote">
         INSERT INTO [dbo].[CMDS_Quotes]
         (
         <xsl:for-each select="Quote/MessageParam/*">
@@ -73,7 +73,7 @@
 
 
     <!--报价-交易方表 -->
-    <xsl:template name="sql-quote-party">
+    <xsl:template name="sql-slave-quote-party">
         <xsl:for-each select="Quote/Slave/Parties/Party">
             INSERT INTO [dbo].[CMDS_Details_parties]
             (
@@ -98,7 +98,7 @@
     </xsl:template>
 
     <!--报价-NoUnderlyings -->
-    <xsl:template name="sql-quote-noUnderlying">
+    <xsl:template name="sql-slave-quote-noUnderlying">
         <xsl:for-each select="Quote/Slave/NoUnderlyings/NoUnderlying">
             INSERT INTO [dbo].[CMDS_Details_underlyings]
             (
@@ -123,7 +123,7 @@
     </xsl:template>
 
     <!--报价-marginInfo -->
-    <xsl:template name="sql-quote-marginInfo">
+    <xsl:template name="sql-slave-quote-marginInfo">
         <xsl:for-each select="Quote/Slave/NoMarginInfos/NoMarginInfo">
             INSERT INTO [dbo].[CMDS_Details_marginInfos]
             (
@@ -156,7 +156,7 @@
     </xsl:template>
 
     <!--noLeg -->
-    <xsl:template name="sql-quote-noLeg">
+    <xsl:template name="sql-slave-quote-noLeg">
         <xsl:for-each select="Quote/Slave/NoLegs/NoLeg">
             INSERT INTO [dbo].[CMDS_Details_legs]
             (
@@ -182,11 +182,14 @@
 
     <!--================================= 成交报价 ================================= -->
     <!--成交报价表 -->
-    <xsl:template name="sql-order">
+    <xsl:template name="sql-master-order">
         INSERT INTO [dbo].[CMDS_Orders]
         (
         <xsl:for-each select="Order/MessageParam/*">
-            <xsl:call-template name="fieldsWithPosition"/>
+            <xsl:variable name="isHas" select="java:XsltUtil.isOrderContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                <xsl:call-template name="fieldsWithPosition"/>
+            </xsl:if>
         </xsl:for-each>
         <xsl:for-each select="Order/Master/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isOrderContains(name())"/>
@@ -211,7 +214,7 @@
     </xsl:template>
 
     <!--成交报价-交易方表 -->
-    <xsl:template name="sql-order-party">
+    <xsl:template name="sql-slave-order-party">
         <xsl:for-each select="Order/Slave/Parties/Party">
             INSERT INTO [dbo].[CMDS_Details_parties]
             (
@@ -236,7 +239,7 @@
     </xsl:template>
 
     <!--成交报价-NoUnderlyings -->
-    <xsl:template name="sql-order-noUnderlying">
+    <xsl:template name="sql-slave-order-noUnderlying">
         <xsl:for-each select="Order/Slave/NoUnderlyings/NoUnderlying">
             INSERT INTO [dbo].[CMDS_Details_underlyings]
             (
@@ -261,7 +264,7 @@
     </xsl:template>
 
     <!--成交报价-marginInfo -->
-    <xsl:template name="sql-order-marginInfo">
+    <xsl:template name="sql-slave-order-marginInfo">
         <xsl:for-each select="Order/Slave/NoMarginInfos/NoMarginInfo">
             INSERT INTO [dbo].[CMDS_Details_marginInfos]
             (
@@ -295,7 +298,7 @@
     </xsl:template>
 
     <!--noLeg -->
-    <xsl:template name="sql-order-noLeg">
+    <xsl:template name="sql-slave-order-noLeg">
         <xsl:for-each select="Order/Slave/NoLegs/NoLeg">
             INSERT INTO [dbo].[CMDS_Details_legs]
             (
@@ -320,7 +323,7 @@
     </xsl:template>
 
     <!-- 行情数据 -->
-    <xsl:template name="sql-Entries">
+    <xsl:template name="sql-slave-Entries">
         <xsl:for-each select="MarketData/Slave/MDType">
             INSERT INTO [dbo].[CMDS_Details_MDEntries]
             (
@@ -346,11 +349,14 @@
 
 
     <!--======================================== 市场行情 ========================================-->
-    <xsl:template name="sql-marketData">
+    <xsl:template name="sql-master-marketData">
         INSERT INTO [dbo].[CMDS_MarketData]
         (
         <xsl:for-each select="MarketData/MessageParam/*">
-            <xsl:call-template name="fieldsWithPosition"/>
+            <xsl:variable name="isHas" select="java:XsltUtil.isMarketDataContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                <xsl:call-template name="fieldsWithPosition"/>
+            </xsl:if>
         </xsl:for-each>
         <xsl:for-each select="MarketData/Master/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isMarketDataContains(name())"/>
@@ -374,7 +380,7 @@
         );
     </xsl:template>
 
-    <xsl:template name="sql-benchmarks">
+    <xsl:template name="sql-slave-benchmarks">
         <xsl:for-each select="MarketData/Slave/MDType/Benchmarks">
             INSERT INTO [dbo].[CMDS_Details_Benchmarks]
             (
@@ -397,7 +403,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template name="sql-mdLegs">
+    <xsl:template name="sql-slave-mdLegs">
         <xsl:for-each select="MarketData/Slave/MDType/Leg">
             INSERT INTO [dbo].[CMDS_Details_MDLegEntries]
             (
@@ -420,7 +426,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template name="sql-mdUnderlying">
+    <xsl:template name="sql-slave-mdUnderlying">
         <xsl:for-each select="MarketData/Slave/MDType/Underlying">
             INSERT INTO [dbo].[CMDS_Details_Underlyings]
             (
@@ -443,7 +449,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template name="sql-mdParty">
+    <xsl:template name="sql-slave-mdParty">
         <xsl:for-each select="MarketData/Slave/MDType/Party">
             INSERT INTO [dbo].[CMDS_Details_Parties]
             (
@@ -464,6 +470,11 @@
             </xsl:for-each>
             );
         </xsl:for-each>
+    </xsl:template>
+
+    <!--================================= NOT-FOUND =================================-->
+    <xsl:template name="NOT-FOUND">
+        <ROOT>NOT FOUND</ROOT>
     </xsl:template>
 
 </xsl:stylesheet>

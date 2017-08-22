@@ -39,9 +39,10 @@
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
-        <xsl:variable name="MsgType" select="*/Header/MsgType"/>
         <xsl:variable name="MarketIndicator" select="*/Master/MarketIndicator"/>
+        <xsl:variable name="MsgType" select="*/Header/MsgType"/>
         <xsl:variable name="MDSubType" select="*/Master/MDSubType"/>
+        <xsl:variable name="TradeMethod" select="*/Master/TradeMethod"/>
 
         <xsl:choose>
             <!--================================= INTER_BANK_OFFERING =================================-->
@@ -116,9 +117,17 @@
             </xsl:when>
             
              <xsl:when test="$MsgType = 'W' and $MarketIndicator = '4'">
-                <xsl:if test="$MDSubType = '44'">
-                    <xsl:call-template name="route-MarketDataSql-Base"/>
-                </xsl:if>
+                 <xsl:choose>
+                     <xsl:when test="$MDSubType = '44'">
+                         <xsl:call-template name="route-MarketDataSql-Base"/>
+                     </xsl:when>
+                     <xsl:when test="$MDSubType = '7'">
+                         <xsl:call-template name="route-MarketDataSql-Base"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                         <xsl:call-template name="NOT-FOUND"/>
+                     </xsl:otherwise>
+                 </xsl:choose>
             </xsl:when>
 
             <!--================================= SECURITY_LENDING =================================-->
@@ -181,7 +190,7 @@
             </xsl:when>
 
             <xsl:otherwise>
-                <ROOT>NOT FOUND</ROOT>
+                <xsl:call-template name="NOT-FOUND"/>
             </xsl:otherwise>
         </xsl:choose>
 

@@ -7,10 +7,10 @@
 
     <xsl:template match="/" name="route-interestRateSwap-executionReportSql-floatFloat">
 
-        <xsl:call-template name="sql-order"/>
+        <xsl:call-template name="sql-master-order"/>
 
 
-        <xsl:call-template name="sql-order-noLeg"/>
+        <xsl:call-template name="sql-slave-order-noLeg"/>
 
 
     </xsl:template>

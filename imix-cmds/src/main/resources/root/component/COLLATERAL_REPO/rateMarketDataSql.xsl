@@ -7,9 +7,9 @@
 
     <xsl:template match="/" name="route-rateMarketData-collateralRepo">
 
-        <xsl:call-template name="sql-marketData"/>
+        <xsl:call-template name="sql-master-marketData"/>
 
-        <xsl:call-template name="sql-Entries"/>
+        <xsl:call-template name="sql-slave-Entries"/>
 
 
     </xsl:template>

@@ -7,9 +7,9 @@
 
     <xsl:template match="/" name="route-securityLending-executionReportSql">
 
-        <xsl:call-template name="sql-order"/>
+        <xsl:call-template name="sql-master-order"/>
 
-        <xsl:call-template name="sql-order-noUnderlying"/>
+        <xsl:call-template name="sql-slave-order-noUnderlying"/>
 
     </xsl:template>
 
