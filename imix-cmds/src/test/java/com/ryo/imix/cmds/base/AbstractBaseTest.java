@@ -55,6 +55,7 @@ public abstract class AbstractBaseTest {
     public void execute(final String originalXmlPath) {
         //1. 获取转换模板
         String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xmlRoutePath).asXML();
+        System.out.println(xmlResult);
 
         //2. 获取转换SQL
         String sqlResult = XmlConverterUtil.transfer2WithSrc(xmlResult, sqlRoutePath);

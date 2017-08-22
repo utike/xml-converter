@@ -1,0 +1,46 @@
+<MarketData>
+    <Header>
+        <BeginString>IMIX.1.0</BeginString>
+        <BodyLength>427</BodyLength>
+        <MsgSeqNum>14</MsgSeqNum>
+        <MsgType>W</MsgType>
+        <SenderCompID>CMDS</SenderCompID>
+        <TargetCompID>545454545454545454541</TargetCompID>
+    </Header>
+    <Master>
+        <TransactTime>20170724 00:00:00.000</TransactTime>
+        <NoMDTypes>1</NoMDTypes>
+        <MDType>R</MDType>
+        <MDSubType>7</MDSubType>
+        <MarketIndicator>4</MarketIndicator>
+        <TradeMethod>0</TradeMethod>
+        <NoRelatedSym>1</NoRelatedSym>
+    </Master>
+    <Slave>
+        <MDType>
+            <SecurityID>160002</SecurityID>
+            <NoMDEntries>16</NoMDEntries>
+            <PreviousClosingPrice>100</PreviousClosingPrice>
+            <PreviousWeightedAveragePrice>100</PreviousWeightedAveragePrice>
+            <OpeningPrice>99.1785</OpeningPrice>
+            <LatestPrice>98</LatestPrice>
+            <ChangeOver>-2</ChangeOver>
+            <TradingSessionHighDealtPrice>101.7555</TradingSessionHighDealtPrice>
+            <TradingSessionLowDealtPrice>96</TradingSessionLowDealtPrice>
+            <WeightedAveragePrice>99.1633580</WeightedAveragePrice>
+            <PreviousClosingYield>2.52760439</PreviousClosingYield>
+            <PreviousWeightedAverageYield>2.52760439</PreviousWeightedAverageYield>
+            <OpenYield>2.77869248</OpenYield>
+            <LastYield>3.14370167</LastYield>
+            <HighestYield>3.77557660</HighestYield>
+            <LowestYield>1.999998651</LowestYield>
+            <WeightedAverageYield>2.78850244</WeightedAverageYield>
+            <TradeVolume>81000000.00</TradeVolume>
+        </MDType>
+    </Slave>
+    <MessageParam>
+        <SysID><![CDATA[c9f54d0a-a49b-452f-9afe-c3c3379e9130]]></SysID>
+        <SysOriMsg>
+            <![CDATA[<MarketData><Header><BeginString>IMIX.1.0</BeginString><BodyLength>427</BodyLength><MsgSeqNum>14</MsgSeqNum><MsgType>W</MsgType><SenderCompID>CMDS</SenderCompID><TargetCompID>545454545454545454541</TargetCompID></Header><Master><TransactTime>20170724 00:00:00.000</TransactTime><NoMDTypes>1</NoMDTypes><MDType>R</MDType><MDSubType>7</MDSubType><MarketIndicator>4</MarketIndicator><TradeMethod>0</TradeMethod><NoRelatedSym>1</NoRelatedSym></Master><Slave><MDType><SecurityID>160002</SecurityID><NoMDEntries>16</NoMDEntries><PreviousClosingPrice>100</PreviousClosingPrice><PreviousWeightedAveragePrice>100</PreviousWeightedAveragePrice><OpeningPrice>99.1785</OpeningPrice><LatestPrice>98</LatestPrice><ChangeOver>-2</ChangeOver><TradingSessionHighDealtPrice>101.7555</TradingSessionHighDealtPrice><TradingSessionLowDealtPrice>96</TradingSessionLowDealtPrice><WeightedAveragePrice>99.1633580</WeightedAveragePrice><PreviousClosingYield>2.52760439</PreviousClosingYield><PreviousWeightedAverageYield>2.52760439</PreviousWeightedAverageYield><OpenYield>2.77869248</OpenYield><LastYield>3.14370167</LastYield><HighestYield>3.77557660</HighestYield><LowestYield>1.999998651</LowestYield><WeightedAverageYield>2.78850244</WeightedAverageYield><TradeVolume>81000000.00</TradeVolume></MDType></Slave></MarketData>]]></SysOriMsg>
+    </MessageParam>
+</MarketData>

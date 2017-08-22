@@ -21,30 +21,50 @@ public class XmlFilterUtil {
 
     /**
      * 生成映射关系图
-     *
+     * TradeMethod:
+     * 0 汇总行情
+     * 1 询价成交
+     * 2
+     * 3 匿名
+     * 4 请求报价
+     * 5 点击报价行情
+     * @see imix.field.TradeMethod
      * @param marketDataDir
      */
-    public static void genMarketDataReadMeFile(final String marketDataDir) {
+    public static void genMarketDataReadMeFile(final String marketDataDir, final String readmeFilePath) {
         Path path = Paths.get(marketDataDir);
-//        path.
+        List<String> stringList = new LinkedList<>();
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path, "*.*")) {
-
-//            directoryStream.forEach(p -> System.out.println(p.getFileName()));
-
             SAXReader saxReader = new SAXReader();
             for (Path path1 : directoryStream) {
                 Document document = saxReader.read(path1.toFile());
-                System.out.println(path1);
-                Node marketIndicatorNode = document.selectSingleNode("message/body/field[@name='MarketIndicator']");
-                System.out.println(marketIndicatorNode.getStringValue());
+                Node marketIndicatorNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='MarketIndicator']/@enum");
+                Node mDSubTypeNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='MDSubType']");
+                Node tradeMethodNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='TradeMethod']");
+                Node mDBookTypeNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/groups[@name='MDInstrumentGrp']/group/field[@name='MDBookType']");
+
+                String result = String.format("%s;%s;%s;%s", getStringValue(marketIndicatorNode),
+                        getStringValue(mDSubTypeNode), getStringValue(tradeMethodNode), getStringValue(mDBookTypeNode));
+//                System.out.println(result);
+//                System.out.println(path1);
+
+                stringList.add(result);
+                stringList.add(path1.toString());
             }
 
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (DocumentException e) {
+            Path readmePath = Paths.get(readmeFilePath);
+            Files.write(readmePath, stringList);
+        } catch (IOException | DocumentException e) {
             e.printStackTrace();
         }
+
+    }
+
+    private static String getStringValue(Node node) {
+        if (node != null) {
+            return node.getStringValue();
+        }
+        return "";
     }
 
 //    MsgType & MDType 可忽略都是一样的;
@@ -56,6 +76,7 @@ public class XmlFilterUtil {
 
     /**
      * 获取文件的列表
+     *
      * @param dir
      * @return
      */
@@ -77,12 +98,15 @@ public class XmlFilterUtil {
     }
 
     public static void main(String[] args) throws DocumentException {
-        final String path = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData20170727\\1.xml";
-        SAXReader saxReader = new SAXReader();
-        Document document = saxReader.read(path);
+        final String dir = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData20170728";
+//        genMarketDataReadMeFile(dir);
 
-        Node marketIndicatorNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='MarketIndicator']/@enum");
-        System.out.println(marketIndicatorNode.getStringValue());
+//        final String path = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData20170727\\1.xml";
+//        SAXReader saxReader = new SAXReader();
+//        Document document = saxReader.read(path);
+//
+//        Node marketIndicatorNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='MarketIndicator']/@enum");
+//        System.out.println(marketIndicatorNode.getStringValue());
     }
 
 }

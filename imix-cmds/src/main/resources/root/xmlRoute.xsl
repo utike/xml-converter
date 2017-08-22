@@ -97,7 +97,7 @@
 
                     <!--$MDSubType=0-->
                     <xsl:when test="$MDSubType = 'DEAL_MARKET_STATISTICS'">
-                        <xsl:variable name="TradeMethod" select="message/body/groups[@name='NoMDTypes']/group/field[@name='TradeMethod']/current()"/>
+                        <xsl:variable name="TradeMethod" select="message/body/groups[@name='NoMDTypes']/group/field[@name='TradeMethod']"/>
                         <xsl:choose>
                             <!--质押式回购匿名点击成交行情-->
                             <xsl:when test="$TradeMethod = '3'">
@@ -112,7 +112,7 @@
 
                     <!--$MDSubType=38-->
                     <xsl:when test="$MDSubType = 'TOP_OF_BOOK'">
-                        <xsl:variable name="MDBookType" select="message/body/groups[@name='NoMDTypes']/group/groups[@name='MDInstrumentGrp']/group/field[@name='MDBookType']/current()"/>
+                        <xsl:variable name="MDBookType" select="message/body/groups[@name='NoMDTypes']/group/groups[@name='MDInstrumentGrp']/group/field[@name='MDBookType']"/>
                         <xsl:choose>
                             <xsl:when test="$MDBookType = '2'">
                                 <!--质押式回购报价深度行情-->
@@ -193,11 +193,11 @@
                 <xsl:variable name="MDSubType"
                               select="message/body/groups[@name='NoMDTypes']/group/field[@name='MDSubType']/@enum"/>
                 <xsl:choose>
-                    <!--现券清洗后实时行情 or 现券清洗后收盘行情-->
+                    <!--现券清洗后实时行情 or 现券清洗后收盘行情(44)-->
                     <xsl:when test="$MDSubType = 'MARKETSTATISTICS_EXCLUDING_ABNORMAL'">
                         <xsl:call-template name="route-MarketData-base"/>
                     </xsl:when>
-                    <!--现券买卖-->
+                    <!--现券买卖(7)-->
                     <xsl:when test="$MDSubType = 'TRADING_PRODUCT_MARKET_STATISTICS'">
                         <xsl:call-template name="route-MarketData-base"/>
                     </xsl:when>

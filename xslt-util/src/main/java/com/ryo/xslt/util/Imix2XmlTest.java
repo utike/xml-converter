@@ -8,13 +8,59 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by bbhou on 2017/6/13.
  */
 public class Imix2XmlTest {
+
+    /**
+     *
+     * @param stringList imix 原始文件内容
+     * @param targetDir 目标文件夹
+     */
+    public static void genXml(List<String> stringList, final String targetDir) {
+//        int i = 0;
+//
+//        for (String msgBody : stringList) {
+//            DataDictionary dd = null;
+//            imix.Message message = new imix.Message();
+//            try {
+//                dd = new DataDictionary("IMIX10.xml");
+////			message.fromString(msgBody, dd, false);
+//                if (msgBody.contains("35=S")) {//对话报价、点击成交、做市报价
+//                    message = new Quote();
+//                    message.fromString(msgBody, dd, false);
+//                } else if (msgBody.contains("35=8")) {//成交数据
+//                    message = new ExecutionReport();
+//                    message.fromString(msgBody, dd, false);
+//                } else if (msgBody.contains("35=6")) {//意向报价、双向报价
+//                    message = new IOI();
+//                    message.fromString(msgBody, dd, false);
+//                } else if (msgBody.contains("35=D")) {//限价报价
+//                    message = new NewOrderSingle();
+//                    message.fromString(msgBody, dd, false);
+//                } else if (msgBody.contains("35=W")){   //行情
+//                    message = new MarketDataAck();
+//                    message.fromString(msgBody, dd, false);
+//                }
+//            } catch (Exception e) {
+//                // TODO Auto-generated catch block
+//            }
+//            System.out.println(message.toXML(dd));
+//
+//            i++;
+//            Path targetPath = Paths.get(targetDir+i+".xml");
+//            try {
+//                Files.write(targetPath, Arrays.asList(message.toXML(dd)));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+    }
+
 
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\data\\20170728\\imixMarketData.data");
