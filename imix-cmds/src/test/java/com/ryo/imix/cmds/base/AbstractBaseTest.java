@@ -54,6 +54,7 @@ public abstract class AbstractBaseTest {
      */
     public void execute(final String originalXmlPath) {
         //1. 获取转换模板
+        System.out.println(originalXmlPath);
         String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xmlRoutePath).asXML();
         System.out.println(xmlResult);
 

@@ -43,9 +43,7 @@
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
         <xsl:variable name="MsgType" select="message/header/field[@name='MsgType']/@enum"/>
-
         <xsl:variable name="MarketIndicator" select="message/body/field[@name='MarketIndicator']/@enum"/>
-
         <xsl:variable name="DataMarketIndicator"
                       select="message/body/groups[@name='NoMDTypes']/group/field[@name='MarketIndicator']/@enum"/>
 
@@ -94,7 +92,6 @@
                     <xsl:when test="$MDSubType = 'SAVINGINSITITUTIONMD'">
                         <xsl:call-template name="route-MarketData-base"/>
                     </xsl:when>
-
                     <!--$MDSubType=0-->
                     <xsl:when test="$MDSubType = 'DEAL_MARKET_STATISTICS'">
                         <xsl:variable name="TradeMethod" select="message/body/groups[@name='NoMDTypes']/group/field[@name='TradeMethod']"/>
@@ -107,7 +104,6 @@
                                 <xsl:call-template name="NOT-FOUND"/>
                             </xsl:otherwise>
                         </xsl:choose>
-                        <xsl:call-template name="route-MarketData-base"/>
                     </xsl:when>
 
                     <!--$MDSubType=38-->
@@ -128,16 +124,6 @@
                         <xsl:call-template name="NOT-FOUND"/>
                     </xsl:otherwise>
                 </xsl:choose>
-
-                <xsl:if test="$MDSubType='REPO_RATE_STATISTICS'">
-                    <xsl:call-template name="route-MarketData-base"/>
-                </xsl:if>
-                <xsl:if test="$MDSubType='SAVINGINSITITUTIONMD'">
-                    <xsl:call-template name="route-MarketData-base"/>
-                </xsl:if>
-                <xsl:if test="$MDSubType='TOP_OF_BOOK'">
-                    <xsl:call-template name="route-MarketData-base"/>
-                </xsl:if>
             </xsl:when>
 
             <!--================================= OUTRIGHT_REPO =================================-->

@@ -30,5 +30,36 @@ public class CmdsDataFilterUtil {
     }
 
 
+    //------------------------------------------------------------------------------CR
+    /**
+     * 质押式回购利率行情数据(8)
+     * @param originalFilePath
+     * @return
+     */
+    public static List<String> getCRREPO_RATE_STATISTICS(final String originalFilePath) {
+        final String filter = "COLLATERAL_REPO;8;";
+        return AttrPathUtil.getFilterFiles(originalFilePath, filter);
+    }
+
+
+    /**
+     * 存款类机构间质押式回购行情(37)
+     * @param originalFilePath
+     * @return
+     */
+    public static List<String> getCRSAVINGINSITITUTIONMD(final String originalFilePath) {
+        final String filter = "COLLATERAL_REPO;37;";
+        return AttrPathUtil.getFilterFiles(originalFilePath, filter);
+    }
+
+    /**
+     * 质押式回购匿名点击成交行情
+     * @param originalFilePath
+     * @return
+     */
+    public static List<String> getCRDEAL_MARKET_STATISTICS_3(final String originalFilePath) {
+        final String filter = "COLLATERAL_REPO;0;3;";
+        return AttrPathUtil.getFilterFiles(originalFilePath, filter);
+    }
 
 }

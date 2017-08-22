@@ -74,9 +74,47 @@
             </xsl:when>
             
             <xsl:when test="$MsgType = 'W' and $MarketIndicator = '9'">
-                <xsl:if test="$MDSubType = '8' or $MDSubType = '37' or $MDSubType = '38'">
-                    <xsl:call-template name="route-MarketDataSql-Base"/>
-                </xsl:if>
+                <xsl:choose>
+                    <!--质押式回购利率行情数据(8)-->
+                    <xsl:when test="$MDSubType = '8'">
+                        <xsl:call-template name="route-MarketDataSql-Base"/>
+                    </xsl:when>
+                    <!--存款类机构间质押式回购行情(37)-->
+                    <xsl:when test="$MDSubType = '37'">
+                        <xsl:call-template name="route-MarketDataSql-Base"/>
+                    </xsl:when>
+
+                    <!--$MDSubType=0-->
+                    <xsl:when test="$MDSubType = '0'">
+                        <xsl:choose>
+                            <!--质押式回购匿名点击成交行情-->
+                            <xsl:when test="$TradeMethod = '3'">
+                                <xsl:call-template name="route-MarketDataSql-Base"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:call-template name="NOT-FOUND"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+
+                    <xsl:when test="$MDSubType = '38'">
+                        <xsl:variable name="MDBookType" select="MarketData/Slave/MDType[1]/MDBookType"/>
+                        <xsl:choose>
+                            <xsl:when test="$MDBookType = '2'">
+                                <!--质押式回购报价深度行情-->
+                                <xsl:call-template name="route-MarketDataSql-Base"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!--质押式回购最优报价行情-->
+                                <xsl:call-template name="route-MarketDataSql-Base"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+
+                    <xsl:otherwise>
+                        <xsl:call-template name="NOT-FOUND"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
 
             <!--================================= OUTRIGHT_REPO =================================-->
