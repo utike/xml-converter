@@ -631,7 +631,6 @@ public class XsltUtil {
         CMDS_MarketData_List.add("TradeLimitDays");
         CMDS_MarketData_List.add("StartDate");
         CMDS_MarketData_List.add("EndDate");
-        CMDS_MarketData_List.add("SysCreateTime");
         CMDS_MarketData_List.add("SysUpdateTime");
 
         CMDS_Details_MDLegEntries_List.add("IID");
