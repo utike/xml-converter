@@ -7,463 +7,112 @@
             
                 ,[SysOriMsg]
             
-        
-            
-                
-            
-            
-                ,[ExecID]
-            
-        
+        ,[ExecID]
     
-        
-            
-                
-            
-            
-                ,[LastQty]
-            
-        
+        ,[LastQty]
     
-        
-            
-                
-            
-            
-                ,[Price]
-            
-        
+        ,[Price]
     
-        
-            
-                
-            
-            
-                ,[SecurityID]
-            
-        
+        ,[SecurityID]
     
-        
-            
-                
-            
-            
-                ,[Side]
-            
-        
+        ,[Side]
     
-        
-            
-                
-            
-            
-                ,[TransactTime]
-            
-        
+        ,[TransactTime]
     
-        
-            
-                
-            
-            
-                ,[SettlType]
-            
-        
+        ,[SettlType]
     
-        
-            
-                
-            
-            
-                ,[SettlDate]
-            
-        
+        ,[SettlDate]
     
-        
-            
-                
-            
-            
-                ,[TradeDate]
-            
-        
+        ,[TradeDate]
     
-        
-            
-                
-            
-            
-                ,[QuoteID]
-            
-        
+        ,[QuoteID]
     
-        
-            
-                
-            
-            
-                ,[SettlCurrAmt]
-            
-        
+        ,[SettlCurrAmt]
     
-        
-            
-                
-            
-            
-                ,[SettlCurrency]
-            
-        
+        ,[SettlCurrency]
     
-        
-            
-                
-            
-            
-                ,[ExecType]
-            
-        
+        ,[ExecType]
     
-        
-            
-                
-            
-            
-                ,[AccruedInterestAmt]
-            
-        
+        ,[AccruedInterestAmt]
     
-        
-            
-                
-            
-            
-                ,[Yield2]
-            
-        
+        ,[Yield2]
     
-        
-            
-                
-            
-            
-                ,[TradeCashAmt]
-            
-        
+        ,[TradeCashAmt]
     
-        
-            
-                
-            
-            
-                ,[DeliveryType]
-            
-        
+        ,[DeliveryType]
     
-        
-            
-                
-            
-            
-                ,[AccruedInterestTotalAmt]
-            
-        
+        ,[AccruedInterestTotalAmt]
     
-        
-            
-                
-            
-            
-                ,[ContingencyIndicator]
-            
-        
+        ,[ContingencyIndicator]
     
-        
-            
-                
-            
-            
-                ,[DirtyPrice]
-            
-        
+        ,[DirtyPrice]
     
-        
-            
-                
-            
-            
-                ,[MarketIndicator]
-            
-        
+        ,[MarketIndicator]
     
-        
-            
-                
-            
-            
-                ,[TradeMethod]
-            
-        
+        ,[TradeMethod]
     
-        
-            
-                
-            
-            
-                ,[TradeTime]
-            
-        
+        ,[TradeTime]
     
-        
-            
-                
-            
-            
-                ,[TradeType]
-            
-        
+        ,[TradeType]
     
-        
-            
-                
-            
-            
-                ,[ClearingMethod]
-            
-        
+        ,[ClearingMethod]
     
         ) VALUES (
         0
         
-                ,'3ecc5eb7-8c24-40ed-baac-c829a847fb63'
+                ,'2be7b91c-5500-49a1-9826-6cf0eae80627'
             
-                ,'
-            <Order><Header><BeginString>IMIX.2.0</BeginString><BodyLength>1018</BodyLength><MsgSeqNum>18</MsgSeqNum><MsgType>8</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 06:45:21.122</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><ExecID>CBT20170710000019</ExecID><LastQty>10000000</LastQty><Price>99.0000</Price><SecurityID>1080001</SecurityID><Side>2</Side><TransactTime>20170710 14:45:20.860</TransactTime><SettlType>2</SettlType><SettlDate>20170711</SettlDate><TradeDate>20170710</TradeDate><QuoteID>201707100420000017</QuoteID><SettlCurrAmt>10136931.51</SettlCurrAmt><SettlCurrency>CNY</SettlCurrency><ExecType>F</ExecType><AccruedInterestAmt>2.36932</AccruedInterestAmt><Yield2>5.1242</Yield2><TradeCashAmt>9900000.00</TradeCashAmt><DeliveryType>0</DeliveryType><AccruedInterestTotalAmt>236931.51</AccruedInterestTotalAmt><ContingencyIndicator>N</ContingencyIndicator><DirtyPrice>101.3693</DirtyPrice><MarketIndicator>4</MarketIndicator><TradeMethod>1</TradeMethod><TradeTime>14:45:20.860</TradeTime><TradeType>1</TradeType><ClearingMethod>13</ClearingMethod></Master><Slave><Parties><Party><PartyID>888888888888888888888</PartyID><PartyRole>119</PartyRole><FirmFullChineseName>恒天基金</FirmFullChineseName><FirmShortChineseName>恒天基金</FirmShortChineseName><TraderName>安徽海益测试对手方</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>A654321</SecuritiesAccNumber><SettlementBankName>1111</SettlementBankName><CashAccountNumber>654321</CashAccountNumber></Party><Party><PartyID>545454545454545454541</PartyID><PartyRole>120</PartyRole><FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName><FirmShortChineseName>安徽海益信息</FirmShortChineseName><TraderName>yaolei</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>125235454</SecuritiesAccNumber><SettlementBankName>安徽海益信息科技有限公司</SettlementBankName><CashAccountNumber>123131</CashAccountNumber></Party></Parties></Slave></Order>'
+                ,'<Order><Header><BeginString>IMIX.2.0</BeginString><BodyLength>1018</BodyLength><MsgSeqNum>18</MsgSeqNum><MsgType>8</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170710 06:45:21.122</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><ExecID>CBT20170710000019</ExecID><LastQty>10000000</LastQty><Price>99.0000</Price><SecurityID>1080001</SecurityID><Side>2</Side><TransactTime>20170710 14:45:20.860</TransactTime><SettlType>2</SettlType><SettlDate>20170711</SettlDate><TradeDate>20170710</TradeDate><QuoteID>201707100420000017</QuoteID><SettlCurrAmt>10136931.51</SettlCurrAmt><SettlCurrency>CNY</SettlCurrency><ExecType>F</ExecType><AccruedInterestAmt>2.36932</AccruedInterestAmt><Yield2>5.1242</Yield2><TradeCashAmt>9900000.00</TradeCashAmt><DeliveryType>0</DeliveryType><AccruedInterestTotalAmt>236931.51</AccruedInterestTotalAmt><ContingencyIndicator>N</ContingencyIndicator><DirtyPrice>101.3693</DirtyPrice><MarketIndicator>4</MarketIndicator><TradeMethod>1</TradeMethod><TradeTime>14:45:20.860</TradeTime><TradeType>1</TradeType><ClearingMethod>13</ClearingMethod></Master><Slave><Parties><Party><PartyID>888888888888888888888</PartyID><PartyRole>119</PartyRole><FirmFullChineseName>恒天基金</FirmFullChineseName><FirmShortChineseName>恒天基金</FirmShortChineseName><TraderName>安徽海益测试对手方</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>A654321</SecuritiesAccNumber><SettlementBankName>1111</SettlementBankName><CashAccountNumber>654321</CashAccountNumber></Party><Party><PartyID>545454545454545454541</PartyID><PartyRole>120</PartyRole><FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName><FirmShortChineseName>安徽海益信息</FirmShortChineseName><TraderName>yaolei</TraderName><CustodianInstitutionName>国债登记结算公司</CustodianInstitutionName><SecuritiesAccNumber>125235454</SecuritiesAccNumber><SettlementBankName>安徽海益信息科技有限公司</SettlementBankName><CashAccountNumber>123131</CashAccountNumber></Party></Parties></Slave></Order>'
             
-        
-            
-                
-            
-            
-                ,'CBT20170710000019'
-            
-        
+        ,'CBT20170710000019'
     
-        
-            
-                
-            
-            
-                ,'10000000'
-            
-        
+        ,'10000000'
     
-        
-            
-                
-            
-            
-                ,'99.0000'
-            
-        
+        ,'99.0000'
     
-        
-            
-                
-            
-            
-                ,'1080001'
-            
-        
+        ,'1080001'
     
-        
-            
-                
-            
-            
-                ,'2'
-            
-        
+        ,'2'
     
-        
-            
-                
-            
-            
-                ,'20170710 14:45:20.860'
-            
-        
+        ,'20170710 14:45:20.860'
     
-        
-            
-                
-            
-            
-                ,'2'
-            
-        
+        ,'2'
     
-        
-            
-                
-            
-            
-                ,'20170711'
-            
-        
+        ,'20170711'
     
-        
-            
-                
-            
-            
-                ,'20170710'
-            
-        
+        ,'20170710'
     
-        
-            
-                
-            
-            
-                ,'201707100420000017'
-            
-        
+        ,'201707100420000017'
     
-        
-            
-                
-            
-            
-                ,'10136931.51'
-            
-        
+        ,'10136931.51'
     
-        
-            
-                
-            
-            
-                ,'CNY'
-            
-        
+        ,'CNY'
     
-        
-            
-                
-            
-            
-                ,'F'
-            
-        
+        ,'F'
     
-        
-            
-                
-            
-            
-                ,'2.36932'
-            
-        
+        ,'2.36932'
     
-        
-            
-                
-            
-            
-                ,'5.1242'
-            
-        
+        ,'5.1242'
     
-        
-            
-                
-            
-            
-                ,'9900000.00'
-            
-        
+        ,'9900000.00'
     
-        
-            
-                
-            
-            
-                ,'0'
-            
-        
+        ,'0'
     
-        
-            
-                
-            
-            
-                ,'236931.51'
-            
-        
+        ,'236931.51'
     
-        
-            
-                
-            
-            
-                ,'N'
-            
-        
+        ,'N'
     
-        
-            
-                
-            
-            
-                ,'101.3693'
-            
-        
+        ,'101.3693'
     
-        
-            
-                
-            
-            
-                ,'4'
-            
-        
+        ,'4'
     
-        
-            
-                
-            
-            
-                ,'1'
-            
-        
+        ,'1'
     
-        
-            
-                
-            
-            
-                ,'14:45:20.860'
-            
-        
+        ,'14:45:20.860'
     
-        
-            
-                
-            
-            
-                ,'1'
-            
-        
+        ,'1'
     
-        
-            
-                
-            
-            
-                ,'13'
-            
-        
+        ,'13'
     
         );
     
@@ -471,171 +120,45 @@
             (
             [FkID]
             
-        
-            
-                
-            
-            
-                ,[PartyID]
-            
-        
+        ,[PartyID]
     
-        
-            
-                
-            
-            
-                ,[PartyRole]
-            
-        
+        ,[PartyRole]
     
-        
-            
-                
-            
-            
-                ,[FirmFullChineseName]
-            
-        
+        ,[FirmFullChineseName]
     
-        
-            
-                
-            
-            
-                ,[FirmShortChineseName]
-            
-        
+        ,[FirmShortChineseName]
     
-        
-            
-                
-            
-            
-                ,[TraderName]
-            
-        
+        ,[TraderName]
     
-        
-            
-                
-            
-            
-                ,[CustodianInstitutionName]
-            
-        
+        ,[CustodianInstitutionName]
     
-        
-            
-                
-            
-            
-                ,[SecuritiesAccNumber]
-            
-        
+        ,[SecuritiesAccNumber]
     
-        
-            
-                
-            
-            
-                ,[SettlementBankName]
-            
-        
+        ,[SettlementBankName]
     
-        
-            
-                
-            
-            
-                ,[CashAccountNumber]
-            
-        
+        ,[CashAccountNumber]
     
             ) VALUES
             (
-            '3ecc5eb7-8c24-40ed-baac-c829a847fb63'
+            '2be7b91c-5500-49a1-9826-6cf0eae80627'
             
-        
-            
-                
-            
-            
-                ,'888888888888888888888'
-            
-        
+        ,'888888888888888888888'
     
-        
-            
-                
-            
-            
-                ,'119'
-            
-        
+        ,'119'
     
-        
-            
-                
-            
-            
-                ,'恒天基金'
-            
-        
+        ,'恒天基金'
     
-        
-            
-                
-            
-            
-                ,'恒天基金'
-            
-        
+        ,'恒天基金'
     
-        
-            
-                
-            
-            
-                ,'安徽海益测试对手方'
-            
-        
+        ,'安徽海益测试对手方'
     
-        
-            
-                
-            
-            
-                ,'国债登记结算公司'
-            
-        
+        ,'国债登记结算公司'
     
-        
-            
-                
-            
-            
-                ,'A654321'
-            
-        
+        ,'A654321'
     
-        
-            
-                
-            
-            
-                ,'1111'
-            
-        
+        ,'1111'
     
-        
-            
-                
-            
-            
-                ,'654321'
-            
-        
+        ,'654321'
     
             );
         
@@ -643,171 +166,45 @@
             (
             [FkID]
             
-        
-            
-                
-            
-            
-                ,[PartyID]
-            
-        
+        ,[PartyID]
     
-        
-            
-                
-            
-            
-                ,[PartyRole]
-            
-        
+        ,[PartyRole]
     
-        
-            
-                
-            
-            
-                ,[FirmFullChineseName]
-            
-        
+        ,[FirmFullChineseName]
     
-        
-            
-                
-            
-            
-                ,[FirmShortChineseName]
-            
-        
+        ,[FirmShortChineseName]
     
-        
-            
-                
-            
-            
-                ,[TraderName]
-            
-        
+        ,[TraderName]
     
-        
-            
-                
-            
-            
-                ,[CustodianInstitutionName]
-            
-        
+        ,[CustodianInstitutionName]
     
-        
-            
-                
-            
-            
-                ,[SecuritiesAccNumber]
-            
-        
+        ,[SecuritiesAccNumber]
     
-        
-            
-                
-            
-            
-                ,[SettlementBankName]
-            
-        
+        ,[SettlementBankName]
     
-        
-            
-                
-            
-            
-                ,[CashAccountNumber]
-            
-        
+        ,[CashAccountNumber]
     
             ) VALUES
             (
-            '3ecc5eb7-8c24-40ed-baac-c829a847fb63'
+            '2be7b91c-5500-49a1-9826-6cf0eae80627'
             
-        
-            
-                
-            
-            
-                ,'545454545454545454541'
-            
-        
+        ,'545454545454545454541'
     
-        
-            
-                
-            
-            
-                ,'120'
-            
-        
+        ,'120'
     
-        
-            
-                
-            
-            
-                ,'安徽海益信息科技有限责任公司'
-            
-        
+        ,'安徽海益信息科技有限责任公司'
     
-        
-            
-                
-            
-            
-                ,'安徽海益信息'
-            
-        
+        ,'安徽海益信息'
     
-        
-            
-                
-            
-            
-                ,'yaolei'
-            
-        
+        ,'yaolei'
     
-        
-            
-                
-            
-            
-                ,'国债登记结算公司'
-            
-        
+        ,'国债登记结算公司'
     
-        
-            
-                
-            
-            
-                ,'125235454'
-            
-        
+        ,'125235454'
     
-        
-            
-                
-            
-            
-                ,'安徽海益信息科技有限公司'
-            
-        
+        ,'安徽海益信息科技有限公司'
     
-        
-            
-                
-            
-            
-                ,'123131'
-            
-        
+        ,'123131'
     
             );
         

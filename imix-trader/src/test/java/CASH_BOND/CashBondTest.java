@@ -79,7 +79,7 @@ public class CashBondTest extends BaseTest {
     //quote 成交(8)
     @Test
     public void ExecutionReportToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\confirmDialogQuote.xml";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\20170823-4-8.xml";
         final String targetFileName = "ExecutionReport.xml";
         super.toXml(filePath, targetFileName);
     }
