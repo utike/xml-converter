@@ -85,8 +85,8 @@ public class CashBondTest extends BaseTest {
     }
     @Test
     public void ExecutionReportToSqlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\ExecutionReport.xml";
-        final String targetFileName = "ExecutionReport.sql";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\20170823-4-8.xml";
+        final String targetFileName = "20170823-4-8.sql";
         super.toSql(filePath, targetFileName);
     }
 

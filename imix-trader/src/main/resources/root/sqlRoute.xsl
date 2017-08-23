@@ -44,7 +44,16 @@
                 <xsl:choose>
                     <!--对于限价报价，对应的都是 报价，不是成交。-->
                     <xsl:when test="$QuoteType = '102'">
-                        <xsl:call-template name="route-cashBond-LimitQuoteStatusReportSql"/>
+                        <xsl:variable name="ExecID" select="*/Master/ExecID"/>
+                        <xsl:choose>
+                            <xsl:when test="$ExecID != ''">
+                                <xsl:call-template name="route-cashBond-ExecutionReportSql"/>
+                            </xsl:when>
+                            <!--对于限价报价，对应的都是 报价，不是成交。且ExecId不存在-->
+                            <xsl:otherwise>
+                                <xsl:call-template name="route-cashBond-LimitQuoteStatusReportSql"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="route-cashBond-ExecutionReportSql"/>
