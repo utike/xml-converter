@@ -295,14 +295,7 @@
                         <xsl:variable name="nodeName"
                                       select="java:XsltUtil.getNoLegsMap(@name)"/>
                         <xsl:element name="{$nodeName}">
-                            <xsl:choose>
-                                <!--<xsl:when test="$nodeName = 'Price'">-->
-                                    <!--<xsl:value-of select="java:XsltUtil.getRate(current())"/>-->
-                                <!--</xsl:when>-->
-                                <xsl:otherwise>
-                                    <xsl:value-of select="current()"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
+                            <xsl:value-of select="current()"/>
                         </xsl:element>
                     </xsl:for-each>
                 </xsl:element>
