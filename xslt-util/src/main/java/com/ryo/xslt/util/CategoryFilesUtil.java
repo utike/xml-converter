@@ -74,9 +74,9 @@ public class CategoryFilesUtil {
      * @param args
      */
     public static void main(String[] args) {
-        final String originalLogFilePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\data\\original\\client.log";
-        final String xmlTargetDir = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData0724To0822\\";
-        final String readmeFilePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData0724To0822.md";
+        final String originalLogFilePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\data\\original\\20170828\\client.log";
+        final String xmlTargetDir = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketDataTo0828\\";
+        final String readmeFilePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketDataTo0828.md";
         List<String> marketDataImixList = getImixContent(originalLogFilePath);
         Imix2XmlTest.genXml(marketDataImixList, xmlTargetDir);
         XmlFilterUtil.genMarketDataReadMeFile(xmlTargetDir, readmeFilePath);

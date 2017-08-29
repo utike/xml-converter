@@ -3,6 +3,8 @@ package com.ryo.imix.cmds.base;
 
 import com.ryo.xslt.util.DaoUtil;
 import com.ryo.xslt.util.XmlConverterUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.dom4j.Document;
 
 import java.io.IOException;
@@ -17,6 +19,8 @@ import java.util.concurrent.ExecutionException;
  */
 public abstract class AbstractBaseTest {
 
+
+    protected static final Logger LOGGER = LogManager.getLogger(AbstractBaseTest.class);
 
     protected abstract String getTargetFilePath();
 
@@ -54,19 +58,16 @@ public abstract class AbstractBaseTest {
      */
     public void execute(final String originalXmlPath) {
         //1. 获取转换模板
-        System.out.println(originalXmlPath);
         String xmlResult = XmlConverterUtil.convertWithXsl(originalXmlPath, xmlRoutePath).asXML();
-        System.out.println(xmlResult);
 
         //2. 获取转换SQL
         String sqlResult = XmlConverterUtil.transfer2WithSrc(xmlResult, sqlRoutePath);
-        System.out.println(sqlResult);
 
         //3. 执行脚本
         try {
             DaoUtil.execute(sqlResult);
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("execute meet ex: {}", e, e);
         }
     }
 
@@ -85,8 +86,7 @@ public abstract class AbstractBaseTest {
         try {
             Files.write(path, xmlResult.getBytes());
         } catch (IOException e) {
-            System.out.println(originalXmlPath);
-            e.printStackTrace();
+            LOGGER.error("execute meet ex: {}", e, e);
         }
     }
 
@@ -105,7 +105,7 @@ public abstract class AbstractBaseTest {
         try {
             Files.write(path, xmlResult.getBytes());
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("execute meet ex: {}", e, e);
         }
     }
 

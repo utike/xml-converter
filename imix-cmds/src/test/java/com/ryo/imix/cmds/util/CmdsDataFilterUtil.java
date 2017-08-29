@@ -62,4 +62,14 @@ public class CmdsDataFilterUtil {
         return AttrPathUtil.getFilterFiles(originalFilePath, filter);
     }
 
+    /**
+     * 获取所有行情数据
+     * @param originalFilePath
+     * @return
+     */
+    public static List<String> getAllMARKET_STATISTICS(final String originalFilePath) {
+        final String filter = ";7;";
+        return AttrPathUtil.getFilterFiles(originalFilePath, filter);
+    }
+
 }

@@ -254,4 +254,7 @@ public class CashBondTest extends BaseTest {
         super.toSql(filePath, targetFileName);
     }
 
+    public static void main(String[] args) {
+//        QuoteStatus
+    }
 }

@@ -15,6 +15,10 @@ import java.util.List;
  */
 public class CollateralRepoTest extends AbstractBaseTest {
 
+    @Test
+    public void logLevelTest() {
+        LOGGER.error("error log test...");
+    }
 
     @Override
     protected String getTargetFilePath() {
@@ -90,6 +94,21 @@ public class CollateralRepoTest extends AbstractBaseTest {
         List<String> stringList = CmdsDataFilterUtil.getCRDEAL_MARKET_STATISTICS_3(filePath);
         for(String path : stringList) {
             super.execute(path);
+        }
+    }
+
+
+    @Test
+    public void allMarketStatisticsTest() {
+        final String filePath = "C:\\Users\\bbhou\\Desktop\\work\\CMDS\\marketDataTo0828.md";
+        List<String> stringList = CmdsDataFilterUtil.getAllMARKET_STATISTICS(filePath);
+        try {
+            for(String path : stringList) {
+                LOGGER.info("Path: {} start!", path);
+                super.execute(path);
+            }
+        } catch (Exception ex) {
+            LOGGER.error("allMarketStatisticsTest ex: {}", ex, ex);
         }
     }
 

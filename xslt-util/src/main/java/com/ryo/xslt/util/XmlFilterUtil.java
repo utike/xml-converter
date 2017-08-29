@@ -1,5 +1,6 @@
 package com.ryo.xslt.util;
 
+import imix.field.MDSubType;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Node;
@@ -99,6 +100,8 @@ public class XmlFilterUtil {
 
     public static void main(String[] args) throws DocumentException {
         final String dir = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData20170728";
+
+//        MDSubType.
 //        genMarketDataReadMeFile(dir);
 
 //        final String path = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData20170727\\1.xml";
