@@ -14,7 +14,7 @@ public class ErrorTest extends BaseTest {
 
     @Test
     public void ErrorToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\Error\\error.xml";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\Error\\error.txt";
         final String targetFileName = "Error.xml";
         super.toXml(filePath, targetFileName);
     }

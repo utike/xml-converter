@@ -67,6 +67,7 @@ public abstract class AbstractBaseTest {
         try {
             DaoUtil.execute(sqlResult);
         } catch (SQLException e) {
+            LOGGER.error("error path is: "+originalXmlPath);
             LOGGER.error("execute meet ex: {}", e, e);
         }
     }

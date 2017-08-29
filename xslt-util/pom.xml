@@ -12,4 +12,22 @@
     <artifactId>xslt-util</artifactId>
 
 
+    <dependencies>
+        <!--local jars import-->
+        <!--http://www.mamicode.com/info-detail-169419.html-->
+        <dependency>
+            <groupId>cn.com.chinamoney</groupId>
+            <artifactId>IMIXProtocol</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../lib/IMIXProtocol.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.chinamoney</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../lib/sqljdbc4.jar</systemPath>
+        </dependency>
+    </dependencies>
 </project>

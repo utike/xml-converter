@@ -11,8 +11,10 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * xml 文件过滤工具
@@ -98,18 +100,34 @@ public class XmlFilterUtil {
         return pathList;
     }
 
-    public static void main(String[] args) throws DocumentException {
-        final String dir = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData20170728";
 
-//        MDSubType.
-//        genMarketDataReadMeFile(dir);
+    /**
+     * 展现产品信息
+     * @param path
+     */
+    private static void showPathInfo(Path path) throws DocumentException {
+        SAXReader saxReader = new SAXReader();
+        Document document = saxReader.read(path.toFile());
+        Node marketIndicatorNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='MarketIndicator']/@enum");
+        Node mDSubTypeNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='MDSubType']");
+        Node tradeMethodNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='TradeMethod']");
+        Node mDBookTypeNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/groups[@name='MDInstrumentGrp']/group/field[@name='MDBookType']");
 
-//        final String path = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-cmds\\src\\test\\resources\\original\\marketData20170727\\1.xml";
-//        SAXReader saxReader = new SAXReader();
-//        Document document = saxReader.read(path);
-//
-//        Node marketIndicatorNode = document.selectSingleNode("message/body/groups[@name='NoMDTypes']/group/field[@name='MarketIndicator']/@enum");
-//        System.out.println(marketIndicatorNode.getStringValue());
+        String result = String.format("%s;%s;%s;%s", getStringValue(marketIndicatorNode),
+                getStringValue(mDSubTypeNode), getStringValue(tradeMethodNode), getStringValue(mDBookTypeNode));
+        System.out.println(result);
+        System.out.println(path);
+    }
+
+    public static void main(String[] args) throws DocumentException, IOException {
+        Path path = Paths.get("E:\\CODE_GEN\\Fork\\xml-converter\\xslt-util\\src\\main\\resources\\data\\20170829\\error.txt");
+        List<String> stringList = Files.readAllLines(path);
+
+        Set<String> stringSet = new HashSet<>(stringList);
+        for(String string : stringSet) {
+            Path filePath = Paths.get(string);
+            showPathInfo(filePath);
+        }
     }
 
 }

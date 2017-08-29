@@ -54,6 +54,13 @@ public class CashBondTest extends AbstractBaseTest {
         }
     }
 
+
+    @Test
+    public void TRADING_PRODUCT_MARKET_STATISTICSTest() {
+        final String filePath = "C:\\Users\\bbhou\\Desktop\\work\\CMDS\\marketDataTo0828\\19061.xml";
+        super.execute(filePath);
+    }
+
     /**
      * CBT-现券清洗后实时行情 or 现券清洗后收盘行情(44)
      */
