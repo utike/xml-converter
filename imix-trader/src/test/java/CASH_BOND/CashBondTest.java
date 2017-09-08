@@ -37,14 +37,14 @@ public class CashBondTest extends BaseTest {
     //quote (S)
     @Test
     public void QuoteToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\Quote.xml";
-        final String targetFileName = "Quote.xml";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\QuoteWithYeild2.xml";
+        final String targetFileName = "QuoteWithYeild2.xml";
         super.toXml(filePath, targetFileName);
     }
     @Test
     public void QuoteToSqlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\Quote.xml";
-        final String targetFileName = "Quote.sql";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\QuoteWithYeild2.xml";
+        final String targetFileName = "QuoteWithYeild2.sql";
         super.toSql(filePath, targetFileName);
     }
 

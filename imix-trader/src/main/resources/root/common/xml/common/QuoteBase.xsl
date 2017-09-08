@@ -14,7 +14,7 @@
     <xsl:template name="master-Quote">
         <xsl:for-each select="message/body/field[@name]">
             <xsl:variable name="nodeName" select="java:XsltUtil.getDialogQuoteMap(@name)"/>
-            <xsl:if test="@tag != 453">
+            <xsl:if test="@tag != 453 and @tag != 235 and @tag != 232">
                 <xsl:element name="{$nodeName}">
                     <xsl:value-of select="java:XsltUtil.getFormatValue(current())"/>
                 </xsl:element>

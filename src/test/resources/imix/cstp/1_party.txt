@@ -1,0 +1,16 @@
+<PartyID><![CDATA[304161]]></PartyID>
+<PartyRole enum="BUYER_OR_BORROWER_OR_REVERSE_REPOER_OR_FIXED_PAYER_OR_BENCHMARK_1_PAYER"><![CDATA[119]]></PartyRole>
+<PostalAddress enum="6"><![CDATA[-]]></PostalAddress>
+<TraderName enum="101"><![CDATA[安徽海益测试对手方]]></TraderName>
+<ShortLegalChineseNameOfFirm enum="125"><![CDATA[恒天基金]]></ShortLegalChineseNameOfFirm>
+<FullLegalChineseNameOfFirm enum="124"><![CDATA[恒天基金]]></FullLegalChineseNameOfFirm>
+<ShortLegalNameOfFirm enum="102"><![CDATA[恒天基金]]></ShortLegalNameOfFirm>
+<CashAccountNumber enum="15"><![CDATA[654321]]></CashAccountNumber>
+<CashAccountName enum="23"><![CDATA[恒天]]></CashAccountName>
+<SettlementBankName enum="110"><![CDATA[1111]]></SettlementBankName>
+<SettlementBankSortCode enum="112"><![CDATA[0000]]></SettlementBankSortCode>
+<CustodianInstitutionName enum="111"><![CDATA[国债登记结算公司]]></CustodianInstitutionName>
+<SecuritiesAccountNumber enum="10"><![CDATA[A654321]]></SecuritiesAccountNumber>
+<SecuritiesAccountName enum="22"><![CDATA[恒天基金]]></SecuritiesAccountName>
+<TraderChineseName enum="126"><![CDATA[安徽海益测试对手方]]></TraderChineseName>
+<EligibleCounterparty enum="29"><![CDATA[CFETS]]></EligibleCounterparty>

@@ -1,0 +1,94 @@
+<MessageBean>
+    <Header>
+        <BeginString enum="BEGINSTRING_VALUE_IMIX10"><![CDATA[IMIX.1.0]]></BeginString>
+        <BodyLength><![CDATA[1515]]></BodyLength>
+        <MsgSeqNum><![CDATA[119]]></MsgSeqNum>
+        <MsgType enum="ExecutionReport"><![CDATA[8]]></MsgType>
+        <SenderCompID><![CDATA[CFETS-RMB-CSTP]]></SenderCompID>
+        <SendingTime><![CDATA[20170901-08:30:52.818]]></SendingTime>
+        <TargetCompID><![CDATA[545454]]></TargetCompID>
+        <TargetSubID><![CDATA[ahhycstp1]]></TargetSubID>
+        <OnBehalfOfCompID><![CDATA[CFETS-RMB]]></OnBehalfOfCompID>
+        <DeliverToCompID><![CDATA[545454]]></DeliverToCompID>
+        <DeliverToSubID><![CDATA[ahhycstp1]]></DeliverToSubID>
+    </Header>
+    <Body>
+        <ClOrdID><![CDATA[994364504281925001]]></ClOrdID>
+        <ExecID><![CDATA[CBT20170901000050]]></ExecID>
+        <LastQty><![CDATA[10000000]]></LastQty>
+        <Price><![CDATA[99.0000]]></Price>
+        <SecurityID><![CDATA[100002]]></SecurityID>
+        <Side enum="SELL_OR_LEND_OR_REVERSE_REPURCHASE"><![CDATA[4]]></Side>
+        <Symbol><![CDATA[10附息国债02]]></Symbol>
+        <TransactTime><![CDATA[20170901-16:30:52.214]]></TransactTime>
+        <SettlDate><![CDATA[20170904]]></SettlDate>
+        <TradeDate><![CDATA[20170901]]></TradeDate>
+        <QuoteID><![CDATA[201709010420000090]]></QuoteID>
+        <SettlCurrAmt><![CDATA[9928894.02]]></SettlCurrAmt>
+        <SettlCurrency><![CDATA[CNY]]></SettlCurrency>
+        <ExecType enum="TRADE"><![CDATA[F]]></ExecType>
+        <AccruedInterestAmt><![CDATA[0.28894]]></AccruedInterestAmt>
+        <DeliveryType enum="DVP"><![CDATA[0]]></DeliveryType>
+        <AccruedInterestTotalAmt><![CDATA[28894.02]]></AccruedInterestTotalAmt>
+        <ContingencyIndicator enum="NO"><![CDATA[N]]></ContingencyIndicator>
+        <DirtyPrice><![CDATA[99.2889]]></DirtyPrice>
+        <DealTransType enum="DEAL_ENTRY"><![CDATA[0]]></DealTransType>
+        <MarketIndicator enum="CASH_BOND"><![CDATA[4]]></MarketIndicator>
+        <TermToMaturity><![CDATA[Y2M5D3]]></TermToMaturity>
+        <RemarkIndicator enum="NO"><![CDATA[N]]></RemarkIndicator>
+        <TradeCashAmt><![CDATA[9900000.00]]></TradeCashAmt>
+        <TradeMethod enum="NEGOTIATION_NORMAL"><![CDATA[1]]></TradeMethod>
+        <TradeTime><![CDATA[16:30:52]]></TradeTime>
+        <TradeType enum="NON_MARKET_MAKING"><![CDATA[1]]></TradeType>
+        <CashBondIndicator enum="YES"><![CDATA[Y]]></CashBondIndicator>
+        <DataCategoryIndicator enum="SELF_DATA"><![CDATA[0]]></DataCategoryIndicator>
+        <ClearingMethod enum="SELF_CLEARING"><![CDATA[13]]></ClearingMethod>
+        <Yield2 enum="SECOND_LEG_YIELD"><![CDATA[3.8666]]></Yield2>
+        <NoPartyIDs>
+            <PartyID><![CDATA[304161]]></PartyID>
+            <PartyRole enum="BUYER_OR_BORROWER_OR_REVERSE_REPOER_OR_FIXED_PAYER_OR_BENCHMARK_1_PAYER">
+                <![CDATA[119]]></PartyRole>
+            <PostalAddress enum="6"><![CDATA[-]]></PostalAddress>
+            <TraderName enum="101"><![CDATA[安徽海益测试对手方]]></TraderName>
+            <ShortLegalChineseNameOfFirm enum="125"><![CDATA[恒天基金]]></ShortLegalChineseNameOfFirm>
+            <FullLegalChineseNameOfFirm enum="124"><![CDATA[恒天基金]]></FullLegalChineseNameOfFirm>
+            <ShortLegalNameOfFirm enum="102"><![CDATA[恒天基金]]></ShortLegalNameOfFirm>
+            <CashAccountNumber enum="15"><![CDATA[654321]]></CashAccountNumber>
+            <CashAccountName enum="23"><![CDATA[恒天]]></CashAccountName>
+            <SettlementBankName enum="110"><![CDATA[1111]]></SettlementBankName>
+            <SettlementBankSortCode enum="112"><![CDATA[0000]]></SettlementBankSortCode>
+            <CustodianInstitutionName enum="111"><![CDATA[国债登记结算公司]]></CustodianInstitutionName>
+            <SecuritiesAccountNumber enum="10"><![CDATA[A654321]]></SecuritiesAccountNumber>
+            <SecuritiesAccountName enum="22"><![CDATA[恒天基金]]></SecuritiesAccountName>
+            <TraderChineseName enum="126"><![CDATA[安徽海益测试对手方]]></TraderChineseName>
+            <EligibleCounterparty enum="29"><![CDATA[CFETS]]></EligibleCounterparty>
+            <NoContactInfos>
+                <ContactInfoID><![CDATA[-]]></ContactInfoID>
+                <ContactInfoIDType enum="PHONE_NO_1"><![CDATA[6]]></ContactInfoIDType>
+            </NoContactInfos>
+        </NoPartyIDs>
+        <NoPartyIDs>
+            <PartyID><![CDATA[545454]]></PartyID>
+            <PartyRole enum="SELLER_OR_LENDER_OR_REPOER_OR_FIXED_RECEIVER_OR_BENCHMARK_1_RECEIVER">
+                <![CDATA[120]]></PartyRole>
+            <PostalAddress enum="6"><![CDATA[-]]></PostalAddress>
+            <TraderName enum="101"><![CDATA[安徽海益首席交易员]]></TraderName>
+            <ShortLegalChineseNameOfFirm enum="125"><![CDATA[安徽海益信息]]></ShortLegalChineseNameOfFirm>
+            <FullLegalChineseNameOfFirm enum="124"><![CDATA[安徽海益信息科技有限责任公司]]></FullLegalChineseNameOfFirm>
+            <ShortLegalNameOfFirm enum="102"><![CDATA[ahhy]]></ShortLegalNameOfFirm>
+            <CashAccountNumber enum="15"><![CDATA[123131]]></CashAccountNumber>
+            <CashAccountName enum="23"><![CDATA[安徽海益]]></CashAccountName>
+            <SettlementBankName enum="110"><![CDATA[安徽海益信息科技有限公司]]></SettlementBankName>
+            <SettlementBankSortCode enum="112"><![CDATA[1311313]]></SettlementBankSortCode>
+            <CustodianInstitutionName enum="111"><![CDATA[国债登记结算公司]]></CustodianInstitutionName>
+            <SecuritiesAccountNumber enum="10"><![CDATA[125235454]]></SecuritiesAccountNumber>
+            <SecuritiesAccountName enum="22"><![CDATA[安徽海益]]></SecuritiesAccountName>
+            <TraderChineseName enum="126"><![CDATA[安徽海益首席交易员]]></TraderChineseName>
+            <EligibleCounterparty enum="29"><![CDATA[CFETS]]></EligibleCounterparty>
+            <NoContactInfos>
+                <ContactInfoID><![CDATA[-]]></ContactInfoID>
+                <ContactInfoIDType enum="PHONE_NO_1"><![CDATA[6]]></ContactInfoIDType>
+            </NoContactInfos>
+        </NoPartyIDs>
+    </Body>
+</MessageBean>
