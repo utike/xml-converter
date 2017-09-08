@@ -21,6 +21,8 @@
                 <!--master-quote-->
                 <xsl:call-template name="master-Quote"/>
 
+                <xsl:call-template name="master-Quote-NoStipulations"/>
+
             </Master>
 
             <Slave>
