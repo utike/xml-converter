@@ -22,5 +22,15 @@
         </xsl:for-each>
     </xsl:template>
 
+    <!--意向报价的主数据,NoStipulations信息-->
+    <xsl:template name="master-Quote-NoStipulations">
+        <xsl:for-each select="message/body/groups[@name='NoStipulations']/group">
+            <xsl:variable name="nodeName" select="field[@name='StipulationType']"/>
+            <xsl:element name="{$nodeName}">
+                <xsl:value-of select="field[@name='StipulationValue']"/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+
 
 </xsl:stylesheet>
