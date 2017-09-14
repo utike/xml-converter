@@ -9,9 +9,9 @@
 
         <xsl:call-template name="sql-marketData"/>
 
-        <xsl:call-template name="sql-marketData-mdEntries"/>
-
-        <xsl:call-template name="sql-marketData-party"/>
+        <!--从表废弃-->
+        <!--<xsl:call-template name="sql-marketData-mdEntries"/>-->
+        <!--<xsl:call-template name="sql-marketData-party"/>-->
 
     </xsl:template>
 

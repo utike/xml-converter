@@ -37,8 +37,8 @@ public class CashBondTest extends BaseTest {
     //quote (S)
     @Test
     public void QuoteToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\QuoteWithYeild2.xml";
-        final String targetFileName = "QuoteWithYeild2.xml";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\CBTQuoteWithStriker.xml";
+        final String targetFileName = "CBTQuoteWithStriker.xml";
         super.toXml(filePath, targetFileName);
     }
     @Test
@@ -229,14 +229,14 @@ public class CashBondTest extends BaseTest {
     //w
     @Test
     public void MarketDataSnapshotFullRefreshToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\qtFullRefresh.xml";
-        final String targetFileName = "MarketDataSnapshotFullRefresh.xml";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\refreshWithParty.xml";
+        final String targetFileName = "refreshWithPartyStandard.xml";
         super.toXml(filePath, targetFileName);
     }
     @Test
     public void MarketDataSnapshotFullRefreshToSqlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\MarketDataSnapshotFullRefresh.xml";
-        final String targetFileName = "MarketDataSnapshotFullRefresh.sql";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\result\\CASH_BOND\\refreshWithPartyStandard.xml";
+        final String targetFileName = "refreshWithPartyStandard.sql";
         super.toSql(filePath, targetFileName);
     }
 

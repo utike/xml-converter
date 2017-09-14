@@ -23,8 +23,6 @@
 
             <Slave>
                 <xsl:call-template name="slave-MarketDataSnapshotFullRefresh-NoMDEntries"/>
-
-                <xsl:call-template name="slave-MarketDataSnapshotFullRefresh-NoPartyIDs"/>
             </Slave>
 
         </MarketData>

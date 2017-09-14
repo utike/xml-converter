@@ -29,5 +29,12 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/../lib/sqljdbc4.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>cn.com.chinamoney</groupId>
+            <artifactId>IMIXProtocol1and2</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../lib/IMIXProtocol1and2.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

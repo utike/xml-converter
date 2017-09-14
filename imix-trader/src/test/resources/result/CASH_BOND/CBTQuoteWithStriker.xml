@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Quote>
+    <Header>
+        <BeginString>IMIX.2.0</BeginString>
+        <BodyLength>785</BodyLength>
+        <MsgSeqNum>137</MsgSeqNum>
+        <MsgType>S</MsgType>
+        <SenderCompID>CFETS-TRADING-INFT</SenderCompID>
+        <SenderSubID>RMB</SenderSubID>
+        <SendingTime>20170908 06:14:18.525</SendingTime>
+        <TargetCompID>545454545454545454541</TargetCompID>
+        <TargetSubID>ahhytrd</TargetSubID>
+    </Header>
+    <Master>
+        <Qty>20000000</Qty>
+        <Price>99.0000</Price>
+        <SecurityID>1120007</SecurityID>
+        <Side>2</Side>
+        <Symbol>11江苏银行</Symbol>
+        <TransactTime>20170908 14:14:18.386</TransactTime>
+        <ValidUntilTime>20170908 19:20:00.000</ValidUntilTime>
+        <SettlType>1</SettlType>
+        <SettlDate>20170908</SettlDate>
+        <ID>201709080420000098</ID>
+        <SettlCurrAmt>21092449.32</SettlCurrAmt>
+        <SettlCurrency>CNY</SettlCurrency>
+        <AccruedInterestAmt>6.46225</AccruedInterestAmt>
+        <SecurityType>CBT</SecurityType>
+        <Yield>6.6310</Yield>
+        <QuoteStatus>16</QuoteStatus>
+        <QuoteType>1</QuoteType>
+        <DeliveryType>0</DeliveryType>
+        <AccruedInterestTotalAmt>1292449.32</AccruedInterestTotalAmt>
+        <DirtyPrice>105.4622</DirtyPrice>
+        <MarketIndicator>4</MarketIndicator>
+        <TransType>N</TransType>
+        <TradeCashAmt>19800000.00</TradeCashAmt>
+        <ClearingMethod>13</ClearingMethod>
+        <StrikeYield>6.7734</StrikeYield>
+    </Master>
+    <Slave>
+        <Parties>
+            <Party>
+                <PartyID>888888888888888888888</PartyID>
+                <PartyRole>101</PartyRole>
+                <FirmFullChineseName>恒天基金</FirmFullChineseName>
+                <TRADER_CODE>htjjdealerahhy</TRADER_CODE>
+                <TraderName>安徽海益测试对手方</TraderName>
+            </Party>
+            <Party>
+                <PartyID>545454545454545454541</PartyID>
+                <PartyRole>102</PartyRole>
+                <FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName>
+                <TRADER_CODE>yaolei</TRADER_CODE>
+                <TraderName>yaolei</TraderName>
+            </Party>
+        </Parties>
+    </Slave>
+    <MessageParam>
+        <SysID><![CDATA[23ed5945-d68d-4ffa-825b-faf993fe3d6f]]></SysID>
+        <SysOriMsg>
+            <![CDATA[<Quote><Header><BeginString>IMIX.2.0</BeginString><BodyLength>785</BodyLength><MsgSeqNum>137</MsgSeqNum><MsgType>S</MsgType><SenderCompID>CFETS-TRADING-INFT</SenderCompID><SenderSubID>RMB</SenderSubID><SendingTime>20170908 06:14:18.525</SendingTime><TargetCompID>545454545454545454541</TargetCompID><TargetSubID>ahhytrd</TargetSubID></Header><Master><Qty>20000000</Qty><Price>99.0000</Price><SecurityID>1120007</SecurityID><Side>2</Side><Symbol>11江苏银行</Symbol><TransactTime>20170908 14:14:18.386</TransactTime><ValidUntilTime>20170908 19:20:00.000</ValidUntilTime><SettlType>1</SettlType><SettlDate>20170908</SettlDate><ID>201709080420000098</ID><SettlCurrAmt>21092449.32</SettlCurrAmt><SettlCurrency>CNY</SettlCurrency><AccruedInterestAmt>6.46225</AccruedInterestAmt><SecurityType>CBT</SecurityType><Yield>6.6310</Yield><QuoteStatus>16</QuoteStatus><QuoteType>1</QuoteType><DeliveryType>0</DeliveryType><AccruedInterestTotalAmt>1292449.32</AccruedInterestTotalAmt><DirtyPrice>105.4622</DirtyPrice><MarketIndicator>4</MarketIndicator><TransType>N</TransType><TradeCashAmt>19800000.00</TradeCashAmt><ClearingMethod>13</ClearingMethod><StrikeYield>6.7734</StrikeYield></Master><Slave><Parties><Party><PartyID>888888888888888888888</PartyID><PartyRole>101</PartyRole><FirmFullChineseName>恒天基金</FirmFullChineseName><TRADER_CODE>htjjdealerahhy</TRADER_CODE><TraderName>安徽海益测试对手方</TraderName></Party><Party><PartyID>545454545454545454541</PartyID><PartyRole>102</PartyRole><FirmFullChineseName>安徽海益信息科技有限责任公司</FirmFullChineseName><TRADER_CODE>yaolei</TRADER_CODE><TraderName>yaolei</TraderName></Party></Parties></Slave></Quote>]]></SysOriMsg>
+    </MessageParam>
+</Quote>

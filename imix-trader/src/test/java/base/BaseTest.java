@@ -1,6 +1,8 @@
 package base;
 
 
+import imix.field.QuoteStatus;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -60,6 +62,9 @@ public abstract class BaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
     }
 
 }
