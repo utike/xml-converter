@@ -27,6 +27,9 @@
 
     <xsl:import href="component/OTHER/OrderToQuoteSql.xsl"/>
 
+    <xsl:import href="component/TOOL/QueryResultSql.xsl"/>
+    <xsl:import href="component/TOOL/UserResponseSql.xsl"/>
+
     <!--SQL脚本的路由-->
     <!--1.可以根据XML的类型、市场等信息自动路由到对应的处理器-->
     <xsl:template match="/">
@@ -128,6 +131,18 @@
             <!--================================= Other-Order2Quote =================================-->
             <xsl:when test="$MsgType = 'FINAL'">
                 <xsl:call-template name="route-orderToQuoteSql"/>
+            </xsl:when>
+
+
+            <!--================================= TOOL =================================-->
+            <!--修改密码反馈-->
+            <xsl:when test="$MsgType = 'BF'">
+                <xsl:call-template name="route-userResponseSql"/>
+            </xsl:when>
+
+            <!--报价查询无结果反馈-->
+            <xsl:when test="$MsgType = 'U01'">
+                <xsl:call-template name="route-queryResultSql"/>
             </xsl:when>
 
             <xsl:otherwise>

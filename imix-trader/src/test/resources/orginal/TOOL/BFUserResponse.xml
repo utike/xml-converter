@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<message>
+    <header>
+        <field name="BeginString" tag="8"><![CDATA[IMIX.2.0]]></field>
+        <field name="BodyLength" tag="9"><![CDATA[215]]></field>
+        <field name="MsgSeqNum" tag="34"><![CDATA[5]]></field>
+        <field enum="UserResponse" name="MsgType" tag="35"><![CDATA[BF]]></field>
+        <field name="SenderCompID" tag="49"><![CDATA[CFETS-TRADING-INFT]]></field>
+        <field name="SenderSubID" tag="50"><![CDATA[RMB]]></field>
+        <field name="SendingTime" tag="52"><![CDATA[20170915-02:54:05.244]]></field>
+        <field name="TargetCompID" tag="56"><![CDATA[545454545454545454541]]></field>
+        <field name="TargetSubID" tag="57"><![CDATA[ahhytrd]]></field>
+    </header>
+    <body>
+        <field name="Username" tag="553"><![CDATA[ahhytrd]]></field>
+        <field name="UserRequestID" tag="923"><![CDATA[ODahhytrd000000007]]></field>
+        <field enum="PASSWORD_INCORRECT" name="UserStatus" tag="926"><![CDATA[4]]></field>
+        <field name="UserStatusText" tag="927"><![CDATA[new password equal old password.]]></field>
+    </body>
+    <trailer>
+        <field name="SignatureLength" tag="93"><![CDATA[16]]></field>
+        <field name="Signature" tag="89"><![CDATA[Signature]]></field>
+        <field name="CheckSum" tag="10"><![CDATA[078]]></field>
+    </trailer>
+</message>

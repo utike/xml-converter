@@ -499,6 +499,78 @@
         );
     </xsl:template>
 
+
+    <!--================================= TOOL =================================-->
+    <!--查询请求-不存在的反馈-->
+    <xsl:template name="sql-query-result">
+        INSERT INTO [dbo].[cfets_query_result]
+        (
+        [SysStatus]
+        <xsl:for-each select="Tool/MessageParam/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsQueryResultContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                ,[<xsl:value-of select="name()"/>]
+            </xsl:if>
+        </xsl:for-each>
+        <xsl:for-each select="Tool/Master/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsQueryResultContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                <xsl:call-template name="fields"/>
+            </xsl:if>
+        </xsl:for-each>
+        ) VALUES (
+        0
+        <xsl:for-each select="Tool/MessageParam/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsQueryResultContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                ,'<xsl:value-of select="string()"/>'
+            </xsl:if>
+        </xsl:for-each>
+        <xsl:for-each select="Tool/Master/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsQueryResultContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                <xsl:call-template name="values"/>
+            </xsl:if>
+        </xsl:for-each>
+        );
+    </xsl:template>
+
+    <!--修改密码的反馈-->
+    <xsl:template name="sql-user-response">
+        INSERT INTO [dbo].[cfets_user_response]
+        (
+        [SysStatus]
+        <xsl:for-each select="Tool/MessageParam/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsUserResponseContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                ,[<xsl:value-of select="name()"/>]
+            </xsl:if>
+        </xsl:for-each>
+        <xsl:for-each select="Tool/Master/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsUserResponseContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                <xsl:call-template name="fields"/>
+            </xsl:if>
+        </xsl:for-each>
+        ) VALUES (
+        0
+        <xsl:for-each select="Tool/MessageParam/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsUserResponseContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                ,'<xsl:value-of select="string()"/>'
+            </xsl:if>
+        </xsl:for-each>
+        <xsl:for-each select="Tool/Master/*">
+            <xsl:variable name="isHas" select="java:XsltUtil.isCfetsUserResponseContains(name())"/>
+            <xsl:if test="$isHas ='1'">
+                <xsl:call-template name="values"/>
+            </xsl:if>
+        </xsl:for-each>
+        );
+    </xsl:template>
+
+
+
     <!--================================= NOT-FOUND =================================-->
     <xsl:template name="NOT-FOUND">
         <ROOT>NOT FOUND</ROOT>

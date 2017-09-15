@@ -26,6 +26,9 @@
 
     <xsl:import href="component/OTHER/OrderToQuote.xsl"/>
 
+    <xsl:import href="component/TOOL/QueryResult.xsl"/>
+    <xsl:import href="component/TOOL/UserResponse.xsl"/>
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8"
                 indent="yes" cdata-section-elements="DataContent"/>
 
@@ -189,6 +192,17 @@
             <!--================================= Other-Order2Quote =================================-->
             <xsl:when test="$MsgType = 'FINAL'">
                 <xsl:call-template name="route-orderToQuote"/>
+            </xsl:when>
+
+            <!--================================= TOOL =================================-->
+            <!--修改密码反馈-->
+            <xsl:when test="$MsgType = 'BF'">
+                <xsl:call-template name="route-userResponse"/>
+            </xsl:when>
+
+            <!--报价查询无结果反馈-->
+            <xsl:when test="$MsgType = 'U01'">
+                <xsl:call-template name="route-queryResult"/>
             </xsl:when>
 
             <xsl:otherwise>

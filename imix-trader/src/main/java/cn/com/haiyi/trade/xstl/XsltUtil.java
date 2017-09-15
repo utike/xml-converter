@@ -39,6 +39,8 @@ public class XsltUtil {
     private static List<String> details_marginInfos_List = new LinkedList<>();
     private static List<String> serialNo_List = new LinkedList<>();
     private static List<String> details_parties_List = new LinkedList<>();
+    private static List<String> cfets_query_result_List = new LinkedList<>();
+    private static List<String> cfets_user_response_List = new LinkedList<>();
 
     static {
         /**
@@ -512,6 +514,29 @@ public class XsltUtil {
         details_parties_List.add("PhoneNo");
         details_parties_List.add("FkID");
         details_parties_List.add("TraderCode");
+
+        cfets_query_result_List.add("IID");
+        cfets_query_result_List.add("SysID");
+        cfets_query_result_List.add("SysOriMsg");
+        cfets_query_result_List.add("SysDirect");
+        cfets_query_result_List.add("SysStatus");
+        cfets_query_result_List.add("QueryType");
+        cfets_query_result_List.add("QueryRequestID");
+        cfets_query_result_List.add("TotNumReports");
+        cfets_query_result_List.add("ClOrdID");
+        cfets_query_result_List.add("ApplErrorCode");
+        cfets_query_result_List.add("SysUpdateTime");
+
+        cfets_user_response_List.add("IID");
+        cfets_user_response_List.add("SysID");
+        cfets_user_response_List.add("SysOriMsg");
+        cfets_user_response_List.add("SysDirect");
+        cfets_user_response_List.add("SysStatus");
+        cfets_user_response_List.add("Username");
+        cfets_user_response_List.add("UserStatus");
+        cfets_user_response_List.add("UserStatusText");
+        cfets_user_response_List.add("UserRequestID");
+        cfets_user_response_List.add("SysUpdateTime");
     }
 
 
@@ -836,6 +861,23 @@ public class XsltUtil {
      */
     public static String isDetailsPartiesContains(String xmlFieldName) {
         return listContains(details_parties_List, xmlFieldName);
+    }
+
+    /**
+     * cfets_query_result是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isCfetsQueryResultContains(String xmlFieldName) {
+        return listContains(cfets_query_result_List, xmlFieldName);
+    }
+    /**
+     * cfets_user_response是否包含对应的xml字段
+     * @param xmlFieldName xml字段名称
+     * @return {@code 0} 不包含 {@code 1} 包含
+     */
+    public static String isCfetsUserResponseContains(String xmlFieldName) {
+        return listContains(cfets_user_response_List, xmlFieldName);
     }
 
     /**
