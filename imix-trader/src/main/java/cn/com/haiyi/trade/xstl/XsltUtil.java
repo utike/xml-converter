@@ -93,7 +93,7 @@ public class XsltUtil {
 
         //3. 限价报价
         QUOTE_CONSTANT.put("OrderID", "ID");
-        QUOTE_CONSTANT.put("OrdStatus", "QuoteStatus"); //订单状态映射为 报价状态s
+//        QUOTE_CONSTANT.put("OrdStatus", "QuoteStatus"); //订单状态映射为 报价状态s
         QUOTE_CONSTANT.put("ExecType", "TransType");
         QUOTE_CONSTANT.put("DeliveryOptionDirection", "Side");
 
