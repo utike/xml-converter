@@ -445,6 +445,7 @@ public class XsltUtil {
         cfets_marketdata_List.add("MarketDepth");
         cfets_marketdata_List.add("MDBookType");
         cfets_marketdata_List.add("MarketIndicator");
+        cfets_marketdata_List.add("SettlType"); //清算速度
         error_List.add("IID");
         error_List.add("SMM_MKT_SRNO");
         error_List.add("SMM_MESG_CODE_NMBR");

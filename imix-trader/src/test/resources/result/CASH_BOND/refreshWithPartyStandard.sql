@@ -1,7 +1,8 @@
 
         INSERT INTO [dbo].[cfets_marketdata]
         (
-        [SysStatus]
+        [SysStatus],
+        [SettlType]
         
                 ,[SysID]
             
@@ -22,8 +23,8 @@
         ,[MarketIndicator]
     
         ) VALUES (
-        0
-        
+        0,
+        2
                 ,'bb8d8824-9e5e-4785-a0cf-abb0fd149b62'
             
                 ,'

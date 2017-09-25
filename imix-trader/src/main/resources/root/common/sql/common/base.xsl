@@ -385,7 +385,8 @@
     <xsl:template name="sql-marketData">
         INSERT INTO [dbo].[cfets_marketdata]
         (
-        [SysStatus]
+        [SysStatus],
+        [SettlType]
         <xsl:for-each select="MarketData/MessageParam/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isCfetsMarketdataContains(name())"/>
             <xsl:if test="$isHas ='1'">
@@ -399,7 +400,8 @@
             </xsl:if>
         </xsl:for-each>
         ) VALUES (
-        0
+        0,
+        <xsl:value-of select="MarketData/Slave/NoMDEntries/NoMDEntry[1]/SettlType"/>
         <xsl:for-each select="MarketData/MessageParam/*">
             <xsl:variable name="isHas" select="java:XsltUtil.isCfetsMarketdataContains(name())"/>
             <xsl:if test="$isHas ='1'">
