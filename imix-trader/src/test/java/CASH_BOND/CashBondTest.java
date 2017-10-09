@@ -65,7 +65,7 @@ public class CashBondTest extends BaseTest {
     //quote 报价(AI)
     @Test
     public void QuoteStatusReportToXmlTest() {
-        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\createDialogQuote.xml";
+        final String filePath = "E:\\CODE_GEN\\Fork\\xml-converter\\imix-trader\\src\\test\\resources\\orginal\\CASH_BOND\\QuoteStatusReport.xml";
         final String targetFileName = "QuoteStatusReport.xml";
         super.toXml(filePath, targetFileName);
     }
