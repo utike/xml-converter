@@ -15,6 +15,7 @@
         <module>imix-cstp</module>
         <module>imix-trader</module>
         <module>imix-cmds</module>
+        <module>xsd-learn</module>
     </modules>
 
 
